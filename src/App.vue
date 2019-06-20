@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import top from './views/Top';
-import home from './views/Home';
-import bottom from './views/Bottom';
+import top from '@/views/Top';
+import home from '@/views/Home';
+import bottom from '@/views/Bottom';
 export default {
   components: {
     top,home,bottom
