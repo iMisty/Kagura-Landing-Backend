@@ -1,37 +1,29 @@
 <template>
   <div id="app">
-    <top></top>
-    <home></home>
-    <bottom></bottom>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
   </div>
 </template>
 
-<script>
-import top from '@/views/Top';
-import home from '@/views/Home';
-import bottom from '@/views/Bottom';
-export default {
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import HelloWorld from './components/HelloWorld.vue';
+
+@Component({
   components: {
-    top,home,bottom
+    HelloWorld,
   },
-  props: [],
-  data () {
-    return {
-    }
-  },
-  watch: {},
-  computed: {},
-  methods: {},
-  created () {},
-  mounted () {}
-}
+})
+export default class App extends Vue {}
 </script>
-<style lang="less" scoped>
-#app{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  overflow: hidden;
+
+<style lang="less">
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
 </style>
