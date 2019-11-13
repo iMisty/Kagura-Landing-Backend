@@ -1,12 +1,29 @@
-## 前言
-本项目是根据[简单搜索](https://github.com/5iux/sou)项目的Vue实现版,在此对作者表示诚挚的感谢
-## 进度
-施工中咕咕咕咕咕咕咕咕咕咕咕
-## 部署方法
-1. Clone本项目或直接点击这里(施工中,请稍等)下载
-2. 位于`dist`文件夹下的为打包版,可直接上传至服务器或GitHub Page中直接使用
-3. 如需要定制,则修改data下的JSON即可(施工中)
-## 可定制部分
-1. 右上角可自定义链接(JSON格式)
-2. 可选择使用何种搜索引擎(默认为谷歌/必应/百度)
-3. 可自定义背景图等
+# single
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
