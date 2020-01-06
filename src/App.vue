@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Home></Home>
+    <Home v-if="mode === 1"></Home>
+    <Admin v-if="mode === 2"></Admin>
   </div>
 </template>
 
@@ -8,8 +9,19 @@
 import home from './views/Home';
 export default {
   components:{
-    Home: home
-  }
+    Home: home,
+    'Admin': () =>  import('./views/Admin.vue')
+  },
+  data(){
+    return{
+      mode: 1
+    }
+  },
+    computed: {},
+    watch: {},
+    methods: {},
+    created() {},
+    mounted() {}
 }
 </script>
 
