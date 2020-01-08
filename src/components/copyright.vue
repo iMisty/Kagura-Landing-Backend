@@ -1,5 +1,5 @@
 <template>
-  <div class="copyright">copyright</div>
+  <div class="copyright">©2005 - {{year}} By iMisty</div>
 </template>
 
 <script>
