@@ -18,8 +18,6 @@ export default {
 		const d = new Date();
 		const years = d.getFullYear();
 		this.$data.year = years;
-		// eslint-disable-next-line no-console
-		console.log(years);
 	}
 };
 </script>
