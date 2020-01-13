@@ -1,6 +1,7 @@
 <template>
     <div class="search-button">
-      search
+      <slot name="icon"></slot>
+      <slot name="text">Search</slot>
     </div>
 </template>
 
