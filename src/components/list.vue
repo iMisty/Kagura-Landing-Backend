@@ -1,6 +1,6 @@
 <template>
     <div class="list">
-      list
+
     </div>
 </template>
 
@@ -10,27 +10,30 @@ export default {
     components: {},
     data() {
         return {
-          video:[
-            {
-              icon: 'fa-youtube',
-              name:'Youtube',
-              link: 'https://www.youtube.com'
+          data: {
+            video: {
+              name: 'Videos',
+              list:[
+                {icon:'aaa.gif',link: 'https://www.youtube.com',text: 'Youtube'},
+                {icon:'aaa.gif',link: 'https://www.bilibili.com',text: 'Bilibili'},
+                {icon:'aaa.gif',link: 'https://www.acfun.com',text: 'ACFun'},
+                {icon:'aaa.gif',link: 'https://www.youku.com',text: 'Youku'},
+              ]
             }
-          ]
+          }
         };
     },
     computed: {},
     watch: {},
-    methods: {},
+    methods: {
+      getIndex: function(){
+        this.click = this.link;
+        // eslint-disable-next-line no-console
+        console.log(this.click);
+      }
+    },
     created() {},
     mounted() {},
-    beforeCreate() {},
-    beforeMount() {},
-    beforeUpdate() {},
-    updated() {},
-    beforeDestroy() {},
-    destroyed() {},
-    activated() {},
     }
 </script>
 <style lang='less' scoped>
