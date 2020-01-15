@@ -1,27 +1,25 @@
 <template>
   <div id="app">
     <Home v-if="mode === 1"></Home>
+    <list></list>
     <Admin v-if="mode === 2"></Admin>
   </div>
 </template>
 
 <script>
 import home from './views/Home';
+import list from './components/list.vue';
 export default {
   components:{
     Home: home,
-    'Admin': () =>  import('./views/Admin.vue')
+    'Admin': () => import('./views/Admin.vue'),
+    list
   },
   data(){
     return{
       mode: 1
     }
-  },
-    computed: {},
-    watch: {},
-    methods: {},
-    created() {},
-    mounted() {}
+  }
 }
 </script>
 
