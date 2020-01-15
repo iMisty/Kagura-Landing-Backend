@@ -1,6 +1,11 @@
 <template>
     <div class="list">
-
+      <ul>
+        <li v-for="list in data.video.list" :key="list.index">
+          <i :class="list.class" class="fa"></i>
+          <a :href="list.link" target="_blank">{{list.text}}</a>
+        </li>
+      </ul>
     </div>
 </template>
 
@@ -14,7 +19,7 @@ export default {
             video: {
               name: 'Videos',
               list:[
-                {icon:'aaa.gif',link: 'https://www.youtube.com',text: 'Youtube'},
+                {icon:'@/assets/imgs/youtube.png',link: 'https://www.youtube.com',text: 'Youtube',class:'fa-youtube'},
                 {icon:'aaa.gif',link: 'https://www.bilibili.com',text: 'Bilibili'},
                 {icon:'aaa.gif',link: 'https://www.acfun.com',text: 'ACFun'},
                 {icon:'aaa.gif',link: 'https://www.youku.com',text: 'Youku'},
