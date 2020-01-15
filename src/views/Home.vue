@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <list></list>
+    <weather></weather>
     <section class="wrap">
     <logo>
       <img src="../assets/imgs/logo.svg" alt="">
@@ -17,7 +17,7 @@
 export default {
   name: 'home',
   components: {
-    'list': () => import('../components/list'),
+    'weather': () => import('../components/weather'),
     'logo': () => import('../components/logo'),
     'search': () => import('../components/search'),
     'copyright': () => import('../components/copyright')
