@@ -2,6 +2,7 @@
   <div id="app">
     <Home v-if="mode === 1"></Home>
     <list></list>
+    <hitokoto></hitokoto>
     <Admin v-if="mode === 2"></Admin>
   </div>
 </template>
@@ -13,8 +14,9 @@ export default {
   components:{
     Home: home,
     'Admin': () => import('./views/Admin.vue'),
-    list
-  },
+    list,
+    'hitokoto': () => import('./components/hitokoto.vue')
+    },
   data(){
     return{
       mode: 1
