@@ -34,7 +34,7 @@
      }
    },
    mounted(){
-     this.getHitokoto();
+     //this.getHitokoto();
      //this.sta();
    }
  }
