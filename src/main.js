@@ -6,6 +6,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import store from './store/index'
 import './assets/less/normalize.less';
 
+
 new Vue({
     router,
     Vuex,
