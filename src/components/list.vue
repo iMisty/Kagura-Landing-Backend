@@ -53,20 +53,44 @@ export default {
   width: 32vw;
   height: 100vh;
   background-color: #222d46;
+  color: #fff;
+}
+.list-title{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      line-height: 2;
+    i{
+      font-size: 1.2em;
+      padding: 0 8px;
+    }
 }
 .list-wrap{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 12px;
+    transition-duration: .4s;
     li{
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
       padding: 12px 0;
+      font-size: 14px;
       background-color: #293550;
       cursor: pointer;
       border-radius: 8px;
+      &:hover{
+        background-color: #0065bb;
+        transition-duration: .4s;
+      }
+      a{
+        color: #fff;
+        text-decoration: none;
+      }
     }
+}
+i{
+  padding: 0 4px;
 }
 </style>
