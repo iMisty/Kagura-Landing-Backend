@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,11 +1,14 @@
 <template>
     <div class="list">
-      <div v-for="links in list" :key="links.index">
-        <div>{{links.name}}</div>
-        <ul>
+      <div v-for="links in list" :key="links.index" class="lists">
+        <div class="list-title">
+          <i class="fa" :class="links.class" :style="{color:links.titleIconColor}"></i>
+          <h2>{{links.name}}</h2>
+          </div>
+        <ul class="list-wrap">
           <li v-for="item in links.items" :key="item.index">
             <i class="iconfont" :class="item.class"></i>
-            <p>{{item.text}}</p>
+            <a :href="item.link" target="_blank">{{item.text}}</a>
             </li>
         </ul>
       </div>
@@ -46,8 +49,24 @@ export default {
   position: fixed;
   top: 0;
   right: 0;
-  width: 40vw;
+  padding: 24px 16px;
+  width: 32vw;
   height: 100vh;
-  background-color: #1453ad;
+  background-color: #222d46;
+}
+.list-wrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 12px;
+    li{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 0;
+      background-color: #293550;
+      cursor: pointer;
+      border-radius: 8px;
+    }
 }
 </style>

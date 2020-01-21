@@ -9,8 +9,11 @@ const store = new Vuex.Store({
         // hitokoto
         hitokoto: '加载中',
         list: {
+
             list1: {
                 name: 'Videos',
+                titleIconColor: "#29f",
+                class: 'fa-video-camera',
                 items: [
                     { icon: '@/assets/imgs/youtube.png', link: 'https://www.youtube.com', text: 'Youtube', class: 'icon-youtube' },
                     { icon: 'aaa.gif', link: 'https://www.bilibili.com', text: 'Bilibili' },
@@ -20,6 +23,8 @@ const store = new Vuex.Store({
             },
             list2: {
                 name: 'Designs',
+                class: 'icon-video',
+                titleIconColor: "#29f",
                 items: [
                     { icon: '@/assets/imgs/youtube.png', link: 'https://www.youtube.com', text: 'Youtube', class: 'fa-youtube' },
                     { icon: 'aaa.gif', link: 'https://www.bilibili.com', text: 'Bilibili' },
