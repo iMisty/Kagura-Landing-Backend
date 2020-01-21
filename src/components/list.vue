@@ -1,11 +1,14 @@
 <template>
     <div class="list">
-      <ul>
-        <li v-for="list in data.video.list" :key="list.index">
-          <i :class="list.class" class="fa"></i>
-          <a :href="list.link" target="_blank">{{list.text}}</a>
-        </li>
-      </ul>
+      <div v-for="links in list" :key="links.index">
+        <div>{{links.name}}</div>
+        <ul>
+          <li v-for="item in links.items" :key="item.index">
+            <i class="iconfont" :class="item.class"></i>
+            <p>{{item.text}}</p>
+            </li>
+        </ul>
+      </div>
     </div>
 </template>
 
@@ -15,33 +18,36 @@ export default {
     components: {},
     data() {
         return {
-          data: {
-            video: {
-              name: 'Videos',
-              list:[
-                {icon:'@/assets/imgs/youtube.png',link: 'https://www.youtube.com',text: 'Youtube',class:'fa-youtube'},
-                {icon:'aaa.gif',link: 'https://www.bilibili.com',text: 'Bilibili'},
-                {icon:'aaa.gif',link: 'https://www.acfun.com',text: 'ACFun'},
-                {icon:'aaa.gif',link: 'https://www.youku.com',text: 'Youku'},
-              ]
-            }
-          }
+            list: 'test'
         };
     },
-    computed: {},
+      created() {},
+      mounted() {
+        this.getData();
+      },
+    computed: {
+      lists(){
+        return this.$store.state.list;
+      },
+    },
     watch: {},
     methods: {
-      getIndex: function(){
-        this.click = this.link;
-        // eslint-disable-next-line no-console
-        console.log(this.click);
+      getData: function(){
+        const a = this.$store.state.list;
+        //console.log(a);
+        this.$data.list = a;
       }
     },
-    created() {},
-    mounted() {},
     }
 </script>
 <style lang='less' scoped>
-//@import url(); 引入公共css类
-
+@import 'https://at.alicdn.com/t/font_1616129_d8kq833eqod.css';
+.list{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40vw;
+  height: 100vh;
+  background-color: #1453ad;
+}
 </style>
