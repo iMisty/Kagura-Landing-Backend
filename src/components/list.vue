@@ -21,7 +21,8 @@ export default {
     components: {},
     data() {
         return {
-            list: 'test'
+            list: 'test',
+            mask: false
         };
     },
       created() {},
@@ -50,10 +51,11 @@ export default {
   top: 0;
   right: 0;
   padding: 24px 16px;
-  width: 32vw;
+  width: 384px;
   height: 100vh;
   background-color: #222d46;
   color: #fff;
+  overflow-y: scroll;
 }
 .list-title{
       display: flex;
@@ -71,10 +73,8 @@ export default {
     grid-gap: 12px;
     transition-duration: .4s;
     li{
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 36% auto;
       padding: 12px 0;
       font-size: 14px;
       background-color: #293550;
@@ -93,4 +93,15 @@ export default {
 i{
   padding: 0 4px;
 }
+  @media screen and (max-width: 768px){
+    .list{
+      width: 240px;
+    }
+    .list-wrap{
+      grid-template-columns: 1fr 1fr;
+      li{
+        padding: 8px 0;
+      }
+    }
+  }
 </style>
