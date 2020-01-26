@@ -2,7 +2,7 @@
     <div class="list">
       <div v-for="links in list" :key="links.index" class="lists">
         <div class="list-title">
-          <i class="fa" :class="links.class" :style="{color:links.titleIconColor}"></i>
+          <i :class="links.class" :style="{color:links.titleIconColor}"></i>
           <h2>{{links.name}}</h2>
           </div>
         <ul class="list-wrap">
@@ -50,12 +50,16 @@ export default {
   position: fixed;
   top: 0;
   right: 0;
-  padding: 24px 16px;
-  width: 384px;
+  padding: 24px;
+  width: 320px;
   height: 100vh;
   background-color: #222d46;
   color: #fff;
+  z-index: 4;
   overflow-y: scroll;
+  .lists{
+    padding-bottom: 32px;
+  }
 }
 .list-title{
       display: flex;
@@ -74,8 +78,8 @@ export default {
     transition-duration: .4s;
     li{
       display: grid;
-      grid-template-columns: 36% auto;
-      padding: 12px 0;
+      grid-template-columns: 32% auto;
+      padding: 8px 0;
       font-size: 14px;
       background-color: #293550;
       cursor: pointer;
@@ -87,6 +91,7 @@ export default {
       a{
         color: #fff;
         text-decoration: none;
+        text-align: left;
       }
     }
 }
