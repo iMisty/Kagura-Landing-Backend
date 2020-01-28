@@ -5,6 +5,7 @@ import router from './router';
 import 'font-awesome/css/font-awesome.min.css';
 import store from './store/index'
 import './assets/less/normalize.less';
+import './assets/less/global.less';
 
 
 new Vue({
