@@ -1,16 +1,17 @@
 <template>
     <div class="list-button">
-      <i class="fa" :class="this.$data.class"></i>
+      <i class="fa" :class="this.$data.class" v-if="fa === true"></i>
+      <img src="../assets/imgs/menu.png" alt="">
     </div>
 </template>
 
 <script>
-
 export default {
     components: {},
     data() {
         return {
-          class: ''
+          class: '',
+          fa: false
         };
     },
     computed: {
