@@ -33,8 +33,6 @@ export default {
     beforeUpdate() {},
     updated() {},
     beforeDestroy() {},
-    destroyed() {},
-    activated() {},
     }
 </script>
 <style lang='less' scoped>
