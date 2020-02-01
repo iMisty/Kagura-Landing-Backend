@@ -28,11 +28,6 @@ export default {
     },
     created() {},
     mounted() {},
-    beforeCreate() {},
-    beforeMount() {},
-    beforeUpdate() {},
-    updated() {},
-    beforeDestroy() {},
     }
 </script>
 <style lang='less' scoped>
