@@ -1,31 +1,28 @@
 <template>
   <div id="app">
-    <Home v-if="mode === 1"></Home>
-    <list></list>
-    <Buttons></Buttons>
-    <hitokoto></hitokoto>
-    <Admin v-if="mode === 2"></Admin>
-    <Masks></Masks>
+    <div style="position: absolute;">
+    <router-link to="/">Home</router-link>
+    <router-link to="/admin">Admin</router-link>
+    <router-link to="/test">Test</router-link>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import home from "./views/Home";
-import list from "./components/list.vue";
-import Buttons from './components/list-button.vue';
+//import home from './views/Home';
 export default {
   components: {
-    Home: home,
-    Admin: () => import("./views/Admin.vue"),
-    list,Buttons,
-    hitokoto: () => import("./components/hitokoto.vue"),
-    Masks: () => import("./components/mask.vue")
+    //Home: home,
+    //Admin: () => import('./views/Admin.vue'),
   },
   data() {
     return {
-      mode: 1,
-      mask: false
     };
+  },
+  methods: {
+  },
+  mounted() {
   }
 };
 </script>
@@ -50,4 +47,6 @@ export default {
     }
   }
 }
+
+
 </style>
