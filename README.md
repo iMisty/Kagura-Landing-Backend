@@ -1,29 +1,12 @@
-# single-search
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Single Search
+## 项目说明
+本项目为为了进行首页导航定制化而设置的项目
+## 使用框架及库
+- Vue全家桶系列
+  - Vuex
+  - VueRouter
+- Animate.css
+- axios
+- font-awesome
+- less
+- Vuei18n
