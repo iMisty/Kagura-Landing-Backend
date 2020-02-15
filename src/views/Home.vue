@@ -7,7 +7,7 @@
       </div>
       </transition>
       <transition name="fade">
-      <div class="right-side-wrap" v-if="active">
+      <div class="right-side-wrap" v-show="active">
         <list></list>
       </div>
       </transition>
@@ -87,10 +87,11 @@ export default {
 .fade-enter-active, .fade-leave-active {
   transition-duration: .4s;
   transition-property: right;
-  transition-property: opacity;
+  transition-property: opacity transform;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
-  right: -100%;
+  transform: translateX(100%);
+  transition-property: transform;
 }
 </style>
