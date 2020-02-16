@@ -1,13 +1,14 @@
 <template>
     <div class="search">
       <div class="search-bar">
-      <input type="text" name="" id="" placeholder="请输入搜索内容" v-model="search">
+      <input type="text" name="" id="search" placeholder="请输入搜索内容" v-model="search">
       <i class="fa fa-search"></i>
       </div>
       <div class="submit">
         <submit></submit>
         <submit></submit>
       </div>
+      <span>{{search}}</span>
     </div>
 </template>
 
