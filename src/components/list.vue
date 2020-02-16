@@ -86,6 +86,7 @@ export default {
     background-color: #293550;
     cursor: pointer;
     border-radius: 8px;
+    transition-duration: .4s;
     &:hover {
       background-color: #0065bb;
       transition-duration: 0.4s;
