@@ -1,19 +1,14 @@
 <template>
   <div id="app">
-    <div style="position: absolute;">
-    <router-link to="/">Home</router-link>
-    <router-link to="/admin">Admin</router-link>
-    <router-link to="/test">Test</router-link>
-    </div>
-    <router-view></router-view>
+    <Home></Home>
   </div>
 </template>
 
 <script>
-//import home from './views/Home';
+import home from './views/Home';
 export default {
   components: {
-    //Home: home,
+    Home: home,
     //Admin: () => import('./views/Admin.vue'),
   },
   data() {
