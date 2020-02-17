@@ -1,11 +1,20 @@
 <template>
     <div class="search">
       <div class="search-bar">
-      <input type="text" name="" id="search" placeholder="请输入搜索内容" v-model="search">
-      <i class="fa fa-search"></i>
+      <input type="text" name="" id="search" placeholder="请输入搜索内容" v-model="search" @keyup.enter="searchValue()">
+      <i class="fa fa-search" @click="searchValue()"></i>
       </div>
       <div class="submit">
-        <submit></submit>
+        <submit>
+          <template v-slot:icon>
+            <img src="http://www.51tfb.com/uploadfile/20190417/201904171725355cb6f10f8cf23.jpg" alt="">
+          </template>
+          <template v-slot:text>
+            <div>
+              aaa
+            </div>
+          </template>
+        </submit>
         <submit></submit>
       </div>
       <span>{{search}}</span>
@@ -25,7 +34,13 @@ export default {
     },
     computed: {},
     watch: {},
-    methods: {},
+    methods: {
+      // 点击后搜索(测试数据)
+      searchValue(){
+        const value = this.$data.search;
+        console.log(value)
+      },
+    },
     created() {},
     mounted() {},
     beforeCreate() {},
@@ -67,6 +82,7 @@ export default {
     display: flex;
     align-items: center;
     padding-right: 16px;
+    cursor: pointer;
   }
 }
 </style>
