@@ -77,6 +77,10 @@ export default {
   }
 }
 
+.wrap{
+  align-self: center;
+}
+
 @media screen and (max-width: 768px) {
   .home {
     min-height: 100vh;
