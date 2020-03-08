@@ -15,14 +15,7 @@ export default {
     watch: {},
     methods: {},
     created() {},
-    mounted() {},
-    beforeCreate() {},
-    beforeMount() {},
-    beforeUpdate() {},
-    updated() {},
-    beforeDestroy() {},
-    destroyed() {},
-    activated() {},
+    mounted() {}
     }
 </script>
 <style lang='less' scoped>
