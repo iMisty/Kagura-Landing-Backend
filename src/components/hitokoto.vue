@@ -35,7 +35,6 @@
    },
    mounted(){
      //this.getHitokoto();
-     //this.sta();
    }
  }
 </script>
