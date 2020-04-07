@@ -1,6 +1,6 @@
 <template>
  <div class="hitokoto">
-   <p>{{text}}</p>
+   <p>{{text}}{{from}}</p>
  </div>
 </template>
 
@@ -8,7 +8,8 @@
  export default {
    data () {
      return {
-       text: '111'
+       text: '获取失败,请刷新重试',
+       from: ''
      }
    },
    components: {
@@ -23,7 +24,8 @@
 				})
 				.then(function (data) {
 					console.log(data);
-					_this.$data.text = data.hitokoto;
+          _this.$data.text = data.hitokoto;
+          _this.$data.from = ` -- ${data.from}`;
 				})
 				.catch(function (err) {
 					console.error(err);
@@ -34,7 +36,7 @@
      }
    },
    mounted(){
-     //this.getHitokoto();
+     this.getHitokoto();
    }
  }
 </script>
