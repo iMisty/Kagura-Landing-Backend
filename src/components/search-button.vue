@@ -17,14 +17,7 @@ export default {
   watch: {},
   methods: {},
   created() {},
-  mounted() {},
-  beforeCreate() {},
-  beforeMount() {},
-  beforeUpdate() {},
-  updated() {},
-  beforeDestroy() {},
-  destroyed() {},
-  activated() {}
+  mounted() {}
 };
 </script>
 <style lang='less' scoped>
@@ -39,7 +32,7 @@ export default {
 .normal-search,.extra-search{
     display: flex;
   flex-direction: row;
-  align-content: center;
+  align-items: center;
   img{
     width: 16px;
     height: 16px;
