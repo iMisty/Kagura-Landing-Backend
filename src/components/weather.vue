@@ -64,7 +64,7 @@ export default {
         air_pm25: '68',
         air_level: '良'
       },
-      frame: true
+      frame: false
     };
   },
   computed: {},
@@ -112,7 +112,7 @@ export default {
       }
     },
     closeFrame() {
-      //this.$data.frame = false;
+      this.$data.frame = false;
     }
   },
   created() {},
@@ -132,6 +132,7 @@ export default {
   display: flex;
   align-items: center;
   text-align: left;
+  width: 100%;
   span {
     padding: 0 4px;
   }
