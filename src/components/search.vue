@@ -5,19 +5,18 @@
       <i class="fa fa-search" @click="searchValue()"></i>
       </div>
       <div class="submit">
-        <submit>
+        <submit @click.native="searchValue()">
           <template v-slot:icon>
             <img src="http://www.51tfb.com/uploadfile/20190417/201904171725355cb6f10f8cf23.jpg" alt="">
           </template>
           <template v-slot:text>
             <div>
-              aaa
+              百度搜索
             </div>
           </template>
         </submit>
         <submit></submit>
       </div>
-      <span>{{search}}</span>
     </div>
 </template>
 
@@ -38,18 +37,11 @@ export default {
       // 点击后搜索(测试数据)
       searchValue(){
         const value = this.$data.search;
-        console.log(value)
+        window.location.href = `https://baidu.com/s?wd=${value}`;
       },
     },
     created() {},
-    mounted() {},
-    beforeCreate() {},
-    beforeMount() {},
-    beforeUpdate() {},
-    updated() {},
-    beforeDestroy() {},
-    destroyed() {},
-    activated() {},
+    mounted() {}
     }
 </script>
 <style lang='less' scoped>
