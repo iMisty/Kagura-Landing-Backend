@@ -51,6 +51,7 @@ export default {
   methods: {
     toggleSideBar(){
       this.$data.active = !this.$data.active;
+      this.$nextTick()
       console.log(this.$data.active);
     }
   },
