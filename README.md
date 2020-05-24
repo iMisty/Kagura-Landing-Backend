@@ -1,4 +1,4 @@
-# search
+# single
 
 ## Project setup
 ```
