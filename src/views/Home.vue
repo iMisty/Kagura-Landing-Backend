@@ -15,8 +15,11 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
+// 链接列表
 import List from '@/components/list.vue';
+// 搜索框
 import Search from '@/components/search.vue';
+// 版权声明
 import Copyright from '@/components/copyright.vue';
 
 @Component({

@@ -1,6 +1,8 @@
 <template>
   <div class="list">
-
+    <button class="list--button">
+      <img :src="listButtonSrc" alt="">
+    </button>
   </div>
 </template>
 
@@ -9,6 +11,7 @@ import { Component, Emit, Inject, Model, Prop, Provide, Vue, Watch } from 'vue-p
 @Component({})
 export default class List extends Vue {
 
+  private listButtonSrc: string = require('@/assets/menu.png');
 }
 </script>
 

@@ -7,8 +7,8 @@
 <script lang="ts">
 import { Vue } from 'vue-property-decorator';
 
-export default class hitokoto extends Vue {
-  public data:String = '11111';
+export default class Hitokoto extends Vue {
+  public data: string = '11111';
 }
 </script>
 

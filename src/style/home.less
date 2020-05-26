@@ -1,0 +1,56 @@
+/*
+ * @Description: 首页使用CSS
+ * @version: 1.0.0
+ * @Author: Miya
+ * @Date: 2020-05-26 21:30:00
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-05-26 22:16:57
+ */
+.home {
+  display           : grid;
+  grid-template-rows: 4rem 4fr 1fr;
+  width             : 100vw;
+  height            : 100vh;
+
+  &--top {
+    display        : flex;
+    flex-direction : row;
+    justify-content: flex-end;
+    align-items    : center;
+    padding        : 1rem;
+  }
+
+  &--medium {
+    .search--bar {
+      text-align: center;
+
+      &--wrap {
+        display        : inline-flex;
+        justify-content: center;
+        align-items    : center;
+        padding        : 0 .5rem;
+        margin         : 0 auto;
+        border         : 1px solid #dedede;
+        border-radius  : 32px;
+      }
+
+      &-choose {
+        padding: 1rem;
+        cursor : pointer;
+      }
+
+      &-input {
+        input {
+          padding  : 1rem 0;
+          width    : 32rem;
+          font-size: 1rem;
+          border   : none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}
