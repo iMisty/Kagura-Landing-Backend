@@ -1,3 +1,11 @@
+<!--
+ * @Description: 首页前端页面
+ * @Version: 1.0
+ * @Autor: Miya
+ * @Date: 2020-05-27 01:24:20
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-05-27 02:22:40
+--> 
 <template>
   <div class="home">
     <section class="home--top">
@@ -5,6 +13,7 @@
     </section>
     <section class="home--medium">
       <Search></Search>
+      <Hitokoto></Hitokoto>
     </section>
     <section class="home--bottom">
       <Copyright></Copyright>
@@ -19,6 +28,8 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import List from '@/components/list.vue';
 // 搜索框
 import Search from '@/components/search.vue';
+// 一言
+import Hitokoto from '@/components/hitokoto.vue';
 // 版权声明
 import Copyright from '@/components/copyright.vue';
 
@@ -27,6 +38,7 @@ import Copyright from '@/components/copyright.vue';
   components: {
     List,
     Search,
+    Hitokoto,
     Copyright,
   },
 })
