@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-05-27 18:54:21
+ * @LastEditTime: 2020-05-27 23:51:57
 --> 
 <template>
   <div class="home">
@@ -42,7 +42,7 @@ import Hitokoto from '@/components/hitokoto.vue';
 })
 export default class Home extends Vue {
   // data
-  
+
   // props
 
   // create

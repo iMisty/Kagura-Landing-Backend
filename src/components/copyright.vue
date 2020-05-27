@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 16:04:33
  * @LastEditors: Miya
- * @LastEditTime: 2020-05-27 17:35:02
+ * @LastEditTime: 2020-05-28 01:20:37
 --> 
 <template>
   <div class="copyright">
@@ -17,6 +17,7 @@ import { Vue } from 'vue-property-decorator';
 
 export default class Copyright extends Vue {
   // Data
+  // TODO: 动态改变年份不生效
   private year: number = 9102;
   private author: string = 'Miya';
   private homepage: string = 'https://github.com/imisty';

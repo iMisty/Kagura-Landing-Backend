@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-27 18:25:04
  * @LastEditors: Miya
- * @LastEditTime: 2020-05-27 18:25:13
+ * @LastEditTime: 2020-05-28 00:20:03
 --> 
 <template>
   <div class="link">
@@ -13,9 +13,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Emit, Inject, Model, Prop, Provide, Vue, Watch } from 'vue-property-decorator'
-@Component({})
-export default class Link extends Vue{
+import { Component, Emit, Inject, Model, Prop, Provide, Vue, Watch } from 'vue-property-decorator';
+export default class Link extends Vue {
 
 }
 </script>
