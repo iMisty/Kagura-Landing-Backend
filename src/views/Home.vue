@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-05-27 02:22:40
+ * @LastEditTime: 2020-05-27 18:54:21
 --> 
 <template>
   <div class="home">
@@ -13,7 +13,7 @@
     </section>
     <section class="home--medium">
       <Search></Search>
-      <Hitokoto></Hitokoto>
+      <!-- <Hitokoto :hito="aaaaaa"></Hitokoto> -->
     </section>
     <section class="home--bottom">
       <Copyright></Copyright>
@@ -30,8 +30,6 @@ import List from '@/components/list.vue';
 import Search from '@/components/search.vue';
 // 一言
 import Hitokoto from '@/components/hitokoto.vue';
-// 版权声明
-import Copyright from '@/components/copyright.vue';
 
 @Component({
   // 组件注册
@@ -39,12 +37,12 @@ import Copyright from '@/components/copyright.vue';
     List,
     Search,
     Hitokoto,
-    Copyright,
+    Copyright: () => import('@/components/copyright.vue'),
   },
 })
 export default class Home extends Vue {
   // data
-
+  
   // props
 
   // create
