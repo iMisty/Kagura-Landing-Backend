@@ -4,20 +4,23 @@
  * @Author: Miya
  * @Date: 2020-05-26 16:04:33
  * @LastEditors: Miya
- * @LastEditTime: 2020-05-28 01:20:37
+ * @LastEditTime: 2020-05-29 23:56:26
 --> 
 <template>
   <div class="copyright">
-    <p class="copyright-text">© 2016-<span>{{year}}</span> by <a :href="homepage">{{author}}</a> . All rights reserved.</p>
+    <p class="copyright-text">
+      © 2016-
+      <span>{{year}}</span> by
+      <a :href="homepage">{{author}}</a> . All rights reserved.
+    </p>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue } from 'vue-property-decorator';
-
+import { Vue, Component } from 'vue-property-decorator';
+@Component({})
 export default class Copyright extends Vue {
   // Data
-  // TODO: 动态改变年份不生效
   private year: number = 9102;
   private author: string = 'Miya';
   private homepage: string = 'https://github.com/imisty';
