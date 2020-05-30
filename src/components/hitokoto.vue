@@ -11,11 +11,11 @@
 </template>
 
 <script lang="ts">
-import { Prop, Vue } from 'vue-property-decorator';
-
+import { Prop, Vue, Component } from 'vue-property-decorator';
+@Component({})
 export default class Hitokoto extends Vue {
 
-  @Prop({ default: '加载中...', type: String })private hito!: string;
+  @Prop({ default: '加载中...', type: String }) private hito!: string;
 
 }
 </script>
