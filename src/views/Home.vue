@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-03 01:00:44
+ * @LastEditTime: 2020-06-03 01:53:13
 --> 
 <template>
   <div class="home">
@@ -20,7 +20,9 @@
     <section class="home--bottom">
       <Copyright></Copyright>
     </section>
-    <List></List>
+    <section class="home--list">
+      <List></List>
+    </section>
   </div>
 </template>
 

@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-03 00:56:57
+ * @LastEditTime: 2020-06-03 01:15:55
 --> 
 <template>
   <div class="list">
@@ -13,104 +13,51 @@
       <section class="list--item">
         <h4 class="list--item--title">测试内容</h4>
         <ul class="list--item--wrap">
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-        </ul>
-      </section>
-      <section class="list--item">
-        <h4 class="list--item--title">测试内容</h4>
-        <ul class="list--item--wrap">
-          <li>
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li>
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li>
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li>
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li>
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li>
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li>
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li>
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li>
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li>
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li>
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
@@ -119,51 +66,51 @@
       <section class="list--item">
         <h4 class="list--item--title">测试内容</h4>
         <ul class="list--item--wrap">
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
@@ -172,51 +119,104 @@
       <section class="list--item">
         <h4 class="list--item--title">测试内容</h4>
         <ul class="list--item--wrap">
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
-          <li>
+          <li class="item">
+            <i class="fa fa-google"></i>
+            <p>Google</p>
+          </li>
+        </ul>
+      </section>
+      <section class="list--item">
+        <h4 class="list--item--title">测试内容</h4>
+        <ul class="list--item--wrap">
+          <li class="item">
+            <i class="fa fa-google"></i>
+            <p>Google</p>
+          </li>
+          <li class="item">
+            <i class="fa fa-google"></i>
+            <p>Google</p>
+          </li>
+          <li class="item">
+            <i class="fa fa-google"></i>
+            <p>Google</p>
+          </li>
+          <li class="item">
+            <i class="fa fa-google"></i>
+            <p>Google</p>
+          </li>
+          <li class="item">
+            <i class="fa fa-google"></i>
+            <p>Google</p>
+          </li>
+          <li class="item">
+            <i class="fa fa-google"></i>
+            <p>Google</p>
+          </li>
+          <li class="item">
+            <i class="fa fa-google"></i>
+            <p>Google</p>
+          </li>
+          <li class="item">
+            <i class="fa fa-google"></i>
+            <p>Google</p>
+          </li>
+          <li class="item">
+            <i class="fa fa-google"></i>
+            <p>Google</p>
+          </li>
+          <li class="item">
+            <i class="fa fa-google"></i>
+            <p>Google</p>
+          </li>
+          <li class="item">
+            <i class="fa fa-google"></i>
+            <p>Google</p>
+          </li>
+          <li class="item">
             <i class="fa fa-google"></i>
             <p>Google</p>
           </li>
