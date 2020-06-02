@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:30:00
  * @LastEditors: Miya
- * @LastEditTime: 2020-05-28 01:15:26
+ * @LastEditTime: 2020-06-03 00:18:03
  */
 .home {
   display           : grid;
@@ -21,7 +21,11 @@
   }
 
   &--medium {
-    padding: 12vh 0;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-around;
+    align-items    : center;
+    padding        : 12vh 0;
 
     .search--bar {
       text-align: center;
@@ -129,6 +133,10 @@
           padding: 1rem;
         }
       }
+    }
+
+    .hitokoto {
+      font-size: 1.1em;
     }
   }
 

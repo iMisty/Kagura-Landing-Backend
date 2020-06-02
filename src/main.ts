@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:59:19
  * @LastEditors: Miya
- * @LastEditTime: 2020-05-26 22:00:34
+ * @LastEditTime: 2020-06-03 00:09:32
  */
 import Vue from 'vue';
 import App from './App.vue';
@@ -16,6 +16,8 @@ import 'font-awesome/css/font-awesome.min.css';
 import '@/style/style.less';
 
 Vue.config.productionTip = false;
+
+
 
 new Vue({
   router,

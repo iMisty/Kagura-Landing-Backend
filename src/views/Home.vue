@@ -4,26 +4,29 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-05-27 23:51:57
+ * @LastEditTime: 2020-06-03 01:00:44
 --> 
 <template>
   <div class="home">
     <section class="home--top">
-      <List></List>
+      <button class="list--button">
+        <img :src="listButtonSrc" alt />
+      </button>
     </section>
     <section class="home--medium">
       <Search></Search>
-      <!-- <Hitokoto :hito="aaaaaa"></Hitokoto> -->
+      <Hitokoto :hito="hitorikoto"></Hitokoto>
     </section>
     <section class="home--bottom">
       <Copyright></Copyright>
     </section>
+    <List></List>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-
+import axios from 'axios';
 // 链接列表
 import List from '@/components/list.vue';
 // 搜索框
@@ -42,8 +45,22 @@ import Hitokoto from '@/components/hitokoto.vue';
 })
 export default class Home extends Vue {
   // data
-
+  // 链接图标
+  private listButtonSrc: string = require('@/assets/menu.png');
+  // 一言
+  // private hitorikoto: string = '加载中...';
+  private hitorikoto: string = '风淅淅，雨纤纤。难怪春愁细细添。';
   // props
+
+  // methods
+  // 加载一言
+  private getHitokoto(): void {
+    axios.get('https://v1.hitokoto.cn')
+      .then(({ data }) => {
+        this.hitorikoto = data.hitokoto;
+      })
+      .catch(console.error);
+  }
 
   // create
   private created() {
@@ -52,7 +69,7 @@ export default class Home extends Vue {
 
   // mounted
   private mounted() {
-    const a = '';
+    // this.getHitokoto();
   }
 }
 </script>
