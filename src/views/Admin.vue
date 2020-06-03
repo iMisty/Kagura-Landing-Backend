@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-02 00:04:25
+ * @LastEditTime: 2020-06-04 00:28:05
 --> 
 <template>
   <div class="admin"></div>
@@ -24,12 +24,12 @@ export default class Admin extends Vue {
 
   // create
   private created() {
-
+    const a = '';
   }
 
   // mounted
   private mounted() {
-
+    const a = '';
   }
 
 }

@@ -4,221 +4,20 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-03 01:15:55
+ * @LastEditTime: 2020-06-04 01:14:28
 --> 
 <template>
   <div class="list">
     <!-- 临时数据  -->
     <div class="list--items">
-      <section class="list--item">
-        <h4 class="list--item--title">测试内容</h4>
+      <section class="list--item" v-for="list in listData" :key="list.index">
+        <h4 class="list--item--title">{{list.name}}</h4>
         <ul class="list--item--wrap">
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-        </ul>
-      </section>
-      <section class="list--item">
-        <h4 class="list--item--title">测试内容</h4>
-        <ul class="list--item--wrap">
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-        </ul>
-      </section>
-      <section class="list--item">
-        <h4 class="list--item--title">测试内容</h4>
-        <ul class="list--item--wrap">
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-        </ul>
-      </section>
-      <section class="list--item">
-        <h4 class="list--item--title">测试内容</h4>
-        <ul class="list--item--wrap">
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
-          </li>
-          <li class="item">
-            <i class="fa fa-google"></i>
-            <p>Google</p>
+          <li class="item" v-for="wrap in list.items" :key="wrap.index">
+            <a :href="wrap.link">
+              <i class="fa fa-google"></i>
+              <p>{{wrap.text}}</p>
+            </a>
           </li>
         </ul>
       </section>
@@ -230,7 +29,16 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component({})
 export default class List extends Vue {
+  private listData = '';
 
+  private getListData(): void {
+    const data = this.$store.state;
+    this.listData = data;
+  }
+
+  private mounted() {
+    this.getListData();
+  }
 }
 </script>
 
