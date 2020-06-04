@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-03 01:53:13
+ * @LastEditTime: 2020-06-05 00:18:21
 --> 
 <template>
   <div class="home">
@@ -23,6 +23,9 @@
     <section class="home--list">
       <List></List>
     </section>
+    <transition name="fadeIn">
+      <section class="home--mask"></section>
+    </transition>
   </div>
 </template>
 

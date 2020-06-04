@@ -4,11 +4,10 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-04 01:14:28
+ * @LastEditTime: 2020-06-04 23:53:32
 --> 
 <template>
   <div class="list">
-    <!-- 临时数据  -->
     <div class="list--items">
       <section class="list--item" v-for="list in listData" :key="list.index">
         <h4 class="list--item--title">{{list.name}}</h4>
@@ -32,7 +31,7 @@ export default class List extends Vue {
   private listData = '';
 
   private getListData(): void {
-    const data = this.$store.state;
+    const data = this.$store.state.link;
     this.listData = data;
   }
 

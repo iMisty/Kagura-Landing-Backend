@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:00:19
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-03 01:45:10
+ * @LastEditTime: 2020-06-05 00:09:56
  */
 .list {
   padding         : 2rem;
@@ -14,9 +14,7 @@
 
   &--button {
     box-sizing: content-box;
-    padding   : 2rem;
     width     : 2rem;
-    height    : 2rem;
     background: none;
     border    : none;
     cursor    : pointer;
@@ -28,35 +26,41 @@
 
   &--item {
     margin-bottom: 2rem;
-    &--title{
-      color: #fff;
+
+    &--title {
+      color  : #fff;
       padding: 1rem 0;
     }
+
     &--wrap {
       display              : grid;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-gap             : 1.6rem;
+      grid-gap             : 1rem;
 
       .item {
         box-sizing      : content-box;
         display         : flex;
         flex-direction  : row;
         align-items     : center;
-        padding         : .6rem 1.5rem;
-        width           : 6rem;
-        height          : 2rem;
         color           : #fff;
         background-color: rgba(255, 255, 255, .2);
         border-radius   : .5rem;
+
+        a {
+          display       : flex;
+          flex-direction: row;
+          align-items   : center;
+          padding       : .6rem 1.5rem;
+          color         : #fff;
+        }
 
         .fa {
           display        : flex;
           justify-content: center;
           align-items    : center;
-          width          : 1.5rem;
-          height         : 1.5rem;
         }
-        p{
+
+        p {
           padding-left: .5rem;
         }
       }
