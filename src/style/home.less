@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:30:00
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-05 00:16:12
+ * @LastEditTime: 2020-06-05 00:32:28
  */
 .home {
   display           : grid;
@@ -147,22 +147,27 @@
   }
 
   &--list {
-    position      : absolute;
-    top           : 0;
-    right         : 0%;
-    display       : flex;
-    flex-direction: row;
-    height        : 100%;
-    z-index       : 12;
+    position                  : absolute;
+    top                       : 0;
+    right                     : 0%;
+    display                   : flex;
+    flex-direction            : row;
+    height                    : 100%;
+    z-index                   : 12;
+    transform                 : translateX(100%);
+    transition-timing-function: ease-out;
+    transition-duration       : .4s;
   }
 
   &--mask {
     position        : fixed;
+    display         : none;
     top             : 0;
-    left            : 0;
+    right           : 0;
     width           : 100vw;
     height          : 100vh;
     z-index         : 4;
     background-color: rgba(0, 0, 0, 0.5);
+
   }
 }

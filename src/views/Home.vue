@@ -4,12 +4,12 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-05 00:18:21
+ * @LastEditTime: 2020-06-05 00:32:01
 --> 
 <template>
   <div class="home">
     <section class="home--top">
-      <button class="list--button">
+      <button class="list--button" @click="handleOpenLink">
         <img :src="listButtonSrc" alt />
       </button>
     </section>
@@ -20,11 +20,11 @@
     <section class="home--bottom">
       <Copyright></Copyright>
     </section>
-    <section class="home--list">
+    <section class="home--list" :class="{'link-active': isLinkOpen}">
       <List></List>
     </section>
     <transition name="fadeIn">
-      <section class="home--mask"></section>
+      <section class="home--mask" :class="{ 'active': isLinkOpen }" @click="handleCloseLink"></section>
     </transition>
   </div>
 </template>
@@ -52,6 +52,8 @@ export default class Home extends Vue {
   // data
   // 链接图标
   private listButtonSrc: string = require('@/assets/menu.png');
+  // 控制链接开关
+  private isLinkOpen: boolean = false;
   // 一言
   // private hitorikoto: string = '加载中...';
   private hitorikoto: string = '风淅淅，雨纤纤。难怪春愁细细添。';
@@ -65,6 +67,14 @@ export default class Home extends Vue {
         this.hitorikoto = data.hitokoto;
       })
       .catch(console.error);
+  }
+  // 开启链接表
+  private handleOpenLink(): void {
+    this.isLinkOpen = true;
+  }
+  // 关闭链接表
+  private handleCloseLink(): void {
+    this.isLinkOpen = false;
   }
 
   // create
