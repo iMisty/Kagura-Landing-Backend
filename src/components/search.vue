@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-05-28 01:10:23
+ * @LastEditTime: 2020-06-06 01:17:48
 --> 
 <template>
   <div class="search--bar">
@@ -63,19 +63,18 @@ import {
 } from 'vue-property-decorator';
 @Component({})
 export default class Search extends Vue {
+  @Prop()
+  public searchMenu: boolean = false;
   // Logo
   private logoImgSrc: string = require('@/assets/logo.svg');
-  // 控制菜单弹出
-  private searchMenu: boolean = false;
   // 控制搜索框样式
   private isInputing: boolean = false;
   // 搜索框文字
   private searchText: string = '';
 
   // 弹出搜索引擎选择框
-  private handleSearchMenu() {
-    console.log('click');
-    this.searchMenu = !this.searchMenu;
+  public handleSearchMenu() {
+    this.$emit('handleSearchMenu');
   }
   // 切换点击 input 时输入框样式
   private handleInput() {

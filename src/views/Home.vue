@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-05 00:32:01
+ * @LastEditTime: 2020-06-06 01:20:36
 --> 
 <template>
   <div class="home">
@@ -14,7 +14,7 @@
       </button>
     </section>
     <section class="home--medium">
-      <Search></Search>
+      <Search :searchMenu="searchMenu" @handleSearchMenu="loadMask"></Search>
       <Hitokoto :hito="hitorikoto"></Hitokoto>
     </section>
     <section class="home--bottom">
@@ -24,7 +24,7 @@
       <List></List>
     </section>
     <transition name="fadeIn">
-      <section class="home--mask" :class="{ 'active': isLinkOpen }" @click="handleCloseLink"></section>
+      <section class="home--mask" :class="{ 'active': isMask }" @click="handleCloseLink"></section>
     </transition>
   </div>
 </template>
@@ -50,13 +50,21 @@ import Hitokoto from '@/components/hitokoto.vue';
 })
 export default class Home extends Vue {
   // data
+  public searchMenu: boolean = false;
   // 链接图标
   private listButtonSrc: string = require('@/assets/menu.png');
   // 控制链接开关
   private isLinkOpen: boolean = false;
+  // 控制蒙版开关
+  private isMask: boolean = false;
   // 一言
   // private hitorikoto: string = '加载中...';
   private hitorikoto: string = '风淅淅，雨纤纤。难怪春愁细细添。';
+
+  private loadMask(): void {
+    this.isMask = true;
+    this.searchMenu = true;
+  }
   // props
 
   // methods
@@ -71,15 +79,13 @@ export default class Home extends Vue {
   // 开启链接表
   private handleOpenLink(): void {
     this.isLinkOpen = true;
+    this.isMask = true;
   }
   // 关闭链接表
   private handleCloseLink(): void {
     this.isLinkOpen = false;
-  }
-
-  // create
-  private created() {
-    const a = '';
+    this.isMask = false;
+    this.searchMenu = false;
   }
 
   // mounted
