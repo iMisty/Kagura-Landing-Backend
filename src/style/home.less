@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:30:00
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-05 00:32:28
+ * @LastEditTime: 2020-06-06 00:31:44
  */
 .home {
   display           : grid;
@@ -60,7 +60,11 @@
         cursor  : pointer;
 
         &-engine {
-          padding: .5rem;
+          display        : flex;
+          justify-content: center;
+          align-items    : center;
+          width          : 2rem;
+          height         : 2rem;
         }
 
         .choose-engine {
@@ -97,11 +101,6 @@
             font-size       : 1.5em;
             background-color: #fff;
 
-            // font-awesome 追加
-            .fa {
-              width : 1rem;
-              height: 1rem;
-            }
 
             &-text {
               padding: 0 .25rem;
@@ -114,7 +113,6 @@
         width: 100%;
 
         input {
-          padding    : 0 2rem;
           width      : 100%;
           font-size  : 1rem;
           line-height: 2rem;
@@ -160,14 +158,13 @@
   }
 
   &--mask {
-    position        : fixed;
-    display         : none;
-    top             : 0;
-    right           : 0;
-    width           : 100vw;
-    height          : 100vh;
-    z-index         : 4;
-    background-color: rgba(0, 0, 0, 0.5);
-
+    position: fixed;
+    display : none;
+    top     : 0;
+    right   : 0;
+    width   : 100vw;
+    height  : 100vh;
+    z-index : 4;
+    opacity : 0;
   }
 }
