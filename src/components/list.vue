@@ -1,10 +1,10 @@
 <!--
- * @Description: 
+ * @Description: 连接列表
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Miya
- * @LastEditTime: 2020-06-06 00:57:01
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-06 15:26:38
 --> 
 <template>
   <div class="list" ref="lists">

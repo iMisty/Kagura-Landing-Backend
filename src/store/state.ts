@@ -243,4 +243,4 @@
   ],
  };
 
- export default { state };
+ export { state };
