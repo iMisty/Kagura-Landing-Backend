@@ -4,17 +4,20 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-06 15:26:38
+ * @LastEditTime: 2020-06-06 17:38:56
 --> 
 <template>
   <div class="list" ref="lists">
     <div class="list--items">
       <section class="list--item" v-for="list in listData" :key="list.index">
-        <h5 class="list--item--title">{{list.name}}</h5>
+        <section class="list--item--title--wrap">
+          <i class="list--item--title--icon" :class="list.class"></i> 
+          <h5 class="list--item--title">{{list.name}}</h5>
+        </section>
         <ul class="list--item--wrap">
           <li class="item" v-for="wrap in list.items" :key="wrap.index">
             <a :href="wrap.link">
-              <i class="fa fa-google"></i>
+              <i :class="wrap.class"></i>
               <p>{{wrap.text}}</p>
             </a>
           </li>
@@ -26,6 +29,8 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import '@/static/font/iconfont.css';
+
 @Component({})
 export default class List extends Vue {
   private listData = '';
