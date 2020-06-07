@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-08 02:10:25
+ * @LastEditTime: 2020-06-08 02:17:39
 --> 
 <template>
   <div class="home">
@@ -68,6 +68,29 @@ export default class Home extends Vue {
   // private hitorikoto: string = '加载中...';
   private hitorikoto: string = '风淅淅，雨纤纤。难怪春愁细细添。';
 
+  // props
+
+  // methods
+  /**
+   * @description: 一言加载
+   * @param {type}
+   * @return:
+   * @author: Miya
+   */
+  private getHitokoto(): void {
+    axios.get('https://v1.hitokoto.cn')
+      .then(({ data }) => {
+        this.hitorikoto = data.hitokoto;
+      })
+      .catch(console.error);
+  }
+
+    /**
+     * @description: 控制搜索框左侧搜索引擎选择框
+     * @param {type}
+     * @return:
+     * @author: Miya
+     */
   private openSearchMenu(): void {
     this.isMask = true;
     this.searchMenu = true;
@@ -76,24 +99,17 @@ export default class Home extends Vue {
     this.isMask = false;
     this.searchMenu = false;
   }
-  // props
 
-  // methods
-  // 加载一言
-  private getHitokoto(): void {
-    axios.get('https://v1.hitokoto.cn')
-      .then(({ data }) => {
-        this.hitorikoto = data.hitokoto;
-      })
-      .catch(console.error);
-  }
-  // 开启链接表
+  /**
+   * @description: 控制右侧默认隐藏的链接列表栏
+   * @param {type}
+   * @return:
+   * @author: Miya
+   */
   private handleOpenLink(): void {
     this.isLinkOpen = !this.isLinkOpen;
     this.isMask = true;
   }
-
-  // 关闭链接表
   private handleCloseLink(): void {
     this.isMask = false;
     this.searchMenu = false;

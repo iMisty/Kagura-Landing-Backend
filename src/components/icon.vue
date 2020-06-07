@@ -4,10 +4,10 @@
  * @Autor: Miya
  * @Date: 2020-06-08 00:41:53
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-08 01:48:47
+ * @LastEditTime: 2020-06-08 02:16:02
 --> 
 <template>
-  <div class="index-icon" :class="{'click': isActive}">
+  <div class="index-icon">
     <span class="line top"></span>
     <span class="line medium"></span>
     <span class="line bottom"></span>
@@ -23,11 +23,5 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
   }})
 export default class Icon extends Vue {
   // data
-  public isActive: boolean = false;
-  // methods
-  public changeIcon(): void {
-    console.log('aa');
-    this.$emit('a', this.isActive);
-  }
 }
 </script>
