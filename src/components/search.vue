@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-06 01:17:48
+ * @LastEditTime: 2020-06-08 02:08:52
 --> 
 <template>
   <div class="search--bar">
@@ -12,8 +12,11 @@
       <img :src="logoImgSrc" alt="Logo" />
     </div>
     <div class="search--bar-wrap" :class="{'inputing': isInputing}">
-      <section class="search--bar-choose">
-        <div class="search--bar-choose-engine" @click="handleSearchMenu">G</div>
+      <section
+        class="search--bar-choose"
+        @mouseover="handleSearchMenu"
+      >
+        <div class="search--bar-choose-engine">G</div>
         <ul class="choose-engine" :class="{'active': searchMenu}">
           <!-- TODO: 拆分为组件 -->
           <li class="choose-engine-wrap" data-value="0">
@@ -73,8 +76,11 @@ export default class Search extends Vue {
   private searchText: string = '';
 
   // 弹出搜索引擎选择框
-  public handleSearchMenu() {
+  public handleSearchMenu(): void {
     this.$emit('handleSearchMenu');
+  }
+  public closeSearchMenu(): void {
+    this.$emit('closeSearchMenu');
   }
   // 切换点击 input 时输入框样式
   private handleInput() {
