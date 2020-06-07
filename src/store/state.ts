@@ -1,13 +1,13 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-06-06 14:58:02
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-07 23:38:14
+ * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
  */
 
- const state = {
+const state = {
   status: {
     mask: false,
   },
@@ -241,6 +241,6 @@
       ],
     },
   ],
- };
+};
 
- export { state };
+export { state };
