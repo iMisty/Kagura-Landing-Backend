@@ -1,0 +1,61 @@
+.index-icon {
+  position           : relative;
+  width              : 1.6rem;
+  height             : 2rem;
+  overflow           : hidden;
+  z-index            : 24;
+  transition-duration: .4s;
+
+  .line {
+    position           : absolute;
+    left               : 0;
+    width              : 1.6rem;
+    height             : 1px;
+    background-color   : #222;
+    transition-duration: .4s;
+  }
+
+  .top {
+    top      : .5rem;
+    transform: translateX(50%);
+  }
+
+  .medium {
+    top: 1rem;
+  }
+
+  .bottom {
+    bottom   : .5rem;
+    transform: translateX(-50%);
+
+  }
+
+  &:hover {
+
+    .top,
+    .bottom {
+      transform: translateX(0);
+    }
+  }
+
+  &.click {
+    .line{
+      background-color: #fff;
+    }
+    .top {
+      width    : 1.6rem;
+      top      : 0.9rem;
+      transform: rotate(45deg);
+    }
+
+    .medium {
+      opacity: 0;
+    }
+
+    .bottom {
+      bottom   : 1rem;
+      width    : 1.6rem;
+      transform: rotate(-45deg);
+    }
+  }
+}

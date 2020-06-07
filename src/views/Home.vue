@@ -4,17 +4,21 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-06 01:20:36
+ * @LastEditTime: 2020-06-08 02:10:25
 --> 
 <template>
   <div class="home">
     <section class="home--top">
       <button class="list--button" @click="handleOpenLink">
-        <img :src="listButtonSrc" alt />
+        <Icon :class="{'click': isLinkOpen}"></Icon>
       </button>
     </section>
     <section class="home--medium">
-      <Search :searchMenu="searchMenu" @handleSearchMenu="loadMask"></Search>
+      <Search
+        :searchMenu="searchMenu"
+        @handleSearchMenu="openSearchMenu"
+        @closeSearchMenu="closeSearchMenu"
+      ></Search>
       <Hitokoto :hito="hitorikoto"></Hitokoto>
     </section>
     <section class="home--bottom">
@@ -32,6 +36,8 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import axios from 'axios';
+// 链接图标
+import Icon from '@/components/icon.vue';
 // 链接列表
 import List from '@/components/list.vue';
 // 搜索框
@@ -42,6 +48,7 @@ import Hitokoto from '@/components/hitokoto.vue';
 @Component({
   // 组件注册
   components: {
+    Icon,
     List,
     Search,
     Hitokoto,
@@ -61,9 +68,13 @@ export default class Home extends Vue {
   // private hitorikoto: string = '加载中...';
   private hitorikoto: string = '风淅淅，雨纤纤。难怪春愁细细添。';
 
-  private loadMask(): void {
+  private openSearchMenu(): void {
     this.isMask = true;
     this.searchMenu = true;
+  }
+  private closeSearchMenu(): void {
+    this.isMask = false;
+    this.searchMenu = false;
   }
   // props
 
@@ -78,14 +89,16 @@ export default class Home extends Vue {
   }
   // 开启链接表
   private handleOpenLink(): void {
-    this.isLinkOpen = true;
+    this.isLinkOpen = !this.isLinkOpen;
     this.isMask = true;
   }
+
   // 关闭链接表
   private handleCloseLink(): void {
-    this.isLinkOpen = false;
     this.isMask = false;
     this.searchMenu = false;
+    if (this.isLinkOpen !== true) { return; }
+    this.isLinkOpen = false;
   }
 
   // mounted
