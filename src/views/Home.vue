@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Miya
- * @LastEditTime: 2020-06-08 02:17:39
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-08 16:52:17
 --> 
 <template>
   <div class="home">
@@ -42,8 +42,6 @@ import Icon from '@/components/icon.vue';
 import List from '@/components/list.vue';
 // 搜索框
 import Search from '@/components/search.vue';
-// 一言
-import Hitokoto from '@/components/hitokoto.vue';
 
 @Component({
   // 组件注册
@@ -51,7 +49,7 @@ import Hitokoto from '@/components/hitokoto.vue';
     Icon,
     List,
     Search,
-    Hitokoto,
+    Hitokoto: () => import('@/components/hitokoto.vue'),
     Copyright: () => import('@/components/copyright.vue'),
   },
 })
@@ -108,7 +106,7 @@ export default class Home extends Vue {
    */
   private handleOpenLink(): void {
     this.isLinkOpen = !this.isLinkOpen;
-    this.isMask = true;
+    this.isMask = !this.isMask;
   }
   private handleCloseLink(): void {
     this.isMask = false;

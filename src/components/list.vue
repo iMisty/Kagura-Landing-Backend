@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-06 17:38:56
+ * @LastEditTime: 2020-06-08 12:10:48
 --> 
 <template>
   <div class="list" ref="lists">
@@ -29,7 +29,6 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import '@/static/font/iconfont.css';
 
 @Component({})
 export default class List extends Vue {
