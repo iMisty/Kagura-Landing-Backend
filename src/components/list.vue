@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-08 12:10:48
+ * @LastEditTime: 2020-06-08 18:32:23
 --> 
 <template>
   <div class="list" ref="lists">
@@ -29,8 +29,13 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import Svgicon from '@/components/svgicon.vue';
 
-@Component({})
+@Component({
+  components:{
+    Svgicon
+  }
+})
 export default class List extends Vue {
   private listData = '';
 
