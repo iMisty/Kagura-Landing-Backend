@@ -19,8 +19,8 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 export default class Svgicon extends Vue{
 
 // Props
-@Prop({required: true})public iconClass: string = '';
-@Prop()public className: string = '';
+@Prop({required: true})public iconClass: unknown;
+@Prop()public className: unknown;
 
 // Computed
 
@@ -42,8 +42,8 @@ get svgClass(){
 
 <style lang="less" scope>
   .svg-icon{
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     vertical-align: -0.15rem;
     fill: currentColor;
     overflow: hidden;
