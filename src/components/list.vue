@@ -11,6 +11,8 @@
     <div class="list--items">
       <section class="list--item" v-for="list in listData" :key="list.index">
         <section class="list--item--title--wrap">
+        <!-- TODO: iconClass与iconName要与data的图片字段对应 -->
+        <Svgicon :svgClass="icon" :iconClass="dribbble" :iconName="dribbble"></Svgicon>
           <i class="list--item--title--icon" :class="list.class"></i> 
           <h5 class="list--item--title">{{list.name}}</h5>
         </section>
