@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 16:04:33
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-08 16:57:25
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-06-10 00:49:43
 --> 
 <template>
   <div class="copyright">
@@ -25,7 +25,12 @@ export default class Copyright extends Vue {
   private author: string = 'Miya';
   private homepage: string = 'https://github.com/imisty';
 
-  // 获取时间
+  /**
+   * @description: 获取时间
+   * @param {type}
+   * @return:
+   * @author: Miya
+   */
   private getYear(): void {
     const Dates = new Date();
     const years = Dates.getFullYear();

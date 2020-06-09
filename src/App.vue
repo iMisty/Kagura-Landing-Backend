@@ -1,3 +1,11 @@
+<!--
+ * @Description: 入口文件
+ * @Version: 1.0
+ * @Autor: Miya
+ * @Date: 2020-05-25 22:54:11
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-06-10 00:50:20
+--> 
 <template>
   <div id="App">
     <Home></Home>
@@ -14,19 +22,6 @@ import Home from '@/views/Home.vue';
     Home,
   }})
 export default class App extends Vue {
-  // data
-
-  // props
-
-  // create
-  private created() {
-    const a = '';
-  }
-
-  // mounted
-  private mounted() {
-      const a = '';
-  }
 
 }
 </script>
