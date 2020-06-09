@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-06-07 23:38:14
+ * @LastEditTime: 2020-06-10 00:21:43
  * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
@@ -15,44 +15,39 @@ const state = {
     {
       name: '工具',
       titleIconColor: '#29f',
-      class: 'iconfont icon-gongju',
+      icon: 'gongju',
       items: [
         {
-          icon: 'undefined',
+          icon: 'youtube',
           link: 'https://www.youtube.com',
           text: 'Youtube',
-          class: 'iconfont icon-youtube',
         },
         {
-          icon: '',
+          icon: 'bilibili',
           link: 'https://www.bilibili.com',
           text: 'Bilibili',
-          class: 'iconfont icon-bilibili',
         },
         {
-          icon: '',
+          icon: 'acfun',
           link: 'https://www.acfun.com',
           text: 'ACFun',
-          class: 'iconfont icon-acfun',
         },
         {
-          icon: '',
+          icon: 'youku',
           link: 'https://www.youku.com',
           text: 'Youku',
-          class: 'iconfont icon-youku',
         },
       ],
     },
     {
       name: '开发',
-      class: 'iconfont icon-zhongduan',
+      icon: 'zhongduan',
       titleIconColor: '#29f',
       items: [
         {
           icon: '',
           link: 'https://www.youtube.com',
           text: 'Youtube',
-          class: 'fa-youtube',
         },
         {
           icon: '',
@@ -74,19 +69,17 @@ const state = {
     {
       name: '影视动画',
       titleIconColor: '#29f',
-      class: 'fa fa-video-camera',
+      icon: 'fa fa-video-camera',
       items: [
         {
           icon: 'undefined',
           link: 'https://www.youtube.com',
           text: 'Youtube',
-          class: 'icon-youtube',
         },
         {
           icon: 'undefined',
           link: 'https://www.bilibili.com',
           text: 'Bilibili',
-          class: 'icon-bilibili',
         },
         {
           icon: 'undefined',
@@ -102,14 +95,13 @@ const state = {
     },
     {
       name: '搜索引擎',
-      class: 'fa fa-search',
+      icon: 'fa fa-search',
       titleIconColor: '#29f',
       items: [
         {
           icon: 'undefined',
           link: 'https://www.youtube.com',
           text: 'Youtube',
-          class: 'fa-youtube',
         },
         {
           icon: 'undefined',
@@ -131,13 +123,12 @@ const state = {
     {
       name: '社交',
       titleIconColor: '#29f',
-      class: 'fa fa-commenting-o',
+      icon: 'fa fa-commenting-o',
       items: [
         {
           icon: 'undefined',
           link: 'https://www.youtube.com',
           text: 'Youtube',
-          class: 'icon-youtube',
         },
         {
           icon: 'undefined',
@@ -158,14 +149,13 @@ const state = {
     },
     {
       name: '剁手',
-      class: 'fa fa-shopping-cart',
+      icon: 'fa fa-shopping-cart',
       titleIconColor: '#29f',
       items: [
         {
           icon: 'undefined',
           link: 'https://www.youtube.com',
           text: 'Youtube',
-          class: 'fa-youtube',
         },
         {
           icon: 'undefined',
@@ -187,13 +177,12 @@ const state = {
     {
       name: '设计视觉',
       titleIconColor: '#29f',
-      class: 'iconfont icon-caijian',
+      icon: 'caijian',
       items: [
         {
           icon: 'undefined',
           link: 'https://www.youtube.com',
           text: 'Youtube',
-          class: 'icon-youtube',
         },
         {
           icon: 'undefined',
@@ -214,14 +203,13 @@ const state = {
     },
     {
       name: '邮箱',
-      class: 'iconfont icon-xinfeng',
+      icon: 'xinfeng',
       titleIconColor: '#29f',
       items: [
         {
           icon: 'undefined',
           link: 'https://www.youtube.com',
           text: 'Youtube',
-          class: 'fa-youtube',
         },
         {
           icon: 'undefined',

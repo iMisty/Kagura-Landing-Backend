@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-08 02:08:52
+ * @LastEditTime: 2020-06-09 23:32:13
 --> 
 <template>
   <div class="search--bar">
@@ -12,10 +12,7 @@
       <img :src="logoImgSrc" alt="Logo" />
     </div>
     <div class="search--bar-wrap" :class="{'inputing': isInputing}">
-      <section
-        class="search--bar-choose"
-        @mouseover="handleSearchMenu"
-      >
+      <section class="search--bar-choose" @mouseover="handleSearchMenu">
         <div class="search--bar-choose-engine">G</div>
         <ul class="choose-engine" :class="{'active': searchMenu}">
           <!-- TODO: 拆分为组件 -->
