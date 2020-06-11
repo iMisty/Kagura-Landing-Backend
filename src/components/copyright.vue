@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 16:04:33
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-10 00:49:43
+ * @LastEditTime: 2020-06-11 23:31:40
 --> 
 <template>
   <div class="copyright">
@@ -28,7 +28,7 @@ export default class Copyright extends Vue {
   /**
    * @description: 获取时间
    * @param {type}
-   * @return:
+   * @return: void
    * @author: Miya
    */
   private getYear(): void {
