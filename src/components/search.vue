@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-12 16:14:31
+ * @LastEditTime: 2020-06-12 18:27:28
 --> 
 <template>
   <div class="search--bar">
@@ -13,26 +13,17 @@
     </div>
     <div class="search--bar-wrap" :class="{'inputing': isInputing}">
       <section class="search--bar-choose" @mouseover="handleSearchMenu" @mouseout="closeSearchMenu">
-        <div class="search--bar-choose-engine">G</div>
+        <div class="search--bar-choose-engine" :data-choose="choose">
+          <Svgicon class="svg-title-icon" :svgClass="icon" :iconClass="choose" :iconName="choose"></Svgicon>
+        </div>
         <ul class="choose-engine" :class="{'active': searchMenu}">
-          <choose></choose>
-          <!-- TODO: 拆分为组件 -->
-          <li class="choose-engine-wrap" data-value="0">
-            <i class="fa fa-google"></i>
-            <p class="choose-engine-wrap-text">Google</p>
-          </li>
-          <li class="choose-engine-wrap" data-value="1">
-            <i class="fa fa-edge"></i>
-            <p class="choose-engine-wrap-text">Bing</p>
-          </li>
-          <li class="choose-engine-wrap" data-value="2">
-            <i class="fa fa-yahoo"></i>
-            <p class="choose-engine-wrap-text">Yahoo</p>
-          </li>
-          <li class="choose-engine-wrap" data-value="3">
-            <i class="fa fa-trash"></i>
-            <p class="choose-engine-wrap-text">Baidu</p>
-          </li>
+          <choose
+            v-for="(item,i) in searchChoose"
+            :key="i"
+            :value="item.text"
+            :iconValue="item.icon"
+            @choose="handleChooseSearch(i)"
+          ></choose>
         </ul>
       </section>
       <section class="search--bar-input">
@@ -45,7 +36,7 @@
         />
       </section>
       <section class="search--bar-submit">
-        <i class="fa fa-search"></i>
+        <svg t="1591957541442" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5479" width="16" height="16"><path d="M1014.784 942.08l-254.464-254.464c59.392-68.096 93.184-161.28 93.184-263.168C853.504 186.88 667.136 0 429.568 0S5.12 186.88 5.12 424.448s186.88 424.448 424.448 424.448c101.888 0 195.072-33.792 263.168-93.184l254.464 254.464c16.896 16.896 42.496 16.896 59.392 0 16.896-17.408 16.896-51.2 8.192-68.096zM90.112 424.448c0-186.88 152.576-339.456 339.456-339.456s339.456 152.576 339.456 339.456-152.576 339.456-339.456 339.456-339.456-153.088-339.456-339.456z m0 0" p-id="5480"></path></svg>
       </section>
     </div>
   </div>
@@ -53,22 +44,29 @@
 
 <script lang="ts">
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
+import Svgicon from '@/components/svgicon.vue';
 import choose from '@/components/search-choose.vue';
+import { getEngineValue } from '@/services/getEngineValue.ts';
 @Component({
   components: {
-    choose
+    choose,
+    Svgicon
   }
 })
 export default class Search extends Vue {
   @Prop() public searchMenu: boolean = false;
+  // iconfont
+  private icon: string = 'icon';
   // Logo
   private logoImgSrc: string = require('@/assets/logo.svg');
   // 控制搜索框样式
   private isInputing: boolean = false;
   // 搜索框文字
   private searchText: string = '';
-  // 搜索引擎选择
-  private searchChoose: unknown = [];
+  // 搜索引擎选择数组
+  private searchChoose: string = '';
+  // 当前选择的搜索引擎
+  private choose: string|undefined = 'google';
 
   // 弹出搜索引擎选择框
   public handleSearchMenu(): void {
@@ -84,19 +82,31 @@ export default class Search extends Vue {
   private cancelInput() {
     this.isInputing = false;
   }
+
   /**
    * @name: getSearchEngines
    * @msg: 获取搜索引擎组件数据
-   * @param {type} 
+   * @param {type}
    * @return: void
    */
   private getSearchEngines(): void {
     const data = this.$store.state.searchList;
-    console.log(data);
     this.searchChoose = data;
   }
 
-  private mounted(){
+  /**
+   * @name: handleChooseSearchEngine
+   * @msg: 点击获取使用的搜索引擎
+   * @param {type}
+   * @return: void
+   */
+  private handleChooseSearch(i: string): void {
+    console.log(i);
+    const data = getEngineValue(i);
+    this.choose = data;
+  }
+
+  private mounted() {
     this.getSearchEngines();
   }
 }
