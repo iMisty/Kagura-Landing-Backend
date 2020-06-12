@@ -3,12 +3,17 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-11 23:32:14
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-12 17:29:39
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-06-13 00:02:15
 --> 
  <template>
   <li class="choose-engine-wrap" :data-value="value" @click="handleChooseEngine">
-    <Svgicon class="svg-icon svg-title-icon" :svgClass="icon" :iconClass="iconValue" :iconName="iconValue"></Svgicon>
+    <Svgicon
+      class="svg-icon svg-title-icon"
+      :svgClass="icon"
+      :iconClass="iconValue"
+      :iconName="iconValue"
+    ></Svgicon>
     <p class="choose-engine-wrap-text">{{value}}</p>
   </li>
 </template>
@@ -33,7 +38,7 @@ export default class SearchChoose extends Vue {
    * @param {type}
    * @return: void
    */
-  private handleChooseEngine(): void{
+  private handleChooseEngine(): void {
     this.$emit('choose');
   }
 }

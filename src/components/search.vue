@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-12 18:27:28
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-06-13 00:18:14
 --> 
 <template>
   <div class="search--bar">
@@ -36,7 +36,21 @@
         />
       </section>
       <section class="search--bar-submit">
-        <svg t="1591957541442" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5479" width="16" height="16"><path d="M1014.784 942.08l-254.464-254.464c59.392-68.096 93.184-161.28 93.184-263.168C853.504 186.88 667.136 0 429.568 0S5.12 186.88 5.12 424.448s186.88 424.448 424.448 424.448c101.888 0 195.072-33.792 263.168-93.184l254.464 254.464c16.896 16.896 42.496 16.896 59.392 0 16.896-17.408 16.896-51.2 8.192-68.096zM90.112 424.448c0-186.88 152.576-339.456 339.456-339.456s339.456 152.576 339.456 339.456-152.576 339.456-339.456 339.456-339.456-153.088-339.456-339.456z m0 0" p-id="5480"></path></svg>
+        <svg
+          t="1591957541442"
+          class="icon"
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          p-id="5479"
+          width="16"
+          height="16"
+        >
+          <path
+            d="M1014.784 942.08l-254.464-254.464c59.392-68.096 93.184-161.28 93.184-263.168C853.504 186.88 667.136 0 429.568 0S5.12 186.88 5.12 424.448s186.88 424.448 424.448 424.448c101.888 0 195.072-33.792 263.168-93.184l254.464 254.464c16.896 16.896 42.496 16.896 59.392 0 16.896-17.408 16.896-51.2 8.192-68.096zM90.112 424.448c0-186.88 152.576-339.456 339.456-339.456s339.456 152.576 339.456 339.456-152.576 339.456-339.456 339.456-339.456-153.088-339.456-339.456z m0 0"
+            p-id="5480"
+          />
+        </svg>
       </section>
     </div>
   </div>
@@ -50,8 +64,8 @@ import { getEngineValue } from '@/services/getEngineValue.ts';
 @Component({
   components: {
     choose,
-    Svgicon
-  }
+    Svgicon,
+  },
 })
 export default class Search extends Vue {
   @Prop() public searchMenu: boolean = false;
@@ -66,7 +80,7 @@ export default class Search extends Vue {
   // 搜索引擎选择数组
   private searchChoose: string = '';
   // 当前选择的搜索引擎
-  private choose: string|undefined = 'google';
+  private choose: string | undefined = 'google';
 
   // 弹出搜索引擎选择框
   public handleSearchMenu(): void {
@@ -76,10 +90,10 @@ export default class Search extends Vue {
     this.$emit('closeSearchMenu');
   }
   // 切换点击 input 时输入框样式
-  private handleInput() {
+  private handleInput(): void {
     this.isInputing = true;
   }
-  private cancelInput() {
+  private cancelInput(): void {
     this.isInputing = false;
   }
 
@@ -100,7 +114,7 @@ export default class Search extends Vue {
    * @param {type}
    * @return: void
    */
-  private handleChooseSearch(i: string): void {
+  private handleChooseSearch(i: number): void {
     console.log(i);
     const data = getEngineValue(i);
     this.choose = data;

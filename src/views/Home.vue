@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-12 17:49:44
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-06-13 00:06:33
 --> 
 <template>
   <div class="home">
@@ -51,8 +51,8 @@ import Search from '@/components/search.vue';
     List,
     Search,
     Hitokoto: () => import('@/components/hitokoto.vue'),
-    Copyright: () => import('@/components/copyright.vue')
-  }
+    Copyright: () => import('@/components/copyright.vue'),
+  },
 })
 export default class Home extends Vue {
   // data
