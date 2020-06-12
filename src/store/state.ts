@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-06-12 15:51:43
+ * @LastEditTime: 2020-06-12 18:41:02
  * @LastEditors: Please set LastEditors
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
@@ -10,13 +10,14 @@
 const state = {
   // 控制状态
   status: {
+    // 遮罩层
     mask: false,
   },
   // 搜索引擎列表
   searchList: [
-    {icon: 'google',text: 'Google', header: 'https://www.google.com/search?q='},
-    {icon: 'bing',text: 'Bing', header: 'https://cn.bing.com/search?q='},
-    {icon: 'baidu',text: 'Baidu', header: 'https://www.baidu.com/s?wd='}, 
+    {icon: 'google', text: '谷歌', header: 'https://www.google.com/search?q='},
+    {icon: 'bing', text: '必应', header: 'https://cn.bing.com/search?q='},
+    {icon: 'baidu', text: '百度', header: 'https://www.baidu.com/s?wd='},
     // {icon: 'google',text: 'google', header: 'https://www.google.com/search?q='},
     // {icon: 'google',text: 'google', header: 'https://www.google.com/search?q='},
     // {icon: 'google',text: 'google', header: 'https://www.google.com/search?q='},
