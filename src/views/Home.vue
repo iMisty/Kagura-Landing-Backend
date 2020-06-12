@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-08 17:05:04
+ * @LastEditTime: 2020-06-12 15:19:37
 --> 
 <template>
   <div class="home">
@@ -90,11 +90,9 @@ export default class Home extends Vue {
      * @author: Miya
      */
   private openSearchMenu(): void {
-    this.isMask = true;
     this.searchMenu = true;
   }
   private closeSearchMenu(): void {
-    this.isMask = false;
     this.searchMenu = false;
   }
 
