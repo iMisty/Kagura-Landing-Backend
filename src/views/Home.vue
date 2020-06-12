@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-12 15:19:37
+ * @LastEditTime: 2020-06-12 17:49:44
 --> 
 <template>
   <div class="home">
@@ -14,6 +14,7 @@
       </button>
     </section>
     <section class="home--medium">
+      <!-- TODO: 鼠标移动到此处时会连续触发openSearchMenu事件 -->
       <Search
         :searchMenu="searchMenu"
         @handleSearchMenu="openSearchMenu"
@@ -50,8 +51,8 @@ import Search from '@/components/search.vue';
     List,
     Search,
     Hitokoto: () => import('@/components/hitokoto.vue'),
-    Copyright: () => import('@/components/copyright.vue'),
-  },
+    Copyright: () => import('@/components/copyright.vue')
+  }
 })
 export default class Home extends Vue {
   // data
@@ -76,20 +77,24 @@ export default class Home extends Vue {
    * @author: Miya
    */
   private getHitokoto(): void {
-    axios.get('https://v1.hitokoto.cn')
+    axios
+      .get('https://v1.hitokoto.cn')
       .then(({ data }) => {
         this.hitorikoto = data.hitokoto;
       })
       .catch(console.error);
   }
 
-    /**
-     * @description: 控制搜索框左侧搜索引擎选择框
-     * @param {type}
-     * @return:
-     * @author: Miya
-     */
+  /**
+   * @description: 控制搜索框左侧搜索引擎选择框
+   * @param {type}
+   * @return:
+   * @author: Miya
+   */
   private openSearchMenu(): void {
+    if (this.searchMenu === true) {
+      return;
+    }
     this.searchMenu = true;
   }
   private closeSearchMenu(): void {
@@ -109,7 +114,9 @@ export default class Home extends Vue {
   private handleCloseLink(): void {
     this.isMask = false;
     this.searchMenu = false;
-    if (this.isLinkOpen !== true) { return; }
+    if (this.isLinkOpen !== true) {
+      return;
+    }
     this.isLinkOpen = false;
   }
 

@@ -4,11 +4,11 @@
  * @Autor: Miya
  * @Date: 2020-06-11 23:32:14
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-12 15:50:19
+ * @LastEditTime: 2020-06-12 17:29:39
 --> 
  <template>
-  <li class="choose-engine-wrap" :data-value="value">
-    <Svgicon :svgClass="icon" :iconClass="value" :iconName="value"></Svgicon>
+  <li class="choose-engine-wrap" :data-value="value" @click="handleChooseEngine">
+    <Svgicon class="svg-icon svg-title-icon" :svgClass="icon" :iconClass="iconValue" :iconName="iconValue"></Svgicon>
     <p class="choose-engine-wrap-text">{{value}}</p>
   </li>
 </template>
@@ -24,6 +24,17 @@ import Svgicon from '@/components/svgicon.vue';
 export default class SearchChoose extends Vue {
   private icon: string = 'icon';
   // props
+  @Prop() private iconValue: unknown;
   @Prop() private value: unknown;
+
+  /**
+   * @name: handleChooseSearchEngine
+   * @msg: 点击获取使用的搜索引擎
+   * @param {type}
+   * @return: void
+   */
+  private handleChooseEngine(): void{
+    this.$emit('choose');
+  }
 }
 </script>
