@@ -1,16 +1,27 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-06-10 00:21:43
- * @LastEditors: Miya
+ * @LastEditTime: 2020-06-12 15:51:43
+ * @LastEditors: Please set LastEditors
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
  */
 
 const state = {
+  // 控制状态
   status: {
     mask: false,
   },
+  // 搜索引擎列表
+  searchList: [
+    {icon: 'google',text: 'Google', header: 'https://www.google.com/search?q='},
+    {icon: 'bing',text: 'Bing', header: 'https://cn.bing.com/search?q='},
+    {icon: 'baidu',text: 'Baidu', header: 'https://www.baidu.com/s?wd='}, 
+    // {icon: 'google',text: 'google', header: 'https://www.google.com/search?q='},
+    // {icon: 'google',text: 'google', header: 'https://www.google.com/search?q='},
+    // {icon: 'google',text: 'google', header: 'https://www.google.com/search?q='},
+  ],
+  // 导航栏列表
   link: [
     {
       name: '工具',
