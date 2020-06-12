@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
- * @LastEditors: Miya
- * @LastEditTime: 2020-06-09 23:32:13
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-12 16:14:31
 --> 
 <template>
   <div class="search--bar">
@@ -12,9 +12,10 @@
       <img :src="logoImgSrc" alt="Logo" />
     </div>
     <div class="search--bar-wrap" :class="{'inputing': isInputing}">
-      <section class="search--bar-choose" @mouseover="handleSearchMenu">
+      <section class="search--bar-choose" @mouseover="handleSearchMenu" @mouseout="closeSearchMenu">
         <div class="search--bar-choose-engine">G</div>
         <ul class="choose-engine" :class="{'active': searchMenu}">
+          <choose></choose>
           <!-- TODO: 拆分为组件 -->
           <li class="choose-engine-wrap" data-value="0">
             <i class="fa fa-google"></i>
@@ -51,26 +52,23 @@
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  Emit,
-  Inject,
-  Model,
-  Prop,
-  Provide,
-  Vue,
-  Watch,
-} from 'vue-property-decorator';
-@Component({})
+import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
+import choose from '@/components/search-choose.vue';
+@Component({
+  components: {
+    choose
+  }
+})
 export default class Search extends Vue {
-  @Prop()
-  public searchMenu: boolean = false;
+  @Prop() public searchMenu: boolean = false;
   // Logo
   private logoImgSrc: string = require('@/assets/logo.svg');
   // 控制搜索框样式
   private isInputing: boolean = false;
   // 搜索框文字
   private searchText: string = '';
+  // 搜索引擎选择
+  private searchChoose: unknown = [];
 
   // 弹出搜索引擎选择框
   public handleSearchMenu(): void {
@@ -85,6 +83,21 @@ export default class Search extends Vue {
   }
   private cancelInput() {
     this.isInputing = false;
+  }
+  /**
+   * @name: getSearchEngines
+   * @msg: 获取搜索引擎组件数据
+   * @param {type} 
+   * @return: void
+   */
+  private getSearchEngines(): void {
+    const data = this.$store.state.searchList;
+    console.log(data);
+    this.searchChoose = data;
+  }
+
+  private mounted(){
+    this.getSearchEngines();
   }
 }
 </script>
