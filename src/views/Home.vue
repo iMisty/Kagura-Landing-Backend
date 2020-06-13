@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-13 00:06:33
+ * @LastEditTime: 2020-06-14 04:42:24
 --> 
 <template>
   <div class="home">
@@ -15,11 +15,7 @@
     </section>
     <section class="home--medium">
       <!-- TODO: 鼠标移动到此处时会连续触发openSearchMenu事件 -->
-      <Search
-        :searchMenu="searchMenu"
-        @handleSearchMenu="openSearchMenu"
-        @closeSearchMenu="closeSearchMenu"
-      ></Search>
+      <Search :searchMenu="searchMenu" @submit="submitSearchText"></Search>
       <Hitokoto :hito="hitorikoto"></Hitokoto>
     </section>
     <section class="home--bottom">
@@ -43,6 +39,8 @@ import Icon from '@/components/icon.vue';
 import List from '@/components/list.vue';
 // 搜索框
 import Search from '@/components/search.vue';
+
+import { computedSearch } from '@/services/computedSearch.ts';
 
 @Component({
   // 组件注册
@@ -92,9 +90,6 @@ export default class Home extends Vue {
    * @author: Miya
    */
   private openSearchMenu(): void {
-    if (this.searchMenu === true) {
-      return;
-    }
     this.searchMenu = true;
   }
   private closeSearchMenu(): void {
@@ -118,6 +113,19 @@ export default class Home extends Vue {
       return;
     }
     this.isLinkOpen = false;
+  }
+
+  /**
+   * @description: 提交搜索关键词
+   * @param {type}
+   * @return:
+   * @author: Miya
+   */
+  private submitSearchText(search: string, value: string, extra: string | undefined): void {
+    const searchSiteText = computedSearch(search);
+    const address = `${searchSiteText}${value}${extra}`;
+    console.log(searchSiteText + value + extra);
+    window.open(address);
   }
 
   // mounted

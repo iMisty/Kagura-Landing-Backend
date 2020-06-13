@@ -1,8 +1,8 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-06-12 18:41:02
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-14 01:24:13
+ * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
  */
@@ -12,12 +12,13 @@ const state = {
   status: {
     // 遮罩层
     mask: false,
+    background: 'https://i.loli.net/2020/06/13/Tsa8uqY2gbjRndw.jpg',
   },
   // 搜索引擎列表
   searchList: [
-    {icon: 'google', text: '谷歌', header: 'https://www.google.com/search?q='},
-    {icon: 'bing', text: '必应', header: 'https://cn.bing.com/search?q='},
-    {icon: 'baidu', text: '百度', header: 'https://www.baidu.com/s?wd='},
+    { icon: 'google', text: '谷歌', header: 'https://www.google.com/search?q=', extra: '' },
+    { icon: 'bing', text: '必应', header: 'https://cn.bing.com/search?q=', extra: '' },
+    { icon: 'baidu', text: '百度', header: 'https://www.baidu.com/s?wd=', extra: '' },
     // {icon: 'google',text: 'google', header: 'https://www.google.com/search?q='},
     // {icon: 'google',text: 'google', header: 'https://www.google.com/search?q='},
     // {icon: 'google',text: 'google', header: 'https://www.google.com/search?q='},

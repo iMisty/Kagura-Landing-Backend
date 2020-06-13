@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-13 00:18:14
+ * @LastEditTime: 2020-06-14 02:53:34
 --> 
 <template>
   <div class="search--bar">
@@ -33,9 +33,10 @@
           v-model="searchText"
           @click="handleInput"
           @blur="cancelInput"
+          @keydown.enter="submitSearchText"
         />
       </section>
-      <section class="search--bar-submit">
+      <section class="search--bar-submit" @click="submitSearchText">
         <svg
           t="1591957541442"
           class="icon"
@@ -67,29 +68,46 @@ import { getEngineValue } from '@/services/getEngineValue.ts';
     Svgicon,
   },
 })
+
 export default class Search extends Vue {
-  @Prop() public searchMenu: boolean = false;
   // iconfont
   private icon: string = 'icon';
   // Logo
   private logoImgSrc: string = require('@/assets/logo.svg');
   // 控制搜索框样式
   private isInputing: boolean = false;
+  // 判断搜索引擎选择列表是否开启
+  private searchMenu: boolean = false;
   // 搜索框文字
   private searchText: string = '';
   // 搜索引擎选择数组
-  private searchChoose: string = '';
+  private searchChoose: any = {};
   // 当前选择的搜索引擎
   private choose: string | undefined = 'google';
+  // 搜索引擎可选的自带参数
+  private extraParam: string | undefined = '';
 
-  // 弹出搜索引擎选择框
+  /**
+   * @name: handleSearchMenu
+   * @msg: 弹出搜索引擎选择框
+   * @param {type}
+   * @return: void
+   */
   public handleSearchMenu(): void {
     this.$emit('handleSearchMenu');
+    this.searchMenu = true;
   }
   public closeSearchMenu(): void {
     this.$emit('closeSearchMenu');
+    this.searchMenu = false;
   }
-  // 切换点击 input 时输入框样式
+
+  /**
+   * @name: handleInput
+   * @msg: 切换点击 input 时输入框样式
+   * @param {type}
+   * @return: void
+   */
   private handleInput(): void {
     this.isInputing = true;
   }
@@ -115,9 +133,20 @@ export default class Search extends Vue {
    * @return: void
    */
   private handleChooseSearch(i: number): void {
-    console.log(i);
     const data = getEngineValue(i);
     this.choose = data;
+    this.extraParam = this.searchChoose[i].extra;
+    this.searchMenu = false;
+  }
+
+  /**
+   * @description: 提交欲搜索的关键词
+   * @param {type}
+   * @return:
+   * @author: Miya
+   */
+  private submitSearchText(): void {
+    this.$emit('submit', this.choose, this.searchText, this.extraParam);
   }
 
   private mounted() {
