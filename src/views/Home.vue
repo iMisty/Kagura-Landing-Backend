@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-14 04:42:24
+ * @LastEditTime: 2020-06-14 06:00:25
 --> 
 <template>
   <div class="home">
@@ -24,9 +24,7 @@
     <section class="home--list" :class="{'link-active': isLinkOpen}">
       <List></List>
     </section>
-    <transition name="fadeIn">
-      <section class="home--mask" :class="{ 'active': isMask }" @click="handleCloseLink"></section>
-    </transition>
+    <section class="home--mask" :class="{ 'active': isMask }" @click="handleCloseLink"></section>
   </div>
 </template>
 

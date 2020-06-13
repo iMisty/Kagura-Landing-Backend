@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-06-14 01:24:13
+ * @LastEditTime: 2020-06-14 06:01:08
  * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
@@ -12,6 +12,7 @@ const state = {
   status: {
     // 遮罩层
     mask: false,
+    isInputing: false,
     background: 'https://i.loli.net/2020/06/13/Tsa8uqY2gbjRndw.jpg',
   },
   // 搜索引擎列表

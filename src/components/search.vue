@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-14 02:53:34
+ * @LastEditTime: 2020-06-14 06:08:24
 --> 
 <template>
   <div class="search--bar">
@@ -109,10 +109,14 @@ export default class Search extends Vue {
    * @return: void
    */
   private handleInput(): void {
-    this.isInputing = true;
+    let status = this.$store.state.status.isInputing;
+    status = true;
+    this.isInputing = status;
   }
   private cancelInput(): void {
+    let status = this.$store.state.status.isInputing;
     this.isInputing = false;
+    status = this.isInputing;
   }
 
   /**
