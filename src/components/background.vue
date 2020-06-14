@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-14 00:02:26
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-15 00:39:46
+ * @LastEditTime: 2020-06-15 00:50:14
 --> 
 <template>
   <div class="background" :style="bgOptions" :class="{'bg-active': isInputing}"></div>
@@ -34,6 +34,7 @@ export default class Background extends Vue {
   width: 100vw;
   height: 100vh;
   z-index: -2;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   transition-duration: 0.4s;
