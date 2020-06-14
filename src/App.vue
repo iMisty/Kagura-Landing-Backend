@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-25 22:54:11
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-14 06:12:28
+ * @LastEditTime: 2020-06-14 23:09:53
 --> 
 <template>
   <div id="App">
@@ -26,11 +26,14 @@ import Background from '@/components/background.vue';
 export default class App extends Vue {
   private bgStatus: boolean = false;
 
-  @Watch('this.$store.state.status.isInputing')
-  private getStatus(status: boolean) {
-    console.log(status);
+  get backgroundStatus() {
+    return this.$store.state.status.isInputing;
   }
 
+  @Watch('backgroundStatus')
+  private getBackgroundStatus(val: boolean) {
+    this.bgStatus = val;
+  }
 }
 </script>
 <style lang="less">
