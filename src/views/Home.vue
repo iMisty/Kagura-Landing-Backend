@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Miya
- * @LastEditTime: 2020-06-14 06:00:25
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-15 15:41:30
 --> 
 <template>
   <div class="home">
@@ -32,11 +32,11 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import axios from 'axios';
 // 链接图标
-import Icon from '@/components/icon.vue';
+import Icon from '@/components/Home/icon.vue';
 // 链接列表
-import List from '@/components/list.vue';
+import List from '@/components/Home/list.vue';
 // 搜索框
-import Search from '@/components/search.vue';
+import Search from '@/components/Home/search.vue';
 
 import { computedSearch } from '@/services/computedSearch.ts';
 
@@ -46,8 +46,8 @@ import { computedSearch } from '@/services/computedSearch.ts';
     Icon,
     List,
     Search,
-    Hitokoto: () => import('@/components/hitokoto.vue'),
-    Copyright: () => import('@/components/copyright.vue'),
+    Hitokoto: () => import('@/components/Home/hitokoto.vue'),
+    Copyright: () => import('@/components/Home/copyright.vue'),
   },
 })
 export default class Home extends Vue {

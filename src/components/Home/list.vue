@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Miya
- * @LastEditTime: 2020-06-10 00:35:54
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-15 15:40:41
 --> 
 <template>
   <div class="list" ref="lists">
