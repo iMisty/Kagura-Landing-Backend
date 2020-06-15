@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-14 00:02:26
- * @LastEditors: Miya
- * @LastEditTime: 2020-06-15 00:50:14
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-15 16:04:17
 --> 
 <template>
   <div class="background" :style="bgOptions" :class="{'bg-active': isInputing}"></div>
@@ -37,21 +37,10 @@ export default class Background extends Vue {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition-duration: 0.4s;
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: #000;
-    opacity: 0.1;
-  }
+  transition-duration: 0.2s;
 }
 .bg-active {
-  transform: scale(1.08);
+  transform: scale(1.04);
   filter: blur(10px);
 }
 </style>
