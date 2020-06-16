@@ -1,7 +1,7 @@
 <!--
  * @Author: Miya
  * @Date: 2020-06-16 18:34:44
- * @LastEditTime: 2020-06-16 19:02:33
+ * @LastEditTime: 2020-06-16 19:07:25
  * @LastEditors: Please set LastEditors
  * @Description: 点击修改暗黑模式
  * @FilePath: /Single-Search/src/components/Home/dark-mode.vue
@@ -32,4 +32,8 @@ export default class DarkMode extends Vue {
 
 
 <style lang="less" scope>
+.dark-mode--button{
+  position: relative;
+  transition-duration: .4s;
+}
 </style>
