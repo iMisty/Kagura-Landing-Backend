@@ -4,13 +4,17 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-15 15:41:30
+ * @LastEditTime: 2020-06-17 15:39:09
 --> 
 <template>
   <div class="home">
     <section class="home--top">
       <button class="list--button" @click="handleOpenLink">
-        <Icon :class="{'click': isLinkOpen}"></Icon>
+        <Icon :class="{'click': isLinkOpen}">
+          <span class="line top"></span>
+          <span class="line medium"></span>
+          <span class="line bottom"></span>
+        </Icon>
       </button>
     </section>
     <section class="home--medium">
@@ -32,12 +36,12 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import axios from 'axios';
 // 链接图标
-import Icon from '@/components/Home/icon.vue';
+import Icon from '@/components/icon.vue';
 // 链接列表
 import List from '@/components/Home/list.vue';
 // 搜索框
 import Search from '@/components/Home/search.vue';
-
+// 计算搜索结果web工具函数
 import { computedSearch } from '@/services/computedSearch.ts';
 
 @Component({
@@ -47,8 +51,8 @@ import { computedSearch } from '@/services/computedSearch.ts';
     List,
     Search,
     Hitokoto: () => import('@/components/Home/hitokoto.vue'),
-    Copyright: () => import('@/components/Home/copyright.vue'),
-  },
+    Copyright: () => import('@/components/Home/copyright.vue')
+  }
 })
 export default class Home extends Vue {
   // data
@@ -119,7 +123,11 @@ export default class Home extends Vue {
    * @return:
    * @author: Miya
    */
-  private submitSearchText(search: string, value: string, extra: string | undefined): void {
+  private submitSearchText(
+    search: string,
+    value: string,
+    extra: string | undefined
+  ): void {
     const searchSiteText = computedSearch(search);
     const address = `${searchSiteText}${value}${extra}`;
     console.log(searchSiteText + value + extra);

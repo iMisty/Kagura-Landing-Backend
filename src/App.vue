@@ -4,11 +4,13 @@
  * @Autor: Miya
  * @Date: 2020-05-25 22:54:11
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-15 15:41:51
---> 
+ * @LastEditTime: 2020-06-17 18:35:13
+-->
 <template>
   <div id="App">
-    <Home></Home>
+    <router-link to="/admin"></router-link>
+    <router-view></router-view>
+    <!-- <Home></Home> -->
     <Background :isInputing="bgStatus"></Background>
   </div>
 </template>

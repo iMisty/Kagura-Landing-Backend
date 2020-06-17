@@ -8,9 +8,7 @@
 --> 
 <template>
   <div class="index-icon">
-    <span class="line top"></span>
-    <span class="line medium"></span>
-    <span class="line bottom"></span>
+    <slot></slot>
   </div>
 </template>
 
