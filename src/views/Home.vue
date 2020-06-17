@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-17 15:39:09
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-06-17 23:59:17
 --> 
 <template>
   <div class="home">
@@ -51,8 +51,8 @@ import { computedSearch } from '@/services/computedSearch.ts';
     List,
     Search,
     Hitokoto: () => import('@/components/Home/hitokoto.vue'),
-    Copyright: () => import('@/components/Home/copyright.vue')
-  }
+    Copyright: () => import('@/components/Home/copyright.vue'),
+  },
 })
 export default class Home extends Vue {
   // data
@@ -126,7 +126,7 @@ export default class Home extends Vue {
   private submitSearchText(
     search: string,
     value: string,
-    extra: string | undefined
+    extra: string | undefined,
   ): void {
     const searchSiteText = computedSearch(search);
     const address = `${searchSiteText}${value}${extra}`;

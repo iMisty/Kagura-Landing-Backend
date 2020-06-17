@@ -1,11 +1,11 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-27 14:28:24
- * @LastEditTime: 2020-06-17 18:29:09
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-17 23:58:02
+ * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: /Single-Search/src/router/index.ts
- */ 
+ */
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '../views/Home.vue';

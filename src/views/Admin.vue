@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-04 00:28:05
+ * @LastEditTime: 2020-06-18 00:42:44
 --> 
 <template>
   <div class="admin">
@@ -18,8 +18,14 @@ import setting from '@/components/Home/setting.vue';
 @Component({
   // 组件注册
   components: {
-    setting
+    setting,
   }})
 export default class Admin extends Vue {
 }
 </script>
+
+<style lang="less">
+  .admin{
+    background-color: aquamarine;
+  }
+</style>

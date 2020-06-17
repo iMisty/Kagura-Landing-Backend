@@ -1,0 +1,32 @@
+.setting{
+  // position: fixed;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #fff;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
+  &--user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: @card-shadow;
+  }
+  &--avatar{
+    width: 5rem;
+  }
+  &--wrap{
+    text-align: center;
+    font-size: 1.2em;
+    &-title{
+      font-weight: normal;
+      color: @pri-text;
+    }
+    &-text{
+      color: @sec-text;
+    }
+  }
+}
