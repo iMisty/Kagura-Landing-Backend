@@ -3,31 +3,31 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:30:00
- * @LastEditors: Miya
- * @LastEditTime: 2020-06-17 23:49:28
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-18 17:04:22
  */
 .home {
-  display           : grid;
+  display: grid;
   grid-template-rows: 4rem 4fr 1fr;
-  width             : 100vw;
-  height            : 100vh;
+  width: 100vw;
+  height: 100vh;
 
   // 顶部
   &--top {
-    display        : flex;
-    flex-direction : row;
+    display: flex;
+    flex-direction: row;
     justify-content: flex-end;
-    align-items    : center;
-    padding        : 1rem;
+    align-items: center;
+    padding: 1rem;
   }
 
   // 搜索栏区域
   &--medium {
-    display        : flex;
-    flex-direction : column;
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    align-items    : center;
-    padding-bottom : 12vh;
+    align-items: center;
+    padding-bottom: 12vh;
 
     // 搜索栏
     .search--bar {
@@ -37,23 +37,23 @@
         margin: 4vh 0;
 
         img {
-          margin   : 0 auto;
+          margin: 0 auto;
           max-width: 36rem;
         }
       }
 
       &-wrap {
-        display            : inline-flex;
-        justify-content    : space-between;
-        align-items        : center;
-        padding            : .5rem;
-        width              : 64vw;
-        background-color   : #fff;
-        border             : 1px solid #dedede;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5rem;
+        width: 64vw;
+        background-color: #fff;
+        border: 1px solid #dedede;
         transition-duration: .4s;
 
         &.inputing {
-          box-shadow         : 0 0 2rem .25rem rgba(0, 0, 0, .08);
+          box-shadow: 0 0 2rem .25rem rgba(0, 0, 0, .08);
           transition-duration: .4s;
         }
       }
@@ -61,54 +61,54 @@
       // 搜索引擎选择器
       &-choose {
         position: relative;
-        padding : 0 .5rem;
-        cursor  : pointer;
+        padding: 0 .5rem;
+        cursor: pointer;
 
         &-engine {
-          display        : flex;
+          display: flex;
           justify-content: center;
-          align-items    : center;
-          width          : 2rem;
-          height         : 2rem;
+          align-items: center;
+          width: 2rem;
+          height: 2rem;
         }
 
         .choose-engine {
-          display         : none;
-          position        : absolute;
-          top             : 108%;
-          left            : 50%;
-          transform       : translateX(-50%);
-          padding         : .5rem;
-          z-index         : 16;
+          display: none;
+          position: absolute;
+          top: 108%;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: .5rem;
+          z-index: 16;
           background-color: #fff;
-          box-shadow      : 0 0 2px 2px rgba(0, 0, 0, .08);
+          box-shadow: 0 0 2px 2px rgba(0, 0, 0, .08);
 
           &::after {
-            content         : '';
-            position        : absolute;
-            top             : -.5rem;
-            left            : 50%;
-            transform       : translateX(-50%) rotate(45deg);
-            width           : 1rem;
-            height          : 1rem;
-            z-index         : 2;
+            content: '';
+            position: absolute;
+            top: -.5rem;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 1rem;
+            height: 1rem;
+            z-index: 2;
             background-color: #fff;
-            border          : 1px solid rgba(0, 0, 0, .08);
-            border-bottom   : none;
-            border-right    : none;
+            border: 1px solid rgba(0, 0, 0, .08);
+            border-bottom: none;
+            border-right: none;
           }
 
           &-wrap {
-            display         : flex;
-            flex-direction  : row;
-            align-items     : center;
-            padding         : .5rem;
-            font-size       : 1.5em;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: .5rem;
+            font-size: 1.5em;
             background-color: #fff;
 
 
             &-text {
-              width  : 3rem;
+              width: 3rem;
               padding: 0 .25rem;
             }
           }
@@ -119,10 +119,10 @@
         width: 100%;
 
         input {
-          width      : 100%;
-          font-size  : 1rem;
+          width: 100%;
+          font-size: 1rem;
           line-height: 2rem;
-          border     : none;
+          border: none;
 
           &:focus {
             outline: none;
@@ -139,10 +139,10 @@
   }
 
   &--bottom {
-    display        : flex;
-    flex-direction : column;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-end;
-    align-items    : center;
+    align-items: center;
 
     .copyright {
       padding: 1rem;
@@ -150,26 +150,36 @@
   }
 
   &--list {
-    position                  : fixed;
-    top                       : 0;
-    right                     : 0%;
-    display                   : flex;
-    flex-direction            : row;
-    height                    : 100%;
-    z-index                   : 12;
-    transform                 : translateX(100%);
+    position: fixed;
+    top: 0;
+    right: 0%;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    z-index: 12;
+    transform: translateX(100%);
     transition-timing-function: ease-out;
-    transition-duration       : .2s;
+    transition-duration: .2s;
+  }
+
+  // 设置区域
+  &--setting {
+    position: fixed;
+    transform: translateX(-128%);
+    z-index: 12;
+    transition-duration: .2s;
   }
 
   &--mask {
     position: fixed;
-    display : none;
-    top     : 0;
-    right   : 0;
-    width   : 100vw;
-    height  : 100vh;
-    z-index : 4;
-    opacity : 0;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: #000;
+    opacity: 0;
+    transition-duration: .2s;
   }
 }
