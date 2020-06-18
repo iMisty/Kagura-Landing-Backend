@@ -1,13 +1,14 @@
 <!--
  * @Author: Miya
  * @Date: 2020-06-17 16:57:01
- * @LastEditTime: 2020-06-18 01:00:11
- * @LastEditors: Miya
+ * @LastEditTime: 2020-06-18 15:58:18
+ * @LastEditors: Please set LastEditors
  * @Description: 个人设置页
  * @FilePath: /Single-Search/src/components/Home/setting.vue
 --> 
 <template>
   <div class="setting">
+    <!-- User start -->
     <section class="setting--user">
       <!-- avatar start -->
       <article class="setting--avatar">
@@ -124,7 +125,7 @@
         </section>
       </article>
       <!-- avatar end -->
-      
+
       <!-- text start -->
       <article class="setting--wrap">
         <h3 class="setting--wrap-title">{{setting.name}}</h3>
@@ -132,11 +133,26 @@
       </article>
       <!-- text end -->
     </section>
+    <!-- User end -->
+    
+    <!-- List start -->
+    <section class="setting--list">
+      <menu-list></menu-list>
+    </section>
+    <!-- List end -->
+
+    <!-- Config start -->
+    <section class="setting--config">
+      <config-list></config-list>
+    </section>
+    <!-- Config end -->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import menuList from '@/components/Home/setting/menu-list.vue';
+import configList from '@/components/Home/setting/config-list.vue';
 interface User {
   // 昵称
   name: string;
@@ -148,7 +164,12 @@ interface User {
   introduce: string;
 }
 
-@Component
+@Component({
+  components: {
+    'menu-list': menuList,
+    'config-list': configList,
+  }
+})
 export default class Setting extends Vue {
   // data
   // TODO: 将集成至Vuex中
@@ -157,7 +178,7 @@ export default class Setting extends Vue {
     name: 'Miya',
     avatar: '',
     sex: 'female',
-    introduce: 'test text',
+    introduce: 'test text'
   };
 }
 </script>

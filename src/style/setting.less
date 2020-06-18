@@ -1,13 +1,14 @@
-.setting{
-  // position: fixed;
+.setting {
+  position: relative;
   top: 0;
   left: 0;
   width: 16rem;
   height: 100vh;
-  overflow-y: auto;
+  overflow: hidden;
   background-color: #fff;
-  box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
-  &--user{
+  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, .2), 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12);
+
+  &--user {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,18 +16,78 @@
     padding: 1rem;
     box-shadow: @card-shadow;
   }
-  &--avatar{
+
+  &--avatar {
     width: 5rem;
   }
-  &--wrap{
+
+  &--wrap {
     text-align: center;
     font-size: 1.2em;
-    &-title{
+
+    &-title {
       font-weight: normal;
       color: @pri-text;
     }
-    &-text{
+
+    &-text {
       color: @sec-text;
+    }
+  }
+
+  // 选项卡
+  &--list {
+    padding-top: .5rem;
+    padding-bottom: 5rem;
+    min-height: 3rem;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
+  &--menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    color: @pri-text;
+    cursor: pointer;
+    transition-duration: .4s;
+
+    &:hover {
+      background-color: @hover;
+      transition-duration: .4s;
+    }
+
+    &-text {
+      font-size: 1rem;
+      margin-left: 2rem;
+      line-height: 1.25rem;
+    }
+  }
+
+  &--config {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: @box-shadow;
+
+    &-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      .choose--mode {
+        padding: .5rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 64%;
+        cursor: pointer;
+        svg{
+          filter: invert(1);
+        }
+      }
     }
   }
 }

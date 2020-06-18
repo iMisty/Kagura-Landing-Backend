@@ -3,12 +3,16 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Miya
- * @LastEditTime: 2020-06-17 23:59:17
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-18 17:41:35
 --> 
 <template>
   <div class="home">
+    <!-- Top start -->
     <section class="home--top">
+      <button class="list--button" @click="handleOpenSetting">
+        <img src="@/icons/svg/avatar.svg" alt />
+      </button>
       <button class="list--button" @click="handleOpenLink">
         <Icon :class="{'click': isLinkOpen}">
           <span class="line top"></span>
@@ -17,18 +21,31 @@
         </Icon>
       </button>
     </section>
+    <!-- Top end -->
+
+    <!-- Medium start -->
     <section class="home--medium">
       <!-- TODO: 鼠标移动到此处时会连续触发openSearchMenu事件 -->
       <Search :searchMenu="searchMenu" @submit="submitSearchText"></Search>
       <Hitokoto :hito="hitorikoto"></Hitokoto>
     </section>
+    <!-- Medium end -->
+
+    <!-- Bottom start -->
     <section class="home--bottom">
       <Copyright></Copyright>
     </section>
+    <!-- Bottom end -->
+
+    <!-- Float & Extra start -->
     <section class="home--list" :class="{'link-active': isLinkOpen}">
       <List></List>
     </section>
-    <section class="home--mask" :class="{ 'active': isMask }" @click="handleCloseLink"></section>
+    <section class="home--setting" :class="{'setting-active': isSettingOpen}">
+      <Setting></Setting>
+    </section>
+    <section class="home--mask" :class="{ 'mask-active': isMask }" @click="handleClose"></section>
+    <!-- Float & Extra end -->
   </div>
 </template>
 
@@ -37,6 +54,8 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import axios from 'axios';
 // 链接图标
 import Icon from '@/components/icon.vue';
+// 设置边栏
+import Setting from '@/components/Home/setting.vue';
 // 链接列表
 import List from '@/components/Home/list.vue';
 // 搜索框
@@ -48,17 +67,20 @@ import { computedSearch } from '@/services/computedSearch.ts';
   // 组件注册
   components: {
     Icon,
+    Setting,
     List,
     Search,
     Hitokoto: () => import('@/components/Home/hitokoto.vue'),
-    Copyright: () => import('@/components/Home/copyright.vue'),
-  },
+    Copyright: () => import('@/components/Home/copyright.vue')
+  }
 })
 export default class Home extends Vue {
   // data
   public searchMenu: boolean = false;
   // 链接图标
   private listButtonSrc: string = require('@/assets/menu.png');
+  // 控制设置边栏开关
+  private isSettingOpen: boolean = false;
   // 控制链接开关
   private isLinkOpen: boolean = false;
   // 控制蒙版开关
@@ -99,6 +121,17 @@ export default class Home extends Vue {
   }
 
   /**
+   * @description: 控制左侧默认隐藏的设置栏
+   * @param {type}
+   * @return:
+   * @author: Miya
+   */
+  private handleOpenSetting(): void {
+    this.isSettingOpen = !this.isSettingOpen;
+    this.isMask = !this.isMask;
+  }
+
+  /**
    * @description: 控制右侧默认隐藏的链接列表栏
    * @param {type}
    * @return:
@@ -108,13 +141,18 @@ export default class Home extends Vue {
     this.isLinkOpen = !this.isLinkOpen;
     this.isMask = !this.isMask;
   }
-  private handleCloseLink(): void {
+
+  /**
+   * @description: 控制蒙版隐藏
+   * @param {type}
+   * @return:
+   * @author: Miya
+   */
+  private handleClose(): void {
     this.isMask = false;
     this.searchMenu = false;
-    if (this.isLinkOpen !== true) {
-      return;
-    }
     this.isLinkOpen = false;
+    this.isSettingOpen = false;
   }
 
   /**
@@ -126,7 +164,7 @@ export default class Home extends Vue {
   private submitSearchText(
     search: string,
     value: string,
-    extra: string | undefined,
+    extra: string | undefined
   ): void {
     const searchSiteText = computedSearch(search);
     const address = `${searchSiteText}${value}${extra}`;
