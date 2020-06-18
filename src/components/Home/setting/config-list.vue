@@ -1,8 +1,8 @@
 <!--
  * @Author: Miya
  * @Date: 2020-06-18 14:50:31
- * @LastEditTime: 2020-06-18 15:09:07
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-18 23:16:45
+ * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: /Single-Search/src/components/Home/setting/config-list.vue
 --> 
@@ -23,8 +23,8 @@ import darkMode from '@/components/Home/dark-mode.vue';
 
 @Component({
   components: {
-    'dark-mode': darkMode
-  }
+    'dark-mode': darkMode,
+  },
 })
 export default class ConfigList extends Vue {}
 </script>

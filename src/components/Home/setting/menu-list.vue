@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-18 11:21:42
- * @LastEditTime: 2020-06-18 12:34:26
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-18 23:16:57
+ * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: /Single-Search/src/components/Home/setting/menu.vue
 --> 
@@ -39,8 +39,8 @@ import menus from '@/components/Home/setting/menu.vue';
 
 @Component({
   components: {
-    menus
-  }
+    menus,
+  },
 })
 export default class MenuList extends Vue {}
 </script>

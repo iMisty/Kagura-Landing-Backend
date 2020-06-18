@@ -1,11 +1,11 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-18 18:17:09
- * @LastEditTime: 2020-06-18 18:37:20
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-19 01:10:27
+ * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: /Single-Search/vue.config.js
- */ 
+ */
 module.exports = {
   // 打包输出目录
   publicPath: './',
@@ -20,24 +20,30 @@ module.exports = {
     extract: true
   },
   // 代理服务器配置
-  proxy: {
-    '/googleapi': {
-      // site: http://suggestqueries.google.com/complete/search?output=toolbar&hl=zh&q=前端
-      target: 'http://suggestqueries.google.com/complete/',
-      secure: false,
-      changeOrigin: true,
-    },
-    '/baiduapi': {
-      // site: http://suggestion.baidu.com/su?wd=前端
-      target: 'http://suggestion.baidu.com/',
-      secure: false,
-      changeOrigin: true,
-    },
-    '/bingapi': {
-      // site: https://api.bing.com/qsonhs.aspx?type=cb&q=前端
-      target: 'https://api.bing.com/',
-      secure: false,
-      changeOrigin: true,
-    },
+  devServer: {
+    proxy: {
+      '/googleapi': {
+        // site: http://suggestqueries.google.com/complete/search?output=toolbar&hl=zh&q=前端
+        target: 'http://suggestqueries.google.com/complete/',
+        secure: false,
+        changeOrigin: true,
+
+      },
+      '/baiduapi': {
+        // site: http://suggestion.baidu.com/su?wd=前端
+        target: 'http://suggestion.baidu.com/',
+        secure: false,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/baiduapi': '/',
+        },
+      },
+      '/bingapi': {
+        // site: https://api.bing.com/qsonhs.aspx?type=cb&q=前端
+        target: 'https://api.bing.com/',
+        secure: false,
+        changeOrigin: true,
+      },
+    }
   }
 }

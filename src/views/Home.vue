@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-18 17:41:35
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-06-19 01:20:01
 --> 
 <template>
   <div class="home">
@@ -63,6 +63,8 @@ import Search from '@/components/Home/search.vue';
 // 计算搜索结果web工具函数
 import { computedSearch } from '@/services/computedSearch.ts';
 
+import getSearchAPIData from '@/services/axios.ts';
+
 @Component({
   // 组件注册
   components: {
@@ -71,8 +73,8 @@ import { computedSearch } from '@/services/computedSearch.ts';
     List,
     Search,
     Hitokoto: () => import('@/components/Home/hitokoto.vue'),
-    Copyright: () => import('@/components/Home/copyright.vue')
-  }
+    Copyright: () => import('@/components/Home/copyright.vue'),
+  },
 })
 export default class Home extends Vue {
   // data
@@ -88,6 +90,8 @@ export default class Home extends Vue {
   // 一言
   // private hitorikoto: string = '加载中...';
   private hitorikoto: string = '风淅淅，雨纤纤。难怪春愁细细添。';
+
+  private a: any = '';
 
   // props
 
@@ -161,15 +165,17 @@ export default class Home extends Vue {
    * @return:
    * @author: Miya
    */
-  private submitSearchText(
+  private async submitSearchText(
     search: string,
     value: string,
-    extra: string | undefined
-  ): void {
+    extra: string | undefined,
+  ) {
     const searchSiteText = computedSearch(search);
     const address = `${searchSiteText}${value}${extra}`;
+    const aa = await getSearchAPIData(value);
+    console.log('--------' + aa);
     console.log(searchSiteText + value + extra);
-    window.open(address);
+    // window.open(address);
   }
 
   // mounted

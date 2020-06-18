@@ -1,8 +1,8 @@
 <!--
  * @Author: Miya
  * @Date: 2020-06-18 11:24:32
- * @LastEditTime: 2020-06-18 15:10:16
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-18 23:16:29
+ * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: /Single-Search/src/components/Home/setting/menu.vue
 --> 
@@ -24,8 +24,8 @@ import svgIcon from '@/components/svgicon.vue';
 
 @Component({
   components: {
-    'svg-icon': svgIcon
-  }
+    'svg-icon': svgIcon,
+  },
 })
 export default class Menu extends Vue {
   private icon: object = {

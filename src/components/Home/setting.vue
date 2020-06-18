@@ -1,8 +1,8 @@
 <!--
  * @Author: Miya
  * @Date: 2020-06-17 16:57:01
- * @LastEditTime: 2020-06-18 15:58:18
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-18 23:14:49
+ * @LastEditors: Miya
  * @Description: 个人设置页
  * @FilePath: /Single-Search/src/components/Home/setting.vue
 --> 
@@ -168,7 +168,7 @@ interface User {
   components: {
     'menu-list': menuList,
     'config-list': configList,
-  }
+  },
 })
 export default class Setting extends Vue {
   // data
@@ -178,7 +178,7 @@ export default class Setting extends Vue {
     name: 'Miya',
     avatar: '',
     sex: 'female',
-    introduce: 'test text'
+    introduce: 'test text',
   };
 }
 </script>
