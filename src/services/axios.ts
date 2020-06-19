@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-18 23:31:58
- * @LastEditors: Miya
- * @LastEditTime: 2020-06-19 01:20:29
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-19 18:29:55
  */
 import axios from 'axios';
 
@@ -19,8 +19,9 @@ const BAIDU_API = '/baiduapi/su';
  * @return: 未进行数据清洗的返回数据
  * @author: Miya
  */
-const getSearchAPIData = (value: string) => {
-  return axios({
+const getSearchAPIData = async (value: string) => {
+  let data: any = {};
+  await axios({
     method: 'get',
     url: BAIDU_API,
     params: {
@@ -28,8 +29,9 @@ const getSearchAPIData = (value: string) => {
     },
   })
     .then((res) => {
-      console.log(res);
+      data = res;
     });
+  return data;
 };
 
 export default getSearchAPIData;

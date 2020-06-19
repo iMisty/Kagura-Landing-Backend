@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Miya
- * @LastEditTime: 2020-06-19 01:20:01
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-19 18:31:48
 --> 
 <template>
   <div class="home">
@@ -63,7 +63,7 @@ import Search from '@/components/Home/search.vue';
 // 计算搜索结果web工具函数
 import { computedSearch } from '@/services/computedSearch.ts';
 
-import getSearchAPIData from '@/services/axios.ts';
+import getBaiduData from '@/services/dataClean.ts';
 
 @Component({
   // 组件注册
@@ -172,8 +172,10 @@ export default class Home extends Vue {
   ) {
     const searchSiteText = computedSearch(search);
     const address = `${searchSiteText}${value}${extra}`;
-    const aa = await getSearchAPIData(value);
-    console.log('--------' + aa);
+    // TEST START
+    const aa = await getBaiduData(value);
+    // TEST END
+
     console.log(searchSiteText + value + extra);
     // window.open(address);
   }
