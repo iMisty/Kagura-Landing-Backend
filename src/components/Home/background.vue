@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-14 00:02:26
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-15 16:04:17
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-06-20 00:15:26
 --> 
 <template>
   <div class="background" :style="bgOptions" :class="{'bg-active': isInputing}"></div>
@@ -22,7 +22,7 @@ export default class Background extends Vue {
 
   // 存储从 Vuex 中获取的背景图片
   private bgOptions: object = {
-    backgroundImage: `url(${this.$store.state.status.background})`,
+    // backgroundImage: `url(${this.$store.state.status.background})`,
   };
 }
 </script>
