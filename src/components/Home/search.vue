@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-18 23:31:19
+ * @LastEditTime: 2020-06-20 00:09:09
 --> 
 <template>
   <div class="search--bar">
@@ -79,7 +79,7 @@ export default class Search extends Vue {
   // 判断搜索引擎选择列表是否开启
   private searchMenu: boolean = false;
   // 搜索框文字
-  private searchText: string = '';
+  private searchText: string = 'Astronomia';
   // 搜索引擎选择数组
   private searchChoose: any = {};
   // 当前选择的搜索引擎
