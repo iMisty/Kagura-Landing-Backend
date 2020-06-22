@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-18 23:31:58
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-19 18:29:55
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-06-20 01:09:54
  */
 import axios from 'axios';
 
@@ -26,12 +26,13 @@ const getSearchAPIData = async (value: string) => {
     url: BAIDU_API,
     params: {
       wd: value,
+      cb: 'data.wdnmd',
     },
   })
     .then((res) => {
       data = res;
     });
-  return data;
+  return data.data;
 };
 
 export default getSearchAPIData;
