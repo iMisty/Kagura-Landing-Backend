@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-19 17:52:08
- * @LastEditTime: 2020-06-20 23:30:04
+ * @LastEditTime: 2020-06-22 23:38:51
  * @LastEditors: Miya
  * @Description: 对 axios.ts 中获取的数据进行清洗
  * @FilePath: /Single-Search/src/services/dataClean.ts
@@ -18,4 +18,4 @@ const getBaiduData = async (value: string) => {
   console.log(newData);
   return newData;
 };
-export default getBaiduData;
+export { getBaiduData };

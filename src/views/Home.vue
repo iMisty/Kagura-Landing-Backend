@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-19 18:31:48
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-06-23 01:18:58
 --> 
 <template>
   <div class="home">
@@ -63,8 +63,6 @@ import Search from '@/components/Home/search.vue';
 // 计算搜索结果web工具函数
 import { computedSearch } from '@/services/computedSearch.ts';
 
-import getBaiduData from '@/services/dataClean.ts';
-
 @Component({
   // 组件注册
   components: {
@@ -91,8 +89,9 @@ export default class Home extends Vue {
   // private hitorikoto: string = '加载中...';
   private hitorikoto: string = '风淅淅，雨纤纤。难怪春愁细细添。';
 
-  private a: any = '';
-
+  private aa(value: string) {
+    console.log(value);
+  }
   // props
 
   // methods
@@ -172,10 +171,6 @@ export default class Home extends Vue {
   ) {
     const searchSiteText = computedSearch(search);
     const address = `${searchSiteText}${value}${extra}`;
-    // TEST START
-    const aa = await getBaiduData(value);
-    // TEST END
-
     console.log(searchSiteText + value + extra);
     // window.open(address);
   }

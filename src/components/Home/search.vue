@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-20 00:09:09
+ * @LastEditTime: 2020-06-23 01:36:18
 --> 
 <template>
   <div class="search--bar">
@@ -34,7 +34,11 @@
           @click="handleInput"
           @blur="cancelInput"
           @keydown.enter="submitSearchText"
+          @input="getExtraValue"
         />
+      </section>
+      <section class="search--bar-suomi">
+        <re-search :data="datas"></re-search>
       </section>
       <section class="search--bar-submit" @click="submitSearchText">
         <svg
@@ -61,11 +65,13 @@
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import Svgicon from '@/components/svgicon.vue';
 import choose from '@/components/Home/search/search-choose.vue';
+import reSearch from '@/components/Home/search/re-search.vue';
 import { getEngineValue } from '@/services/getEngineValue.ts';
 @Component({
   components: {
     choose,
     Svgicon,
+    're-search': reSearch,
   },
 })
 
@@ -87,17 +93,23 @@ export default class Search extends Vue {
   // 搜索引擎可选的自带参数
   private extraParam: string | undefined = '';
 
+  private datas: string[] = ['111', '12222'];
+
+  private getExtraValue() {
+    console.log(this.searchText);
+  }
+
   /**
    * @name: handleSearchMenu
    * @msg: 弹出搜索引擎选择框
    * @param {type}
    * @return: void
    */
-  public handleSearchMenu(): void {
+  private handleSearchMenu(): void {
     this.$emit('handleSearchMenu');
     this.searchMenu = true;
   }
-  public closeSearchMenu(): void {
+  private closeSearchMenu(): void {
     this.$emit('closeSearchMenu');
     this.searchMenu = false;
   }
