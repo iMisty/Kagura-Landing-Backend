@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-23 15:32:32
+ * @LastEditTime: 2020-06-23 17:00:39
 --> 
 <template>
   <div class="search--bar">
@@ -38,7 +38,7 @@
         />
       </section>
       <section class="search--bar-suomi" v-show="searchText !== ''">
-        <re-search :data="extraDatas"></re-search>
+        <re-search :data="extraDatas" @handleExtraSearch="submitExtraSearchText"></re-search>
       </section>
       <section class="search--bar-submit" @click="submitSearchText">
         <svg
@@ -89,25 +89,11 @@ export default class Search extends Vue {
   // 搜索引擎选择数组
   private searchChoose: any = {};
   // 当前选择的搜索引擎
-  private choose?: string = 'google';
+  private choose?: string = 'baidu';
   // 搜索引擎可选的自带参数
   private extraParam: string | undefined = '';
-
+  // 搜索引擎联想关键词
   private extraDatas: string[] = [];
-
-  /**
-   * @name: getExtraValue
-   * @msg: 展示搜索关键词的联想结果
-   * @param {type}
-   * @return: void
-   */
-  private async getExtraValue() {
-    const eValue = this.choose;
-    const sValue = this.searchText;
-    const res = await associateSearch(eValue!, sValue);
-    
-    this.extraDatas = res;
-  }
 
   /**
    * @name: handleSearchMenu
@@ -173,6 +159,31 @@ export default class Search extends Vue {
    */
   private submitSearchText(): void {
     this.$emit('submit', this.choose, this.searchText, this.extraParam);
+  }
+
+  /**
+   * @name: getExtraValue
+   * @msg: 提交欲搜索的关键词
+   * @param {type}
+   * @return: void
+   */
+  private async getExtraValue() {
+    // TODO: 暂时写死
+    const eValue = 'baidu';
+    const sValue = this.searchText;
+    const res = await associateSearch(eValue!, sValue);
+
+    this.extraDatas = res;
+  }
+
+  /**
+   * @name: submitExtraSearchText
+   * @msg: 展示搜索关键词的联想结果
+   * @param {type}
+   * @return: void
+   */
+  private submitExtraSearchText(item: any) {
+    this.$emit('submit', this.choose, item, this.extraParam);
   }
 
   private mounted() {
