@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
- * @LastEditors: Miya
- * @LastEditTime: 2020-06-23 01:36:18
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-23 15:32:32
 --> 
 <template>
   <div class="search--bar">
@@ -37,8 +37,8 @@
           @input="getExtraValue"
         />
       </section>
-      <section class="search--bar-suomi">
-        <re-search :data="datas"></re-search>
+      <section class="search--bar-suomi" v-show="searchText !== ''">
+        <re-search :data="extraDatas"></re-search>
       </section>
       <section class="search--bar-submit" @click="submitSearchText">
         <svg
@@ -67,14 +67,14 @@ import Svgicon from '@/components/svgicon.vue';
 import choose from '@/components/Home/search/search-choose.vue';
 import reSearch from '@/components/Home/search/re-search.vue';
 import { getEngineValue } from '@/services/getEngineValue.ts';
+import { associateSearch } from '@/services/associateSearch.ts';
 @Component({
   components: {
     choose,
     Svgicon,
-    're-search': reSearch,
-  },
+    're-search': reSearch
+  }
 })
-
 export default class Search extends Vue {
   // iconfont
   private icon: string = 'icon';
@@ -85,18 +85,28 @@ export default class Search extends Vue {
   // 判断搜索引擎选择列表是否开启
   private searchMenu: boolean = false;
   // 搜索框文字
-  private searchText: string = 'Astronomia';
+  private searchText: string = '';
   // 搜索引擎选择数组
   private searchChoose: any = {};
   // 当前选择的搜索引擎
-  private choose: string | undefined = 'google';
+  private choose?: string = 'google';
   // 搜索引擎可选的自带参数
   private extraParam: string | undefined = '';
 
-  private datas: string[] = ['111', '12222'];
+  private extraDatas: string[] = [];
 
-  private getExtraValue() {
-    console.log(this.searchText);
+  /**
+   * @name: getExtraValue
+   * @msg: 展示搜索关键词的联想结果
+   * @param {type}
+   * @return: void
+   */
+  private async getExtraValue() {
+    const eValue = this.choose;
+    const sValue = this.searchText;
+    const res = await associateSearch(eValue!, sValue);
+    
+    this.extraDatas = res;
   }
 
   /**

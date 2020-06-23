@@ -1,11 +1,13 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-18 17:44:54
- * @LastEditTime: 2020-06-18 18:39:25
+ * @LastEditTime: 2020-06-23 15:19:16
  * @LastEditors: Please set LastEditors
  * @Description: 搜索引擎联想数据
  * @FilePath: /Single-Search/src/services/associateSearch.ts
  */
+
+import { getBaiduData } from './dataClean';
 
 /**
  * @description: 返回搜索引擎联想数据
@@ -16,7 +18,7 @@
 
 // 查阅：各大浏览器搜索联想API: https://blog.iprub.com/php/50.html
 
-const associateSearch = (engines: number, value: string) => {
+const associateSearch = (engines: string, value: string) => {
   // 获取参数输入
   const engineValue = engines;
   const searchValue = value;
@@ -25,22 +27,22 @@ const associateSearch = (engines: number, value: string) => {
   // TODO: 封装一个axios方法用于跨域输入并获取返回数据
   switch (engineValue) {
     // Google
-    case 0:
+    case 'google':
     // const a = ajax();
     // return a;
     // Bing
-    case 1:
-    // const a = ajax();
-    // return a;
+    case 'bing':
+    // const res = getBingData(searchValue);
+    // return res;
     // Baidu
-    case 2:
-    // const a = ajax();
-    // return a;
+    case 'baidu':
+      const res = getBaiduData(searchValue);
+      return res;
     // Baidu
     default:
-    // const a = ajax();
-    // return a;
+      // const res = getBaiduData(searchValue);
+      // return res;
   }
 };
 
-export default associateSearch;
+export { associateSearch };

@@ -1,8 +1,8 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-18 18:17:09
- * @LastEditTime: 2020-06-19 01:10:27
- * @LastEditors: Miya
+ * @LastEditTime: 2020-06-23 15:29:20
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /Single-Search/vue.config.js
  */
@@ -27,7 +27,9 @@ module.exports = {
         target: 'http://suggestqueries.google.com/complete/',
         secure: false,
         changeOrigin: true,
-
+        pathRewrite: {
+          '^/googleapi': '/',
+        },
       },
       '/baiduapi': {
         // site: http://suggestion.baidu.com/su?wd=前端
@@ -43,6 +45,9 @@ module.exports = {
         target: 'https://api.bing.com/',
         secure: false,
         changeOrigin: true,
+        pathRewrite: {
+          '^/bingapi': '/',
+        },
       },
     }
   }
