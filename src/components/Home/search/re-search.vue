@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-23 00:43:51
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-23 15:16:37
+ * @LastEditTime: 2020-06-23 15:53:00
 --> 
 <template>
   <div class="re-search">
@@ -48,6 +48,10 @@ export default class ReSearch extends Vue {
   }
   &-item {
     padding: 0.5rem;
+    cursor: default;
+    &:hover{
+      background-color: #f0f0f0;
+    }
   }
 }
 </style>

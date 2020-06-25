@@ -1,0 +1,23 @@
+{
+  "name": "search-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "node dist/server.js",
+    "build": "npm run tslint && npm run build-ts",
+    "build-ts": "tsc",
+    "watch": "npm run tslint && npm run watch-ts",
+    "watch-ts": "tsc -w",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "author": "Miya",
+  "license": "MIT",
+  "dependencies": {
+    "@types/koa": "^2.11.3",
+    "koa": "^2.13.0",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.6"
+  }
+}
