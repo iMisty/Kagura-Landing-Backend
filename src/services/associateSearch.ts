@@ -1,17 +1,17 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-18 17:44:54
- * @LastEditTime: 2020-06-23 16:58:10
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-07-09 16:06:13
+ * @LastEditors: Miya
  * @Description: 搜索引擎联想数据
- * @FilePath: /Single-Search/src/services/associateSearch.ts
+ * @FilePath: \Single-Search\src\services\associateSearch.ts
  */
 
 import { getBaiduData } from './dataClean';
 
 /**
  * @description: 返回搜索引擎联想数据
- * @param {String} engines: 选定的搜索引擎 
+ * @param {String} engines: 选定的搜索引擎
  * @param {String} value: 关键词
  * @return: 接口返回数据(已清洗)
  * @author: Miya
