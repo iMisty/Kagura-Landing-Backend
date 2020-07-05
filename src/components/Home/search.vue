@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-23 17:00:39
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-07-09 16:05:08
 --> 
 <template>
   <div class="search--bar">
@@ -72,8 +72,8 @@ import { associateSearch } from '@/services/associateSearch.ts';
   components: {
     choose,
     Svgicon,
-    're-search': reSearch
-  }
+    're-search': reSearch,
+  },
 })
 export default class Search extends Vue {
   // iconfont
