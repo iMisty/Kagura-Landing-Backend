@@ -3,11 +3,11 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-18 23:31:58
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-23 16:57:58
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-07-09 16:06:31
  */
 import axios from 'axios';
-//http://suggestqueries.google.com/complete/search?output=toolbar&hl=zh&q=前端
+// http://suggestqueries.google.com/complete/search?output=toolbar&hl=zh&q=前端
 const GOOGLE_API = '/googleapi/search';
 // param: type,q,cb
 const BING_API = '/bingapi/qsonhs.aspx';
@@ -83,8 +83,8 @@ const getSearchBaiduAPIData = async (value: string) => {
   return data.data;
 };
 
-export { 
-  getSearchBaiduAPIData, 
-  // getSearchBingAPIData, 
-  // getSearchGoogleAPIData 
+export {
+  getSearchBaiduAPIData,
+  // getSearchBingAPIData,
+  // getSearchGoogleAPIData
 };
