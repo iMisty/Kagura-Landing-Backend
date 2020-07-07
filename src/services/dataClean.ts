@@ -1,13 +1,13 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-19 17:52:08
- * @LastEditTime: 2020-06-23 16:57:49
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-07-09 16:06:51
+ * @LastEditors: Miya
  * @Description: 对 axios.ts 中获取的数据进行清洗
- * @FilePath: /Single-Search/src/services/dataClean.ts
+ * @FilePath: \Single-Search\src\services\dataClean.ts
  * @return: 数组格式
  */
-import { 
+import {
   getSearchBaiduAPIData,
   // getSearchBingAPIData,
   // getSearchGoogleAPIData
@@ -38,7 +38,7 @@ const getBaiduData = async (value: string) => {
 //   const oldData = await getSearchGoogleAPIData(value);
 //   console.log(oldData);
 // }
-export { 
+export {
   getBaiduData,
   // getBingData,
   // getGoogleData
