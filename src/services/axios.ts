@@ -21,21 +21,21 @@ const BAIDU_API = '/baiduapi/su';
  * @author: Miya
  */
 // const getSearchGoogleAPIData = async (value: string) => {
-//   let data: any = {};
-//   await axios({
-//     method: 'get',
-//     url: GOOGLE_API,
-//     params: {
-//       output: 'toolbar',
-//       hl: 'zh',
-//       q: value,
-//     },
-//   })
-//     .then((res) => {
-//       data = res;
-//       console.log(res);
-//     });
-//   return data.data;
+  // let data: any = {};
+  // await axios({
+  //   method: 'get',
+  //   url: GOOGLE_API,
+  //   params: {
+  //     output: 'toolbar',
+  //     hl: 'zh',
+  //     q: value,
+  //   },
+  // })
+  //   .then((res) => {
+  //     data = res;
+  //     console.log(res);
+  //   });
+  // return data.data;
 // };
 
 /**
