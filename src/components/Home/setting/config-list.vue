@@ -1,10 +1,10 @@
 <!--
  * @Author: Miya
  * @Date: 2020-06-18 14:50:31
- * @LastEditTime: 2020-06-18 23:16:45
+ * @LastEditTime: 2020-07-10 18:41:18
  * @LastEditors: Miya
  * @Description: In User Settings Edit
- * @FilePath: /Single-Search/src/components/Home/setting/config-list.vue
+ * @FilePath: \Single-Search\src\components\Home\setting\config-list.vue
 --> 
 <template>
   <div class="setting--config-list">

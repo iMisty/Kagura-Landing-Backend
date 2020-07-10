@@ -4,10 +4,10 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-23 01:18:58
+ * @LastEditTime: 2020-07-10 18:29:58
 --> 
 <template>
-  <div class="home">
+  <div class="home" :class="{'dark': isDarkMode === true,'light': isDarkMode === false}">
     <!-- Top start -->
     <section class="home--top">
       <button class="list--button" @click="handleOpenSetting">
@@ -42,7 +42,7 @@
       <List></List>
     </section>
     <section class="home--setting" :class="{'setting-active': isSettingOpen}">
-      <Setting></Setting>
+      <Setting @handleClick="aa"></Setting>
     </section>
     <section class="home--mask" :class="{ 'mask-active': isMask }" @click="handleClose"></section>
     <!-- Float & Extra end -->
@@ -50,7 +50,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import axios from 'axios';
 // 链接图标
 import Icon from '@/components/icon.vue';
@@ -79,6 +79,8 @@ export default class Home extends Vue {
   public searchMenu: boolean = false;
   // 链接图标
   private listButtonSrc: string = require('@/assets/menu.png');
+  // 是否夜间模式
+  private isDarkMode: boolean = false;
   // 控制设置边栏开关
   private isSettingOpen: boolean = false;
   // 控制链接开关
@@ -89,16 +91,28 @@ export default class Home extends Vue {
   // private hitorikoto: string = '加载中...';
   private hitorikoto: string = '风淅淅，雨纤纤。难怪春愁细细添。';
 
-  private aa(value: string) {
-    console.log(value);
+  private aa(a: any) {
+    console.log(a);
   }
-  // props
-
   // methods
+  /**
+   * @description: 检测是否为暗黑模式
+   * @param {type} params
+   * @return: void
+   */
+  private getDarkModeStatus() {
+    const status = this.$store.state.styleMode;
+    console.log(status);
+    if (status === 'light') {
+      this.isDarkMode = false;
+    } else {
+      this.isDarkMode = true;
+    }
+  }
   /**
    * @description: 一言加载
    * @param {type}
-   * @return:
+   * @return: void
    * @author: Miya
    */
   private getHitokoto(): void {
@@ -172,12 +186,13 @@ export default class Home extends Vue {
     const searchSiteText = computedSearch(search);
     const address = `${searchSiteText}${value}${extra}`;
     console.log(searchSiteText + value + extra);
-    // window.open(address);
+    window.open(address);
   }
 
   // mounted
   private mounted() {
     // this.getHitokoto();
+    this.getDarkModeStatus();
   }
 }
 </script>

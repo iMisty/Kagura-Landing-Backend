@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-06-14 06:01:08
+ * @LastEditTime: 2020-07-10 17:55:11
  * @LastEditors: Miya
  * @Description: Vuex State部分
- * @FilePath: /Single-Search/src/store/state.ts
+ * @FilePath: \Single-Search\src\store\state.ts
  */
 
 const state = {
@@ -14,6 +14,7 @@ const state = {
     mask: false,
     isInputing: false,
     background: 'https://i.loli.net/2020/06/13/Tsa8uqY2gbjRndw.jpg',
+    styleMode: 'light',
   },
   // 搜索引擎列表
   searchList: [

@@ -1,13 +1,13 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-18 17:44:54
- * @LastEditTime: 2020-07-09 16:06:13
+ * @LastEditTime: 2020-07-10 16:47:38
  * @LastEditors: Miya
  * @Description: 搜索引擎联想数据
  * @FilePath: \Single-Search\src\services\associateSearch.ts
  */
 
-import { getBaiduData } from './dataClean';
+import { getBaiduData } from './getSearchExtraData';
 
 /**
  * @description: 返回搜索引擎联想数据
