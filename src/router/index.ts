@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-27 14:28:24
- * @LastEditTime: 2020-06-17 23:58:02
+ * @LastEditTime: 2020-07-20 15:53:23
  * @LastEditors: Miya
  * @Description: In User Settings Edit
- * @FilePath: /Single-Search/src/router/index.ts
+ * @FilePath: \Single-Search\src\router\index.ts
  */
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
@@ -16,7 +16,7 @@ const routes: RouteConfig[] = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: Home
   },
   {
     path: '/admin',
@@ -24,14 +24,15 @@ const routes: RouteConfig[] = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Admin.vue'),
-  },
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/Admin.vue')
+  }
 ];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes,
+  routes
 });
 
 export default router;
