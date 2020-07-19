@@ -4,17 +4,20 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-07-10 18:29:58
---> 
+ * @LastEditTime: 2020-07-20 17:50:13
+-->
 <template>
-  <div class="home" :class="{'dark': isDarkMode === true,'light': isDarkMode === false}">
+  <div
+    class="home"
+    :class="{ dark: isDarkMode === true, light: isDarkMode === false }"
+  >
     <!-- Top start -->
     <section class="home--top">
       <button class="list--button" @click="handleOpenSetting">
         <img src="@/icons/svg/avatar.svg" alt />
       </button>
       <button class="list--button" @click="handleOpenLink">
-        <Icon :class="{'click': isLinkOpen}">
+        <Icon :class="{ click: isLinkOpen }">
           <span class="line top"></span>
           <span class="line medium"></span>
           <span class="line bottom"></span>
@@ -38,13 +41,17 @@
     <!-- Bottom end -->
 
     <!-- Float & Extra start -->
-    <section class="home--list" :class="{'link-active': isLinkOpen}">
+    <section class="home--list" :class="{ 'link-active': isLinkOpen }">
       <List></List>
     </section>
-    <section class="home--setting" :class="{'setting-active': isSettingOpen}">
-      <Setting @handleClick="aa"></Setting>
+    <section class="home--setting" :class="{ 'setting-active': isSettingOpen }">
+      <Setting></Setting>
     </section>
-    <section class="home--mask" :class="{ 'mask-active': isMask }" @click="handleClose"></section>
+    <section
+      class="home--mask"
+      :class="{ 'mask-active': isMask }"
+      @click="handleClose"
+    ></section>
     <!-- Float & Extra end -->
   </div>
 </template>
@@ -71,8 +78,8 @@ import { computedSearch } from '@/services/computedSearch.ts';
     List,
     Search,
     Hitokoto: () => import('@/components/Home/hitokoto.vue'),
-    Copyright: () => import('@/components/Home/copyright.vue'),
-  },
+    Copyright: () => import('@/components/Home/copyright.vue')
+  }
 })
 export default class Home extends Vue {
   // data
@@ -91,9 +98,6 @@ export default class Home extends Vue {
   // private hitorikoto: string = '加载中...';
   private hitorikoto: string = '风淅淅，雨纤纤。难怪春愁细细添。';
 
-  private aa(a: any) {
-    console.log(a);
-  }
   // methods
   /**
    * @description: 检测是否为暗黑模式
@@ -181,7 +185,7 @@ export default class Home extends Vue {
   private async submitSearchText(
     search: string,
     value: string,
-    extra: string | undefined,
+    extra: string | undefined
   ) {
     const searchSiteText = computedSearch(search);
     const address = `${searchSiteText}${value}${extra}`;
