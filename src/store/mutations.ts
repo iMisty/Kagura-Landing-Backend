@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:17:38
- * @LastEditTime: 2020-06-14 23:21:24
+ * @LastEditTime: 2020-07-20 16:19:26
  * @LastEditors: Miya
  * @Description: Vuex 内的 Mutations
- * @FilePath: /Single-Search/src/store/mutations.ts
+ * @FilePath: \Single-Search\src\store\mutations.ts
  */
 
 const mutations = {
@@ -15,7 +15,13 @@ const mutations = {
   IS_INPUTING(state: any, isInputing: boolean) {
     state.status.isInputing = isInputing;
   },
+  /*
+   *  改变 status 中的 styleMode
+   *  该变量用于确认是否启用夜间模式
+   */
+  STYLEMODE(state: any, style: string) {
+    state.status.styleMode = style;
+  }
 };
-
 
 export { mutations };
