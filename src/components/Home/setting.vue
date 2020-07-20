@@ -1,11 +1,11 @@
 <!--
  * @Author: Miya
  * @Date: 2020-06-17 16:57:01
- * @LastEditTime: 2020-06-18 23:14:49
+ * @LastEditTime: 2020-07-20 18:48:15
  * @LastEditors: Miya
  * @Description: 个人设置页
- * @FilePath: /Single-Search/src/components/Home/setting.vue
---> 
+ * @FilePath: \Single-Search\src\components\Home\setting.vue
+-->
 <template>
   <div class="setting">
     <!-- User start -->
@@ -121,20 +121,22 @@
           </svg>
         </section>
         <section class="setting--avatar--custom" v-else>
-          <i style="width: 80px;height: 80px;background-color: #444;border-radius: 64%;"></i>
+          <i
+            style="width: 80px;height: 80px;background-color: #444;border-radius: 64%;"
+          ></i>
         </section>
       </article>
       <!-- avatar end -->
 
       <!-- text start -->
       <article class="setting--wrap">
-        <h3 class="setting--wrap-title">{{setting.name}}</h3>
-        <p class="setting--wrap-text">{{setting.introduce}}</p>
+        <h3 class="setting--wrap-title">{{ setting.name }}</h3>
+        <p class="setting--wrap-text">{{ setting.introduce }}</p>
       </article>
       <!-- text end -->
     </section>
     <!-- User end -->
-    
+
     <!-- List start -->
     <section class="setting--list">
       <menu-list></menu-list>
@@ -142,9 +144,10 @@
     <!-- List end -->
 
     <!-- Config start -->
-    <section class="setting--config">
+    <!-- TODO: 暂时隐藏 -->
+    <!-- <section class="setting--config">
       <config-list></config-list>
-    </section>
+    </section> -->
     <!-- Config end -->
   </div>
 </template>
@@ -167,8 +170,8 @@ interface User {
 @Component({
   components: {
     'menu-list': menuList,
-    'config-list': configList,
-  },
+    'config-list': configList
+  }
 })
 export default class Setting extends Vue {
   // data
@@ -178,7 +181,7 @@ export default class Setting extends Vue {
     name: 'Miya',
     avatar: '',
     sex: 'female',
-    introduce: 'test text',
+    introduce: 'test text'
   };
 }
 </script>
