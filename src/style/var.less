@@ -3,35 +3,72 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 18:18:46
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-18 17:04:29
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-07-21 18:16:53
  */
 
- @pri-text: rgba(0,0,0,.87);
- @sec-text: rgba(0,0,0,.54);
- @line: rgba(0,0,0,.18);
- @hover: rgba(0,0,0,.08);
+@pri-text: rgba(0, 0, 0, .87);
+@sec-text: rgba(0, 0, 0, .54);
+@line    : rgba(0, 0, 0, .18);
+@hover   : rgba(0, 0, 0, .08);
 
- @card-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
- @box-shadow:  0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
+@card-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+@box-shadow : 0 8px 10px -5px rgba(0, 0, 0, .2),
+0 16px 24px 2px rgba(0, 0, 0, .14),
+0 6px 30px 5px rgba(0, 0, 0, .12);
 
+// 垂直居中
+@vertial-center: {
+  display    : flex;
+  align-items: center;
+}
+
+// 水平居中
+@horizon-center: {
+  display        : flex;
+  justify-content: center;
+}
 
 // 链接菜单启动
-.link-active{
-  transform: translateX(0%);
+.link-active {
+  transform                 : translateX(0%);
   transition-timing-function: ease-in;
-  transition-duration: .2s;
+  transition-duration       : .2s;
 }
+
 // 设置菜单启动
-.setting-active{
-  transform: translateX(0%);
+.setting-active {
+  transform                 : translateX(0%);
   transition-timing-function: ease-in;
-  transition-duration: .2s;
+  transition-duration       : .2s;
 }
+
 // 蒙版启动
-.mask-active{
-  z-index: 4;
-  opacity: .38;
+.mask-active {
+  z-index                   : 4;
+  opacity                   : .38;
   transition-timing-function: ease-in;
-  transition-duration: .2s;
+  transition-duration       : .2s;
+}
+
+/*********************************************
+ *                                           *
+ *                   后台使用                 *
+ *                                           *
+**********************************************/
+// result => 条纹颜色
+.purple {
+  border-color: #7b61b2;
+}
+
+.green {
+  border-color: #3aafae;
+}
+
+.orange {
+  border-color: #ffa751;
+}
+
+.red {
+  border-color: #ff5151;
 }

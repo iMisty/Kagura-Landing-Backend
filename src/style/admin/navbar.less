@@ -1,0 +1,200 @@
+@import'var.less';
+
+.admin {
+  // display              : grid;
+  // grid-template-columns: 4rem auto;
+
+  // 顶部栏
+  &-top {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    display         : flex;
+    flex-direction  : row;
+    align-items     : center;
+    width           : 100%;
+    height          : 6rem;
+    padding         : 1rem 2rem;
+    background-color: #fff;
+  }
+
+  // 左边栏
+  &-left {
+    position        : fixed;
+    top             : 6rem;
+    left            : 0;
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    width           : 6rem;
+    height          : calc(100% - 6rem);
+    background-color: #fff;
+  }
+
+  // 内容栏
+  &-wrap {
+    display              : grid;
+    grid-template-columns: 1fr 0.3fr;
+    margin               : 6rem 0 0 6rem;
+
+    // 左边栏题目
+    &-title {
+      display        : flex;
+      flex-direction : row;
+      flex-wrap      : nowrap;
+      justify-content: flex-end;
+      align-items    : center;
+      padding        : 2rem;
+    }
+
+    // 左边栏内容
+    &-left {
+      display           : grid;
+      grid-template-rows: 6rem auto;
+    }
+
+    // 卡片栏
+    &-puzzle {
+      display              : grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap             : 1rem;
+      padding              : 0 2rem 2rem 2rem;
+    }
+
+    // 右边栏个人中心
+    &-right {
+      display         : flex;
+      flex-direction  : column;
+      flex-wrap       : wrap;
+      padding         : 0 2rem;
+      min-height      : calc(100vh - 4rem);
+      background-color: #fff;
+    }
+
+    // 右边栏头像
+    &-info {
+      position       : relative;
+      display        : flex;
+      flex-direction : row;
+      justify-content: space-around;
+      align-items    : center;
+      padding        : 0 0 2rem 0;
+
+      &::after {
+        content         : '';
+        position        : absolute;
+        bottom          : 0;
+        left            : 50%;
+        width           : 80%;
+        height          : 1px;
+        transform       : translateX(-50%);
+        background-color: #eee;
+      }
+
+      &-name {
+        line-height: 1.6;
+
+        h4 {
+          font-weight: normal;
+          line-height: 1.2;
+
+          &:last-child {
+            font-weight: bold;
+          }
+        }
+      }
+
+      &-avatar {
+        width           : 6rem;
+        height          : 6rem;
+        background-color: aliceblue;
+        border-radius   : 64%;
+      }
+    }
+
+    // 右边栏数据总和
+    &-results {
+      position             : relative;
+      display              : grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows   : 1fr 1fr;
+      grid-gap             : 1.5rem 1rem;
+      padding              : 2rem 0;
+
+      &::after {
+        content         : '';
+        position        : absolute;
+        bottom          : 0;
+        left            : 50%;
+        width           : 80%;
+        height          : 1px;
+        transform       : translateX(-50%);
+        background-color: #eee;
+      }
+    }
+
+    // 单个总和内容
+    &-result {}
+
+    // 额外内容 => 暂时没想好写什么，就搞个todolist吧
+    &-extra {
+      display       : flex;
+      flex-direction: column;
+    }
+  }
+}
+
+// 卡片
+.puzzle-wrap {
+  padding         : 1rem;
+  background-color: #fff;
+}
+
+.puzzle-title {
+  font-size     : 1.5rem;
+  font-weight   : 600;
+  line-height   : 2.6;
+  letter-spacing: .54px;
+}
+
+.puzzle-text {
+  font-size  : 0.8rem;
+  line-height: 1.6;
+}
+
+// 数据可视化
+.result-title {
+  margin        : 1rem 0;
+  font-size     : 0.9rem;
+  color         : #888;
+  letter-spacing: .54px;
+}
+
+.result-sum {
+  padding-left  : .8rem;
+  font-size     : 1.6rem;
+  font-weight   : 600;
+  color         : #222;
+  letter-spacing: 1px;
+  border-width  : 2px;
+  border-style  : solid;
+  border-top    : none;
+  border-bottom : none;
+  border-right  : none;
+}
+
+// 额外部分
+.extra-title {
+  padding: 2rem 0;
+
+  .primany-title {
+    font-size     : 1.2rem;
+    letter-spacing: .54px;
+  }
+
+  .second-title {
+    font-size     : 1.2rem;
+    font-weight   : 600;
+    letter-spacing: .54px;
+  }
+}
