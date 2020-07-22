@@ -26,16 +26,22 @@
     display         : flex;
     flex-direction  : column;
     align-items     : center;
-    width           : 6rem;
+    padding         : 2rem;
+    width           : 5rem;
     height          : calc(100% - 6rem);
     background-color: #fff;
+
+    // 图标
+    .icon {
+      padding: 1rem;
+    }
   }
 
   // 内容栏
   &-wrap {
     display              : grid;
     grid-template-columns: 1fr 0.3fr;
-    margin               : 6rem 0 0 6rem;
+    margin               : 6rem 0 0 5rem;
 
     // 左边栏题目
     &-title {
@@ -176,7 +182,7 @@
   font-weight   : 600;
   color         : #222;
   letter-spacing: 1px;
-  border-width  : 2px;
+  border-width  : 3px;
   border-style  : solid;
   border-top    : none;
   border-bottom : none;
@@ -196,5 +202,16 @@
     font-size     : 1.2rem;
     font-weight   : 600;
     letter-spacing: .54px;
+  }
+}
+
+// TODOs
+.todo {
+  &-list-item {
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    margin         : 0.5rem 0;
+    padding        : 0.5rem 0;
   }
 }

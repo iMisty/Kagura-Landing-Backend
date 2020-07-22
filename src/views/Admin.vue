@@ -4,82 +4,58 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-07-21 18:52:17
+ * @LastEditTime: 2020-07-22 18:30:48
 -->
 <template>
   <div class="admin">
     <section class="admin-top">
       <div class="admin-top-logo">
-        <span>Logo</span>
+        <img :src="logo" alt="test logo" />
       </div>
       <div class="admin-top-title">
         DashBoard
       </div>
     </section>
     <section class="admin-left">
-      <div
-        class="icon"
-        style="width: 2rem;height: 2rem;background-color
-      aliceblue;border-radius
-      64%;overflow:hidden"
-      >
-        Icon
+      <div class="icon">
+        <Svgicon
+          class="svg-title-icon"
+          :svgClass="icon"
+          :iconClass="shouye"
+          :iconName="shouye"
+        ></Svgicon>
       </div>
-      <div
-        class="icon"
-        style="width: 2rem;height: 2rem;background-color
-      aliceblue;border-radius
-      64%;overflow:hidden"
-      >
-        Icon
+      <div class="icon">
+        <Svgicon
+          class="svg-title-icon"
+          :svgClass="icon"
+          :iconClass="shouye"
+          :iconName="shouye"
+        ></Svgicon>
       </div>
-      <div
-        class="icon"
-        style="width: 2rem;height: 2rem;background-color
-      aliceblue;border-radius
-      64%;overflow:hidden"
-      >
-        Icon
+      <div class="icon">
+        <Svgicon
+          class="svg-title-icon"
+          :svgClass="icon"
+          :iconClass="shouye"
+          :iconName="shouye"
+        ></Svgicon>
       </div>
-      <div
-        class="icon"
-        style="width: 2rem;height: 2rem;background-color
-      aliceblue;border-radius
-      64%;overflow:hidden"
-      >
-        Icon
+      <div class="icon">
+        <Svgicon
+          class="svg-title-icon"
+          :svgClass="icon"
+          :iconClass="shouye"
+          :iconName="shouye"
+        ></Svgicon>
       </div>
-      <div
-        class="icon"
-        style="width: 2rem;height: 2rem;background-color
-      aliceblue;border-radius
-      64%;overflow:hidden"
-      >
-        Icon
-      </div>
-      <div
-        class="icon"
-        style="width: 2rem;height: 2rem;background-color
-      aliceblue;border-radius
-      64%;overflow:hidden"
-      >
-        Icon
-      </div>
-      <div
-        class="icon"
-        style="width: 2rem;height: 2rem;background-color
-      aliceblue;border-radius
-      64%;overflow:hidden"
-      >
-        Icon
-      </div>
-      <div
-        class="icon"
-        style="width: 2rem;height: 2rem;background-color
-      aliceblue;border-radius
-      64%;overflow:hidden"
-      >
-        Icon
+      <div class="icon">
+        <Svgicon
+          class="svg-title-icon"
+          :svgClass="icon"
+          :iconClass="shouye"
+          :iconName="shouye"
+        ></Svgicon>
       </div>
     </section>
     <section class="admin-wrap">
@@ -280,11 +256,20 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import setting from '@/components/Home/setting.vue';
+// 导入SVG相关
+import Svgicon from '@/components/svgicon.vue';
+import '@/icons/svg/admin';
 @Component({
   // 组件注册
   components: {
-    setting
+    setting,
+    Svgicon
   }
 })
-export default class Admin extends Vue {}
+export default class Admin extends Vue {
+  // 临时变量
+  private icon: string = 'icon';
+  private shouye: string = 'shouye';
+  private logo: any = require('@/assets/logo.png');
+}
 </script>
