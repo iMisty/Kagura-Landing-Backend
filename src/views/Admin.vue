@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-07-22 18:30:48
+ * @LastEditTime: 2020-07-23 18:32:46
 -->
 <template>
   <div class="admin">
@@ -17,117 +17,44 @@
       </div>
     </section>
     <section class="admin-left">
-      <div class="icon">
+      <router-link class="icon" to="/admin" tag="div">
         <Svgicon
           class="svg-title-icon"
           :svgClass="icon"
-          :iconClass="shouye"
-          :iconName="shouye"
-        ></Svgicon>
-      </div>
-      <div class="icon">
+          :iconClass="title[0]"
+          :iconName="title[0]"
+        ></Svgicon
+      ></router-link>
+      <router-link class="icon" to="/admin/user" tag="div">
         <Svgicon
           class="svg-title-icon"
           :svgClass="icon"
-          :iconClass="shouye"
-          :iconName="shouye"
-        ></Svgicon>
-      </div>
-      <div class="icon">
+          :iconClass="title[1]"
+          :iconName="title[1]"
+        ></Svgicon
+      ></router-link>
+      <router-link class="icon" to="/admin/link" tag="div">
         <Svgicon
           class="svg-title-icon"
           :svgClass="icon"
-          :iconClass="shouye"
-          :iconName="shouye"
-        ></Svgicon>
-      </div>
-      <div class="icon">
+          :iconClass="title[2]"
+          :iconName="title[2]"
+        ></Svgicon
+      ></router-link>
+      <router-link class="icon" to="/admin/extra" tag="div">
         <Svgicon
           class="svg-title-icon"
           :svgClass="icon"
-          :iconClass="shouye"
-          :iconName="shouye"
-        ></Svgicon>
-      </div>
-      <div class="icon">
-        <Svgicon
-          class="svg-title-icon"
-          :svgClass="icon"
-          :iconClass="shouye"
-          :iconName="shouye"
-        ></Svgicon>
-      </div>
+          :iconClass="title[3]"
+          :iconName="title[3]"
+        ></Svgicon
+      ></router-link>
     </section>
     <section class="admin-wrap">
       <section class="admin-wrap-left">
-        <section class="admin-wrap-title">
-          test-title
-        </section>
-        <section class="admin-wrap-puzzle">
-          <section class="puzzle-wrap">
-            <div class="puzzle-title">Test Puzzle</div>
-            <div class="puzzle-text">
-              This is a test text.This is a test text.This is a test text.This
-              is a test Text
-            </div>
-          </section>
-          <section class="puzzle-wrap">
-            <div class="puzzle-title">Test Puzzle</div>
-            <div class="puzzle-text">
-              This is a test text.This is a test text.This is a test text.This
-              is a test Text
-            </div>
-          </section>
-          <section class="puzzle-wrap">
-            <div class="puzzle-title">Test Puzzle</div>
-            <div class="puzzle-text">
-              This is a test text.This is a test text.This is a test text.This
-              is a test Text
-            </div>
-          </section>
-          <section class="puzzle-wrap">
-            <div class="puzzle-title">Test Puzzle</div>
-            <div class="puzzle-text">
-              This is a test text.This is a test text.This is a test text.This
-              is a test Text
-            </div>
-          </section>
-          <section class="puzzle-wrap">
-            <div class="puzzle-title">Test Puzzle</div>
-            <div class="puzzle-text">
-              This is a test text.This is a test text.This is a test text.This
-              is a test Text
-            </div>
-          </section>
-          <section class="puzzle-wrap">
-            <div class="puzzle-title">Test Puzzle</div>
-            <div class="puzzle-text">
-              This is a test text.This is a test text.This is a test text.This
-              is a test Text
-            </div>
-          </section>
-          <section class="puzzle-wrap">
-            <div class="puzzle-title">Test Puzzle</div>
-            <div class="puzzle-text">
-              This is a test text.This is a test text.This is a test text.This
-              is a test Text
-            </div>
-          </section>
-          <section class="puzzle-wrap">
-            <div class="puzzle-title">Test Puzzle</div>
-            <div class="puzzle-text">
-              This is a test text.This is a test text.This is a test text.This
-              is a test Text
-            </div>
-          </section>
-          <section class="puzzle-wrap">
-            <div class="puzzle-title">Test Puzzle</div>
-            <div class="puzzle-text">
-              This is a test text.This is a test text.This is a test text.This
-              is a test Text
-            </div>
-          </section>
-        </section>
+        <transition name="fade">
+          <router-view></router-view>
+        </transition>
       </section>
       <section class="admin-wrap-right">
         <div class="admin-wrap-info">
@@ -193,22 +120,10 @@
           </article>
         </div>
         <div class="admin-wrap-results">
-          <article class="admin-wrap-result">
-            <div class="result-title">Total Links:</div>
-            <div class="result-sum purple">190</div>
-          </article>
-          <article class="admin-wrap-result">
-            <div class="result-title">Total Links:</div>
-            <div class="result-sum green">190</div>
-          </article>
-          <article class="admin-wrap-result">
-            <div class="result-title">Total Links:</div>
-            <div class="result-sum orange">190</div>
-          </article>
-          <article class="admin-wrap-result">
-            <div class="result-title">Total Links:</div>
-            <div class="result-sum red">190</div>
-          </article>
+          <result></result>
+          <result :colorClass="orange"></result>
+          <result></result>
+          <result></result>
         </div>
         <div class="admin-wrap-extra">
           <header class="extra-title">
@@ -255,21 +170,23 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import setting from '@/components/Home/setting.vue';
 // 导入SVG相关
 import Svgicon from '@/components/svgicon.vue';
 import '@/icons/svg/admin';
+// 导入右侧总量数字
+import result from '@/components/Admin/result.vue';
 @Component({
   // 组件注册
   components: {
-    setting,
-    Svgicon
+    Svgicon,
+    result
   }
 })
 export default class Admin extends Vue {
   // 临时变量
   private icon: string = 'icon';
-  private shouye: string = 'shouye';
+  private title: string[] = ['shouye', 'gaojiban', 'piliangxiugai', 'bianji'];
   private logo: any = require('@/assets/logo.png');
+  private orange: string = 'orange';
 }
 </script>

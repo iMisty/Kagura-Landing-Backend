@@ -1,0 +1,49 @@
+@import './admin.less';
+
+.admin-wrap {
+
+  // 右边栏数据总和
+  &-results {
+    position             : relative;
+    display              : grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows   : 1fr 1fr;
+    grid-gap             : 1.5rem 1rem;
+    padding              : 2rem 0;
+
+    &::after {
+      content         : '';
+      position        : absolute;
+      bottom          : 0;
+      left            : 50%;
+      width           : 80%;
+      height          : 1px;
+      transform       : translateX(-50%);
+      background-color: #eee;
+    }
+  }
+
+  // 单个总和内容
+  &-result {}
+}
+
+// 数据可视化
+.result-title {
+  margin        : 1rem 0;
+  font-size     : 0.9rem;
+  color         : #888;
+  letter-spacing: .54px;
+}
+
+.result-sum {
+  padding-left  : .8rem;
+  font-size     : 1.6rem;
+  font-weight   : 600;
+  color         : #222;
+  letter-spacing: 1px;
+  border-width  : 3px;
+  border-style  : solid;
+  border-top    : none;
+  border-bottom : none;
+  border-right  : none;
+}

@@ -1,0 +1,32 @@
+@import './admin.less';
+
+.admin-wrap {
+
+  // 卡片栏
+  &-puzzle {
+    display              : grid;
+    justify-content      : center;
+    grid-template-columns: repeat(3, 16rem);
+    grid-template-rows   : repeat(3, 16rem);
+    grid-gap             : 1rem;
+    padding              : 0 2rem 2rem 2rem;
+  }
+}
+
+// 卡片
+.puzzle-wrap {
+  padding         : 1rem;
+  background-color: #fff;
+}
+
+.puzzle-title {
+  font-size     : 1.5rem;
+  font-weight   : 600;
+  line-height   : 2.6;
+  letter-spacing: .54px;
+}
+
+.puzzle-text {
+  font-size  : 0.8rem;
+  line-height: 1.6;
+}

@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-27 14:28:24
- * @LastEditTime: 2020-07-20 15:53:23
+ * @LastEditTime: 2020-07-23 17:39:27
  * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: \Single-Search\src\router\index.ts
@@ -9,6 +9,12 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '../views/Home.vue';
+import Admin from '../views/Admin.vue';
+
+import AdminIndex from '../components/Admin/Index.vue';
+import AdminUser from '../components/Admin/User.vue';
+import AdminLink from '../components/Admin/Link.vue';
+import AdminExtra from '../components/Admin/Extra.vue';
 
 Vue.use(VueRouter);
 
@@ -20,12 +26,27 @@ const routes: RouteConfig[] = [
   },
   {
     path: '/admin',
-    name: 'Admin',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Admin.vue')
+    name: 'admin',
+    component: Admin,
+    redirect: '/',
+    children: [
+      {
+        path: '/',
+        component: AdminIndex
+      },
+      {
+        path: 'link',
+        component: AdminLink
+      },
+      {
+        path: 'user',
+        component: AdminUser
+      },
+      {
+        path: 'extra',
+        component: AdminExtra
+      }
+    ]
   }
 ];
 
