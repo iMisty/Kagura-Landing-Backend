@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-18 18:17:09
- * @LastEditTime: 2020-07-24 10:50:12
+ * @LastEditTime: 2020-07-24 18:01:01
  * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: \Single-Search\vue.config.js
@@ -47,6 +47,15 @@ module.exports = {
         changeOrigin: true,
         pathRewrite: {
           '^/bingapi': '/'
+        },
+        '/api': {
+          // site: https://api.bing.com/qsonhs.aspx?type=cb&q=前端
+          target: 'http://127.0.0.1:12450/',
+          secure: false,
+          changeOrigin: true,
+          pathRewrite: {
+            '^/api': '/api'
+          }
         }
       }
     }

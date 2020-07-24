@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-27 14:28:24
- * @LastEditTime: 2020-07-24 10:56:15
+ * @LastEditTime: 2020-07-24 17:52:01
  * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: \Single-Search\src\router\index.ts
@@ -10,6 +10,7 @@ import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '@/views/Home.vue';
 import Admin from '@/views/Admin.vue';
+import Login from '@/views/Login.vue';
 
 import AdminIndex from '@/components/Admin/Index.vue';
 import AdminUser from '@/components/Admin/User.vue';
@@ -47,6 +48,11 @@ const routes: RouteConfig[] = [
         component: AdminExtra
       }
     ]
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
   }
 ];
 
