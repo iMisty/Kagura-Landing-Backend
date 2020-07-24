@@ -1,14 +1,14 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-18 18:17:09
- * @LastEditTime: 2020-06-23 15:29:20
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-07-24 10:50:12
+ * @LastEditors: Miya
  * @Description: In User Settings Edit
- * @FilePath: /Single-Search/vue.config.js
+ * @FilePath: \Single-Search\vue.config.js
  */
 module.exports = {
   // 打包输出目录
-  publicPath: './',
+  publicPath: '/',
   // 构建输出目录
   outputDir: 'dist',
   // 静态资源目录
@@ -28,8 +28,8 @@ module.exports = {
         secure: false,
         changeOrigin: true,
         pathRewrite: {
-          '^/googleapi': '/',
-        },
+          '^/googleapi': '/'
+        }
       },
       '/baiduapi': {
         // site: http://suggestion.baidu.com/su?wd=前端
@@ -37,8 +37,8 @@ module.exports = {
         secure: false,
         changeOrigin: true,
         pathRewrite: {
-          '^/baiduapi': '/',
-        },
+          '^/baiduapi': '/'
+        }
       },
       '/bingapi': {
         // site: https://api.bing.com/qsonhs.aspx?type=cb&q=前端
@@ -46,9 +46,9 @@ module.exports = {
         secure: false,
         changeOrigin: true,
         pathRewrite: {
-          '^/bingapi': '/',
-        },
-      },
+          '^/bingapi': '/'
+        }
+      }
     }
   }
-}
+};
