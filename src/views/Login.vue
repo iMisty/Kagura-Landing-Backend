@@ -1,20 +1,20 @@
 <!--
  * @Author: Miya
  * @Date: 2020-07-24 17:48:54
- * @LastEditors: Miya
- * @LastEditTime: 2020-07-27 18:38:15
+ * @LastEditors: iMisty
+ * @LastEditTime: 2020-07-28 02:00:21
  * @Description: 登录页面
- * @FilePath: \Single-Search\src\views\Login.vue
+ * @FilePath: /Single-Search/src/views/Login.vue
 -->
 <template>
   <div class="login">
     <div class="login-form">
       <header class="login-form-logo">Test Header</header>
       <section class="login-form-header">
-        <h2 class="login-form-title">
+        <h2 class="login-form-header-title">
           Treat her a cup of cappuccino,show me your bombs
         </h2>
-        <p class="login-form-text">
+        <p class="login-form-header-text">
           Treat her a cup of cappuccino. Treat her a cup of cappuccino,show me
           your bombs, do it, do it. Awesome~
         </p>
@@ -31,13 +31,16 @@
       </section>
       <section class="login-form-options">
         <div class="remember">
-          <input type="checkbox" name="remember" />
+          <input class="remember-checkbox" type="checkbox" name="remember" />
           <p>Remember Me</p>
+        </div>
+        <div class="forgotten">
+          <p>Forget Password?</p>
         </div>
       </section>
       <section class="login-form-button">
-        <button class="submit">Login</button>
-        <button class="extra">Extra</button>
+        <button class="login-button submit">Login</button>
+        <button class="login-button extra">Extra</button>
       </section>
     </div>
   </div>
@@ -47,7 +50,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { POST } from '@/services/ajax';
 
-interface login {
+interface LoginInterface {
   username: string;
   password: string;
 }
@@ -55,7 +58,7 @@ interface login {
 @Component({})
 export default class Login extends Vue {
   // TODO: 测试数据
-  private info: login = {
+  private info: LoginInterface = {
     username: '',
     password: ''
   };

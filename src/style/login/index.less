@@ -3,7 +3,7 @@
   flex-direction       : row;
   justify-content      : flex-end;
   width                : 100vw;
-  height               : 100vh;
+  min-height           : 100vh;
   background-image     : url('../../assets/login.jpg');
   background-position  : top left;
   background-attachment: fixed;
@@ -14,5 +14,82 @@
     width           : 40%;
     height          : 100vh;
     background-color: rgba(255, 255, 255, .72);
+
+    // 顶部 logo
+    &-logo {
+      width           : 16rem;
+      height          : 4rem;
+      // TODO: REMOVE
+      display         : flex;
+      justify-content : center;
+      align-items     : center;
+      font-size       : 2rem;
+      color           : #888;
+      background-color: aliceblue;
+    }
+
+    // 介绍文字
+    &-header {
+      margin    : 2rem 0;
+      word-break: break-all;
+
+      &-title {
+        margin     : .5rem 0;
+        line-height: 2rem;
+      }
+
+      &-text {
+        color: #888;
+      }
+    }
+
+    // TODO:表单填写
+    &-input {}
+
+    // 选项
+    &-options {
+      display        : flex;
+      flex-direction : row;
+      justify-content: space-between;
+      align-items    : center;
+      padding        : 1rem 0;
+      color          : #888;
+    }
+
+    // 按钮组
+    &-button {
+      display        : flex;
+      flex-direction : row;
+      justify-content: space-around;
+      margin         : 1rem 0;
+    }
   }
+}
+
+
+// 独立 class
+// 记住密码选项
+.remember {
+  display       : flex;
+  flex-direction: row;
+  align-items   : center;
+
+  &-checkbox {
+    margin-right: .5rem;
+  }
+}
+
+// 按钮组公用
+.login-button {
+  padding      : 1rem 3rem;
+  border-radius: .25rem;
+}
+
+.submit {
+  color           : #fff;
+  background-color: rgb(1, 162, 255);
+}
+
+.extra {
+  background-color: #eee;
 }
