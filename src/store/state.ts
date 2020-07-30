@@ -1,13 +1,22 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-07-20 15:53:02
+ * @LastEditTime: 2020-07-30 04:35:45
  * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: \Single-Search\src\store\state.ts
  */
 
 const state = {
+  // 登录相关
+  token:
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLC.caAFsUUgzA0bPJtKfkH-4Hk',
+  // 用户相关
+  user: {
+    id: 1,
+    status: 'admin',
+    name: 'miya'
+  },
   // 控制状态
   status: {
     // 遮罩层
