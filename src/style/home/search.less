@@ -1,33 +1,9 @@
-/*
- * @Description: 首页使用CSS
- * @version: 1.0.0
- * @Author: Miya
- * @Date: 2020-05-26 21:30:00
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-23 17:18:44
- */
 .home {
-  display           : grid;
-  grid-template-rows: 4rem 4fr 1fr;
-  width             : 100vw;
-  height            : 100vh;
-
-  // 顶部
-  &--top {
-    display        : flex;
-    flex-direction : row;
-    justify-content: flex-end;
-    align-items    : center;
-    padding        : 1rem;
-  }
 
   // 搜索栏区域
   &--medium {
-    display        : flex;
-    flex-direction : column;
-    justify-content: space-around;
-    align-items    : center;
-    padding-bottom : 12vh;
+    .layout-flex(flex, column, space-around, center);
+    padding-bottom: 12vh;
 
     // 搜索栏
     .search--bar {
@@ -43,19 +19,17 @@
       }
 
       &-wrap {
-        position           : relative;
-        display            : inline-flex;
-        justify-content    : space-between;
-        align-items        : center;
+        .layout-flex(inline-flex, row, space-between, center, nowrap);
         padding            : .5rem;
         width              : 64vw;
         background-color   : #fff;
         border             : 1px solid #dedede;
-        transition-duration: .4s;
+        border-radius      : @border-radius;
+        transition-duration: @transition-duration;
 
         &.inputing {
           box-shadow         : 0 0 2rem .25rem rgba(0, 0, 0, .08);
-          transition-duration: .4s;
+          transition-duration: @transition-duration;
         }
       }
 
@@ -66,11 +40,9 @@
         cursor  : pointer;
 
         &-engine {
-          display        : flex;
-          justify-content: center;
-          align-items    : center;
-          width          : 2rem;
-          height         : 2rem;
+          .layout-flex(flex, column, center, center);
+          width : 2rem;
+          height: 2rem;
         }
 
         .choose-engine {
@@ -145,50 +117,5 @@
       }
     }
 
-  }
-
-  &--bottom {
-    display        : flex;
-    flex-direction : column;
-    justify-content: flex-end;
-    align-items    : center;
-
-    .copyright {
-      padding: 1rem;
-    }
-  }
-
-  &--list {
-    position                  : fixed;
-    top                       : 0;
-    right                     : 0%;
-    display                   : flex;
-    flex-direction            : row;
-    height                    : 100%;
-    z-index                   : 5;
-    transform                 : translateX(100%);
-    transition-timing-function: ease-out;
-    transition-duration       : .2s;
-  }
-
-  // 设置区域
-  &--setting {
-    position           : fixed;
-    transform          : translateX(-128%);
-    z-index            : 12;
-    transition-duration: .2s;
-  }
-
-  &--mask {
-    position           : fixed;
-    display            : block;
-    top                : 0;
-    right              : 0;
-    width              : 100vw;
-    height             : 100vh;
-    z-index            : -1;
-    background-color   : #000;
-    opacity            : 0;
-    transition-duration: .2s;
   }
 }

@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 18:18:46
  * @LastEditors: Miya
- * @LastEditTime: 2020-07-21 18:16:53
+ * @LastEditTime: 2020-07-31 18:41:02
  */
 
 @pri-text: rgba(0, 0, 0, .87);
@@ -12,22 +12,42 @@
 @line    : rgba(0, 0, 0, .18);
 @hover   : rgba(0, 0, 0, .08);
 
+// 首页背景
+@pri-bgcolor: #222d46;
+
+// 毛玻璃背景
+.blur-bg-light(@color: rgba(255, 255, 255, .72), @blur: 8px) {
+  background-color: @color;
+  backdrop-filter : blur(@blur);
+}
+
+.blur-bg-dark(@color: rgba(0, 0, 0, .54), @blur: 8px) {
+  background-color: @color;
+  backdrop-filter : blur(@blur);
+}
+
+// 主体色
+@pri-color : rgba(0, 98, 183, 1);
+
 @card-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 @box-shadow : 0 8px 10px -5px rgba(0, 0, 0, .2),
 0 16px 24px 2px rgba(0, 0, 0, .14),
 0 6px 30px 5px rgba(0, 0, 0, .12);
 
-// 垂直居中
-@vertial-center: {
-  display    : flex;
-  align-items: center;
+// 圆角
+@border-radius      : 1rem;
+// 动画时长
+@transition-duration: .4s;
+
+// Flex布局混合
+.layout-flex(@display, @arrange, @horizon: flex-start, @vertial: stretch, @allowwrap: wrap) {
+  display        : @display;
+  flex-direction : @arrange;
+  flex-wrap      : @allowwrap;
+  justify-content: @horizon;
+  align-items    : @vertial;
 }
 
-// 水平居中
-@horizon-center: {
-  display        : flex;
-  justify-content: center;
-}
 
 // 链接菜单启动
 .link-active {

@@ -1,0 +1,104 @@
+/*
+ * @Author: Miya
+ * @Date: 2020-06-21 11:14:32
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-07-31 19:28:32
+ * @Description: 首页-设置栏
+ * @FilePath: \Single-Search\src\style\home\setting.less
+ */
+.home {
+
+  // 设置区域
+  &--setting {
+    z-index            : 12;
+    transition-duration: @transition-duration;
+  }
+}
+
+.setting {
+  position        : relative;
+  top             : 0;
+  left            : 0;
+  margin          : 2rem;
+  overflow        : hidden;
+  background-color: #fff;
+  box-shadow      : 0 8px 10px -5px rgba(0, 0, 0, .2), 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12);
+  border-radius   : @border-radius;
+
+  &--user {
+    .layout-flex(flex, column, center, center);
+    padding   : 1rem;
+    box-shadow: @card-shadow;
+  }
+
+  &--avatar {
+    width: 5rem;
+  }
+
+  &--wrap {
+    text-align: center;
+    font-size : 1.2em;
+
+    &-title {
+      font-weight: normal;
+      color      : @pri-text;
+    }
+
+    &-text {
+      color: @sec-text;
+    }
+  }
+
+  // 选项卡
+  &--list {
+    padding-top   : .5rem;
+    padding-bottom: 5rem;
+    min-height    : 3rem;
+    height        : 100vh;
+    overflow-y    : scroll;
+  }
+
+  &--menu-item {
+    .layout-flex(flex, row, flex-start, center);
+    padding            : 1rem;
+    color              : @pri-text;
+    cursor             : pointer;
+    transition-duration: .4s;
+
+    &:hover {
+      background-color   : @hover;
+      transition-duration: .4s;
+    }
+
+    &-text {
+      font-size  : 1rem;
+      margin-left: 2rem;
+      line-height: 1.25rem;
+    }
+  }
+
+  &--config {
+    position        : absolute;
+    bottom          : 0;
+    left            : 0;
+    width           : 100%;
+    padding         : 1rem;
+    background-color: #fff;
+    box-shadow      : @box-shadow;
+
+    &-list {
+      .layout-flex(flex, row, space-evenly);
+
+      .choose--mode {
+        padding         : .5rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius   : 64%;
+        cursor          : pointer;
+
+        svg {
+          filter: invert(1);
+        }
+      }
+    }
+  }
+}

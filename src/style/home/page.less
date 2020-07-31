@@ -1,0 +1,48 @@
+/*
+ * @Description: 首页使用CSS
+ * @version: 1.0.0
+ * @Author: Miya
+ * @Date: 2020-05-26 21:30:00
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-07-31 11:41:11
+ */
+.home {
+  display           : grid;
+  grid-template-rows: 4rem 4fr 1fr;
+  width             : 100vw;
+  height            : 100vh;
+
+  // 顶部
+  &--top {
+    display        : flex;
+    flex-direction : row;
+    justify-content: flex-end;
+    align-items    : center;
+    padding        : 1rem;
+  }
+
+  &--bottom {
+    display        : flex;
+    flex-direction : column;
+    justify-content: flex-end;
+    align-items    : center;
+
+    .copyright {
+      padding: 1rem;
+    }
+  }
+
+
+  &--mask {
+    position           : fixed;
+    display            : block;
+    top                : 0;
+    right              : 0;
+    width              : 100vw;
+    height             : 100vh;
+    z-index            : -1;
+    background-color   : #000;
+    opacity            : 0;
+    transition-duration: .2s;
+  }
+}

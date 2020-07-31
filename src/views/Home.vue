@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-07-20 18:38:44
+ * @LastEditTime: 2020-07-31 18:01:47
 -->
 <template>
   <div
@@ -17,7 +17,7 @@
         <img src="@/icons/svg/avatar.svg" alt />
       </button>
       <button class="list--button" @click="handleOpenLink">
-        <Icon :class="{ click: isLinkOpen }">
+        <Icon :class="{ click: isLinkOpen, click: isSettingOpen }">
           <span class="line top"></span>
           <span class="line medium"></span>
           <span class="line bottom"></span>
@@ -40,13 +40,19 @@
     </section>
     <!-- Bottom end -->
 
-    <!-- Float & Extra start -->
-    <section class="home--list" :class="{ 'link-active': isLinkOpen }">
-      <List></List>
-    </section>
-    <section class="home--setting" :class="{ 'setting-active': isSettingOpen }">
-      <Setting></Setting>
-    </section>
+    <transition-group
+      class="home--rightbar"
+      :class="{ 'link-active': isLinkOpen, 'setting-active': isSettingOpen }"
+      tag="section"
+      name="slide"
+    >
+      <section class="home--list" v-show="isLinkOpen" :key="1">
+        <List></List>
+      </section>
+      <section class="home--setting" v-show="isSettingOpen" :key="2">
+        <Setting></Setting>
+      </section>
+    </transition-group>
     <section
       class="home--mask"
       :class="{ 'mask-active': isMask }"
@@ -66,7 +72,7 @@ import Setting from '@/components/Home/setting.vue';
 // 链接列表
 import List from '@/components/Home/list.vue';
 // 搜索框
-import Search from '@/components/Home/search.vue';
+import Search from '@/components/Home/search/search.vue';
 // 计算搜索结果web工具函数
 import { computedSearch } from '@/services/computedSearch.ts';
 
@@ -160,6 +166,7 @@ export default class Home extends Vue {
    */
   private handleOpenLink(): void {
     this.isLinkOpen = !this.isLinkOpen;
+    this.isSettingOpen = !this.isSettingOpen;
     this.isMask = !this.isMask;
   }
 
@@ -200,3 +207,13 @@ export default class Home extends Vue {
   }
 }
 </script>
+<style lang="less" scoped>
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 0.2s;
+}
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
+}
+</style>

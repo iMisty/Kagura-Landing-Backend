@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-07-30 04:35:45
+ * @LastEditTime: 2020-07-31 19:14:16
  * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: \Single-Search\src\store\state.ts
@@ -218,6 +218,11 @@ const state = {
       titleIconColor: '#29f',
       icon: 'caijian',
       items: [
+        {
+          icon: 'undefined',
+          link: 'https://palettegenerator.colorion.co/',
+          text: 'Color Palette Generator'
+        },
         {
           icon: 'undefined',
           link: 'https://www.youtube.com',

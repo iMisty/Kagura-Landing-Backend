@@ -4,25 +4,28 @@
  * @Autor: Miya
  * @Date: 2020-06-14 00:02:26
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-20 00:15:26
---> 
+ * @LastEditTime: 2020-07-31 18:42:52
+-->
 <template>
-  <div class="background" :style="bgOptions" :class="{'bg-active': isInputing}"></div>
+  <div
+    class="background"
+    :style="bgOptions"
+    :class="{ 'bg-active': isInputing }"
+  ></div>
 </template>
- 
+
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component({
   // 组件注册
-  components: {
-
-  }})
+  components: {}
+})
 export default class Background extends Vue {
   @Prop() private isInputing: boolean = false;
 
   // 存储从 Vuex 中获取的背景图片
   private bgOptions: object = {
-    // backgroundImage: `url(${this.$store.state.status.background})`,
+    // backgroundImage: `url(${this.$store.state.status.background})`
   };
 }
 </script>

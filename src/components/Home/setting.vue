@@ -1,7 +1,7 @@
 <!--
  * @Author: Miya
  * @Date: 2020-06-17 16:57:01
- * @LastEditTime: 2020-07-20 18:48:15
+ * @LastEditTime: 2020-07-31 19:24:44
  * @LastEditors: Miya
  * @Description: 个人设置页
  * @FilePath: \Single-Search\src\components\Home\setting.vue
@@ -136,26 +136,11 @@
       <!-- text end -->
     </section>
     <!-- User end -->
-
-    <!-- List start -->
-    <section class="setting--list">
-      <menu-list></menu-list>
-    </section>
-    <!-- List end -->
-
-    <!-- Config start -->
-    <!-- TODO: 暂时隐藏 -->
-    <!-- <section class="setting--config">
-      <config-list></config-list>
-    </section> -->
-    <!-- Config end -->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import menuList from '@/components/Home/setting/menu-list.vue';
-import configList from '@/components/Home/setting/config-list.vue';
 interface User {
   // 昵称
   name: string;
@@ -168,10 +153,7 @@ interface User {
 }
 
 @Component({
-  components: {
-    'menu-list': menuList,
-    'config-list': configList
-  }
+  components: {}
 })
 export default class Setting extends Vue {
   // data
