@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-06-21 11:14:32
  * @LastEditors: Miya
- * @LastEditTime: 2020-07-31 19:28:32
+ * @LastEditTime: 2020-08-01 21:08:22
  * @Description: 首页-设置栏
  * @FilePath: \Single-Search\src\style\home\setting.less
  */
@@ -10,7 +10,9 @@
 
   // 设置区域
   &--setting {
+    height             : 100%;
     z-index            : 12;
+    overflow-y         : auto;
     transition-duration: @transition-duration;
   }
 }
@@ -22,13 +24,11 @@
   margin          : 2rem;
   overflow        : hidden;
   background-color: #fff;
-  box-shadow      : 0 8px 10px -5px rgba(0, 0, 0, .2), 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12);
   border-radius   : @border-radius;
 
   &--user {
     .layout-flex(flex, column, center, center);
-    padding   : 1rem;
-    box-shadow: @card-shadow;
+    padding: 1rem;
   }
 
   &--avatar {
