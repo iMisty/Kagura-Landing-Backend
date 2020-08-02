@@ -4,13 +4,16 @@
  * @Author: Miya
  * @Date: 2020-05-26 18:18:46
  * @LastEditors: Miya
- * @LastEditTime: 2020-07-31 18:41:02
+ * @LastEditTime: 2020-08-03 01:15:57
  */
-
+// 白天模式文字颜色
 @pri-text: rgba(0, 0, 0, .87);
 @sec-text: rgba(0, 0, 0, .54);
 @line    : rgba(0, 0, 0, .18);
 @hover   : rgba(0, 0, 0, .08);
+// 暗黑模式文字颜色
+@pri-text-dark: #eaeaea;
+@sec-text-dark: #c1c1c1;
 
 // 首页背景
 @pri-bgcolor: #222d46;
@@ -21,10 +24,13 @@
   backdrop-filter : blur(@blur);
 }
 
-.blur-bg-dark(@color: rgba(0, 0, 0, .54), @blur: 8px) {
+.blur-bg-dark(@color: rgba(0, 0, 0, .38), @blur: 8px) {
   background-color: @color;
   backdrop-filter : blur(@blur);
 }
+
+// 毛玻璃背景组件背景色
+@blur-component-color: rgba(255,255,255,.28);
 
 // 主体色
 @pri-color : rgba(0, 98, 183, 1);

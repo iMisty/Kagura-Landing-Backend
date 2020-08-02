@@ -20,10 +20,10 @@
 
       &-wrap {
         .layout-flex(inline-flex, row, space-between, center, nowrap);
+        .blur-bg-dark();
+        position           : relative;
         padding            : .5rem;
         width              : 64vw;
-        background-color   : #fff;
-        border             : 1px solid #dedede;
         border-radius      : @border-radius;
         transition-duration: @transition-duration;
 
@@ -46,39 +46,41 @@
         }
 
         .choose-engine {
-          display         : none;
-          position        : absolute;
-          top             : 108%;
-          left            : 50%;
-          transform       : translateX(-50%);
-          padding         : .5rem;
-          z-index         : 16;
-          background-color: #fff;
-          box-shadow      : 0 0 2px 2px rgba(0, 0, 0, .08);
+          .blur-bg-dark();
+          display      : none;
+          position     : absolute;
+          top          : 108%;
+          left         : 50%;
+          transform    : translateX(-50%);
+          padding      : .5rem;
+          z-index      : 16;
+          border-radius: @border-radius;
 
           &::after {
             content         : '';
             position        : absolute;
             top             : -.5rem;
-            left            : 50%;
-            transform       : translateX(-50%) rotate(45deg);
-            width           : 1rem;
+            left            : 0;
+            width           : 100%;
             height          : 1rem;
             z-index         : 2;
-            background-color: #fff;
-            border          : 1px solid rgba(0, 0, 0, .08);
+            background-color: transparent;
             border-bottom   : none;
             border-right    : none;
           }
 
           &-wrap {
-            display         : flex;
-            flex-direction  : row;
-            align-items     : center;
-            padding         : .5rem;
-            font-size       : 1.5em;
-            background-color: #fff;
+            .layout-flex(flex, row, center, center, nowrap);
+            padding            : .5rem;
+            font-size          : 1.5em;
+            color              : #fff;
+            border-radius      : @border-radius / 2;
+            transition-duration: @transition-duration / 2;
 
+            &:hover {
+              .blur-bg-dark(@blur-component-color);
+              transition-duration: @transition-duration / 2;
+            }
 
             &-text {
               width  : 3rem;
@@ -96,7 +98,10 @@
           font-size  : 1rem;
           line-height: 2rem;
           border     : none;
-
+          color: @pri-text-dark;
+          &::placeholder{
+            color: @sec-text-dark;
+          }
           &:focus {
             outline: none;
           }
@@ -105,7 +110,7 @@
 
       &-suomi {
         position  : absolute;
-        top       : 3rem;
+        top       : 3.5rem;
         left      : 0;
         width     : 100%;
         text-align: left;
@@ -114,6 +119,7 @@
       &-submit {
         display: inline-flex;
         padding: .5rem;
+        filter: invert(.4);
       }
     }
 
