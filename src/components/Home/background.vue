@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-14 00:02:26
  * @LastEditors: Miya
- * @LastEditTime: 2020-07-31 18:42:52
+ * @LastEditTime: 2020-08-04 00:14:48
 -->
 <template>
   <div
@@ -25,7 +25,7 @@ export default class Background extends Vue {
 
   // 存储从 Vuex 中获取的背景图片
   private bgOptions: object = {
-    backgroundImage: `url(${this.$store.state.status.background})`
+    // backgroundImage: `url(${this.$store.state.status.background})`
   };
 }
 </script>

@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-03 00:13:41
+ * @LastEditTime: 2020-08-04 00:17:29
 -->
 <template>
   <div
@@ -50,11 +50,6 @@
         <List></List>
       </section>
       <section class="home--setting" v-show="isSettingOpen" :key="2">
-        <Setting></Setting>
-        <Setting></Setting>
-        <Setting></Setting>
-        <Setting></Setting>
-        <Setting></Setting>
         <Setting></Setting>
       </section>
     </transition-group>
