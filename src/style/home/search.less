@@ -20,7 +20,9 @@
 
       &-wrap {
         .layout-flex(inline-flex, row, space-between, center, nowrap);
-        .blur-bg-dark();
+        //.blur-bg-dark();
+        // DEV: 防止虚拟机内存泄露
+        background-color   : rgba(0, 0, 0, .54);
         position           : relative;
         padding            : .5rem;
         width              : 64vw;
@@ -98,10 +100,12 @@
           font-size  : 1rem;
           line-height: 2rem;
           border     : none;
-          color: @pri-text-dark;
-          &::placeholder{
+          color      : @pri-text-dark;
+
+          &::placeholder {
             color: @sec-text-dark;
           }
+
           &:focus {
             outline: none;
           }
@@ -119,7 +123,7 @@
       &-submit {
         display: inline-flex;
         padding: .5rem;
-        filter: invert(.4);
+        filter : invert(.4);
       }
     }
 
