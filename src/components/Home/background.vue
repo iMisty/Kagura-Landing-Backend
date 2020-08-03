@@ -25,7 +25,7 @@ export default class Background extends Vue {
 
   // 存储从 Vuex 中获取的背景图片
   private bgOptions: object = {
-    // backgroundImage: `url(${this.$store.state.status.background})`
+    backgroundImage: `url(${this.$store.state.status.background})`
   };
 }
 </script>

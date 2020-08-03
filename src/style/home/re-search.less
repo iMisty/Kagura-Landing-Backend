@@ -1,12 +1,29 @@
 .re-search {
-  // .blur-bg-dark();
+  .blur-bg-dark();
   // DEV: 防止虚拟机内存泄露
-  background-color: rgba(0, 0, 0, .54);
+  //background-color: rgba(0, 0, 0, .54);
   position        : absolute;
   top             : 0;
   left            : 0;
   width           : 100%;
   border-radius   : @border-radius;
+
+  &::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: inherit;
+    filter: blur(8px);
+  }
+
+  &-list{
+    position: relative;
+    z-index: 2;
+  }
 
   &-item {
     margin       : 0.5rem;

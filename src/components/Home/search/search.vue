@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-07-09 16:05:08
+ * @LastEditTime: 2020-08-03 23:39:53
 --> 
 <template>
   <div class="search--bar">
@@ -37,7 +37,7 @@
           @input="getExtraValue"
         />
       </section>
-      <section class="search--bar-suomi" v-show="searchText !== ''">
+      <section class="search--bar-suomi" v-if="searchText !== ''">
         <re-search :data="extraDatas" @handleExtraSearch="submitExtraSearchText"></re-search>
       </section>
       <section class="search--bar-submit" @click="submitSearchText">

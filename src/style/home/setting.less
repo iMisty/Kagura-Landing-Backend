@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-06-21 11:14:32
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-01 21:08:22
+ * @LastEditTime: 2020-08-03 23:46:41
  * @Description: 首页-设置栏
- * @FilePath: \Single-Search\src\style\home\setting.less
+ * @FilePath: /Single-Search/src/style/home/setting.less
  */
 .home {
 
@@ -18,12 +18,12 @@
 }
 
 .setting {
+  .blur-bg-dark(@blur-component-color);
   position        : relative;
   top             : 0;
   left            : 0;
   margin          : 2rem;
   overflow        : hidden;
-  background-color: #fff;
   border-radius   : @border-radius;
 
   &--user {
@@ -41,11 +41,11 @@
 
     &-title {
       font-weight: normal;
-      color      : @pri-text;
+      color      : @pri-text-dark;
     }
 
     &-text {
-      color: @sec-text;
+      color: @sec-text-dark;
     }
   }
 

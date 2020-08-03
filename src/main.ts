@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:59:19
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-03 15:22:46
+ * @LastEditTime: 2020-08-03 22:57:56
  */
 import Vue from 'vue';
 import App from './App.vue';
@@ -17,5 +17,5 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App)
 }).$mount('#app');
