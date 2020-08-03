@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:59:19
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-12 15:52:15
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-08-03 15:22:46
  */
 import Vue from 'vue';
 import App from './App.vue';
@@ -17,5 +17,5 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  render: h => h(App)
 }).$mount('#app');
