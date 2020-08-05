@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-05 23:24:28
+ * @LastEditTime: 2020-08-06 00:48:48
 -->
 <template>
   <div class="admin">
@@ -17,38 +17,7 @@
       </div>
     </section>
     <section class="admin-left">
-      <router-link class="icon" to="/admin" tag="div">
-        <Svgicon
-          class="svg-title-icon"
-          :svgClass="icon"
-          :iconClass="title[0]"
-          :iconName="title[0]"
-        ></Svgicon
-      ></router-link>
-      <router-link class="icon" to="/admin/user" tag="div">
-        <Svgicon
-          class="svg-title-icon"
-          :svgClass="icon"
-          :iconClass="title[1]"
-          :iconName="title[1]"
-        ></Svgicon
-      ></router-link>
-      <router-link class="icon" to="/admin/link" tag="div">
-        <Svgicon
-          class="svg-title-icon"
-          :svgClass="icon"
-          :iconClass="title[2]"
-          :iconName="title[2]"
-        ></Svgicon
-      ></router-link>
-      <router-link class="icon" to="/admin/extra" tag="div">
-        <Svgicon
-          class="svg-title-icon"
-          :svgClass="icon"
-          :iconClass="title[3]"
-          :iconName="title[3]"
-        ></Svgicon
-      ></router-link>
+      <Router v-for="item in router" :key="item.index" :path="item.path" :title="item.title" :name="item.name"></Router>
     </section>
     <section class="admin-wrap">
       <section class="admin-wrap-left">
@@ -56,7 +25,7 @@
           <router-view></router-view>
         </transition>
       </section>
-      <Right></Right>
+      <!-- <Right></Right> -->
     </section>
   </div>
 </template>
@@ -65,21 +34,33 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 // 导入SVG相关
 import Svgicon from '@/components/svgicon.vue';
-import Right from '@/components/Admin/Right.vue';
+// import Right from '@/components/Admin/Right.vue';
+import Router from '@/components/Admin/Router.vue';
+
 import '@/icons/svg/admin';
+
+interface Routes {
+  path: string;
+  title: string;
+  name: string;
+}
 
 @Component({
   // 组件注册
   components: {
     Svgicon,
-    Right
+    Router
+    // Right
   }
 })
 export default class Admin extends Vue {
   // 临时变量
-  private icon: string = 'icon';
-  private title: string[] = ['shouye', 'gaojiban', 'piliangxiugai', 'bianji'];
   private logo: any = require('@/assets/logo.png');
-
+  private router: Routes[] = [
+    { path: '/admin', title: 'shouye', name: 'HOME' },
+    { path: '/admin/user', title: 'gaojiban', name: 'USER' },
+    { path: '/admin/link', title: 'piliangxiugai', name: 'LINK' },
+    { path: '/admin/extra', title: 'bianji', name: 'SETTING' },
+  ];
 }
 </script>
