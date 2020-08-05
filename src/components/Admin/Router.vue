@@ -2,12 +2,12 @@
  * @Author: Miya
  * @Date: 2020-08-06 00:20:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-06 00:34:06
+ * @LastEditTime: 2020-08-06 01:55:25
  * @Description: file content
  * @FilePath: /Single-Search/src/components/Admin/Router.vue
 -->
 <template>
-  <router-link class="icon" :to="path">
+  <router-link class="icon" :to="path" tag="section">
     <Svgicon
       class="svg-title-icon"
       :svgClass="icon"

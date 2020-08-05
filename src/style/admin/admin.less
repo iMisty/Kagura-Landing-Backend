@@ -7,9 +7,7 @@
     position        : fixed;
     top             : 0;
     left            : 0;
-    display         : flex;
-    flex-direction  : row;
-    align-items     : center;
+    .layout-flex(flex,row,flex-start,center);
     width           : 100%;
     height          : 4rem;
     padding         : 1rem 2rem;
@@ -55,7 +53,8 @@
   &-wrap {
     display              : grid;
     grid-template-columns: 1fr auto;
-    margin               : 4rem 0 0 8rem;
+    margin               : 6rem 0 2rem 8rem;
+    border-radius: @border-radius 0;
     // 左边栏内容
     &-left {
       content: '';
