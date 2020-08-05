@@ -8,9 +8,6 @@
 -->
 <template>
   <div class="admin-index">
-    <section class="admin-wrap-title">
-      test-title
-    </section>
     <section class="admin-wrap-puzzle">
       <puzzle></puzzle>
       <puzzle></puzzle>

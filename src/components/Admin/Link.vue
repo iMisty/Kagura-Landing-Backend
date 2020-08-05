@@ -2,13 +2,12 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:36:36
  * @LastEditors: Miya
- * @LastEditTime: 2020-07-24 15:23:05
+ * @LastEditTime: 2020-08-06 01:02:41
  * @Description: file content
- * @FilePath: \Single-Search\src\components\Admin\Link.vue
+ * @FilePath: /Single-Search/src/components/Admin/Link.vue
 -->
 <template>
   <div class="admin-link">
-    <div class="admin-wrap-title">Test title</div>
     <section class="admin-link-list">
       <link-wrap></link-wrap>
       <link-wrap></link-wrap>
