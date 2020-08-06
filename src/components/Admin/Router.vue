@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-08-06 00:20:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-06 01:55:25
+ * @LastEditTime: 2020-08-07 00:14:15
  * @Description: file content
  * @FilePath: /Single-Search/src/components/Admin/Router.vue
 -->
@@ -23,20 +23,17 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 import Svgicon from '@/components/svgicon.vue';
 import '@/icons/svg/admin';
 @Component({
-  components:{
+  components: {
     Svgicon
   }
 })
 export default class Router extends Vue {
   // 跳转地址
-  @Prop({default: '/admin'}) private path: unknown;
+  @Prop({ default: '/admin', type: String }) private path: string | undefined;
   // SVG图标地址
-  @Prop({default: 'shouye'}) private title: unknown;
+  @Prop({ default: 'shouye', type: String }) private title: string | undefined;
   // 组件名称
-  @Prop({default: 'HOME'}) private name: unknown;
-
+  @Prop({ default: 'HOME', type: String }) private name: string | undefined;
   private icon: string = 'icon';
 }
 </script>
-
-<style lang="less" scope></style>

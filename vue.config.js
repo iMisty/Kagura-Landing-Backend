@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-18 18:17:09
- * @LastEditTime: 2020-07-24 18:01:01
+ * @LastEditTime: 2020-08-07 01:46:39
  * @LastEditors: Miya
  * @Description: In User Settings Edit
- * @FilePath: \Single-Search\vue.config.js
+ * @FilePath: /Single-Search/vue.config.js
  */
 module.exports = {
   // 打包输出目录
@@ -18,6 +18,14 @@ module.exports = {
   css: {
     // 提取至单独的CSS文件
     extract: true
+  },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        // 别名
+        vue$: "vue/dist/vue.esm.js", //加上这一句
+      }
+    }
   },
   // 代理服务器配置
   devServer: {

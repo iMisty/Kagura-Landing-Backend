@@ -1,8 +1,8 @@
 <!--
  * @Author: Miya
  * @Date: 2020-06-08 17:42:30
- * @LastEditTime: 2020-06-12 17:16:05
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-07 00:07:26
+ * @LastEditors: Miya
  * @Description: SVG 图标支持
  * @FilePath: /Single-Search/src/components/svgicon.vue
 --> 
@@ -19,8 +19,8 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 export default class Svgicon extends Vue {
 
   // Props
-  @Prop({ required: true }) public iconClass: unknown;
-  @Prop() public className: unknown;
+  @Prop({ required: true }) public iconClass: string | undefined;
+  @Prop() public className: string | undefined;
 
   // Computed
 

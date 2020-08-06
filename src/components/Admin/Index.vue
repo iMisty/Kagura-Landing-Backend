@@ -2,14 +2,14 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:49:17
  * @LastEditors: Miya
- * @LastEditTime: 2020-07-23 18:04:55
+ * @LastEditTime: 2020-08-07 00:47:22
  * @Description: 后台管理首页
- * @FilePath: \Single-Search\src\components\Admin\Index.vue
+ * @FilePath: /Single-Search/src/components/Admin/Index.vue
 -->
 <template>
   <div class="admin-index">
     <section class="admin-wrap-puzzle">
-      <puzzle></puzzle>
+      <puzzle :row="2" :column="2"></puzzle>
       <puzzle></puzzle>
       <puzzle></puzzle>
       <puzzle></puzzle>
