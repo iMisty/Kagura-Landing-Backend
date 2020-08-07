@@ -1,22 +1,14 @@
-<!--
+/*
  * @Author: Miya
  * @Date: 2020-07-23 18:14:32
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-06 23:45:22
+ * @LastEditTime: 2020-08-08 00:03:36
  * @Description: 数据总量显示
- * @FilePath: /Single-Search/src/components/Admin/result.vue
--->
-<template>
-  <article class="admin-wrap-result">
-    <div class="result-title">{{ title }}</div>
-    <div class="result-sum" :class="colorClass">{{ sum }}</div>
-  </article>
-</template>
-
-<script lang="ts">
+ * @FilePath: /Single-Search/src/components/Admin/result.component.tsx
+ */
 import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component({})
-export default class Result extends Vue {
+export default class Result_Admin extends Vue {
   // @Props: title => 标题
   @Prop({ default: 'Total Links:', type: String }) public title:
     | string
@@ -27,7 +19,12 @@ export default class Result extends Vue {
     | undefined;
   // @Props: sum => 计算总数
   @Prop({ default: 190, type: Number }) public sum: number | undefined;
+  protected render() {
+    return (
+      <article class="admin-wrap-result">
+        <div class="result-title">{this.title}</div>
+        <div class={`result-sum ${this.colorClass}`}>{this.sum}</div>
+      </article>
+    );
+  }
 }
-</script>
-
-<style lang="less" scope></style>

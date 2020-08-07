@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-15 15:40:41
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-08-08 01:45:59
 --> 
 <template>
   <div class="list" ref="lists">
@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Svgicon from '@/components/svgicon.vue';
+import Svgicon from '@/components/svgicon.component';
 import '@/icons/svg/index';
 
 @Component({
