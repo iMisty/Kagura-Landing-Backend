@@ -38,11 +38,11 @@ CSS 格式化: Less
 
 图标: iconfont
 
-~~后台 UI 库: Yukarin Style Beta Version~~
+后台 UI 库: Yukarin Style Beta Version
 
-~~后端框架: Koa~~
+后端框架: Koa
 
-~~数据库: MongoDB~~
+数据库: MongoDB
 
 ## ~~功能~~ TODOs
 
