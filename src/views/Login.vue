@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-07-24 17:48:54
  * @LastEditors: Miya
- * @LastEditTime: 2020-07-30 04:52:03
+ * @LastEditTime: 2020-08-07 18:49:06
  * @Description: 登录页面
  * @FilePath: \Single-Search\src\views\Login.vue
 -->
@@ -62,12 +62,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 // import { POST } from '@/services/ajax';
-
-interface LoginInterface {
-  username: string;
-  password: string;
-  remember: boolean;
-}
+// 登录模型
+import LoginInterface from '@/model/login';
 
 @Component({})
 export default class Login extends Vue {

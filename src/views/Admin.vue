@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-07 18:13:27
+ * @LastEditTime: 2020-08-07 18:50:35
 -->
 <template>
   <div class="admin">
@@ -42,14 +42,10 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import Svgicon from '@/components/svgicon.vue';
 // import Right from '@/components/Admin/Right.vue';
 import Router from '@/components/Admin/Router.vue';
+// 后台路由模型
+import Routes from '@/model/routes';
 
 import '@/icons/svg/admin';
-
-interface Routes {
-  path: string;
-  title: string;
-  name: string;
-}
 
 @Component({
   // 组件注册
