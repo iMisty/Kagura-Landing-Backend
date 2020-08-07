@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-18 18:17:09
- * @LastEditTime: 2020-08-07 01:46:39
+ * @LastEditTime: 2020-08-07 18:42:37
  * @LastEditors: Miya
  * @Description: In User Settings Edit
- * @FilePath: /Single-Search/vue.config.js
+ * @FilePath: \Single-Search\vue.config.js
  */
 module.exports = {
   // 打包输出目录
@@ -21,10 +21,11 @@ module.exports = {
   },
   configureWebpack: {
     resolve: {
-      alias: {
-        // 别名
-        vue$: "vue/dist/vue.esm.js", //加上这一句
-      }
+      // alias: {
+      //   // 别名
+      //   vue$: "vue/dist/vue.esm.js",
+      // }
+      extensions: ['.js', '.vue', '.json', '.ts', '.tsx']
     }
   },
   // 代理服务器配置

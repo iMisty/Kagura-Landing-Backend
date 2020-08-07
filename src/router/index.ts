@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-27 14:28:24
- * @LastEditTime: 2020-08-07 01:29:15
+ * @LastEditTime: 2020-08-07 18:14:02
  * @LastEditors: Miya
  * @Description: In User Settings Edit
- * @FilePath: /Single-Search/src/router/index.ts
+ * @FilePath: \Single-Search\src\router\index.ts
  */
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
@@ -15,7 +15,7 @@ import Login from '@/views/Login.vue';
 import AdminIndex from '@/components/Admin/Index.vue';
 import AdminUser from '@/components/Admin/User.vue';
 import AdminLink from '@/components/Admin/Link.vue';
-import AdminExtra from '@/components/Admin/Extra.ts';
+import AdminSetting from '@/components/Admin/Extra.tsx';
 
 Vue.use(VueRouter);
 
@@ -44,8 +44,8 @@ const routes: RouteConfig[] = [
         component: AdminUser
       },
       {
-        path: 'extra',
-        component: AdminExtra
+        path: 'setting',
+        component: AdminSetting
       }
     ]
   },

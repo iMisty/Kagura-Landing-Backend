@@ -23,8 +23,10 @@ import Background from '@/components/Home/background.vue';
 @Component({
   // 组件注册
   components: {
-    Home, Background,
-  }})
+    Home,
+    Background
+  }
+})
 export default class App extends Vue {
   private bgStatus: boolean = false;
 
@@ -38,5 +40,4 @@ export default class App extends Vue {
   }
 }
 </script>
-<style lang="less">
-</style>
+<style lang="less"></style>

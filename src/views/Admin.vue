@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-06 00:48:48
+ * @LastEditTime: 2020-08-07 18:13:27
 -->
 <template>
   <div class="admin">
@@ -17,7 +17,13 @@
       </div>
     </section>
     <section class="admin-left">
-      <Router v-for="item in router" :key="item.index" :path="item.path" :title="item.title" :name="item.name"></Router>
+      <Router
+        v-for="item in router"
+        :key="item.index"
+        :path="item.path"
+        :title="item.title"
+        :name="item.name"
+      ></Router>
     </section>
     <section class="admin-wrap">
       <section class="admin-wrap-left">
@@ -60,7 +66,7 @@ export default class Admin extends Vue {
     { path: '/admin', title: 'shouye', name: 'HOME' },
     { path: '/admin/user', title: 'gaojiban', name: 'USER' },
     { path: '/admin/link', title: 'piliangxiugai', name: 'LINK' },
-    { path: '/admin/extra', title: 'bianji', name: 'SETTING' },
+    { path: '/admin/setting', title: 'bianji', name: 'SETTING' }
   ];
 }
 </script>
