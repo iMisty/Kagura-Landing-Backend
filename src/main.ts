@@ -4,19 +4,19 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:59:19
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-07 18:50:44
+ * @LastEditTime: 2020-08-09 04:09:57
  */
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import { store } from './store';
 import 'vue-tsx-support/enable-check';
-import '@/style/style.less';
+import '@/style/global/style.less';
 
 Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: (h: any) => h(App)
 }).$mount('#app');

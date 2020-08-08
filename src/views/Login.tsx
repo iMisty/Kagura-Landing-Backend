@@ -2,11 +2,12 @@
  * @Author: Miya
  * @Date: 2020-07-24 17:48:54
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-08 03:01:05
+ * @LastEditTime: 2020-08-09 04:08:17
  * @Description: 登录页面
  * @FilePath: /Single-Search/src/views/Login.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
+import '@/style/login/style.less';
 // import { POST } from '@/services/ajax';
 // 登录模型
 import LoginInterface from '@/model/login';
@@ -65,7 +66,7 @@ export default class Login extends Vue {
   //   this.result = a.data;
   // }
 
-  protected render() {
+  private render() {
     return (
       <div class="login">
         <div class="login-form">
@@ -85,7 +86,7 @@ export default class Login extends Vue {
               <input
                 class="login-form-input-inputarea"
                 type="text"
-                v-model="info.username"
+                v-model={this.info.username}
               />
             </div>
             <div class="login-form-input-item login-form-input-password">
@@ -93,17 +94,20 @@ export default class Login extends Vue {
               <input
                 class="login-form-input-inputarea"
                 type="password"
-                v-model="info.password"
+                v-model={this.info.password}
               />
             </div>
           </section>
           <section class="login-form-options">
-            <div class="remember normal-cursor" onClick={this.handleChangeRememberStatus}>
+            <div
+              class="remember normal-cursor"
+              onClick={this.handleChangeRememberStatus}
+            >
               <input
                 class="remember-checkbox"
                 type="checkbox"
                 name="remember"
-                v-model="info.remember"
+                v-model={this.info.remember}
               />
               <p>Remember Me</p>
             </div>

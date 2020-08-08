@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-08 02:55:05
+ * @LastEditTime: 2020-08-09 04:09:36
  */
 import { Component, Vue } from 'vue-property-decorator';
 // 导入SVG相关
@@ -13,7 +13,7 @@ import Svgicon from '@/components/svgicon.component';
 import Router from '@/components/Admin/router.component';
 // 后台路由模型
 import Routes from '@/model/routes';
-
+import '@/style/admin/style.less';
 import '@/icons/svg/admin';
 
 @Component({
@@ -43,7 +43,7 @@ export default class Admin extends Vue {
           <div class="admin-top-title">DashBoard</div>
         </section>
         <section class="admin-left">
-          {this.router.map(item => {
+          {this.router.map((item: Routes) => {
             return (
               <router
                 path={item.path}

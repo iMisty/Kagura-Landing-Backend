@@ -1,0 +1,26 @@
+/*
+ * 手机通用配置(max-width: 768px)
+ */
+@media screen and (max-width: 768px) {
+  .home {
+    &--medium {
+
+      // 搜索栏
+      .search--bar {
+        &-wrap {
+          width: 80vw;
+        }
+      }
+    }
+
+    // 右边栏
+    &--rightbar {
+      width: 50vw;
+    }
+  }
+
+  // 导航表单行列显示
+  .list--item--wrap {
+    grid-template-columns: 1fr 1fr;
+  }
+}

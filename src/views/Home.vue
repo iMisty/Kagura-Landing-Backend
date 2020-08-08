@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-04 00:17:29
+ * @LastEditTime: 2020-08-09 03:48:51
 -->
 <template>
   <div
@@ -64,6 +64,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import '@/style/home/style.less';
 import axios from 'axios';
 // 链接图标
 import Icon from '@/components/icon.vue';
