@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-08 04:11:59
+ * @LastEditTime: 2020-08-04 00:17:29
 -->
 <template>
   <div
@@ -66,13 +66,13 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import axios from 'axios';
 // 链接图标
-import Icon from '@/components/icon.component';
+import Icon from '@/components/icon.vue';
 // 设置边栏
 import Setting from '@/components/Home/setting.vue';
 // 链接列表
 import List from '@/components/Home/list.vue';
 // 搜索框
-import Search from '@/components/Home/search/search.tsx';
+import Search from '@/components/Home/search/search.vue';
 // 计算搜索结果web工具函数
 import { computedSearch } from '@/services/computedSearch.ts';
 
