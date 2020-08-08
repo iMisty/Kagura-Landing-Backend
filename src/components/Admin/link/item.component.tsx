@@ -1,6 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
 @Component({})
-export default class Item_Link_Admin extends Vue {
+export default class ItemLinkAdmin extends Vue {
   protected render() {
     return (
       <div class="admin-item">

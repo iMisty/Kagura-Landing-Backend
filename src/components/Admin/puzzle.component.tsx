@@ -2,13 +2,13 @@
  * @Author: Miya
  * @Date: 2020-07-23 17:53:38
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-08 00:23:16
+ * @LastEditTime: 2020-08-09 04:04:15
  * @Description: 卡片式磁贴
  * @FilePath: /Single-Search/src/components/Admin/puzzle.component.tsx
  */
 import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component({})
-export default class Puzzle_Admin extends Vue {
+export default class PuzzleAdmin extends Vue {
   // @Props: title => 标题
   @Prop({ default: 'Test Puzzle', type: String }) public title:
     | string

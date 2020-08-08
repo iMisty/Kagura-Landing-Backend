@@ -2,20 +2,20 @@
  * @Author: Miya
  * @Date: 2020-08-06 00:20:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-08 01:47:29
+ * @LastEditTime: 2020-08-09 04:05:43
  * @Description: 路由跳转
  * @FilePath: /Single-Search/src/components/Admin/router.component.tsx
  */
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import Svgicon from '@/components/svgicon.component';
+import svgicon from '@/components/svgicon.component';
 import '@/icons/svg/admin';
 
 @Component({
   components: {
-    'svgicon': Svgicon
+    svgicon
   }
 })
-export default class Router_Admin extends Vue {
+export default class RouterAdmin extends Vue {
   // 跳转地址
   @Prop({ default: '/admin' }) private path: string | undefined;
   // SVG图标地址

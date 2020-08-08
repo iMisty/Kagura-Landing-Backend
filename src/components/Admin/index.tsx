@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:49:17
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-08 00:08:21
+ * @LastEditTime: 2020-08-09 04:02:43
  * @Description: 后台管理首页
  * @FilePath: /Single-Search/src/components/Admin/index.tsx
  */
@@ -13,7 +13,7 @@ import puzzle from '@/components/Admin/puzzle.component.tsx';
     puzzle
   }
 })
-export default class Index_Admin extends Vue {
+export default class IndexAdmin extends Vue {
   protected render() {
     return (
       <div class="admin-index">

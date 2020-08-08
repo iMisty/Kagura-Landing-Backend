@@ -6,7 +6,7 @@ import result from '@/components/Admin/result.vue';
     result
   }
 })
-export default class Right_Admin extends Vue {
+export default class RightAdmin extends Vue {
   private orange: string = 'orange';
 
   protected render() {

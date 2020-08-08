@@ -9,7 +9,7 @@
 
 import { Component, Vue } from 'vue-property-decorator';
 @Component({})
-export default class Settings_Admin extends Vue {
+export default class SettingsAdmin extends Vue {
   protected render() {
     return <div class='admin-wrap-settings'>settings</div>;
   }

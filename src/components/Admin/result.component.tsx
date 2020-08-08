@@ -2,13 +2,13 @@
  * @Author: Miya
  * @Date: 2020-07-23 18:14:32
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-08 00:03:36
+ * @LastEditTime: 2020-08-09 04:03:20
  * @Description: 数据总量显示
  * @FilePath: /Single-Search/src/components/Admin/result.component.tsx
  */
 import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component({})
-export default class Result_Admin extends Vue {
+export default class ResultAdmin extends Vue {
   // @Props: title => 标题
   @Prop({ default: 'Total Links:', type: String }) public title:
     | string

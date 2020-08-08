@@ -5,7 +5,7 @@ import linkWrap from '@/components/Admin/link/wrap.component.tsx';
     'link-wrap': linkWrap
   }
 })
-export default class Link_Admin extends Vue {
+export default class LinkAdmin extends Vue {
   protected render() {
     return (
       <div class="admin-link">
