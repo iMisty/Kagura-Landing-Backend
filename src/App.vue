@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-25 22:54:11
  * @LastEditors: Miya
- * @LastEditTime: 2020-06-18 01:16:57
+ * @LastEditTime: 2020-08-09 20:29:01
 -->
 <template>
   <div id="App">
@@ -18,7 +18,7 @@
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import Home from '@/views/Home.vue';
-import Background from '@/components/Home/background.vue';
+import Background from '@/components/Home/background.component.tsx';
 
 @Component({
   // 组件注册

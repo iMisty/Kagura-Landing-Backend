@@ -4,13 +4,10 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-09 03:48:51
+ * @LastEditTime: 2020-08-10 00:11:35
 -->
 <template>
-  <div
-    class="home"
-    :class="{ dark: isDarkMode === true, light: isDarkMode === false }"
-  >
+  <div class="home">
     <!-- Top start -->
     <section class="home--top">
       <button class="list--button" @click="handleOpenSetting">
@@ -65,17 +62,17 @@
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import '@/style/home/style.less';
-import axios from 'axios';
 // 链接图标
-import Icon from '@/components/icon.vue';
+import Icon from '@/components/icon.component.tsx';
 // 设置边栏
-import Setting from '@/components/Home/setting.vue';
+import Setting from '@/components/Home/setting.component.tsx';
 // 链接列表
-import List from '@/components/Home/list.vue';
+import List from '@/components/Home/list.component.vue';
 // 搜索框
 import Search from '@/components/Home/search/search.vue';
 // 计算搜索结果web工具函数
 import { computedSearch } from '@/services/computedSearch.ts';
+import { GET } from '@/services/ajax';
 
 @Component({
   // 组件注册
@@ -84,8 +81,8 @@ import { computedSearch } from '@/services/computedSearch.ts';
     Setting,
     List,
     Search,
-    Hitokoto: () => import('@/components/Home/hitokoto.vue'),
-    Copyright: () => import('@/components/Home/copyright.vue')
+    Hitokoto: () => import('@/components/Home/hitokoto.component.tsx'),
+    Copyright: () => import('@/components/Home/copyright.component.tsx')
   }
 })
 export default class Home extends Vue {
@@ -93,8 +90,6 @@ export default class Home extends Vue {
   public searchMenu: boolean = false;
   // 链接图标
   private listButtonSrc: string = require('@/assets/menu.png');
-  // 是否夜间模式
-  private isDarkMode: boolean = false;
   // 控制设置边栏开关
   private isSettingOpen: boolean = false;
   // 控制链接开关
@@ -107,32 +102,14 @@ export default class Home extends Vue {
 
   // methods
   /**
-   * @description: 检测是否为暗黑模式
-   * @param {type} params
-   * @return: void
-   */
-  private getDarkModeStatus() {
-    const status = this.$store.state.styleMode;
-    console.log(status);
-    if (status === 'light') {
-      this.isDarkMode = false;
-    } else {
-      this.isDarkMode = true;
-    }
-  }
-  /**
    * @description: 一言加载
    * @param {type}
    * @return: void
    * @author: Miya
    */
-  private getHitokoto(): void {
-    axios
-      .get('https://v1.hitokoto.cn')
-      .then(({ data }) => {
-        this.hitorikoto = data.hitokoto;
-      })
-      .catch(console.error);
+  private async getHitokoto() {
+    const getHitokotoData = await GET('https://v1.hitokoto.cn');
+    this.hitorikoto = getHitokotoData.data.hitokoto;
   }
 
   /**
@@ -204,7 +181,6 @@ export default class Home extends Vue {
   // mounted
   private mounted() {
     // this.getHitokoto();
-    this.getDarkModeStatus();
   }
 }
 </script>

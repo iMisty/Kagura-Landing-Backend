@@ -1,25 +1,13 @@
-<!--
+/*
  * @Author: Miya
  * @Date: 2020-06-17 16:57:01
- * @LastEditTime: 2020-08-07 18:47:44
+ * @LastEditTime: 2020-08-10 00:15:10
  * @LastEditors: Miya
  * @Description: 个人设置页
- * @FilePath: \Single-Search\src\components\Home\setting.vue
--->
-<template>
-  <div class="setting">
-    <setting-user
-      :name="setting.name"
-      :sex="setting.sex"
-      :introduce="setting.introduce"
-      :avatar="setting.avatar"
-    ></setting-user>
-  </div>
-</template>
-
-<script lang="ts">
+ * @FilePath: /Single-Search/src/components/Home/setting.component.tsx
+ */
 import { Component, Vue } from 'vue-property-decorator';
-import settingUser from '@/components/Home/setting/setting-user.vue';
+import settingUser from '@/components/Home/setting/user.setting.component';
 import User from '@/model/user.ts';
 
 @Component({
@@ -37,5 +25,17 @@ export default class Setting extends Vue {
     sex: 'female',
     introduce: 'test text'
   };
+
+  protected render() {
+    return (
+      <div class="setting">
+        <setting-user
+          name={this.setting.name}
+          sex={this.setting.sex}
+          introduce={this.setting.introduce}
+          avatar={this.setting.avatar}
+        ></setting-user>
+      </div>
+    );
+  }
 }
-</script>

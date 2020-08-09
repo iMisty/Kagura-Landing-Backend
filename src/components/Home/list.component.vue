@@ -4,21 +4,33 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-08 01:45:59
---> 
+ * @LastEditTime: 2020-08-09 23:14:08
+-->
 <template>
   <div class="list" ref="lists">
     <div class="list--items">
       <section class="list--item" v-for="list in listData" :key="list.index">
         <section class="list--item--title--wrap">
-          <Svgicon class="svg-title-icon" :svgClass="icon" :iconClass="list.icon" :iconName="list.icon"></Svgicon>
-          <h5 class="list--item--title" :style="{color: list.color}">{{list.name}}</h5>
+          <Svgicon
+            class="svg-title-icon"
+            :svgClass="icon"
+            :iconClass="list.icon"
+            :iconName="list.icon"
+          ></Svgicon>
+          <h5 class="list--item--title" :style="{ color: list.color }">
+            {{ list.name }}
+          </h5>
         </section>
         <ul class="list--item--wrap">
           <li class="item" v-for="wrap in list.items" :key="wrap.index">
             <a :href="wrap.link">
-              <Svgicon class="svg-link-icon" :svgClass="icon" :iconClass="wrap.icon" :iconName="wrap.icon"></Svgicon>
-              <p>{{wrap.text}}</p>
+              <Svgicon
+                class="svg-link-icon"
+                :svgClass="icon"
+                :iconClass="wrap.icon"
+                :iconName="wrap.icon"
+              ></Svgicon>
+              <p>{{ wrap.text }}</p>
             </a>
           </li>
         </ul>
@@ -34,8 +46,8 @@ import '@/icons/svg/index';
 
 @Component({
   components: {
-    Svgicon,
-  },
+    Svgicon
+  }
 })
 export default class List extends Vue {
   // 链接数据 => Vuex 调用
@@ -60,4 +72,3 @@ export default class List extends Vue {
   }
 }
 </script>
-
