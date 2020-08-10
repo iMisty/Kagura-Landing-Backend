@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-07-31 19:14:16
+ * @LastEditTime: 2020-08-11 01:01:14
  * @LastEditors: Miya
  * @Description: Vuex State部分
- * @FilePath: \Single-Search\src\store\state.ts
+ * @FilePath: /Single-Search/src/store/state.ts
  */
 
 const state = {
@@ -15,7 +15,10 @@ const state = {
   user: {
     id: 1,
     status: 'admin',
-    name: 'miya'
+    name: 'miya',
+    sex: 'female',
+    avatar: '',
+    introduce: 'test text'
   },
   // 控制状态
   status: {
