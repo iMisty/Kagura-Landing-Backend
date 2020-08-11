@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 18:18:46
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-09 23:15:20
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-11 18:49:29
  */
 // 白天模式文字颜色
 @pri-text: rgba(0, 0, 0, .87);
@@ -29,14 +29,12 @@
 //   backdrop-filter : blur(@blur);
 // }
 // 防止在 VirtualBox 下虚拟机出现毛玻璃效果宕机配置
-.blur-bg-light(@color: rgba(255, 255, 255, .72), @blur: 0px) {
+.blur-bg-light(@color: rgba(255, 255, 255, .72)) {
   background-color: @color;
-  backdrop-filter : blur(@blur);
 }
 
-.blur-bg-dark(@color: rgba(0, 0, 0, .72), @blur: 0px) {
+.blur-bg-dark(@color: rgba(0, 0, 0, .72)) {
   background-color: @color;
-  backdrop-filter : blur(@blur);
 }
 
 // 毛玻璃背景组件背景色

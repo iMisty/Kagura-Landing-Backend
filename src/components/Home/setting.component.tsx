@@ -1,8 +1,8 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-17 16:57:01
- * @LastEditTime: 2020-08-11 01:16:18
- * @LastEditors: Miya
+ * @LastEditTime: 2020-08-11 18:57:07
+ * @LastEditors: Please set LastEditors
  * @Description: 个人设置页
  * @FilePath: /Single-Search/src/components/Home/setting.component.tsx
  */
@@ -28,7 +28,6 @@ export default class Setting extends Vue {
 
   private getUserInfo() {
     const info = this.$store.state.user;
-    console.log(info);
     this.setting = info;
   }
 

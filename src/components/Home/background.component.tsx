@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-14 00:02:26
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-09 20:28:41
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-11 18:36:11
  */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import '../../style/home/background.component.less';
@@ -17,7 +17,7 @@ export default class Background extends Vue {
 
   // 存储从 Vuex 中获取的背景图片
   private bgOptions: object = {
-    // backgroundImage: `url(${this.$store.state.status.background})`
+    // backgroundImage: `url(${this.$store.state.settings.background})`
   };
 
   get inputingStatus() {

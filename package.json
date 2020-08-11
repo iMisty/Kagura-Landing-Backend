@@ -28,6 +28,7 @@
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "typescript": "~3.8.3",
+    "tslib": "^2.0.0",
     "vue-property-decorator": "^9.0.0",
     "vue-template-compiler": "^2.6.11"
   }

@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-10 00:11:35
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-11 19:20:03
 -->
 <template>
   <div class="home">
@@ -27,7 +27,7 @@
     <section class="home--medium">
       <!-- TODO: 鼠标移动到此处时会连续触发openSearchMenu事件 -->
       <Search :searchMenu="searchMenu" @submit="submitSearchText"></Search>
-      <Hitokoto :hito="hitorikoto"></Hitokoto>
+      <Hitokoto :hito="hitorikoto" v-show="hitorikoto"></Hitokoto>
     </section>
     <!-- Medium end -->
 
@@ -97,8 +97,7 @@ export default class Home extends Vue {
   // 控制蒙版开关
   private isMask: boolean = false;
   // 一言
-  // private hitorikoto: string = '加载中...';
-  private hitorikoto: string = '风淅淅，雨纤纤。难怪春愁细细添。';
+  private hitorikoto: string | undefined = '加载中...';
 
   // methods
   /**
@@ -108,6 +107,12 @@ export default class Home extends Vue {
    * @author: Miya
    */
   private async getHitokoto() {
+    const status = this.$store.state.settings.home.hitokoto;
+    console.log(status);
+    if (status === false) {
+      this.hitorikoto = undefined;
+      return;
+    }
     const getHitokotoData = await GET('https://v1.hitokoto.cn');
     this.hitorikoto = getHitokotoData.data.hitokoto;
   }
@@ -180,7 +185,7 @@ export default class Home extends Vue {
 
   // mounted
   private mounted() {
-    // this.getHitokoto();
+    this.getHitokoto();
   }
 }
 </script>
