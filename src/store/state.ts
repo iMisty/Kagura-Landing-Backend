@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-08-11 19:26:22
+ * @LastEditTime: 2020-08-11 19:32:46
  * @LastEditors: Please set LastEditors
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
@@ -12,12 +12,19 @@ const state = {
   token:
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLC.caAFsUUgzA0bPJtKfkH-4Hk',
   // 用户相关
+  // TODO: api.xxx.com/settings/user
   user: {
+    // 用户ID
     id: 1,
+    // 用户组
     status: 'admin',
+    // 用户昵称
     name: 'Miya',
+    // 用户性别
     sex: 'female',
+    // 头像
     avatar: '',
+    // 骚话.jpg
     introduce: 'test text',
   },
   // 控制状态
