@@ -1,8 +1,8 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-08-11 19:32:46
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-12 22:46:07
+ * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
  */
@@ -26,6 +26,8 @@ const state = {
     avatar: '',
     // 骚话.jpg
     introduce: 'test text',
+    // 适配颜色模式
+    color_style: 'dark'
   },
   // 控制状态
   status: {
@@ -55,6 +57,7 @@ const state = {
     },
   },
   // 搜索引擎列表
+  // api.xxx.com/search/list
   searchList: [
     {
       icon: 'google',
@@ -79,6 +82,7 @@ const state = {
     // {icon: 'google',text: 'google', header: 'https://www.google.com/search?q='},
   ],
   // 导航栏列表
+  // api.xxx.com/search/link
   link: [
     {
       name: '工具',
