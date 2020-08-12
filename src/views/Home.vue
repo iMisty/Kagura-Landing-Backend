@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-11 19:20:03
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-08-13 00:16:46
 -->
 <template>
   <div class="home">
@@ -67,7 +67,7 @@ import Icon from '@/components/icon.component.tsx';
 // 设置边栏
 import Setting from '@/components/Home/setting.component.tsx';
 // 链接列表
-import List from '@/components/Home/list.component.vue';
+import List from '@/components/Home/list.component.tsx';
 // 搜索框
 import Search from '@/components/Home/search/search.vue';
 // 计算搜索结果web工具函数

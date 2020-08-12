@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-27 14:28:24
- * @LastEditTime: 2020-08-08 23:34:08
+ * @LastEditTime: 2020-08-12 23:16:01
  * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: /Single-Search/src/router/index.ts
@@ -53,6 +53,11 @@ const routes: RouteConfig[] = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    component: () => import('@/views/test')
   }
 ];
 

@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-08-12 22:46:07
+ * @LastEditTime: 2020-08-12 23:18:20
  * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
@@ -27,7 +27,7 @@ const state = {
     // 骚话.jpg
     introduce: 'test text',
     // 适配颜色模式
-    color_style: 'dark'
+    dark_style: true
   },
   // 控制状态
   status: {
@@ -42,7 +42,7 @@ const state = {
       // 背景图片
       background: 'https://i.loli.net/2020/06/13/Tsa8uqY2gbjRndw.jpg',
       // TODO: 首页搜索栏图片
-      search_logo: require('@/static/img/logo.svg'),
+      search_logo: '',
       // 是否开启毛玻璃效果
       blur_style: true,
       // 是否开启一言
