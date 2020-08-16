@@ -1,16 +1,16 @@
 import { Component, Vue } from 'vue-property-decorator';
 @Component({})
 export default class Test extends Vue {
-  private data: String[] = [];
+  private data: string[] = [];
   private mounted() {
     const a = this.$store.state.link;
     this.data = a;
     console.log(this.data);
   }
-  protected render() {
+  private render() {
     return (
       <div class="test" style="color: #fff;">
-        {this.data.map(item => {
+        {this.data.map((item: any) => {
           return (
             <div>
               {/* @ts-ignore */}
