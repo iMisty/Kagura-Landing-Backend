@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-13 01:09:42
+ * @LastEditTime: 2020-08-17 01:59:15
 -->
 <template>
   <div class="home">
@@ -108,7 +108,7 @@ export default class Home extends Vue {
    */
   private async getHitokoto() {
     const status = this.$store.state.settings.home.hitokoto;
-    console.log(status);
+    console.log(`是否显示一言:${status}`);
     if (status === false) {
       this.hitorikoto = undefined;
       return;
