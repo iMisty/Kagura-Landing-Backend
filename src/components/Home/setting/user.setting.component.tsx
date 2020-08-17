@@ -1,13 +1,13 @@
 import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component({})
 export default class UserSetting extends Vue {
-  @Prop() private name: unknown;
-  @Prop() private avatar: unknown;
-  @Prop() private sex: unknown;
-  @Prop() private introduce: unknown;
+  @Prop() private name: string | undefined;
+  @Prop() private avatar: string | undefined;
+  @Prop() private sex: string | undefined;
+  @Prop() private introduce: string | undefined;
   protected render() {
     return (
-      <section class="setting--user">
+      <section class="setting__wrap setting--user">
         <article class="setting--avatar">
           {/* 当自定义头像为空时使用默认头像 */}
           {this.sex === 'male' && this.avatar === '' ? (

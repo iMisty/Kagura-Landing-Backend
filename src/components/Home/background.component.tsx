@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-14 00:02:26
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-17 00:08:24
+ * @LastEditTime: 2020-08-17 23:39:08
  */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import '../../style/home/background.component.less';
@@ -13,7 +13,7 @@ import '../../style/home/background.component.less';
   components: {}
 })
 export default class Background extends Vue {
-  @Prop() private isInputing: boolean = false;
+  @Prop() private isInputing: any = false;
 
   // 存储从 Vuex 中获取的背景图片
   private bgOptions: object = {

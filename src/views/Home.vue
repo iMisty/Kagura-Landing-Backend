@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-17 01:59:15
+ * @LastEditTime: 2020-08-18 00:01:27
 -->
 <template>
   <div class="home">
@@ -37,6 +37,7 @@
     </section>
     <!-- Bottom end -->
 
+    <!-- RightBar start -->
     <transition-group
       class="home--rightbar"
       :class="{ 'link-active': isLinkOpen, 'setting-active': isSettingOpen }"
@@ -50,6 +51,9 @@
         <Setting></Setting>
       </section>
     </transition-group>
+    <!-- RightBar end -->
+
+    <!-- Float & Extra start -->
     <section
       class="home--mask"
       :class="{ 'mask-active': isMask }"

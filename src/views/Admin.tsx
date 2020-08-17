@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-09 04:09:36
+ * @LastEditTime: 2020-08-18 00:20:42
  */
 import { Component, Vue } from 'vue-property-decorator';
 // 导入SVG相关
@@ -36,12 +36,17 @@ export default class Admin extends Vue {
   protected render() {
     return (
       <div class="admin">
+
+        {/* TopBar start */}
         <section class="admin-top">
           <div class="admin-top-logo">
             <img src={this.logo} alt="test logo" />
           </div>
           <div class="admin-top-title">DashBoard</div>
         </section>
+        {/* TopBar end */}
+
+        {/* LeftBar start */}
         <section class="admin-left">
           {this.router.map((item: Routes) => {
             return (
@@ -53,6 +58,9 @@ export default class Admin extends Vue {
             );
           })}
         </section>
+        {/* LeftBar end */}
+        
+        {/* Wrap start */}
         <section class="admin-wrap">
           <section class="admin-wrap-left">
             <transition name="fade">
@@ -60,6 +68,7 @@ export default class Admin extends Vue {
             </transition>
           </section>
         </section>
+        {/* Wrap end*/}
       </div>
     );
   }

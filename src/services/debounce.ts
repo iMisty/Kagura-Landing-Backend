@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-08-17 00:31:28
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-17 00:47:44
+ * @LastEditTime: 2020-08-17 23:33:49
  * @Description: 节流方法
  * @FilePath: /Single-Search/src/services/debounce.ts
  */
@@ -22,7 +22,7 @@ const _debounce = (fn: string, delay: number) => {
       timer = null;
       // @ts-ignore
       fn.apply(_this, args);
-    },delay);
+    }, delay);
   };
 };
 

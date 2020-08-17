@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-06-21 11:14:32
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-03 23:46:41
+ * @LastEditTime: 2020-08-18 01:01:00
  * @Description: 首页-设置栏
- * @FilePath: /Single-Search/src/style/home/setting.less
+ * @FilePath: /Single-Search/src/style/home/setting.component.less
  */
 .home {
 
@@ -19,20 +19,33 @@
 
 .setting {
   .blur-bg-dark(@blur-component-color);
-  position        : relative;
-  top             : 0;
-  left            : 0;
-  margin          : 2rem;
-  overflow        : hidden;
-  border-radius   : @border-radius;
+  position     : relative;
+  top          : 0;
+  left         : 0;
+  margin       : 2rem;
+  min-width    : 16rem;
+  min-height   : 8rem;
+  overflow     : hidden;
+  border-radius: @border-radius;
 
-  &--user {
-    .layout-flex(flex, column, center, center);
+  // 内框框架
+  &__wrap {
     padding: 1rem;
   }
 
+  &__logout {
+    .layout-flex(flex, row, space-between, center, wrap);
+  }
+
   &--avatar {
-    width: 5rem;
+    .layout-flex(flex, column, center, center);
+    // 头像大小
+    &--male,
+    &--female,
+    &--custom {
+      width : 6rem;
+      height: 6rem;
+    }
   }
 
   &--wrap {
