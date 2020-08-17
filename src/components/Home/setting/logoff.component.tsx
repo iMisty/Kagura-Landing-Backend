@@ -1,9 +1,10 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import '@/style/home/setting/logoff.component.less';
 @Component({})
 export default class LoadingRightBarHome extends Vue {
   private render() {
     return (
-      <div class="setting__wrap setting__logout">
+      <div class="setting__wrap setting__logoff">
         {/* 默认头像 */}
         <article class="setting--avatar">
           <section class="setting--avatar--female">
@@ -64,7 +65,7 @@ export default class LoadingRightBarHome extends Vue {
           </section>
         </article>
         {/* 登录按钮 */}
-        <article class="setting__logout--setting">
+        <article class="setting__logoff--setting">
           <button class="ys__button ys__button--ghost">Login</button>
           <button class="ys__button ys__button--ghost">Registry</button>
         </article>
