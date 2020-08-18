@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-27 14:28:24
- * @LastEditTime: 2020-08-17 01:57:24
+ * @LastEditTime: 2020-08-18 23:57:19
  * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: /Single-Search/src/router/index.ts
@@ -67,20 +67,20 @@ const router = new VueRouter({
   routes
 });
 
-router.beforeEach((to, from, next) => {
-  if (to.path === '/login') {
-    next();
-  } else {
-    const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLC.caAFsUUgzA0bPJtKfkH-4Hk';
-    if (token) {
-      next();
-    } else {
-      router.push({
-        name: 'login'
-      });
-    }
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   if (to.path === '/login') {
+//     next();
+//   } else {
+//     const token =
+//       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLC.caAFsUUgzA0bPJtKfkH-4Hk';
+//     if (token) {
+//       next();
+//     } else {
+//       router.push({
+//         name: 'login'
+//       });
+//     }
+//   }
+// });
 
 export default router;

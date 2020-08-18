@@ -1,0 +1,27 @@
+@import '../../global/var.less';
+
+.home__login {
+  .layout-flex(flex, row, center, center);
+  position: fixed;
+  width   : 100vw;
+  height  : 100vh;
+  z-index : 4;
+
+  // 内容部分
+  &--wrap {
+    .layout-flex(flex, column, center);
+    .blur-bg-dark(@blur-component-color);
+    width        : 32rem;
+    min-height   : 18rem;
+    padding      : 2rem;
+    border-radius: @border-radius;
+  }
+
+  // logo 占位
+  &--logo {
+    width          : 16rem;
+    height         : 4rem;
+    background     : linear-gradient(to right, #f1f6f7 0%, #f1f6f7 50%, #ecf2f3 50%, #ecf2f3 100%) repeat-x 50% 0;
+    background-size: 3rem;
+  }
+}

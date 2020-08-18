@@ -2,6 +2,14 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import '@/style/home/setting/logoff.less';
 @Component({})
 export default class LoadingRightBarHome extends Vue {
+  // 控制点击后触发登录模块
+  private handleLogin(): void {
+    console.log('login click');
+  }
+  // 点击弹一个敬请期待
+  private handleNoEvent(): void {
+    console.log('No');
+  }
   private render() {
     return (
       <div class="setting__wrap setting__logoff">
@@ -66,8 +74,18 @@ export default class LoadingRightBarHome extends Vue {
         </article>
         {/* 登录按钮 */}
         <article class="setting__logoff--setting">
-          <button class="setting__logoff--setting--button">Login</button>
-          <button class="setting__logoff--setting--button">Registry</button>
+          <button
+            class="setting__logoff--setting--button"
+            onClick={this.handleLogin}
+          >
+            Login
+          </button>
+          <button
+            class="setting__logoff--setting--button"
+            onClick={this.handleNoEvent}
+          >
+            Registry
+          </button>
         </article>
       </div>
     );
