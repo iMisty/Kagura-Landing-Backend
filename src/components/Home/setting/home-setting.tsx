@@ -1,14 +1,14 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-17 16:57:01
- * @LastEditTime: 2020-08-18 01:03:58
- * @LastEditors: Miya
+ * @LastEditTime: 2020-08-18 16:48:03
+ * @LastEditors: Please set LastEditors
  * @Description: 个人设置页
  * @FilePath: /Single-Search/src/components/Home/setting.component.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
-import settingUser from '@/components/Home/setting/user.setting.component';
-import logoff from '@/components/Home/setting/logoff.component';
+import settingUser from '@/components/Home/setting/user';
+import logoff from '@/components/Home/setting/logoff';
 import User from '@/model/user';
 
 @Component({

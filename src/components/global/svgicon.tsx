@@ -4,7 +4,7 @@
  * @LastEditTime: 2020-08-08 01:40:34
  * @LastEditors: Miya
  * @Description: SVG 图标支持
- * @FilePath: /Single-Search/src/components/svgicon.component.tsx
+ * @FilePath: /Single-Search/src/components/svgicon.tsx
  */
 import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component({})

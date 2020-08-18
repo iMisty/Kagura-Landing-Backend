@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-08 01:46:15
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-18 16:09:55
 --> 
 <template>
   <div class="search--bar">
@@ -63,7 +63,7 @@
 
 <script lang="ts">
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
-import Svgicon from '@/components/svgicon.component';
+import Svgicon from '@/components/global/svgicon';
 import choose from '@/components/Home/search/search-choose.vue';
 import reSearch from '@/components/Home/search/re-search.vue';
 import { getEngineValue } from '@/services/getEngineValue.ts';

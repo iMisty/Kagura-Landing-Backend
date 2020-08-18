@@ -1,8 +1,8 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-08-12 23:18:20
- * @LastEditors: Miya
+ * @LastEditTime: 2020-08-18 15:13:50
+ * @LastEditors: Please set LastEditors
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
  */

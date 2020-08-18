@@ -3,7 +3,7 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 16:04:33
- * @LastEditors: Please set LastEditors
+ * @LastEditors: Miya
  * @LastEditTime: 2020-08-11 19:17:05
  */
 import { Component, Vue } from 'vue-property-decorator';

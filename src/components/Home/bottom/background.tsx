@@ -3,14 +3,15 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-14 00:02:26
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-17 23:39:08
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-18 16:19:52
  */
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import '../../style/home/background.component.less';
+import '../../../style/home/bottom/background.less';
 @Component({
   // 组件注册
-  components: {}
+  components: {
+  }
 })
 export default class Background extends Vue {
   @Prop() private isInputing: any = false;
@@ -23,7 +24,7 @@ export default class Background extends Vue {
   get inputingStatus() {
     if (this.isInputing === true) {
       return 'bg-active';
-    }else{
+    } else {
       return '';
     }
   }

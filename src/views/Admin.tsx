@@ -3,12 +3,12 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-18 00:20:42
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-18 16:14:19
  */
 import { Component, Vue } from 'vue-property-decorator';
 // 导入SVG相关
-import Svgicon from '@/components/svgicon.component';
+import Svgicon from '@/components/global/svgicon';
 // 路由相关
 import Router from '@/components/Admin/router.component';
 // 后台路由模型
@@ -59,7 +59,7 @@ export default class Admin extends Vue {
           })}
         </section>
         {/* LeftBar end */}
-        
+
         {/* Wrap start */}
         <section class="admin-wrap">
           <section class="admin-wrap-left">

@@ -3,13 +3,13 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-18 00:01:27
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-18 16:25:49
 -->
 <template>
   <div class="home">
     <!-- Top start -->
-    <section class="home--top">
+    <section class="home__top">
       <button class="list--button" @click="handleOpenSetting">
         <img src="@/icons/svg/avatar.svg" alt />
       </button>
@@ -24,7 +24,7 @@
     <!-- Top end -->
 
     <!-- Medium start -->
-    <section class="home--medium">
+    <section class="home__medium">
       <!-- TODO: 鼠标移动到此处时会连续触发openSearchMenu事件 -->
       <Search :searchMenu="searchMenu" @submit="submitSearchText"></Search>
       <Hitokoto :hito="hitorikoto" v-show="hitorikoto"></Hitokoto>
@@ -32,22 +32,22 @@
     <!-- Medium end -->
 
     <!-- Bottom start -->
-    <section class="home--bottom">
+    <section class="home__bottom">
       <Copyright></Copyright>
     </section>
     <!-- Bottom end -->
 
     <!-- RightBar start -->
     <transition-group
-      class="home--rightbar"
+      class="home__rightbar"
       :class="{ 'link-active': isLinkOpen, 'setting-active': isSettingOpen }"
       tag="section"
       name="slide"
     >
-      <section class="home--list" v-show="isLinkOpen" :key="1">
+      <section class="home__list" v-show="isLinkOpen" :key="1">
         <List></List>
       </section>
-      <section class="home--setting" v-show="isSettingOpen" :key="2">
+      <section class="home__setting" v-show="isSettingOpen" :key="2">
         <Setting></Setting>
       </section>
     </transition-group>
@@ -55,7 +55,7 @@
 
     <!-- Float & Extra start -->
     <section
-      class="home--mask"
+      class="home__mask"
       :class="{ 'mask-active': isMask }"
       @click="handleClose"
     ></section>
@@ -67,11 +67,11 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import '@/style/home/style.less';
 // 链接图标
-import Icon from '@/components/icon.component.tsx';
+import Icon from '@/components/global/icon.component.tsx';
 // 设置边栏
-import Setting from '@/components/Home/setting.component.tsx';
+import Setting from '@/components/Home/setting/home-setting.tsx';
 // 链接列表
-import List from '@/components/Home/list.component.vue';
+import List from '@/components/Home/list/home-list.vue';
 // 搜索框
 import Search from '@/components/Home/search/search.vue';
 // 计算搜索结果web工具函数
@@ -85,15 +85,13 @@ import { GET } from '@/services/ajax';
     Setting,
     List,
     Search,
-    Hitokoto: () => import('@/components/Home/hitokoto.component.tsx'),
-    Copyright: () => import('@/components/Home/copyright.component.tsx')
+    Hitokoto: () => import('@/components/Home/bottom/hitokoto.tsx'),
+    Copyright: () => import('@/components/Home/bottom/copyright.tsx')
   }
 })
 export default class Home extends Vue {
   // data
   public searchMenu: boolean = false;
-  // 链接图标
-  private listButtonSrc: string = require('@/assets/menu.png');
   // 控制设置边栏开关
   private isSettingOpen: boolean = false;
   // 控制链接开关

@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-11 23:32:14
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-08 01:46:33
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-18 16:13:28
 --> 
  <template>
   <li class="choose-engine-wrap" :data-value="value" @click="handleChooseEngine">
@@ -20,7 +20,7 @@
  
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Svgicon from '@/components/svgicon.component';
+import Svgicon from '@/components/global/svgicon';
 @Component({
   // 组件注册
   components: {

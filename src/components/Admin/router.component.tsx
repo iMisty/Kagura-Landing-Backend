@@ -1,13 +1,13 @@
 /*
  * @Author: Miya
  * @Date: 2020-08-06 00:20:25
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-09 04:05:43
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-18 16:10:04
  * @Description: 路由跳转
  * @FilePath: /Single-Search/src/components/Admin/router.component.tsx
  */
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import svgicon from '@/components/svgicon.component';
+import svgicon from '@/components/global/svgicon';
 import '@/icons/svg/admin';
 
 @Component({

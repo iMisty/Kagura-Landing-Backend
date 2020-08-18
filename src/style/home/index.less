@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:30:00
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-03 23:38:47
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-18 16:37:38
  */
 .home {
   display           : grid;
@@ -13,7 +13,7 @@
   height            : 100vh;
 
   // 顶部
-  &--top {
+  &__top {
     display        : flex;
     flex-direction : row;
     justify-content: flex-end;
@@ -21,7 +21,13 @@
     padding        : 1rem;
   }
 
-  &--bottom {
+  // 中间区域
+  &__medium {
+    .layout-flex(flex, column, space-around, center);
+    padding-bottom: 12vh;
+  }
+
+  &__bottom {
     display        : flex;
     flex-direction : column;
     justify-content: flex-end;
@@ -33,16 +39,16 @@
   }
 
 
-  &--mask {
-    position           : fixed;
-    display            : block;
-    top                : 0;
-    right              : 0;
-    width              : 100vw;
-    height             : 100vh;
-    z-index            : -1;
+  &__mask {
+    position             : fixed;
+    display              : block;
+    top                  : 0;
+    right                : 0;
+    width                : 100vw;
+    height               : 100vh;
+    z-index              : -1;
     //background-color   : #000;
-    opacity            : 0;
-    transition-duration: .2s;
+    opacity              : 0;
+    transition-duration  : .2s;
   }
 }

@@ -1,12 +1,12 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import '@/style/home/setting/logoff.component.less';
+import '@/style/home/setting/logoff.less';
 @Component({})
 export default class LoadingRightBarHome extends Vue {
   private render() {
     return (
       <div class="setting__wrap setting__logoff">
         {/* 默认头像 */}
-        <article class="setting--avatar">
+        <article class="setting__logoff--avatar setting--avatar">
           <section class="setting--avatar--female">
             <svg
               t="1592386222301"
