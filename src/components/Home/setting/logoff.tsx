@@ -66,8 +66,8 @@ export default class LoadingRightBarHome extends Vue {
         </article>
         {/* 登录按钮 */}
         <article class="setting__logoff--setting">
-          <button class="ys__button ys__button--ghost">Login</button>
-          <button class="ys__button ys__button--ghost">Registry</button>
+          <button class="setting__logoff--setting--button">Login</button>
+          <button class="setting__logoff--setting--button">Registry</button>
         </article>
       </div>
     );

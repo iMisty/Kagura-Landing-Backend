@@ -2,4 +2,26 @@
 
 .setting__logoff {
   .layout-flex(flex, row, space-between, center, wrap);
+
+  // Normal Avatar
+  &--avatar {
+    flex: 1;
+  }
+
+  // Button list
+  &--setting {
+    .layout-flex(flex, column, center, flex-end);
+    flex: 1;
+
+    // button
+    &--button {
+      margin       : .5rem;
+      width        : 5rem;
+      height       : 2rem;
+      color        : @pri-text-dark;
+      border       : 1px solid #888;
+      cursor       : pointer;
+      border-radius: @border-radius;
+    }
+  }
 }
