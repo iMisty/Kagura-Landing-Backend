@@ -17,9 +17,12 @@ export default class LoginHome extends Vue {
           <section class="home__login--logo">
             <div class="fake-logo"></div>
           </section>
+          <section class="home__login--title">
+            <h3>Login</h3>
+          </section>
           <section class="home__login--form">
             <label for="username">
-              <h5>UserName</h5>
+              <p>UserName</p>
               <input
                 class="home__login--form--input"
                 type="text"
@@ -29,7 +32,7 @@ export default class LoginHome extends Vue {
               />
             </label>
             <label for="password">
-              <h5>Password</h5>
+              <p>Password</p>
               <input
                 class="home__login--form--input"
                 type="password"
@@ -39,23 +42,10 @@ export default class LoginHome extends Vue {
               />
             </label>
           </section>
-          <section class="home__login--options">
-            <label for="remember" class="home__login--options--remember">
-              <input
-                type="checkbox"
-                name="remember"
-                v-model={this.loginData.remember}
-              />
-              <p>Remember Me</p>
-            </label>
-            <section class="home__login--options--submit">
-              <button
-                type="submit"
-                class="home__login--options--submit--button"
-              >
-                Login
-              </button>
-            </section>
+          <section class="home__login--submit">
+            <button type="submit" class="home__login--submit--button">
+              SIGN IN NOW
+            </button>
           </section>
         </div>
       </div>

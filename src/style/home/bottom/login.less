@@ -9,12 +9,17 @@
 
   // 内容部分
   &--wrap {
-    .layout-flex(flex, column, center);
+    .layout-flex(flex, column, center, stretch);
     .blur-bg-dark(@blur-component-color);
     width        : 32rem;
     min-height   : 18rem;
-    padding      : 2rem;
+    padding      : 2rem 8rem;
     border-radius: @border-radius;
+  }
+
+  // 标题
+  &--title {
+    text-align: center;
   }
 
   // logo 占位
@@ -23,5 +28,37 @@
     height         : 4rem;
     background     : linear-gradient(to right, #f1f6f7 0%, #f1f6f7 50%, #ecf2f3 50%, #ecf2f3 100%) repeat-x 50% 0;
     background-size: 3rem;
+  }
+
+  // 表单
+  &--form {
+
+    p {
+      font-size: 1em;
+    }
+
+    &--input {
+      margin       : .5rem 0;
+      width        : 100%;
+      line-height  : 2rem;
+      color        : @pri-text-dark;
+      border-bottom: 1px solid @pri-text-dark;
+    }
+  }
+
+  // 提交按钮
+  &--submit {
+    margin: 1rem;
+
+    &--button {
+      padding         : .8rem 1rem;
+      width           : 100%;
+      font-weight     : 700;
+      font-size       : 1rem;
+      letter-spacing  : 0.1rem;
+      color           : @pri-text-dark;
+      background-color: @blur-component-color;
+      border-radius   : @border-radius * 2;
+    }
   }
 }
