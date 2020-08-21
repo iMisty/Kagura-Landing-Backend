@@ -67,7 +67,7 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import '@/style/home/style.less';
 // 链接图标
-import Icon from '@/components/global/icon.component.tsx';
+import Icon from '@/components/global/icon.tsx';
 // 设置边栏
 import Setting from '@/components/Home/setting/home-setting.tsx';
 // 链接列表

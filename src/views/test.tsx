@@ -6,9 +6,6 @@ import login from '@/components/Home/bottom/login';
   }
 })
 export default class Test extends Vue {
-  private mounted() {
-
-  }
   private render() {
     return (
       <div class="test" style="color: #fff;">

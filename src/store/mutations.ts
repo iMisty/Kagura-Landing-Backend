@@ -1,8 +1,8 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:17:38
- * @LastEditTime: 2020-07-20 16:19:26
- * @LastEditors: Miya
+ * @LastEditTime: 2020-08-21 11:32:47
+ * @LastEditors: Please set LastEditors
  * @Description: Vuex 内的 Mutations
  * @FilePath: \Single-Search\src\store\mutations.ts
  */
@@ -21,6 +21,13 @@ const mutations = {
    */
   STYLEMODE(state: any, style: string) {
     state.status.styleMode = style;
+  },
+  /*
+   *  改变 state 里的 token
+   *  该变量用于登录与退出
+   */
+  SETTOKEN(state: any, token: string) {
+    state.token = token;
   }
 };
 
