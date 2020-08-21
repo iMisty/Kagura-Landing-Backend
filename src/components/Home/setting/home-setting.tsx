@@ -31,7 +31,7 @@ export default class Setting extends Vue {
   // 获取用户是否已登录
   private isLogin: boolean = false;
 
-  private isLoginStatus: boolean= false;
+  private isLoginStatus: boolean = false;
 
   private getUserInfo() {
     const token = localStorage.getItem('token') || this.$store.state.token;

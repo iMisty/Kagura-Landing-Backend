@@ -8,7 +8,7 @@
   &-puzzle {
     display              : grid;
     justify-content      : stretch;
-    grid-template-columns: repeat(8, auto);
+    grid-template-columns: repeat(8, 1fr);
     grid-template-rows   : repeat(3, 10rem);
     grid-gap             : 1rem;
     padding              : 1rem;
@@ -23,9 +23,9 @@
 }
 
 .puzzle-title {
+  padding       : .25rem;
   font-size     : 1.5rem;
   font-weight   : 600;
-  line-height   : 2.6;
   letter-spacing: .54px;
 }
 
@@ -35,21 +35,26 @@
 }
 
 /**************** 模块大小控制 ******************/
-.row-2{
+.row-2 {
   grid-row: span 2;
 }
-.row-3{
+
+.row-3 {
   grid-row: span 3;
 }
-.row-4{
+
+.row-4 {
   grid-row: span 4;
 }
-.column-2{
+
+.column-2 {
   grid-column: span 2;
 }
-.column-3{
+
+.column-3 {
   grid-column: span 3;
 }
-.column-4{
+
+.column-4 {
   grid-column: span 4;
 }

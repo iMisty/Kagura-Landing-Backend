@@ -1,11 +1,13 @@
-/*
- * @Author: Miya
- * @Date: 2020-07-23 17:53:38
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-09 04:04:15
- * @Description: 卡片式磁贴
- * @FilePath: /Single-Search/src/components/Admin/puzzle.component.tsx
- */
+<template>
+  <section class="puzzle-wrap" :class="[rowClass, columnClass]">
+    <slot>
+      <div class="puzzle-title">{{ title }}</div>
+      <div class="puzzle-text">{{ text }}</div>
+    </slot>
+  </section>
+</template>
+
+<script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component({})
 export default class PuzzleAdmin extends Vue {
@@ -30,14 +32,5 @@ export default class PuzzleAdmin extends Vue {
   get columnClass(): string {
     return `column-${this.column}`;
   }
-  protected render() {
-    return (
-      <section class={`puzzle-wrap ${this.rowClass} ${this.columnClass}`}>
-        <slot>
-          <div class="puzzle-title">{this.title}</div>
-          <div class="puzzle-text">{this.text}</div>
-        </slot>
-      </section>
-    );
-  }
 }
+</script>

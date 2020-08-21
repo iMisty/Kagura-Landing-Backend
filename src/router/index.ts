@@ -67,20 +67,21 @@ const router = new VueRouter({
   routes
 });
 
-// router.beforeEach((to, from, next) => {
-//   if (to.path === '/login') {
-//     next();
-//   } else {
-//     const token =
-//       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLC.caAFsUUgzA0bPJtKfkH-4Hk';
-//     if (token) {
-//       next();
-//     } else {
-//       router.push({
-//         name: 'login'
-//       });
-//     }
-//   }
-// });
+router.beforeEach((to, from, next) => {
+  if (to.path === '/login') {
+    next();
+  } else {
+    const token = localStorage.getItem('token');
+    // const token =
+    //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLC.caAFsUUgzA0bPJtKfkH-4Hk';
+    if (token) {
+      next();
+    } else {
+      router.push({
+        path: 'login'
+      });
+    }
+  }
+});
 
 export default router;
