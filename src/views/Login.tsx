@@ -15,9 +15,9 @@ import LoginInterface from '@/model/login';
 @Component({})
 export default class Login extends Vue {
   // 用户输入数据
-  private info: LoginInterface = {
-    username: '',
-    password: '',
+  private loginData: LoginInterface = {
+    username: 'admin',
+    password: '123456',
     remember: false
   };
   // 是否记住密码
@@ -31,6 +31,37 @@ export default class Login extends Vue {
   private handleChangeRememberStatus() {
     this.isRemember = !this.isRemember;
     console.log(this.isRemember);
+  }
+
+  // 提交登录状态
+  private setLoginStatus() {
+    // TODO: 上线时需要调整为正式环境与后台交互
+    // 临时数据
+    const data = this.loginData;
+    const loginStatus = localStorage.getItem('token');
+
+    // 账号密码不正确
+    if (data.username !== 'admin' && data.password !== '123456') {
+      console.log('账号密码不正确');
+      // this.buttonText = 'Login inconnect';
+      return false;
+    }
+
+    // 已经是登录状态
+    if (loginStatus !== null) {
+      console.log('已经是登录状态');
+      this.$store.commit('SETTOKEN', 'test-token');
+      this.$router.push({ path: '/admin' });
+      console.log(`token: ${this.$store.state.token}`);
+      return true;
+    }
+
+    // 账号密码正确时，写入localStorage与Vuex
+    localStorage.setItem('token', 'test-token');
+    this.$store.commit('SETTOKEN', loginStatus);
+    this.$router.push({ path: '/admin' });
+    console.log(`token: ${this.$store.state.token}`);
+    return true;
   }
   // // TODO: 测试数据
   // private info2 = {
@@ -86,7 +117,7 @@ export default class Login extends Vue {
               <input
                 class="login-form-input-inputarea"
                 type="text"
-                v-model={this.info.username}
+                v-model={this.loginData.username}
               />
             </div>
             <div class="login-form-input-item login-form-input-password">
@@ -94,7 +125,7 @@ export default class Login extends Vue {
               <input
                 class="login-form-input-inputarea"
                 type="password"
-                v-model={this.info.password}
+                v-model={this.loginData.password}
               />
             </div>
           </section>
@@ -107,7 +138,7 @@ export default class Login extends Vue {
                 class="remember-checkbox"
                 type="checkbox"
                 name="remember"
-                v-model={this.info.remember}
+                v-model={this.loginData.remember}
               />
               <p>Remember Me</p>
             </div>
@@ -116,7 +147,9 @@ export default class Login extends Vue {
             </div>
           </section>
           <section class="login-form-button">
-            <button class="login-button submit">Login</button>
+            <button class="login-button submit" onClick={this.setLoginStatus}>
+              Login
+            </button>
             <button class="login-button extra">Extra</button>
           </section>
         </div>

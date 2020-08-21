@@ -26,7 +26,7 @@
     <!-- Medium start -->
     <section class="home__medium">
       <!-- TODO: 鼠标移动到此处时会连续触发openSearchMenu事件 -->
-      <Search :searchMenu="searchMenu" @submit="submitSearchText"></Search>
+      <Search :searchMenu="searchMenu" @submit.once="submitSearchText"></Search>
       <Hitokoto :hito="hitorikoto" v-show="hitorikoto"></Hitokoto>
     </section>
     <!-- Medium end -->
@@ -179,7 +179,9 @@ export default class Home extends Vue {
     value: string,
     extra: string | undefined
   ) {
+    // TODO: 搜索效果失效
     const searchSiteText = computedSearch(search);
+    console.log(searchSiteText);
     const address = `${searchSiteText}${value}${extra}`;
     console.log(searchSiteText + value + extra);
     window.open(address);

@@ -38,16 +38,16 @@ export default class Admin extends Vue {
       <div class="admin">
 
         {/* TopBar start */}
-        <section class="admin-top">
-          <div class="admin-top-logo">
+        <section class="admin__top">
+          <div class="admin__top-logo">
             <img src={this.logo} alt="test logo" />
           </div>
-          <div class="admin-top-title">DashBoard</div>
+          <div class="admin__top-title">DashBoard</div>
         </section>
         {/* TopBar end */}
 
         {/* LeftBar start */}
-        <section class="admin-left">
+        <section class="admin__left">
           {this.router.map((item: Routes) => {
             return (
               <router
@@ -61,8 +61,8 @@ export default class Admin extends Vue {
         {/* LeftBar end */}
 
         {/* Wrap start */}
-        <section class="admin-wrap">
-          <section class="admin-wrap-left">
+        <section class="admin__wrap">
+          <section class="admin__wrap-left">
             <transition name="fade">
               <router-view></router-view>
             </transition>

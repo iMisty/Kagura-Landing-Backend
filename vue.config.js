@@ -17,7 +17,7 @@ module.exports = {
   // 查阅： https://cli.vuejs.org/zh/guide/css.html#%E5%BC%95%E7%94%A8%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90
   css: {
     // 提取至单独的CSS文件
-    extract: true
+    extract: false
   },
   configureWebpack: {
     resolve: {

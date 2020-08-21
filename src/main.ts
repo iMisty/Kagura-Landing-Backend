@@ -10,7 +10,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import { store } from './store';
-import 'vue-tsx-support/enable-check';
+// import 'vue-tsx-support/enable-check';
 import '@/style/global/style.less';
 
 Vue.config.productionTip = false;

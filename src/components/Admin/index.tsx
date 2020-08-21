@@ -7,7 +7,7 @@
  * @FilePath: /Single-Search/src/components/Admin/index.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
-import puzzle from '@/components/Admin/puzzle.component.tsx';
+import puzzle from '@/components/Admin/components/puzzle';
 @Component({
   components: {
     puzzle
@@ -18,7 +18,7 @@ export default class IndexAdmin extends Vue {
     return (
       <div class="admin-index">
         <section class="admin-wrap-puzzle">
-          <puzzle row="2" column="2"></puzzle>
+          <puzzle row="2" column="4"></puzzle>
           <puzzle></puzzle>
           <puzzle></puzzle>
           <puzzle></puzzle>
