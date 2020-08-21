@@ -31,14 +31,33 @@ export default class Setting extends Vue {
   // 获取用户是否已登录
   private isLogin: boolean = false;
 
+  private isLoginStatus: boolean= false;
+
   private getUserInfo() {
     const token = localStorage.getItem('token') || this.$store.state.token;
     const info = this.$store.state.user;
     if (!token) {
       return;
     }
-    // this.isLogin = true;
+    this.isLogin = true;
     this.setting = info;
+  }
+
+  private handleLogin() {
+    this.isLoginStatus = true;
+    return true;
+  }
+
+  private handleLogout() {
+    const token = localStorage.getItem('token');
+    const vuextoken = this.$store.state.token;
+    if (!token && !vuextoken) {
+      return false;
+    }
+    localStorage.removeItem('token');
+    this.$store.commit('SETTOKEN', null);
+    console.log('aa');
+    console.log(this.$store.state.token);
   }
 
   private mounted() {
@@ -54,9 +73,13 @@ export default class Setting extends Vue {
             sex={this.setting.sex}
             introduce={this.setting.introduce}
             avatar={this.setting.avatar}
+            onlogout={this.handleLogout}
           ></setting-user>
         ) : (
-          <log-off></log-off>
+          <log-off
+            onisActive={this.isLoginStatus}
+            onlogin={this.handleLogin}
+          ></log-off>
         )}
       </div>
     );

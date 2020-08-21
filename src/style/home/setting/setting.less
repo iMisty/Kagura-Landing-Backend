@@ -30,11 +30,13 @@
 
   // 内框框架
   &__wrap {
+    .layout-flex(flex,row,center,center);
     padding: 1rem;
-  }
+
 
   &--avatar {
     .layout-flex(flex, column, center, center);
+    flex: 1;
     // 头像大小
     &--male,
     &--female,
@@ -44,7 +46,8 @@
     }
   }
 
-  &--wrap {
+  &--information {
+    flex: 1;
     text-align: center;
     font-size : 1.2em;
 
@@ -56,6 +59,17 @@
     &-text {
       color: @sec-text-dark;
     }
+
+    &--logout {
+      margin       : 0.5rem;
+      width        : 5rem;
+      height       : 2rem;
+      color        : #eaeaea;
+      border       : 1px solid #888;
+      cursor       : pointer;
+      border-radius: 1rem;
+    }
+  }
   }
 
   // 选项卡

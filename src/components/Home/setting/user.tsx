@@ -5,13 +5,18 @@ export default class UserSetting extends Vue {
   @Prop() private avatar: string | undefined;
   @Prop() private sex: string | undefined;
   @Prop() private introduce: string | undefined;
-  protected render() {
+
+  private logout() {
+    this.$emit('logout');
+  }
+
+  private render() {
     return (
       <section class="setting__wrap setting--user">
-        <article class="setting--avatar">
+        <article class="setting__wrap--avatar">
           {/* 当自定义头像为空时使用默认头像 */}
           {this.sex === 'male' && this.avatar === '' ? (
-            <section class="setting--avatar--male">
+            <section class="setting__wrap--avatar--male">
               <svg
                 t="1592386301906"
                 class="icon"
@@ -58,7 +63,7 @@ export default class UserSetting extends Vue {
               </svg>
             </section>
           ) : (
-            <section class="setting--avatar--female">
+            <section class="setting__wrap--avatar--female">
               <svg
                 t="1592386222301"
                 class="icon"
@@ -117,7 +122,7 @@ export default class UserSetting extends Vue {
           )}
           {/* 当自定义头像不为空时使用自定义头像 */}
           {this.avatar ? (
-            <section class="setting--avatar--custom">
+            <section class="setting__wrap--avatar--custom">
               <i style="width: 80px;height: 80px;background-color: #444;border-radius: 64%;"></i>
             </section>
           ) : (
@@ -125,9 +130,15 @@ export default class UserSetting extends Vue {
           )}
         </article>
 
-        <article class="setting--wrap">
-          <h3 class="setting--wrap-title">{this.name}</h3>
-          <p class="setting--wrap-text">{this.introduce}</p>
+        <article class="setting__wrap--information">
+          <h3 class="setting__wrap--information-title">{this.name}</h3>
+          <p class="setting__wrap--information-text">{this.introduce}</p>
+          <button
+            class="setting__wrap--information--logout"
+            onClick={this.logout}
+          >
+            Logout
+          </button>
         </article>
       </section>
     );

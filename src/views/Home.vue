@@ -86,7 +86,7 @@ import { GET } from '@/services/ajax';
     List,
     Search,
     Hitokoto: () => import('@/components/Home/bottom/hitokoto.tsx'),
-    Copyright: () => import('@/components/Home/bottom/copyright.tsx')
+    Copyright: () => import('@/components/Home/bottom/copyright.tsx'),
   }
 })
 export default class Home extends Vue {

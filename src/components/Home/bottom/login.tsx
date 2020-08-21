@@ -1,14 +1,17 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 import LoginInterFace from '@/model/login';
 import '@/style/home/bottom/login.less';
 @Component({})
 export default class LoginHome extends Vue {
+  @Prop({ default: false }) private isActive: boolean | unknown;
   // 接收数据
   private loginData: LoginInterFace = {
     username: 'admin',
     password: '123456',
     remember: false
   };
+  // 是否显示
+  // private isActive: boolean = false;
   // 登录按钮文字
   private buttonText: string = 'SIGN IN NOW';
   // 文字复位
@@ -43,55 +46,69 @@ export default class LoginHome extends Vue {
     return true;
   }
 
+  private hide() {
+    this.isActive = false;
+  }
+
   private render() {
     return (
-      <div class="home__login">
-        <div class="home__login--wrap">
-          {/* Logo Start */}
-          <section class="home__login--logo">
-            <div class="fake-logo"></div>
-          </section>
-          {/* Logo End */}
-          {/* Title Start */}
-          <section class="home__login--title">
-            <h3>Login</h3>
-          </section>
-          {/* Title End */}
-          {/* Form Start */}
-          <section class="home__login--form">
-            <label for="username">
-              <p>UserName</p>
-              <input
-                class="home__login--form--input"
-                type="text"
-                name="username"
-                v-model={this.loginData.username}
-                value={this.loginData.username}
-                onChange={this.resetButtonText}
-              />
-            </label>
-            <label for="password">
-              <p>Password</p>
-              <input
-                class="home__login--form--input"
-                type="password"
-                name="password"
-                v-model={this.loginData.password}
-                value={this.loginData.password}
-                onChange={this.resetButtonText}
-              />
-            </label>
-          </section>
-          {/* Form End */}
-          {/* Submit Start */}
-          <section class="home__login--submit" onClick={this.setLoginStatus}>
-            <button type="submit" class="home__login--submit--button">
-              {this.buttonText}
-            </button>
-          </section>
-          {/* Submit End */}
-        </div>
-      </div>
+      <transition name="fadeUp">
+        {this.isActive ? (
+          <div class="home__login">
+            <div class="home__login--wrap">
+              {/* Logo Start */}
+              <section class="home__login--logo">
+                <div class="fake-logo"></div>
+              </section>
+              {/* Logo End */}
+              {/* Title Start */}
+              <section class="home__login--title">
+                <h3 class="home__login--paragraph">Login</h3>
+              </section>
+              {/* Title End */}
+              {/* Form Start */}
+              <section class="home__login--form">
+                <label for="username">
+                  <p class="home__login--paragraph">UserName</p>
+                  <input
+                    class="home__login--form--input"
+                    type="text"
+                    name="username"
+                    v-model={this.loginData.username}
+                    value={this.loginData.username}
+                    onChange={this.resetButtonText}
+                  />
+                </label>
+                <label for="password">
+                  <p class="home__login--paragraph">Password</p>
+                  <input
+                    class="home__login--form--input"
+                    type="password"
+                    name="password"
+                    v-model={this.loginData.password}
+                    value={this.loginData.password}
+                    onChange={this.resetButtonText}
+                  />
+                </label>
+              </section>
+              {/* Form End */}
+              {/* Submit Start */}
+              <section
+                class="home__login--submit"
+                onClick={this.setLoginStatus}
+              >
+                <button type="submit" class="home__login--submit--button">
+                  {this.buttonText}
+                </button>
+              </section>
+              {/* Submit End */}
+            </div>
+            <div class="home__login--mask" onClick={this.hide}></div>
+          </div>
+        ) : (
+          ''
+        )}
+      </transition>
     );
   }
 }

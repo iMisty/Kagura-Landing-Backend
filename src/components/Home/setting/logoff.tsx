@@ -2,9 +2,9 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import '@/style/home/setting/logoff.less';
 @Component({})
 export default class LoadingRightBarHome extends Vue {
-  // 控制点击后触发登录模块
+  // 控制点击后进入登录页面
   private handleLogin(): void {
-    console.log('login click');
+    this.$router.push({path: 'login'});
   }
   // 点击弹一个敬请期待
   private handleNoEvent(): void {
