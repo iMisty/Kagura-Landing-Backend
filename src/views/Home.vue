@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-18 16:25:49
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-08-24 00:15:59
 -->
 <template>
   <div class="home">
@@ -69,7 +69,7 @@ import '@/style/home/style.less';
 // 链接图标
 import Icon from '@/components/global/icon.tsx';
 // 设置边栏
-import Setting from '@/components/Home/setting/home-setting.tsx';
+import Setting from '@/components/Home/setting/setting.vue';
 // 链接列表
 import List from '@/components/Home/list/home-list.vue';
 // 搜索框
@@ -85,8 +85,8 @@ import { GET } from '@/services/ajax';
     Setting,
     List,
     Search,
-    Hitokoto: () => import('@/components/Home/bottom/hitokoto.tsx'),
-    Copyright: () => import('@/components/Home/bottom/copyright.tsx'),
+    Hitokoto: () => import('@/components/Home/bottom/hitokoto.vue'),
+    Copyright: () => import('@/components/Home/bottom/copyright.vue'),
   }
 })
 export default class Home extends Vue {
