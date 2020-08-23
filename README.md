@@ -30,6 +30,30 @@
 
 - 导航部分目前由 Vuex 管理,位于 src 目录下的 `store/state.ts` 内
 
+## 项目组成
+
+所有内容均在 src 目录下
+
+- assets: 存放静态资源如图片
+
+- components: 存放各种组件
+
+- icons: (即将废弃)存放 iconfont 的 js 图标文件
+
+- layout: 存放页面模组框架文件
+
+- model: 存放 typescript 类型模型
+
+- router: 存放路由配置
+
+- services: (即将废弃)存放各种业务逻辑配置
+
+- store: 存放 vuex 配置
+
+- util: 存放各种业务逻辑配置
+
+- views: 存放展示用页面
+
 ## 使用框架及库
 
 基础框架: Vue 全家桶 with TypeScript
@@ -50,7 +74,7 @@ CSS 格式化: Less
 
 - [x] 响应式支持
 
-- [ ] 暗黑模式
+- [x] 暗黑模式
 
 - [x] 背景支持
 
@@ -70,6 +94,6 @@ CSS 格式化: Less
 
 ## License
 
-~~MIT~~
+MIT
 
 Anti996 License
