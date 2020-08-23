@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-27 14:28:24
- * @LastEditTime: 2020-08-18 23:57:19
+ * @LastEditTime: 2020-08-24 00:27:21
  * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: /Single-Search/src/router/index.ts
@@ -67,21 +67,21 @@ const router = new VueRouter({
   routes
 });
 
-router.beforeEach((to, from, next) => {
-  if (to.path === '/login') {
-    next();
-  } else {
-    const token = localStorage.getItem('token');
-    // const token =
-    //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLC.caAFsUUgzA0bPJtKfkH-4Hk';
-    if (token) {
-      next();
-    } else {
-      router.push({
-        path: 'login'
-      });
-    }
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   if (to.path === '/login') {
+//     next();
+//   } else {
+//     const token = localStorage.getItem('token');
+//     // const token =
+//     //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLC.caAFsUUgzA0bPJtKfkH-4Hk';
+//     if (token) {
+//       next();
+//     } else {
+//       router.push({
+//         path: 'login'
+//       });
+//     }
+//   }
+// });
 
 export default router;
