@@ -4,14 +4,20 @@
  * @Autor: Miya
  * @Date: 2020-06-08 00:41:53
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-09 22:16:41
+ * @LastEditTime: 2020-08-26 23:15:17
  */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component({})
 export default class Icon extends Vue {
-  protected render() {
+  // 点击事件
+  private handleClick() {
+    this.$emit('handleClick');
+    return true;
+  }
+
+  private render() {
     return (
-      <div class="index-icon">
+      <div class="index-icon" onClick={this.handleClick}>
         {/* <span class="line top"></span>
         <span class="line medium"></span>
         <span class="line bottom"></span> */}

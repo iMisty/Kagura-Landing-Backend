@@ -1,6 +1,6 @@
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import LoginInterFace from '@/model/login';
-import '@/style/home/bottom/login.less';
+// import '@/style/home/bottom/login.less';
 @Component({})
 export default class LoginHome extends Vue {
   @Prop({ default: false }) private isActive: boolean | unknown;

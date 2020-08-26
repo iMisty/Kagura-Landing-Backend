@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-26 16:04:26
- * @LastEditTime: 2020-08-26 18:25:16
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-26 22:30:25
+ * @LastEditors: Miya
  * @Description: 版权信息
- * @FilePath: \Single-Search\src\components\Home\bottom\copyright.tsx
+ * @FilePath: /Single-Search/src/components/Home/bottom/copyright.tsx
  */
 
 import { Component, Vue } from 'vue-property-decorator';
@@ -51,10 +51,9 @@ export default class HomeCopyright extends Vue {
     return (
       <div class="copyright">
         <p class="copyright-text">
-          © <span>{this.startdate}</span
-          >-<span>{this.year}</span> by <a href={this.website}>{this.author}</a> .
-      All rights reserved.
-    </p>
+          © <span>{this.startdate}</span>-<span>{this.year}</span> by{' '}
+          <a href={this.website}>{this.author}</a> . All rights reserved.
+        </p>
       </div>
     );
   }

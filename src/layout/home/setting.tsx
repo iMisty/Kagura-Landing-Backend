@@ -1,12 +1,12 @@
 import { Component, Vue } from 'vue-property-decorator';
-import settingUser from '@/components/Home/setting/user';
-import logoff from '@/components/Home/setting/logoff.vue';
+import online from '@/components/Home/setting/online.tsx';
+import offline from '@/components/Home/setting/offline.vue';
 import User from '@/model/user';
 
 @Component({
   components: {
-    'setting-user': settingUser,
-    'log-off': logoff
+    online,
+    offline
   }
 })
 export default class HomeSetting extends Vue {
@@ -72,28 +72,29 @@ export default class HomeSetting extends Vue {
   private mounted() {
     this.getUserInfo();
   }
-  
+
   private render() {
     return (
       <div class="home__setting--wrap">
-        {
-          this.isLogin ? (
-            <section class="home__setting--user-online">
-              <setting-user
-                name={this.setting.name}
-                sex={this.setting.sex}
-                introduce={this.setting.introduce}
-                avatar={this.setting.avatar}
-                onLogout={this.handleLogout}
-              ></setting-user>
-            </section>
-          ) : (
-              <section class="home__setting--user-offline">
-                <log-off onIsActive={this.isLoginStatus} onLogin={this.handleLogin}></log-off>
-              </section >
-            )
-        }
-      </div >
+        {this.isLogin ? (
+          <section class="home__setting--user-online">
+            <online
+              name={this.setting.name}
+              sex={this.setting.sex}
+              introduce={this.setting.introduce}
+              avatar={this.setting.avatar}
+              onLogout={this.handleLogout}
+            ></online>
+          </section>
+        ) : (
+          <section class="home__setting--user-offline">
+            <offline
+              onIsActive={this.isLoginStatus}
+              onLogin={this.handleLogin}
+            ></offline>
+          </section>
+        )}
+      </div>
     );
   }
 }

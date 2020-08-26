@@ -3,23 +3,25 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-26 18:27:18
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-08-26 23:37:38
 -->
 <template>
   <div class="home">
     <!-- Top start -->
     <section class="home__top">
-      <button class="list--button" @click="handleOpenSetting">
+      <Icon class="list--button" @handleClick="handleOpenSetting">
         <img src="@/icons/svg/avatar.svg" alt />
-      </button>
-      <button class="list--button" @click="handleOpenLink">
-        <Icon :class="{ click: isLinkOpen, click: isSettingOpen }">
-          <span class="line top"></span>
-          <span class="line medium"></span>
-          <span class="line bottom"></span>
-        </Icon>
-      </button>
+      </Icon>
+      <Icon
+        class="list--button"
+        @handleClick="handleOpenLink"
+        :class="{ click: isLinkOpen, click: isSettingOpen }"
+      >
+        <span class="line top"></span>
+        <span class="line medium"></span>
+        <span class="line bottom"></span>
+      </Icon>
     </section>
     <!-- Top end -->
 
@@ -69,11 +71,11 @@ import '@/style/home/style.less';
 // 链接图标
 import Icon from '@/components/global/icon.tsx';
 // 设置边栏
-import Setting from '@/components/Home/setting/setting.vue';
+import Setting from '@/layout/home/setting.tsx';
 // 链接列表
 import List from '@/components/Home/list/home-list.vue';
 // 搜索框
-import Search from '@/components/Home/search/search.vue';
+import Search from '@/layout/home/search.vue';
 // 计算搜索结果web工具函数
 import { computedSearch } from '@/services/computedSearch.ts';
 import { GET } from '@/services/ajax';
@@ -85,8 +87,8 @@ import { GET } from '@/services/ajax';
     Setting,
     List,
     Search,
-    Hitokoto: () => import('@/components/Home/bottom/hitokoto.tsx'),
-    Copyright: () => import('@/components/Home/bottom/copyright.tsx'),
+    Hitokoto: () => import('@/layout/home/hitokoto.tsx'),
+    Copyright: () => import('@/layout/home/copyright.tsx')
   }
 })
 export default class Home extends Vue {

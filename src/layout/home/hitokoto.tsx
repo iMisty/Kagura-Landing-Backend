@@ -1,17 +1,18 @@
 /*
- * @Description: 一言模块
+ * @Author: Miya
  * @Version: 1.0
- * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-26 18:25:30
-*/
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-08-26 22:32:01
+ * @Description: 一言模块
+ * @FilePath: /Single-Search/src/components/Home/bottom/hitokoto.tsx
+ */
 import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component({})
 export default class Hitokoto extends Vue {
   @Prop({ default: '加载中...', type: String }) public hito!: string;
 
   private render() {
-    return (<div class='hitokoto'>{this.hito}</div>);
+    return <div class="hitokoto">{this.hito}</div>;
   }
 }

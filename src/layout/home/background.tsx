@@ -2,12 +2,12 @@
  * @Author: Miya
  * @Date: 2020-06-24 21:38:13
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-24 00:25:35
+ * @LastEditTime: 2020-08-26 22:39:23
  * @Description: 背景图片设置
- * @FilePath: /Single-Search/src/components/Home/bottom/background.vue
+ * @FilePath: /Single-Search/src/layout/home/background.tsx
 */
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import '../../../style/home/bottom/background.less';
+import '../../style/layout/home/background.less';
 
 @Component({})
 export default class Background extends Vue {
