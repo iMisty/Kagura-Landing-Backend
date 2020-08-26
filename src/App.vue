@@ -16,7 +16,7 @@
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import Home from '@/views/Home.vue';
-import Background from '@/components/Home/bottom/background.vue';
+import Background from '@/components/Home/bottom/background.tsx';
 
 @Component({
   // 组件注册

@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-24 00:15:59
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-26 18:27:18
 -->
 <template>
   <div class="home">
@@ -85,8 +85,8 @@ import { GET } from '@/services/ajax';
     Setting,
     List,
     Search,
-    Hitokoto: () => import('@/components/Home/bottom/hitokoto.vue'),
-    Copyright: () => import('@/components/Home/bottom/copyright.vue'),
+    Hitokoto: () => import('@/components/Home/bottom/hitokoto.tsx'),
+    Copyright: () => import('@/components/Home/bottom/copyright.tsx'),
   }
 })
 export default class Home extends Vue {
@@ -105,7 +105,7 @@ export default class Home extends Vue {
   /**
    * @description: 一言加载
    * @param {type}
-   * @return: void
+   * @return: boolean
    * @author: Miya
    */
   private async getHitokoto() {
@@ -113,10 +113,11 @@ export default class Home extends Vue {
     console.log(`是否显示一言:${status}`);
     if (status === false) {
       this.hitorikoto = undefined;
-      return;
+      return false;
     }
     const getHitokotoData = await GET('https://v1.hitokoto.cn');
     this.hitorikoto = getHitokotoData.data.hitokoto;
+    return true;
   }
 
   /**

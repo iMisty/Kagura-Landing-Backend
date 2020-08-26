@@ -1,25 +1,15 @@
-<!--
+/*
  * @Author: Miya
- * @Date: 2020-05-26 16:04:33
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-24 00:35:51
+ * @Date: 2020-05-26 16:04:26
+ * @LastEditTime: 2020-08-26 18:25:16
+ * @LastEditors: Please set LastEditors
  * @Description: 版权信息
- * @FilePath: /Single-Search/src/components/Home/bottom/copyright.vue
--->
-<template>
-  <div class="copyright">
-    <p class="copyright-text">
-      © <span>{{ startdate }}</span
-      >-<span>{{ year }}</span> by <a :href="website">{{ author }}</a> .
-      All rights reserved.
-    </p>
-  </div>
-</template>
+ * @FilePath: \Single-Search\src\components\Home\bottom\copyright.tsx
+ */
 
-<script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 @Component({})
-export default class Copyright extends Vue {
+export default class HomeCopyright extends Vue {
   // Data
   private startdate: number = 2005;
   private year: number = 2019;
@@ -57,6 +47,15 @@ export default class Copyright extends Vue {
     this.getYear();
     this.getAuthor();
   }
+  private render() {
+    return (
+      <div class="copyright">
+        <p class="copyright-text">
+          © <span>{this.startdate}</span
+          >-<span>{this.year}</span> by <a href={this.website}>{this.author}</a> .
+      All rights reserved.
+    </p>
+      </div>
+    );
+  }
 }
-</script>
-<style lang="less"></style>
