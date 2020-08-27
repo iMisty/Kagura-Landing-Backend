@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-26 23:37:38
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-27 18:12:44
 -->
 <template>
   <div class="home">
@@ -69,13 +69,13 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import '@/style/home/style.less';
 // 链接图标
-import Icon from '@/components/global/icon.tsx';
+import Icon from '@/components/icon.tsx';
 // 设置边栏
 import Setting from '@/layout/home/setting.tsx';
 // 链接列表
 import List from '@/components/Home/list/home-list.vue';
 // 搜索框
-import Search from '@/layout/home/search.vue';
+import Search from '@/layout/home/search.tsx';
 // 计算搜索结果web工具函数
 import { computedSearch } from '@/services/computedSearch.ts';
 import { GET } from '@/services/ajax';

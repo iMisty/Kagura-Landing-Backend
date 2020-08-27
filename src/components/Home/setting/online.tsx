@@ -2,8 +2,8 @@
  * @Author: Miya
  * @Version: 1.0
  * @Date: 2020-08-26 01:06:24
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-27 01:16:09
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-27 10:51:07
  * @Description: 用户在线状态模块
  * @FilePath: /Single-Search/src/components/Home/setting/online.tsx
  */
@@ -74,17 +74,3 @@ export default class UserSetting extends Vue {
   }
 }
 
-function male(this: any) {
-  return (
-    <section class="setting__wrap--avatar--male">
-      <img src={this.male} />
-    </section>
-  );
-}
-function female(this: any) {
-  return (
-    <section class="setting__wrap--avatar--female">
-      <img src={this.female} />
-    </section>
-  );
-}
