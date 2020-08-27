@@ -1,0 +1,60 @@
+.admin-wrap {
+  margin          : 4rem 0 0 8rem;
+  width           : calc(100vw - 8rem);
+  min-height      : calc(100vh - 4rem);
+  background-color: #f4f5f6;
+
+  // 卡片栏
+  &-puzzle {
+    display              : grid;
+    justify-content      : stretch;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows   : repeat(3, 10rem);
+    grid-gap             : 1rem;
+    padding              : 1rem;
+  }
+}
+
+// 卡片
+.puzzle-wrap {
+  padding         : 1rem;
+  background-color: #fff;
+  border-radius   : @border-radius;
+}
+
+.puzzle-title {
+  padding       : .25rem;
+  font-size     : 1.5rem;
+  font-weight   : 600;
+  letter-spacing: .54px;
+}
+
+.puzzle-text {
+  font-size  : 0.8rem;
+  line-height: 1.6;
+}
+
+/**************** 模块大小控制 ******************/
+.row-2 {
+  grid-row: span 2;
+}
+
+.row-3 {
+  grid-row: span 3;
+}
+
+.row-4 {
+  grid-row: span 4;
+}
+
+.column-2 {
+  grid-column: span 2;
+}
+
+.column-3 {
+  grid-column: span 3;
+}
+
+.column-4 {
+  grid-column: span 4;
+}

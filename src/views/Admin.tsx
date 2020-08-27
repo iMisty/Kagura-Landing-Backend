@@ -3,17 +3,17 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-27 16:13:05
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-08-28 00:51:53
  */
 import { Component, Vue } from 'vue-property-decorator';
 // 导入SVG相关
 import Svgicon from '@/components/svgicon';
 // 路由相关
-import Router from '@/components/Admin/router.component';
+import Router from '@/layout/admin/router';
 // 后台路由模型
 import Routes from '@/model/routes';
-import '@/style/admin/style.less';
+import '@/style/layout/admin/style.less';
 import '@/icons/svg/admin';
 
 @Component({
@@ -46,7 +46,6 @@ export default class Admin extends Vue {
   private render() {
     return (
       <div class="admin">
-
         {/* TopBar start */}
         <section class="admin__top">
           <div class="admin__top-logo" onClick={this.backToIndex}>
