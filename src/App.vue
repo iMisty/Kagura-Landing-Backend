@@ -3,13 +3,13 @@
  * @Version: 1.0
  * @Author: Miya
  * @Date: 2020-05-25 22:54:11
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-26 22:35:46
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-27 11:42:30
 -->
 <template>
   <div id="App">
     <router-view></router-view>
-    <Background :isInputing="bgStatus"></Background>
+    <!-- <Background :isInputing="bgStatus"></Background> -->
   </div>
 </template>
 
