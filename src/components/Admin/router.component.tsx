@@ -7,7 +7,7 @@
  * @FilePath: /Single-Search/src/components/Admin/router.component.tsx
  */
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import svgicon from '@/components/global/svgicon';
+import svgicon from '@/components/svgicon';
 import '@/icons/svg/admin';
 
 @Component({

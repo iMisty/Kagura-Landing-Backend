@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-18 16:11:13
+ * @LastEditTime: 2020-08-27 11:59:28
 -->
 <template>
   <div class="list" ref="lists">
@@ -41,7 +41,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Svgicon from '@/components/global/svgicon';
+import Svgicon from '@/components/svgicon';
 import '@/icons/svg/index';
 
 @Component({

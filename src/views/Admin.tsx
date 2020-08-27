@@ -4,11 +4,11 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-18 16:14:19
+ * @LastEditTime: 2020-08-27 16:13:05
  */
 import { Component, Vue } from 'vue-property-decorator';
 // 导入SVG相关
-import Svgicon from '@/components/global/svgicon';
+import Svgicon from '@/components/svgicon';
 // 路由相关
 import Router from '@/components/Admin/router.component';
 // 后台路由模型
@@ -21,7 +21,6 @@ import '@/icons/svg/admin';
   components: {
     Svgicon,
     router: Router
-    // Right
   }
 })
 export default class Admin extends Vue {
@@ -33,13 +32,24 @@ export default class Admin extends Vue {
     { path: '/admin/link', title: 'piliangxiugai', name: 'LINK' },
     { path: '/admin/setting', title: 'bianji', name: 'SETTING' }
   ];
-  protected render() {
+
+  /**
+   * @description: 返回首页
+   * @param {type}
+   * @return {type} boolean
+   */
+  private backToIndex() {
+    this.$router.push({ path: '/' });
+    return true;
+  }
+
+  private render() {
     return (
       <div class="admin">
 
         {/* TopBar start */}
         <section class="admin__top">
-          <div class="admin__top-logo">
+          <div class="admin__top-logo" onClick={this.backToIndex}>
             <img src={this.logo} alt="test logo" />
           </div>
           <div class="admin__top-title">DashBoard</div>

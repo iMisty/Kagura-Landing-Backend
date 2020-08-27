@@ -1,10 +1,13 @@
 import { Component, Vue } from 'vue-property-decorator';
+// 边栏卡片式组件
+import sidecard from '@/components/sidecard.tsx';
 import online from '@/components/Home/setting/online.tsx';
-import offline from '@/components/Home/setting/offline.vue';
+import offline from '@/components/Home/setting/offline.tsx';
 import User from '@/model/user';
 
 @Component({
   components: {
+    'm-card': sidecard,
     online,
     offline
   }
@@ -59,13 +62,15 @@ export default class HomeSetting extends Vue {
   private handleLogout() {
     const token = localStorage.getItem('token');
     const vuextoken = this.$store.state.token;
+    // 非正常状态
     if (!token && !vuextoken) {
+      this.isLogin = false;
       return false;
     }
+    // 清除token
     localStorage.removeItem('token');
     this.$store.commit('SETTOKEN', null);
-    console.log('aa');
-    console.log(this.$store.state.token);
+    this.isLogin = false;
     return true;
   }
 
@@ -77,7 +82,7 @@ export default class HomeSetting extends Vue {
     return (
       <div class="home__setting--wrap">
         {this.isLogin ? (
-          <section class="home__setting--user-online">
+          <m-card className="home__setting--user-online">
             <online
               name={this.setting.name}
               sex={this.setting.sex}
@@ -85,15 +90,15 @@ export default class HomeSetting extends Vue {
               avatar={this.setting.avatar}
               onLogout={this.handleLogout}
             ></online>
-          </section>
+          </m-card>
         ) : (
-          <section class="home__setting--user-offline">
-            <offline
-              onIsActive={this.isLoginStatus}
-              onLogin={this.handleLogin}
-            ></offline>
-          </section>
-        )}
+            <m-card className="home__setting--user-offline">
+              <offline
+                onIsActive={this.isLoginStatus}
+                onLogin={this.handleLogin}
+              ></offline>
+            </m-card>
+          )}
       </div>
     );
   }
