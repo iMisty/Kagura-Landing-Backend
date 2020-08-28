@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-08-18 15:13:50
+ * @LastEditTime: 2020-08-28 11:52:01
  * @LastEditors: Please set LastEditors
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
@@ -61,19 +61,19 @@ const state = {
   // api.xxx.com/search/list
   searchList: [
     {
-      icon: 'google',
+      icon: require('@/assets/search/google.svg'),
       text: '谷歌',
       header: 'https://www.google.com/search?q=',
       extra: '',
     },
     {
-      icon: 'bing',
+      icon: require('@/assets/search/bing.svg'),
       text: '必应',
       header: 'https://cn.bing.com/search?q=',
       extra: '',
     },
     {
-      icon: 'baidu',
+      icon: require('@/assets/search/baidu.svg'),
       text: '百度',
       header: 'https://www.baidu.com/s?wd=',
       extra: '',

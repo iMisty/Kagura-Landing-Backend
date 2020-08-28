@@ -1,8 +1,8 @@
 import { Component, Vue } from 'vue-property-decorator';
 // 边栏卡片式组件
 import sidecard from '@/components/sidecard.tsx';
-import online from '@/components/Home/setting/online.tsx';
-import offline from '@/components/Home/setting/offline.tsx';
+import online from '@/components/Home/online';
+import offline from '@/components/Home/offline';
 import User from '@/model/user';
 
 @Component({

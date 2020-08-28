@@ -4,12 +4,12 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-27 17:57:55
+ * @LastEditTime: 2020-08-28 12:00:10
 */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
-import engine from '@/components/Home/search/engine.tsx';
-import associate from '@/components/Home/search/associate';
+import engine from '@/components/Home/engine';
+import associate from '@/components/Home/associate';
 import { getEngineValue } from '@/services/getEngineValue.ts';
 import { associateSearch } from '@/services/associateSearch.ts';
 @Component({
@@ -155,6 +155,13 @@ export default class Search extends Vue {
     return null;
   }
 
+  // 临时设置： 计算图片
+  get getChooseImg() {
+    const temp: any = this.choose;
+    const temparray = ['google', 'bing', 'baidu'];
+    return temparray.indexOf(temp);
+  }
+
   private render() {
     return (
       <div class="search--bar">
@@ -166,22 +173,16 @@ export default class Search extends Vue {
         <div class={`search--bar-wrap ${this.inputing}`}>
           <section class="search--bar-choose" onMouseover={this.handleSearchMenu} onMouseout={this.closeSearchMenu}>
             <div class="search--bar-choose-engine" data-choose={this.choose}>
-              <svgicon class="svg-title-icon" svgClass="icon" iconClass={this.choose} iconName={this.choose}></svgicon>
+              <img src={this.$store.state.searchList[this.getChooseImg].icon} style="width: 1.5rem"/>
             </div>
             <ul class={`choose-engine ${this.searchMenuActive}`}>
-              {/* {
-                this.searchChoose.map((item: { text: string; icon: string; }, index: number) => {
-                  <engine
-                    value={item.text}
-                    iconValue={item.icon}
-                    onChoose={() => this.handleChooseSearch(index)}
-                  ></engine>
+              {
+                this.searchChoose.map((item, index) => {
+                  return (
+                    <engine icon={item.icon} onChoose={() => this.handleChooseSearch(index)}></engine>
+                  );
                 })
-              } */}
-              {/* 临时设置 */}
-              <engine value="谷歌" iconValue="google" onChoose={() => this.handleChooseSearch(0)}></engine>
-              <engine value="必应" iconValue="bing" onChoose={() => this.handleChooseSearch(1)}></engine>
-              <engine value="百度" iconValue="baidu" onChoose={() => this.handleChooseSearch(2)}></engine>
+              }
             </ul>
           </section>
           <section class="search--bar-input">

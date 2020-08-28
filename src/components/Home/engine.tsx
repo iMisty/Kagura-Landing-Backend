@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-11 23:32:14
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-27 17:24:46
+ * @LastEditTime: 2020-08-28 11:41:57
 */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -16,7 +16,7 @@ import svgicon from '@/components/svgicon';
 })
 export default class SearchEngine extends Vue {
   // props
-  @Prop() private iconValue: any;
+  @Prop() private icon: any;
   @Prop() private value: any;
 
   /**
@@ -31,13 +31,14 @@ export default class SearchEngine extends Vue {
   private render() {
     return (
       <li class="choose-engine-wrap" onClick={this.handleChooseEngine}>
-        <svgicon
+        {/* <svgicon
           class="svg-icon svg-title-icon"
           svgClass="icon"
           iconClass={this.iconValue}
           iconName={this.iconValue}
-        ></svgicon>
-        <p class="choose-engine-wrap-text">{this.value}</p>
+        ></svgicon> */}
+        <img src={this.icon}/>
+        {/* <p class="choose-engine-wrap-text">{this.value}</p> */}
       </li>
     );
   }
