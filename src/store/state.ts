@@ -1,8 +1,8 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-08-18 15:13:50
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-29 01:45:37
+ * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
  */
@@ -30,12 +30,6 @@ const state = {
     // 适配颜色模式
     dark_style: true
   },
-  // 控制状态
-  status: {
-    // 遮罩层
-    mask: false,
-    isInputing: false,
-  },
   // 站点设置列表
   settings: {
     // TODO: api.xxx.com/settings/home
@@ -55,7 +49,7 @@ const state = {
       },
       // 网站开始日期
       start_date: '2005-05-04'
-    },
+    }
   },
   // 搜索引擎列表
   // api.xxx.com/search/list
@@ -64,20 +58,20 @@ const state = {
       icon: 'google',
       text: '谷歌',
       header: 'https://www.google.com/search?q=',
-      extra: '',
+      extra: ''
     },
     {
       icon: 'bing',
       text: '必应',
       header: 'https://cn.bing.com/search?q=',
-      extra: '',
+      extra: ''
     },
     {
       icon: 'baidu',
       text: '百度',
       header: 'https://www.baidu.com/s?wd=',
-      extra: '',
-    },
+      extra: ''
+    }
     // {icon: 'google',text: 'google', header: 'https://www.google.com/search?q='},
     // {icon: 'google',text: 'google', header: 'https://www.google.com/search?q='},
     // {icon: 'google',text: 'google', header: 'https://www.google.com/search?q='},
@@ -93,24 +87,24 @@ const state = {
         {
           icon: 'youtube',
           link: 'https://www.youtube.com',
-          text: 'Youtube',
+          text: 'Youtube'
         },
         {
           icon: 'bilibili',
           link: 'https://www.bilibili.com',
-          text: 'Bilibili',
+          text: 'Bilibili'
         },
         {
           icon: 'acfun',
           link: 'https://www.acfun.com',
-          text: 'ACFun',
+          text: 'ACFun'
         },
         {
           icon: 'youku',
           link: 'https://www.youku.com',
-          text: 'Youku',
-        },
-      ],
+          text: 'Youku'
+        }
+      ]
     },
     {
       name: '开发',
@@ -120,24 +114,24 @@ const state = {
         {
           icon: '',
           link: 'https://www.youtube.com',
-          text: 'Youtube',
+          text: 'Youtube'
         },
         {
           icon: '',
           link: 'https://www.bilibili.com',
-          text: 'Bilibili',
+          text: 'Bilibili'
         },
         {
           icon: '',
           link: 'https://www.acfun.com',
-          text: 'ACFun',
+          text: 'ACFun'
         },
         {
           icon: '',
           link: 'https://www.youku.com',
-          text: 'Youku',
-        },
-      ],
+          text: 'Youku'
+        }
+      ]
     },
     {
       name: '影视动画',
@@ -147,24 +141,24 @@ const state = {
         {
           icon: 'undefined',
           link: 'https://www.youtube.com',
-          text: 'Youtube',
+          text: 'Youtube'
         },
         {
           icon: 'undefined',
           link: 'https://www.bilibili.com',
-          text: 'Bilibili',
+          text: 'Bilibili'
         },
         {
           icon: 'undefined',
           link: 'https://www.acfun.com',
-          text: 'ACFun',
+          text: 'ACFun'
         },
         {
           icon: 'undefined',
           link: 'https://www.youku.com',
-          text: 'Youku',
-        },
-      ],
+          text: 'Youku'
+        }
+      ]
     },
     {
       name: '搜索引擎',
@@ -174,24 +168,24 @@ const state = {
         {
           icon: 'undefined',
           link: 'https://www.youtube.com',
-          text: 'Youtube',
+          text: 'Youtube'
         },
         {
           icon: 'undefined',
           link: 'https://www.bilibili.com',
-          text: 'Bilibili',
+          text: 'Bilibili'
         },
         {
           icon: 'undefined',
           link: 'https://www.acfun.com',
-          text: 'ACFun',
+          text: 'ACFun'
         },
         {
           icon: 'undefined',
           link: 'https://www.youku.com',
-          text: 'Youku',
-        },
-      ],
+          text: 'Youku'
+        }
+      ]
     },
     {
       name: '社交',
@@ -201,24 +195,24 @@ const state = {
         {
           icon: 'undefined',
           link: 'https://www.youtube.com',
-          text: 'Youtube',
+          text: 'Youtube'
         },
         {
           icon: 'undefined',
           link: 'https://www.bilibili.com',
-          text: 'Bilibili',
+          text: 'Bilibili'
         },
         {
           icon: 'undefined',
           link: 'https://www.acfun.com',
-          text: 'ACFun',
+          text: 'ACFun'
         },
         {
           icon: 'undefined',
           link: 'https://www.youku.com',
-          text: 'Youku',
-        },
-      ],
+          text: 'Youku'
+        }
+      ]
     },
     {
       name: '剁手',
@@ -228,24 +222,24 @@ const state = {
         {
           icon: 'undefined',
           link: 'https://www.youtube.com',
-          text: 'Youtube',
+          text: 'Youtube'
         },
         {
           icon: 'undefined',
           link: 'https://www.bilibili.com',
-          text: 'Bilibili',
+          text: 'Bilibili'
         },
         {
           icon: 'undefined',
           link: 'https://www.acfun.com',
-          text: 'ACFun',
+          text: 'ACFun'
         },
         {
           icon: 'undefined',
           link: 'https://www.youku.com',
-          text: 'Youku',
-        },
-      ],
+          text: 'Youku'
+        }
+      ]
     },
     {
       name: '设计视觉',
@@ -255,29 +249,29 @@ const state = {
         {
           icon: 'undefined',
           link: 'https://palettegenerator.colorion.co/',
-          text: 'Color Palette Generator',
+          text: 'Color Palette Generator'
         },
         {
           icon: 'undefined',
           link: 'https://www.youtube.com',
-          text: 'Youtube',
+          text: 'Youtube'
         },
         {
           icon: 'undefined',
           link: 'https://www.bilibili.com',
-          text: 'Bilibili',
+          text: 'Bilibili'
         },
         {
           icon: 'undefined',
           link: 'https://www.acfun.com',
-          text: 'ACFun',
+          text: 'ACFun'
         },
         {
           icon: 'undefined',
           link: 'https://www.youku.com',
-          text: 'Youku',
-        },
-      ],
+          text: 'Youku'
+        }
+      ]
     },
     {
       name: '邮箱',
@@ -287,26 +281,32 @@ const state = {
         {
           icon: 'undefined',
           link: 'https://www.youtube.com',
-          text: 'Youtube',
+          text: 'Youtube'
         },
         {
           icon: 'undefined',
           link: 'https://www.bilibili.com',
-          text: 'Bilibili',
+          text: 'Bilibili'
         },
         {
           icon: 'undefined',
           link: 'https://www.acfun.com',
-          text: 'ACFun',
+          text: 'ACFun'
         },
         {
           icon: 'undefined',
           link: 'https://www.youku.com',
-          text: 'Youku',
-        },
-      ],
-    },
+          text: 'Youku'
+        }
+      ]
+    }
   ],
+  // 控制状态
+  status: {
+    // 遮罩层
+    mask: false,
+    isInputing: false
+  }
 };
 
 export { state };
