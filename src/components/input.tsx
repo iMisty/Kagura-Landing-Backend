@@ -11,7 +11,7 @@ export default class FormInput extends Vue {
   // 聚焦事件
   private focus() {
     this.hasValue = true;
-    console.log(this.hasValue)
+    console.log(this.hasValue);
   }
   // 失焦事件
   private blur() {
@@ -27,14 +27,16 @@ export default class FormInput extends Vue {
   }
 
   get hasValueActive() {
-    if (this.hasValue === true) { return `activing`; }
+    if (this.hasValue === true) {
+      return `activing`;
+    }
     return '';
   }
 
   private render() {
     return (
       <div>
-        <label class='mermaid__input'>
+        <label class="mermaid__input">
           <p class={`mermaid__input--title ${this.hasValueActive}`}>用户名</p>
           <input
             class="mermaid__input--input"
@@ -43,7 +45,8 @@ export default class FormInput extends Vue {
             value={this.value}
             onChange={() => this.change()}
             onFocus={() => this.focus()}
-            onBlur={() => this.blur()} />
+            onBlur={() => this.blur()}
+          />
         </label>
         <p>{this.value}</p>
       </div>

@@ -3,31 +3,33 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:00:19
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-28 12:07:34
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-08-30 03:56:14
  */
 .home {
   &__list {
     .layout-flex(flex, row);
-    height : 100%;
+    padding: 2rem;
+    height: 100%;
     z-index: 5;
+    overflow-y: auto;
   }
 }
 
 .list {
-  padding   : 1.5rem 1rem;
-  width     : 100%;
-  height    : 100vh;
+  padding: 1.5rem 1rem;
+  width: 100%;
+  height: 100vh;
   overflow-y: auto;
 
   &--button {
     box-sizing: content-box;
-    margin    : 0 .5rem;
-    width     : 2rem;
-    height    : 2rem;
+    margin: 0 0.5rem;
+    width: 2rem;
+    height: 2rem;
     background: none;
-    border    : none;
-    cursor    : pointer;
+    border: none;
+    cursor: pointer;
 
     &:focus {
       outline: none;
@@ -38,67 +40,68 @@
     margin-bottom: 1rem;
 
     &--title {
-      padding: .5rem;
+      .layout-flex(flex, row, flex-start, center, nowrap);
+      padding: 0.5rem;
 
-      h5{
+      h5 {
         color: #eee;
       }
 
       &--wrap {
-        display       : flex;
+        display: flex;
         flex-direction: row;
-        align-items   : center;
-        color         : #fff;
+        align-items: center;
+        color: #fff;
       }
 
       &--icon {
-        padding  : .5rem;
+        padding: 0.5rem;
         font-size: 1.2em;
       }
     }
 
     &--link {
-      display              : grid;
+      display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-gap             : .5rem;
+      grid-gap: 0.5rem;
 
       .item {
-        box-sizing         : content-box;
-        display            : flex;
-        flex-direction     : row;
-        align-items        : center;
-        color              : #fff;
-        background-color   : rgba(255, 255, 255, .2);
-        border-radius      : @border-radius / 2;
-        transition-duration: .2s;
+        box-sizing: content-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: @border-radius / 2;
+        transition-duration: 0.2s;
 
         &:hover {
-          background-color   : #0062b7;
-          transition-duration: .2s;
+          background-color: #0062b7;
+          transition-duration: 0.2s;
         }
 
         a {
-          display       : flex;
+          display: flex;
           flex-direction: row;
-          align-items   : center;
-          padding       : .5rem 1rem;
-          color         : #fff;
+          align-items: center;
+          padding: 0.5rem 1rem;
+          color: #fff;
         }
 
         .fa {
-          display        : flex;
+          display: flex;
           justify-content: center;
-          align-items    : center;
+          align-items: center;
         }
 
         p {
-          padding-left      : .5rem;
-          display           : -webkit-box;
-          word-break        : break-all;
+          padding-left: 0.5rem;
+          display: -webkit-box;
+          word-break: break-all;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 1;
-          text-overflow     : ellipsis;
-          overflow          : hidden;
+          text-overflow: ellipsis;
+          overflow: hidden;
         }
       }
     }
