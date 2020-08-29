@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-28 11:07:31
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-08-30 03:49:42
 -->
 <template>
   <div class="home">
@@ -154,7 +154,7 @@ export default class Home extends Vue {
    */
   private handleOpenLink(): void {
     this.isLinkOpen = !this.isLinkOpen;
-    this.isSettingOpen = !this.isSettingOpen;
+    // this.isSettingOpen = !this.isSettingOpen;
     this.isMask = !this.isMask;
   }
 

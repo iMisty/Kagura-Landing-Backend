@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-28 12:00:10
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-08-30 03:49:50
 */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';

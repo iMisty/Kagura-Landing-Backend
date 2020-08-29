@@ -16,24 +16,32 @@ export default class ListItem extends Vue {
   @Prop() private link!: any[];
   private render() {
     return (
-      <div class='list__item'>
+      <div class="list__item">
         <section class="list__item--title">
-          <svgicon className="svg-title-icon" svgClass="icon" iconClass={this.icon} iconName={this.icon}></svgicon>
+          <svgicon
+            className="svg-title-icon"
+            svgClass="icon"
+            iconClass={this.icon}
+            iconName={this.icon}
+          ></svgicon>
           <h5 style={`color: ${this.color}`}>{this.title}</h5>
         </section>
         <ul class="list__item--link">
-          {
-            this.link.map((item, index) => {
-              return (
-                <li class="item" data-index={index}>
-                  <a href={item.link}>
-                    <svgicon class="svg-link-icon" svgClass="icon" iconClass={item.icon} iconName={item.icon}></svgicon>
-                    <p>{item.text}</p>
-                  </a>
-                </li>
-              );
-            })
-          }
+          {this.link.map((item, index) => {
+            return (
+              <li class="item" data-index={index}>
+                <a href={item.link}>
+                  <svgicon
+                    class="svg-link-icon"
+                    svgClass="icon"
+                    iconClass={item.icon}
+                    iconName={item.icon}
+                  ></svgicon>
+                  <p>{item.text}</p>
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     );
