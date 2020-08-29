@@ -1,0 +1,75 @@
+/*
+ * @Description: 项目列表组建
+ * @version: 1.0.0
+ * @Author: Miya
+ * @Date: 2020-05-26 21:00:19
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-08-30 03:45:59
+ */
+.home__list {
+  height: 100vh;
+  // 框架层
+  &--items {
+    .layout-flex(flex, column, flex-start, stretch, nowrap);
+    padding: 2rem;
+    height: 100%;
+    z-index: 5;
+    overflow-y: scroll;
+  }
+}
+
+// 链接内容组件
+.list__item {
+  margin-bottom: 2rem;
+  // 标题
+  &--title {
+    .layout-flex(flex, row, flex-start, center);
+    padding: .5rem 0;
+  }
+  // 链接组
+  &--link {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.5rem;
+    // 链接
+    .item {
+      box-sizing: content-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: @border-radius / 2;
+      transition-duration: 0.2s;
+
+      &:hover {
+        background-color: #0062b7;
+        transition-duration: 0.2s;
+      }
+
+      a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        color: #fff;
+      }
+
+      .fa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      p {
+        padding-left: 0.5rem;
+        display: -webkit-box;
+        word-break: break-all;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+}

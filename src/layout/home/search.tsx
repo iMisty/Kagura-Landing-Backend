@@ -3,13 +3,13 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-27 17:57:55
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-08-30 01:54:10
 */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
-import engine from '@/components/Home/search/engine.tsx';
-import associate from '@/components/Home/search/associate';
+import engine from '@/components/Home/engine';
+import associate from '@/components/Home/associate';
 import { getEngineValue } from '@/services/getEngineValue.ts';
 import { associateSearch } from '@/services/associateSearch.ts';
 @Component({
