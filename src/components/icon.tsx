@@ -3,13 +3,13 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-08 00:41:53
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-27 18:03:37
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-08-31 01:07:13
  */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component({})
 export default class Icon extends Vue {
-  @Prop() private className: string | undefined;
+  @Prop({ default: ''}) private className: string | undefined;
   // 点击事件
   private handleClick() {
     this.$emit('handleClick');

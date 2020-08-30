@@ -1,15 +1,15 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-26 16:04:26
- * @LastEditTime: 2020-08-26 22:30:25
+ * @LastEditTime: 2020-08-30 23:53:35
  * @LastEditors: Miya
  * @Description: 版权信息
- * @FilePath: /Single-Search/src/components/Home/bottom/copyright.tsx
+ * @FilePath: /Single-Search/src/layout/home/copyright.tsx
  */
 
 import { Component, Vue } from 'vue-property-decorator';
 @Component({})
-export default class HomeCopyright extends Vue {
+export default class Copyright extends Vue {
   // Data
   private startdate: number = 2005;
   private year: number = 2019;

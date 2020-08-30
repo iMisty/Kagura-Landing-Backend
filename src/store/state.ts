@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-08-30 03:50:10
+ * @LastEditTime: 2020-08-31 00:35:34
  * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
@@ -303,9 +303,18 @@ const state = {
   ],
   // 控制状态
   status: {
-    // 遮罩层
-    mask: false,
-    isInputing: false
+    // 是否开启遮罩层
+    is_mask: false,
+    // 是否输入状态
+    is_inputing: false,
+    // 控制链接边栏开关
+    is_link: false,
+    // 控制设置边栏开关
+    is_setting: false,
+    // 当前选中的搜索引擎
+    search_engine: 'baidu',
+    // 搜索引擎联想数据
+    search_association: []
   }
 };
 

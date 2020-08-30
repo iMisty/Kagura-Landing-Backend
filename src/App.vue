@@ -29,7 +29,7 @@ export default class App extends Vue {
   private bgStatus: boolean = false;
 
   get backgroundStatus() {
-    return this.$store.state.status.isInputing;
+    return this.$store.state.status.is_inputing;
   }
 
   @Watch('backgroundStatus')

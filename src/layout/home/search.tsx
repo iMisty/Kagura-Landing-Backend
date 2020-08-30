@@ -61,12 +61,12 @@ export default class Search extends Vue {
    * @return: void
    */
   private handleInput(): void {
-    const status = this.$store.state.status.isInputing;
+    const status = this.$store.state.status.is_inputing;
     this.$store.commit('IS_INPUTING', true);
     this.isInputing = true;
   }
   private cancelInput(): void {
-    const status = this.$store.state.status.isInputing;
+    const status = this.$store.state.status.is_inputing;
     this.$store.commit('IS_INPUTING', false);
     this.isInputing = false;
   }
