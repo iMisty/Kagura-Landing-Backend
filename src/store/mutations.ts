@@ -1,13 +1,27 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:17:38
- * @LastEditTime: 2020-08-21 11:32:47
+ * @LastEditTime: 2020-08-31 18:08:35
  * @LastEditors: Please set LastEditors
  * @Description: Vuex 内的 Mutations
  * @FilePath: \Single-Search\src\store\mutations.ts
  */
 
 const mutations = {
+  /*
+  *  改变 status 中的 is_mask
+  *  该变量用于修改是否开启蒙层
+  */
+  is_mask(state: any, data: boolean) {
+    state.status.is_mask = data;
+  },
+  /*
+  *  改变 status 中的 is_setting
+  *  该变量用于修改是否开启用户设置边栏
+  */
+  is_setting(state: any, data: boolean) {
+    state.status.is_setting = data;
+  },
   /*
    *  改变 status 中的 isInputing
    *  该变量用于修改聚焦后是否打开对应的 active CSS class

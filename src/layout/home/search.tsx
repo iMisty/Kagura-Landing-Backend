@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-30 03:49:50
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-31 17:53:18
 */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -60,15 +60,10 @@ export default class Search extends Vue {
    * @param {type}
    * @return: void
    */
-  private handleInput(): void {
+  private setInputStatus(stat: boolean): void {
     const status = this.$store.state.status.is_inputing;
-    this.$store.commit('IS_INPUTING', true);
-    this.isInputing = true;
-  }
-  private cancelInput(): void {
-    const status = this.$store.state.status.is_inputing;
-    this.$store.commit('IS_INPUTING', false);
-    this.isInputing = false;
+    this.$store.commit('IS_INPUTING', stat);
+    this.isInputing = stat;
   }
 
   /**
@@ -173,7 +168,7 @@ export default class Search extends Vue {
         <div class={`search--bar-wrap ${this.inputing}`}>
           <section class="search--bar-choose" onMouseover={this.handleSearchMenu} onMouseout={this.closeSearchMenu}>
             <div class="search--bar-choose-engine" data-choose={this.choose}>
-              <img src={this.$store.state.searchList[this.getChooseImg].icon} style="width: 1.5rem"/>
+              <img src={this.$store.state.searchList[this.getChooseImg].icon} style="width: 1.5rem" />
             </div>
             <ul class={`choose-engine ${this.searchMenuActive}`}>
               {
@@ -190,8 +185,8 @@ export default class Search extends Vue {
               type="text"
               placeholder="请输入搜索内容"
               v-model={this.searchText}
-              onClick={this.handleInput}
-              onBlur={this.cancelInput}
+              onClick={this.setInputStatus(true)}
+              onBlur={this.setInputStatus(false)}
               onKeydown={(e: any) => this.submitSearchText(e)}
               onInput={this.getExtraValue}
             />

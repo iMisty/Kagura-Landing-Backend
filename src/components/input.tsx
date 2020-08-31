@@ -24,6 +24,7 @@ export default class FormInput extends Vue {
   // 输入事件
   private change() {
     console.log(this.value);
+    this.$emit('inputValue', this.value);
   }
 
   get hasValueActive() {

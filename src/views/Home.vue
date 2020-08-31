@@ -1,16 +1,16 @@
 <!--
  * @Description: 首页前端页面
  * @Version: 1.0
- * @Autor: Miya
+ * @Author: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-30 03:49:42
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-31 18:32:19
 -->
 <template>
   <div class="home">
     <!-- Top start -->
     <section class="home__top">
-      <Icon class="list--button" @handleClick="handleOpenSetting">
+      <Icon class="list--button" @handleClick="setSettingStatus(true)">
         <img src="@/icons/svg/avatar.svg" alt />
       </Icon>
       <Icon
@@ -56,11 +56,7 @@
     <!-- RightBar end -->
 
     <!-- Float & Extra start -->
-    <section
-      class="home__mask"
-      :class="{ 'mask-active': isMask }"
-      @click="handleClose"
-    ></section>
+    <section class="home__mask" :class="{ 'mask-active': isMask }" @click="handleClose"></section>
     <!-- Float & Extra end -->
   </div>
 </template>
@@ -88,8 +84,8 @@ import { GET } from '@/utils/ajax';
     List,
     Search,
     Hitokoto: () => import('@/layout/home/hitokoto.tsx'),
-    Copyright: () => import('@/layout/home/copyright.tsx')
-  }
+    Copyright: () => import('@/layout/home/copyright.tsx'),
+  },
 })
 export default class Home extends Vue {
   // data
@@ -141,9 +137,11 @@ export default class Home extends Vue {
    * @return:
    * @author: Miya
    */
-  private handleOpenSetting(): void {
-    this.isSettingOpen = !this.isSettingOpen;
-    this.isMask = !this.isMask;
+  private setSettingStatus(stat: boolean): void {
+    this.$store.commit('is_setting', stat);
+    this.$store.commit('is_mask', stat);
+    this.isSettingOpen = this.$store.state.status.is_setting;
+    this.isMask = this.$store.state.status.is_mask;
   }
 
   /**
@@ -196,13 +194,4 @@ export default class Home extends Vue {
   }
 }
 </script>
-<style lang="less" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  transition: opacity 0.2s;
-}
-.slide-enter,
-.slide-leave-to {
-  opacity: 0;
-}
-</style>
+

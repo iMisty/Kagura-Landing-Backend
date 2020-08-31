@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-23 00:43:51
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-27 16:38:31
+ * @LastEditTime: 2020-08-31 18:05:40
 */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component({
@@ -26,7 +26,6 @@ export default class Associate extends Vue {
         <ul class="associate-list">
           {
             this.data.map((item: string) => {
-              // 使用箭头函数以阻止渲染列表后自动执行onClick事件
               return (<li class="associate-item" onClick={() => this.handleExtraSearch(item)}>{item}</li>);
             })
           }
