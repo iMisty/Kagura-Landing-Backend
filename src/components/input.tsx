@@ -3,6 +3,8 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 export default class FormInput extends Vue {
   // 选择表单形式
   @Prop({ required: true, default: 'text' }) private type!: string;
+  // 选择表单标题
+  @Prop({ required: true, default: 'Input' }) private title!: string;
 
   // data
   private value: string = '';
@@ -38,7 +40,7 @@ export default class FormInput extends Vue {
     return (
       <div>
         <label class="mermaid__input">
-          <p class={`mermaid__input--title ${this.hasValueActive}`}>用户名</p>
+    <p class={`mermaid__input--title ${this.hasValueActive}`}>{this.title}</p>
           <input
             class="mermaid__input--input"
             type={this.type}

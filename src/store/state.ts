@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-08-31 00:35:34
+ * @LastEditTime: 2020-08-31 23:12:11
  * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
@@ -313,6 +313,8 @@ const state = {
     is_setting: false,
     // 当前选中的搜索引擎
     search_engine: 'baidu',
+    // 当前输入的关键词
+    search_text: '',
     // 搜索引擎联想数据
     search_association: []
   }
