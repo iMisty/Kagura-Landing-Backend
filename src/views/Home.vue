@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-31 18:32:19
+ * @LastEditTime: 2020-09-01 17:46:14
 -->
 <template>
   <div class="home">
@@ -15,7 +15,7 @@
       </Icon>
       <Icon
         class="list--button"
-        @handleClick="handleOpenLink"
+        @handleClick="setOpenLink(true)"
         :class="{ click: isLinkOpen, click: isSettingOpen }"
       >
         <span class="line top"></span>
@@ -28,7 +28,7 @@
     <!-- Medium start -->
     <section class="home__medium">
       <!-- TODO: 鼠标移动到此处时会连续触发openSearchMenu事件 -->
-      <Search :searchMenu="searchMenu" @submit.once="submitSearchText"></Search>
+      <Search :searchMenu="searchMenu" @submit="submitSearchText"></Search>
       <Hitokoto :hito="hitorikoto" v-show="hitorikoto"></Hitokoto>
     </section>
     <!-- Medium end -->
@@ -56,13 +56,13 @@
     <!-- RightBar end -->
 
     <!-- Float & Extra start -->
-    <section class="home__mask" :class="{ 'mask-active': isMask }" @click="handleClose"></section>
+    <section class="home__mask" :class="{ 'mask-active': isMask }" @click="setStatus(false)"></section>
     <!-- Float & Extra end -->
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import '@/style/home/style.less';
 // 链接图标
 import Icon from '@/components/icon.tsx';
@@ -113,27 +113,14 @@ export default class Home extends Vue {
       this.hitorikoto = undefined;
       return false;
     }
-    const getHitokotoData = await GET('https://v1.hitokoto.cn');
-    this.hitorikoto = getHitokotoData.data.hitokoto;
+    const getData = await GET('https://v1.hitokoto.cn');
+    this.hitorikoto = getData.data.hitokoto;
     return true;
   }
 
   /**
-   * @description: 控制搜索框左侧搜索引擎选择框
-   * @param {type}
-   * @return:
-   * @author: Miya
-   */
-  private openSearchMenu(): void {
-    this.searchMenu = true;
-  }
-  private closeSearchMenu(): void {
-    this.searchMenu = false;
-  }
-
-  /**
    * @description: 控制左侧默认隐藏的设置栏
-   * @param {type}
+   * @param {type} stat 状态控制
    * @return:
    * @author: Miya
    */
@@ -146,14 +133,16 @@ export default class Home extends Vue {
 
   /**
    * @description: 控制右侧默认隐藏的链接列表栏
-   * @param {type}
+   * @param {type} stat 状态控制
    * @return:
    * @author: Miya
    */
-  private handleOpenLink(): void {
-    this.isLinkOpen = !this.isLinkOpen;
-    // this.isSettingOpen = !this.isSettingOpen;
-    this.isMask = !this.isMask;
+  private setOpenLink(stat: boolean): void {
+    console.log('click');
+    this.$store.commit('is_link', stat);
+    this.$store.commit('is_mask', stat);
+    this.isLinkOpen = this.$store.state.status.is_link;
+    this.isMask = this.$store.state.status.is_mask;
   }
 
   /**
@@ -162,11 +151,15 @@ export default class Home extends Vue {
    * @return:
    * @author: Miya
    */
-  private handleClose(): void {
-    this.isMask = false;
-    this.searchMenu = false;
-    this.isLinkOpen = false;
-    this.isSettingOpen = false;
+  private setStatus(stat: boolean): void {
+    this.$store.commit('is_link', stat);
+    this.$store.commit('is_mask', stat);
+    this.$store.commit('is_setting', stat);
+    this.$store.commit('is_inputing', stat);
+    this.isMask = stat;
+    this.searchMenu = stat;
+    this.isLinkOpen = stat;
+    this.isSettingOpen = stat;
   }
 
   /**
@@ -181,8 +174,8 @@ export default class Home extends Vue {
     extra: string | undefined
   ) {
     // TODO: 搜索效果失效
-    const searchSiteText = computedSearch(search);
-    console.log(searchSiteText);
+    const searchSiteText = await computedSearch(search);
+    console.log(`点击关键词：${searchSiteText}`);
     const address = `${searchSiteText}${value}${extra}`;
     console.log(searchSiteText + value + extra);
     window.open(address);
@@ -190,6 +183,9 @@ export default class Home extends Vue {
 
   // mounted
   private mounted() {
+    // 重置状态
+    this.setStatus(false);
+    // 获取一言
     this.getHitokoto();
   }
 }

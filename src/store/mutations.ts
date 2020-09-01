@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:17:38
- * @LastEditTime: 2020-08-31 18:08:35
+ * @LastEditTime: 2020-09-01 10:53:18
  * @LastEditors: Please set LastEditors
  * @Description: Vuex 内的 Mutations
  * @FilePath: \Single-Search\src\store\mutations.ts
@@ -23,10 +23,17 @@ const mutations = {
     state.status.is_setting = data;
   },
   /*
+  *  改变 status 中的 is_link
+  *  该变量用于修改是否开启右侧导航链接边栏
+  */
+  is_link(state: any, data: boolean) {
+    state.status.is_link = data;
+  },
+  /*
    *  改变 status 中的 isInputing
    *  该变量用于修改聚焦后是否打开对应的 active CSS class
    */
-  IS_INPUTING(state: any, isInputing: boolean) {
+  is_inputing(state: any, isInputing: boolean) {
     state.status.isInputing = isInputing;
   },
   /*

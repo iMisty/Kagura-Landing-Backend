@@ -3,11 +3,11 @@
  * @Version: 1.0
  * @Author: Miya
  * @Date: 2020-05-25 22:54:11
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-30 03:54:31
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-09-01 11:07:52
 -->
 <template>
-  <div id="App" style="background-color:#444;">
+  <div id="App">
     <router-view></router-view>
     <!-- <Background :isInputing="bgStatus"></Background> -->
   </div>
@@ -33,8 +33,8 @@ export default class App extends Vue {
   }
 
   @Watch('backgroundStatus')
-  private getBackgroundStatus(val: boolean) {
-    this.bgStatus = val;
+  private getBackgroundStatus(stat: boolean) {
+    this.bgStatus = stat;
   }
 }
 </script>

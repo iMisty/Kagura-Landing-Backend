@@ -1,8 +1,8 @@
 /*
  * @Author: Miya
  * @Date: 2020-07-27 15:49:00
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-03 15:15:06
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-09-01 11:25:53
  * @Description: axios方法封装
  * @FilePath: \Single-Search\src\services\ajax.ts
  */
@@ -15,7 +15,7 @@ export const GET = (url: string, data?: object, token?: string | null) => {
       authorization: `Bearer ${token}`
     },
     url,
-    data
+    data,
   });
 };
 
