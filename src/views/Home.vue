@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Author: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-01 17:46:14
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-01 22:45:36
 -->
 <template>
   <div class="home">
@@ -28,7 +28,7 @@
     <!-- Medium start -->
     <section class="home__medium">
       <!-- TODO: 鼠标移动到此处时会连续触发openSearchMenu事件 -->
-      <Search :searchMenu="searchMenu" @submit="submitSearchText"></Search>
+      <Search :searchMenu="searchMenu"></Search>
       <Hitokoto :hito="hitorikoto" v-show="hitorikoto"></Hitokoto>
     </section>
     <!-- Medium end -->
@@ -162,29 +162,10 @@ export default class Home extends Vue {
     this.isSettingOpen = stat;
   }
 
-  /**
-   * @description: 提交搜索关键词
-   * @param {type}
-   * @return:
-   * @author: Miya
-   */
-  private async submitSearchText(
-    search: string,
-    value: string,
-    extra: string | undefined
-  ) {
-    // TODO: 搜索效果失效
-    const searchSiteText = await computedSearch(search);
-    console.log(`点击关键词：${searchSiteText}`);
-    const address = `${searchSiteText}${value}${extra}`;
-    console.log(searchSiteText + value + extra);
-    window.open(address);
-  }
-
   // mounted
   private mounted() {
-    // 重置状态
-    this.setStatus(false);
+    // // 重置状态
+    // this.setStatus(false);
     // 获取一言
     this.getHitokoto();
   }

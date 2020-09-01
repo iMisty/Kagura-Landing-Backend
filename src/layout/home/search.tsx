@@ -3,9 +3,9 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-01 17:47:22
-*/
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-01 23:53:30
+ */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
 import engine from '@/components/Home/engine';
@@ -16,8 +16,8 @@ import { getExtraData } from '@/utils/getSearchExtraData';
   components: {
     engine,
     svgicon,
-    associate,
-  },
+    associate
+  }
 })
 export default class Search extends Vue {
   // Logo
@@ -86,6 +86,8 @@ export default class Search extends Vue {
   private handleChooseSearch(index: number): void {
     const data = getEngineValue(index);
     this.choose = data;
+    this.$store.commit('set_search_engine', data);
+    console.log(`选中的搜索引擎:${this.$store.state.status.search_engine}`);
     this.extraParam = this.searchChoose[index].extra;
     this.searchMenu = false;
   }
@@ -119,16 +121,6 @@ export default class Search extends Vue {
     const res = await getExtraData(eValue!, sValue);
 
     this.extraDatas = res;
-  }
-
-  /**
-   * @name: submitExtraSearchText
-   * @msg: 展示搜索关键词的联想结果
-   * @param {type}
-   * @return: void
-   */
-  private submitExtraSearchText(item: any) {
-    console.log('extra-----');
   }
 
   private mounted() {
@@ -165,18 +157,26 @@ export default class Search extends Vue {
         </div>
         {/* 搜索引擎内容部分 */}
         <div class={`search--bar-wrap ${this.inputing}`}>
-          <section class="search--bar-choose" onMouseover={this.handleSearchMenu} onMouseout={this.closeSearchMenu}>
+          <section
+            class="search--bar-choose"
+            onMouseover={this.handleSearchMenu}
+            onMouseout={this.closeSearchMenu}
+          >
             <div class="search--bar-choose-engine" data-choose={this.choose}>
-              <img src={this.$store.state.searchList[this.getChooseImg].icon} style="width: 1.5rem" />
+              <img
+                src={this.$store.state.searchList[this.getChooseImg].icon}
+                style="width: 1.5rem"
+              />
             </div>
             <ul class={`choose-engine ${this.searchMenuActive}`}>
-              {
-                this.searchChoose.map((item, index) => {
-                  return (
-                    <engine icon={item.icon} onChoose={() => this.handleChooseSearch(index)}></engine>
-                  );
-                })
-              }
+              {this.searchChoose.map((item, index) => {
+                return (
+                  <engine
+                    icon={item.icon}
+                    onChoose={() => this.handleChooseSearch(index)}
+                  ></engine>
+                );
+              })}
             </ul>
           </section>
           <section class="search--bar-input">
@@ -190,14 +190,15 @@ export default class Search extends Vue {
               onInput={this.getExtraValue}
             />
           </section>
-          {
-            this.extraDatas[0] !== '' ? (
-              <section class="search--bar-suomi">
-                <associate data={this.extraDatas} onHandleExtraSearch={() => this.submitExtraSearchText}></associate>
-              </section>
-            ) : null
-          }
-          <section class="search--bar-submit" onClick={this.submitSearchText}>
+          {this.extraDatas[0] !== '' ? (
+            <section class="search--bar-suomi">
+              <associate data={this.extraDatas}></associate>
+            </section>
+          ) : null}
+          <section
+            class="search--bar-submit"
+            onClick={() => this.submitSearchText}
+          >
             <img src={this.magnifier} />
           </section>
         </div>

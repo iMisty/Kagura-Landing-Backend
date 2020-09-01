@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Author: Miya
  * @Date: 2020-05-25 22:54:11
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-01 11:07:52
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-01 22:21:28
 -->
 <template>
   <div id="App">
@@ -38,4 +38,3 @@ export default class App extends Vue {
   }
 }
 </script>
-<style lang="less"></style>

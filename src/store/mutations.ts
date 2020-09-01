@@ -1,31 +1,31 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:17:38
- * @LastEditTime: 2020-09-01 10:53:18
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-09-01 23:26:45
+ * @LastEditors: Miya
  * @Description: Vuex 内的 Mutations
- * @FilePath: \Single-Search\src\store\mutations.ts
+ * @FilePath: /Single-Search/src/store/mutations.ts
  */
 
 const mutations = {
   /*
-  *  改变 status 中的 is_mask
-  *  该变量用于修改是否开启蒙层
-  */
+   *  改变 status 中的 is_mask
+   *  该变量用于修改是否开启蒙层
+   */
   is_mask(state: any, data: boolean) {
     state.status.is_mask = data;
   },
   /*
-  *  改变 status 中的 is_setting
-  *  该变量用于修改是否开启用户设置边栏
-  */
+   *  改变 status 中的 is_setting
+   *  该变量用于修改是否开启用户设置边栏
+   */
   is_setting(state: any, data: boolean) {
     state.status.is_setting = data;
   },
   /*
-  *  改变 status 中的 is_link
-  *  该变量用于修改是否开启右侧导航链接边栏
-  */
+   *  改变 status 中的 is_link
+   *  该变量用于修改是否开启右侧导航链接边栏
+   */
   is_link(state: any, data: boolean) {
     state.status.is_link = data;
   },
@@ -35,6 +35,13 @@ const mutations = {
    */
   is_inputing(state: any, isInputing: boolean) {
     state.status.isInputing = isInputing;
+  },
+  /*
+   *  改变 status 中的 search_engine
+   *  该变量用于修改选中的搜索引擎文字
+   */
+  set_search_engine(state: any, data: boolean) {
+    state.status.search_engine = data;
   },
   /*
    *  改变 status 中的 styleMode
