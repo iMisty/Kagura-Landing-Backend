@@ -4,14 +4,14 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-31 17:53:18
+ * @LastEditTime: 2020-09-01 17:47:22
 */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
 import engine from '@/components/Home/engine';
 import associate from '@/components/Home/associate';
-import { getEngineValue } from '@/services/getEngineValue.ts';
-import { associateSearch } from '@/services/associateSearch.ts';
+import { getEngineValue } from '@/utils/getEngineValue.ts';
+import { getExtraData } from '@/utils/getSearchExtraData';
 @Component({
   components: {
     engine,
@@ -61,8 +61,7 @@ export default class Search extends Vue {
    * @return: void
    */
   private setInputStatus(stat: boolean): void {
-    const status = this.$store.state.status.is_inputing;
-    this.$store.commit('IS_INPUTING', stat);
+    this.$store.commit('is_inputing', stat);
     this.isInputing = stat;
   }
 
@@ -117,7 +116,7 @@ export default class Search extends Vue {
     // TODO: 暂时写死
     const eValue = 'baidu';
     const sValue = this.searchText;
-    const res = await associateSearch(eValue!, sValue);
+    const res = await getExtraData(eValue!, sValue);
 
     this.extraDatas = res;
   }
@@ -129,7 +128,7 @@ export default class Search extends Vue {
    * @return: void
    */
   private submitExtraSearchText(item: any) {
-    this.$emit('submit', this.choose, item, this.extraParam);
+    console.log('extra-----');
   }
 
   private mounted() {
@@ -185,8 +184,8 @@ export default class Search extends Vue {
               type="text"
               placeholder="请输入搜索内容"
               v-model={this.searchText}
-              onClick={this.setInputStatus(true)}
-              onBlur={this.setInputStatus(false)}
+              onClick={() => this.setInputStatus(true)}
+              onBlur={() => this.setInputStatus(false)}
               onKeydown={(e: any) => this.submitSearchText(e)}
               onInput={this.getExtraValue}
             />
@@ -194,7 +193,7 @@ export default class Search extends Vue {
           {
             this.extraDatas[0] !== '' ? (
               <section class="search--bar-suomi">
-                <associate data={this.extraDatas} onHandleExtraSearch={this.submitExtraSearchText}></associate>
+                <associate data={this.extraDatas} onHandleExtraSearch={() => this.submitExtraSearchText}></associate>
               </section>
             ) : null
           }

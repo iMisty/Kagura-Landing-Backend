@@ -4,21 +4,25 @@
  * @Autor: Miya
  * @Date: 2020-06-23 00:43:51
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-31 18:05:40
+ * @LastEditTime: 2020-09-01 18:27:26
 */
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { submitSearch } from '@/utils/submitSearch';
+
 @Component({
   // 组件注册
   components: {}
 })
 export default class Associate extends Vue {
   // 接收联想关键词数据
-  @Prop() private data: any;
+  @Prop() private data!: string[];
 
   // 点击列表项目进行关键词搜索
-  private handleExtraSearch(item: string) {
-    console.log(item);
-    this.$emit('handleExtraSearch', item);
+  private async handleExtraSearch(item: string) {
+    const eng = this.$store.state.status.search_engine;
+    const submit = submitSearch(eng, item);
+    console.log(submit);
+    window.open(submit);
   }
   private render() {
     return (
