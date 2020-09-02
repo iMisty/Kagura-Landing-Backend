@@ -1,10 +1,10 @@
 /*
  * @Description: 搜索词联想框
  * @Version: 1.0
- * @Autor: Miya
+ * @Author: Miya
  * @Date: 2020-06-23 00:43:51
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-01 18:27:26
+ * @LastEditTime: 2020-09-02 15:43:25
 */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { submitSearch } from '@/utils/submitSearch';

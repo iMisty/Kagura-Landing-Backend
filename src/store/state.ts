@@ -1,8 +1,8 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-09-01 22:19:00
- * @LastEditors: Miya
+ * @LastEditTime: 2020-09-02 15:19:48
+ * @LastEditors: Please set LastEditors
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
  */
@@ -57,18 +57,21 @@ const state = {
     {
       icon: require('@/assets/search/google.svg'),
       text: '谷歌',
+      name: 'google',
       header: 'https://www.google.com/search?q=',
       extra: ''
     },
     {
       icon: require('@/assets/search/bing.svg'),
       text: '必应',
+      name: 'bing',
       header: 'https://cn.bing.com/search?q=',
       extra: ''
     },
     {
       icon: require('@/assets/search/baidu.svg'),
       text: '百度',
+      name: 'baidu',
       header: 'https://www.baidu.com/s?wd=',
       extra: ''
     }
