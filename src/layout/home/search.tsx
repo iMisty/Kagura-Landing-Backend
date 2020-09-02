@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
- * @LastEditors: Miya
- * @LastEditTime: 2020-09-01 23:53:30
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-09-02 17:02:16
  */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -78,6 +78,18 @@ export default class Search extends Vue {
   }
 
   /**
+   * @name: getDefaultSearchEngines
+   * @msg: 获取默认搜索引擎
+   * @param {type}
+   * @return: void
+   */
+  private getDefaultSearchEngines() {
+    const defaultSearch = this.$store.state.user.default_search;
+    console.log(`默认搜索引擎：${defaultSearch}`);
+    this.choose = defaultSearch;
+  }
+
+  /**
    * @name: handleChooseSearchEngine
    * @msg: 点击获取使用的搜索引擎
    * @param {type}
@@ -99,10 +111,8 @@ export default class Search extends Vue {
    * @author: Miya
    */
   private submitSearchText(e) {
-    console.log(e);
     if (e.keyCode === 13) {
       this.$emit('submit', this.choose, this.searchText, this.extraParam);
-      console.group(this.choose, this.searchText, this.extraParam);
       return true;
     }
     return false;
@@ -115,7 +125,7 @@ export default class Search extends Vue {
    * @return: void
    */
   private async getExtraValue() {
-    // TODO: 暂时写死
+    // TODO: 暂时写死 => 用于控制当前选择的搜索引擎
     const eValue = 'baidu';
     const sValue = this.searchText;
     const res = await getExtraData(eValue!, sValue);
@@ -125,6 +135,7 @@ export default class Search extends Vue {
 
   private mounted() {
     this.getSearchEngines();
+    this.getDefaultSearchEngines();
   }
 
   // 计算在输入内容时显示的class

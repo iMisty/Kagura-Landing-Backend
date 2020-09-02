@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-09-02 15:19:48
+ * @LastEditTime: 2020-09-02 16:50:20
  * @LastEditors: Please set LastEditors
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
@@ -28,7 +28,9 @@ const state = {
     // 骚话.jpg
     introduce: 'test text',
     // 适配颜色模式
-    dark_style: true
+    dark_style: true,
+    // 默认搜索引擎
+    default_search: 'bing'
   },
   // 站点设置列表
   settings: {

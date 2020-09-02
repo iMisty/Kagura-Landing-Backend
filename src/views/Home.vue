@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Author: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Miya
- * @LastEditTime: 2020-09-01 22:45:36
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-09-02 16:21:47
 -->
 <template>
   <div class="home">
@@ -73,7 +73,6 @@ import List from '@/layout/home/list.tsx';
 // 搜索框
 import Search from '@/layout/home/search.tsx';
 // 计算搜索结果web工具函数
-import { computedSearch } from '@/services/computedSearch.ts';
 import { GET } from '@/utils/ajax';
 
 @Component({
