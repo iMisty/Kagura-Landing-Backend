@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-08-26 01:06:24
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-27 10:51:07
+ * @LastEditTime: 2020-09-02 18:31:06
  * @Description: 用户在线状态模块
  * @FilePath: /Single-Search/src/components/Home/setting/online.tsx
  */
@@ -34,6 +34,16 @@ export default class UserSetting extends Vue {
     return true;
   }
   /**
+   * @name: goAdmin
+   * @msg: 点击跳转进入后台管理
+   * @param {type}
+   * @return: void
+   */
+  private goAdmin() {
+    this.$router.push({ path: '/admin' });
+  }
+
+  /**
    * @description: 计算图像链接
    * @param {type}
    * @return {type} 定义的 require 图像
@@ -54,20 +64,18 @@ export default class UserSetting extends Vue {
           {this.avatar === '' ? (
             <avatar image={this.image} sex={this.sex}></avatar>
           ) : (
-            <section class="setting__wrap--avatar--custom">
-              <i style="width: 80px;height: 80px;background-color: #444;border-radius: 64%;"></i>
-            </section>
-          )}
+              <section class="setting__wrap--avatar--custom">
+                <i style="width: 80px;height: 80px;background-color: #444;border-radius: 64%;"></i>
+              </section>
+            )}
         </article>
         <article class="setting__wrap--information">
-          <h3 class="setting__wrap--information-title">{this.name}</h3>
-          <p class="setting__wrap--information-text">{this.introduce}</p>
-          <button
-            class="setting__wrap--information--logout"
-            onClick={this.logout}
-          >
-            Logout
-          </button>
+          <h3 class="setting__wrap--information--title">{this.name}</h3>
+          <p class="setting__wrap--information--text">{this.introduce}</p>
+          <section class="setting__wrap--buttons">
+            <button class="setting__wrap--information--button" onClick={this.goAdmin}>Admin</button>
+            <button class="setting__wrap--information--button" onClick={this.logout}>Logout</button>
+          </section>
         </article>
       </section>
     );

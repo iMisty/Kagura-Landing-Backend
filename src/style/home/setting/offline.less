@@ -1,15 +1,17 @@
 .setting__logoff {
-  .layout-flex(flex, row, space-between, center, wrap);
+  .layout-flex(flex, column, space-between, center, wrap);
 
   // Normal Avatar
   &--avatar {
+    .layout-flex(flex,row,center,center);
     flex: 1;
   }
 
   // Button list
   &--setting {
-    .layout-flex(flex, column, center, flex-end);
+    .layout-flex(flex, row, center, center);
     flex: 1;
+    margin-top: 1rem;
 
     // button
     &--button {

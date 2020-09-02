@@ -1,70 +1,78 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-21 11:14:32
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-24 00:09:49
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-09-02 18:14:27
  * @Description: 首页-设置栏
  * @FilePath: /Single-Search/src/style/home/setting/setting.less
  */
 .home {
+
   // 设置区域
   &__setting {
-    height: 100%;
-    z-index: 12;
-    overflow-y: auto;
+    height             : 100%;
+    z-index            : 12;
+    overflow-y         : auto;
     transition-duration: @transition-duration;
   }
 }
 
 .setting {
   .blur-bg-dark(@blur-component-color);
-  position: relative;
-  top: 0;
-  left: 0;
-  margin: 2rem;
-  min-width: 16rem;
-  min-height: 8rem;
-  overflow: hidden;
+  position     : relative;
+  top          : 0;
+  left         : 0;
+  margin       : 2rem;
+  min-width    : 16rem;
+  min-height   : 8rem;
+  overflow     : hidden;
   border-radius: @border-radius;
 
   // 内框框架
   &__wrap {
-    .layout-flex(flex, row, center, center);
-    padding: 1rem;
+    .layout-flex(flex, column, center, center);
+    padding   : 1rem;
+    min-height: 10rem;
 
     &--avatar {
       .layout-flex(flex, column, center, center);
       flex: 1;
+
       // 头像大小
       &--male,
       &--female,
       &--custom {
-        width: 6rem;
+        width : 6rem;
         height: 6rem;
       }
     }
 
-    &--information {
-      flex: 1;
-      text-align: center;
-      font-size: 1.2em;
+    // 按钮组
+    &--buttons {
+      .layout-flex(flex, row, center, center);
+    }
 
-      &-title {
+    &--information {
+      flex      : 1;
+      text-align: center;
+
+      &--title {
         font-weight: normal;
-        color: @pri-text-dark;
+        color      : @pri-text-dark;
       }
 
-      &-text {
+      &--text {
         color: @sec-text-dark;
       }
 
-      &--logout {
-        margin: 0.5rem;
-        width: 5rem;
-        height: 2rem;
-        color: #eaeaea;
-        border: 1px solid #888;
-        cursor: pointer;
+      &--button {
+        margin       : 0.5rem;
+        width        : 5rem;
+        height       : 2rem;
+        color        : #eaeaea;
+        text-align   : center;
+        border       : 1px solid #888;
+        cursor       : pointer;
         border-radius: 1rem;
       }
     }
@@ -72,49 +80,49 @@
 
   // 选项卡
   &--list {
-    padding-top: 0.5rem;
+    padding-top   : 0.5rem;
     padding-bottom: 5rem;
-    min-height: 3rem;
-    height: 100vh;
-    overflow-y: scroll;
+    min-height    : 3rem;
+    height        : 100vh;
+    overflow-y    : scroll;
   }
 
   &--menu-item {
     .layout-flex(flex, row, flex-start, center);
-    padding: 1rem;
-    color: @pri-text;
-    cursor: pointer;
+    padding            : 1rem;
+    color              : @pri-text;
+    cursor             : pointer;
     transition-duration: 0.4s;
 
     &:hover {
-      background-color: @hover;
+      background-color   : @hover;
       transition-duration: 0.4s;
     }
 
     &-text {
-      font-size: 1rem;
+      font-size  : 1rem;
       margin-left: 2rem;
       line-height: 1.25rem;
     }
   }
 
   &--config {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
+    position        : absolute;
+    bottom          : 0;
+    left            : 0;
+    width           : 100%;
+    padding         : 1rem;
     background-color: #fff;
-    box-shadow: @box-shadow;
+    box-shadow      : @box-shadow;
 
     &-list {
       .layout-flex(flex, row, space-evenly);
 
       .choose--mode {
-        padding: 0.5rem;
+        padding         : 0.5rem;
         background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 64%;
-        cursor: pointer;
+        border-radius   : 64%;
+        cursor          : pointer;
 
         svg {
           filter: invert(1);
