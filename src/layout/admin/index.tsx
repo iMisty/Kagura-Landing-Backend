@@ -1,8 +1,8 @@
 /*
  * @Author: Miya
  * @Date: 2020-07-23 15:49:17
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-28 00:53:02
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-09-03 17:52:45
  * @Description: 后台管理首页
  * @FilePath: /Single-Search/src/layout/admin/index.tsx
  */
@@ -39,8 +39,8 @@ export default class IndexAdmin extends Vue {
 
   private render() {
     return (
-      <div class="admin-index">
-        <section class="admin-wrap-puzzle">
+      <div class="admin__index">
+        <section class="admin__wrap-puzzle">
           <puzzle row="2" column="4"></puzzle>
           <puzzle row="1" column="1"></puzzle>
           <puzzle row="1" column="1"></puzzle>

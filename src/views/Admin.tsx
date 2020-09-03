@@ -3,12 +3,13 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-28 00:51:53
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-09-03 17:55:41
  */
 import { Component, Vue } from 'vue-property-decorator';
+import adminTop from '@/layout/admin/top';
 // 导入SVG相关
-import Svgicon from '@/components/svgicon';
+import svgicon from '@/components/svgicon';
 // 路由相关
 import Router from '@/layout/admin/router';
 // 后台路由模型
@@ -19,8 +20,9 @@ import '@/icons/svg/admin';
 @Component({
   // 组件注册
   components: {
-    Svgicon,
-    router: Router
+    'admin-top': adminTop,
+    svgicon,
+    'router': Router
   }
 })
 export default class Admin extends Vue {
@@ -47,12 +49,7 @@ export default class Admin extends Vue {
     return (
       <div class="admin">
         {/* TopBar start */}
-        <section class="admin__top">
-          <div class="admin__top-logo" onClick={this.backToIndex}>
-            <img src={this.logo} alt="test logo" />
-          </div>
-          <div class="admin__top-title">DashBoard</div>
-        </section>
+        <admin-top logo={this.logo}></admin-top>
         {/* TopBar end */}
 
         {/* LeftBar start */}
@@ -71,11 +68,9 @@ export default class Admin extends Vue {
 
         {/* Wrap start */}
         <section class="admin__wrap">
-          <section class="admin__wrap-left">
             <transition name="fade">
               <router-view></router-view>
             </transition>
-          </section>
         </section>
         {/* Wrap end*/}
       </div>
