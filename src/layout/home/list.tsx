@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Miya
- * @LastEditTime: 2020-08-30 03:49:18
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-09-03 12:04:25
  */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon.tsx';
@@ -31,7 +31,6 @@ export default class HomeList extends Vue {
   private getListData(): void {
     const data = this.$store.state.link;
     this.listData = data;
-    console.log(this.listData);
   }
 
   private mounted() {

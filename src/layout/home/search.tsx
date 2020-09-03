@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-02 17:02:16
+ * @LastEditTime: 2020-09-03 12:04:12
  */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -74,7 +74,6 @@ export default class Search extends Vue {
   private getSearchEngines(): void {
     const data = this.$store.state.searchList;
     this.searchChoose = data;
-    console.log(this.searchChoose);
   }
 
   /**
