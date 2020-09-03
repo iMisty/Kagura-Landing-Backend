@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-08-26 01:06:24
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-02 18:31:06
+ * @LastEditTime: 2020-09-03 11:12:28
  * @Description: 用户在线状态模块
  * @FilePath: /Single-Search/src/components/Home/setting/online.tsx
  */
@@ -15,10 +15,10 @@ import avatar from '@/components/avatar.tsx';
   }
 })
 export default class UserSetting extends Vue {
-  @Prop() private name: string | undefined;
-  @Prop() private avatar: string | undefined;
-  @Prop() private sex: string | undefined;
-  @Prop() private introduce: string | undefined;
+  @Prop() private name!: string;
+  @Prop() private avatar!: string;
+  @Prop() private sex!: string;
+  @Prop() private introduce!: string;
 
   // 缺省头像图片
   private male: object = require('@/assets/male.svg');

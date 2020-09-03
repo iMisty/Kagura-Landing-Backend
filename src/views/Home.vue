@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-02 16:21:47
+ * @LastEditTime: 2020-09-03 11:41:34
 -->
 <template>
   <div class="home">
@@ -118,6 +118,17 @@ export default class Home extends Vue {
   }
 
   /**
+   * @description: 获取默认搜索引擎并选择
+   * @param {type}
+   * @return void
+   * @author: Miya
+   */
+  private getDefaultSearchEngine() {
+    const eng = this.$store.state.user.default_search;
+    this.$store.commit('set_search_engine', eng);
+  }
+
+  /**
    * @description: 控制左侧默认隐藏的设置栏
    * @param {type} stat 状态控制
    * @return:
@@ -165,6 +176,8 @@ export default class Home extends Vue {
   private mounted() {
     // // 重置状态
     // this.setStatus(false);
+    // 默认搜索引擎与链接同步
+    this.getDefaultSearchEngine();
     // 获取一言
     this.getHitokoto();
   }

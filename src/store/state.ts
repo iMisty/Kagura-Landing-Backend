@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-09-02 16:50:20
+ * @LastEditTime: 2020-09-03 11:38:28
  * @LastEditors: Please set LastEditors
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
@@ -317,7 +317,7 @@ const state = {
     // 控制设置边栏开关
     is_setting: false,
     // 当前选中的搜索引擎
-    search_engine: 'baidu',
+    search_engine: '',
     // // 当前输入的关键词
     // search_text: '',
     // // 搜索引擎联想数据
