@@ -26,7 +26,7 @@ export default class AdminTop extends Vue {
           <img src={this.logo} alt="test logo" />
           <div class="admin__top-title">DashBoard</div>
         </section>
-        <admin-user class="admin__top--user"></admin-user>
+        <admin-user></admin-user>
       </section>
     );
   }

@@ -69,7 +69,7 @@ export default class HomeSetting extends Vue {
     }
     // 清除token
     localStorage.removeItem('token');
-    this.$store.commit('SETTOKEN', null);
+    this.$store.commit('set_token', null);
     this.isLogin = false;
     return true;
   }

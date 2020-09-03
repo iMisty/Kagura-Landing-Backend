@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:17:38
- * @LastEditTime: 2020-09-01 23:26:45
+ * @LastEditTime: 2020-09-04 01:27:53
  * @LastEditors: Miya
  * @Description: Vuex 内的 Mutations
  * @FilePath: /Single-Search/src/store/mutations.ts
@@ -54,7 +54,7 @@ const mutations = {
    *  改变 state 里的 token
    *  该变量用于登录与退出
    */
-  SETTOKEN(state: any, token: string) {
+  set_token(state: any, token: string) {
     state.token = token;
   }
 };

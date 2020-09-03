@@ -50,7 +50,7 @@ export default class Login extends Vue {
     // 已经是登录状态
     if (loginStatus !== null) {
       console.log('已经是登录状态');
-      this.$store.commit('SETTOKEN', 'test-token');
+      this.$store.commit('set_token', 'test-token');
       this.$router.push({ path: '/admin' });
       console.log(`token: ${this.$store.state.token}`);
       return true;
@@ -58,7 +58,7 @@ export default class Login extends Vue {
 
     // 账号密码正确时，写入localStorage与Vuex
     localStorage.setItem('token', 'test-token');
-    this.$store.commit('SETTOKEN', loginStatus);
+    this.$store.commit('set_token', loginStatus);
     this.$router.push({ path: '/admin' });
     console.log(`token: ${this.$store.state.token}`);
     return true;
