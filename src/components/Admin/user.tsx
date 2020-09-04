@@ -10,30 +10,48 @@ export default class AdminUser extends Vue {
   // 头像设置
   private avatar: string =
     this.$store.state.user.avatar || require('@/assets/female.svg');
+
   // 移动菜单
   private settingMenu: SettingMenu[] = [
-    { title: '个人设置', path: '/user' },
-    { title: '系统设置', path: '/setting' },
-    { title: '去往首页', path: '/' },
+    // { title: '个人设置', path: '/admin/user' },
+    // { title: '系统设置', path: '/setting' },
+    // { title: '去往首页', path: '/' },
     { title: '退出登录', path: '/', event: 'logout' }
   ];
+
+  // 控制菜单开启
+  private isSettingMenuActive: boolean = false;
+
+  /**
+   * @description: 控制用户菜单是否开启
+   * @param {type}
+   * @return {type} boolean
+   */
+  private handleSettingMenuStatus() {
+    this.isSettingMenuActive = !this.isSettingMenuActive;
+    return true;
+  }
   private render() {
     return (
       <div class="admin__top--user">
-        <section class="admin__top--user--avatar">
+        <section class="admin__top--user--avatar" onClick={this.handleSettingMenuStatus}>
           <img src={this.avatar}></img>
         </section>
-        <section class="admin__top--user--menu">
-          {this.settingMenu.map(item => {
-            return (
-              <user-setting
-                title={item.title}
-                path={item.path}
-                extraEvent={item.event}
-              ></user-setting>
-            );
-          })}
-        </section>
+        {this.isSettingMenuActive ? (
+          <section class="admin__top--user--menu">
+            {this.settingMenu.map(item => {
+              return (
+                <user-setting
+                  title={item.title}
+                  path={item.path}
+                  extraEvent={item.event}
+                ></user-setting>
+              );
+            })}
+          </section>
+        ) : (
+          ''
+        )}
       </div>
     );
   }

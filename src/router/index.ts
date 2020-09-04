@@ -1,8 +1,8 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-27 14:28:24
- * @LastEditTime: 2020-09-04 01:50:56
- * @LastEditors: Miya
+ * @LastEditTime: 2020-09-04 11:54:46
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /Single-Search/src/router/index.ts
  */
@@ -18,24 +18,6 @@ import AdminLink from '@/layout/admin/link';
 import AdminSetting from '@/layout/admin/setting';
 
 Vue.use(VueRouter);
-
-// push
-const VueRouterPush = VueRouter.prototype.push;
-VueRouter.prototype.push = function push(to) {
-  // @ts-ignore
-  return VueRouterPush.call(this, to).catch((err: any) => {
-    console.log(err);
-  });
-};
-
-// replace
-const VueRouterReplace = VueRouter.prototype.replace;
-VueRouter.prototype.replace = function replace(to) {
-  // @ts-ignore
-  return VueRouterReplace.call(this, to).catch((err: any) => {
-    console.log(err);
-  });
-};
 
 const routes: RouteConfig[] = [
   {
