@@ -12,7 +12,7 @@ export default class Puzzle extends Vue {
   })
   public text: string | undefined;
   // 组件占用的空间
-  @Prop({ default: 1 }) private row: number | undefined;
+  @Prop({ default: 2 }) private row: number | undefined;
   @Prop({ default: 2 }) private column: number | undefined;
 
   // computed
