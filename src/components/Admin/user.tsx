@@ -39,7 +39,7 @@ export default class AdminUser extends Vue {
         </section>
         {this.isSettingMenuActive ? (
           <section class="admin__top--user--menu">
-            {this.settingMenu.map(item => {
+            {this.settingMenu.map((item) => {
               return (
                 <user-setting
                   title={item.title}
