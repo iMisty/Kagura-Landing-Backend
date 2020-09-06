@@ -1,8 +1,8 @@
 /*
  * @Author: Miya
  * @Date: 2020-07-23 15:49:17
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-04 18:33:39
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-06 20:33:16
  * @Description: 后台管理首页
  * @FilePath: /Single-Search/src/layout/admin/index.tsx
  */
@@ -68,16 +68,16 @@ export default class IndexAdmin extends Vue {
     return (
       <div class="admin__index">
         <section class="admin__wrap--puzzle">
-          <puzzle row="1" column="2">
+          <puzzle row="1" column="1">
             <link-sum result={this.linkSortSum}></link-sum>
           </puzzle>
-          <puzzle row="1" column="2">
+          <puzzle row="1" column="1">
             <link-sum result={this.linkSum}></link-sum>
           </puzzle>
-          <puzzle row="1" column="2">
+          <puzzle row="1" column="1">
             <link-sum result={this.SearchSum}></link-sum>
           </puzzle>
-          <puzzle row="1" column="2" title={null}>
+          <puzzle row="1" column="1" title={null}>
             <link-sum></link-sum>
           </puzzle>
           <puzzle row="1" column="1"></puzzle>
