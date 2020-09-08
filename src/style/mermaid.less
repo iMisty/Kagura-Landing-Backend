@@ -1,21 +1,56 @@
 @import './global/var.less';
 
 .mermaid {
-
   // sidecard
   &__side-card {
-    margin          : 2rem;
-    min-height      : 8rem;
+    margin: 2rem;
+    min-height: 8rem;
     background-color: @blur-component-color;
-    border-radius   : @border-radius;
+    border-radius: @border-radius;
   }
 
   // button
-  &__button {
-    min-width    : 5rem;
-    height       : 2rem;
-    border       : 1px solid #888;
-    border-radius: 1rem;
+  &__btn {
+    margin: .5rem;
+    min-width: 5rem;
+    height: 2rem;
+    border-radius: @border-radius / 4;
+    border: 1px solid;
+    &--primary {
+      color: #fff;
+      background-color: #3d55df;
+      border-color: #324cdd;
+    }
+    &--info {
+      color: #fff;
+      background-color: #11cdef;
+      border-color: #11cdef;
+    }
+    &--success {
+      color: #fff;
+      background-color: #2dce89;
+      border-color: #2dce89;
+    }
+    &--danger {
+      color: #fff;
+      background-color: #f3e;
+      border-color: #ec0c38;
+    }
+    &--warning {
+      color: #fff;
+      background-color: #fb6340;
+      border-color: #fb6340;
+    }
+    &--default {
+      color: #fff;
+      background-color: #172b4d;
+      border-color: #172b4d;
+    }
+    &--secondary {
+      color: #212529;
+      background-color: #f4f5f7;
+      border-color: #f4f5f7;
+    }
   }
 
   // input
@@ -24,26 +59,26 @@
 
     // title
     &--title {
-      position           : absolute;
-      top                : 50%;
-      left               : 0;
-      transform          : translateY(-50%);
-      transition-duration: .4s;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      transition-duration: 0.4s;
 
       &.activing {
-        transform          : translate(0%, -200%) scale(0.8);
-        transform-origin   : top left;
-        transition-duration: .4s;
+        transform: translate(0%, -200%) scale(0.8);
+        transform-origin: top left;
+        transition-duration: 0.4s;
       }
     }
 
     // inputarea
     &--input {
-      padding       : .5rem 0;
-      width         : 100%;
+      padding: 0.5rem 0;
+      width: 100%;
       letter-spacing: 0.54px;
-      border-bottom : 1px solid #646464;
-      color         : #64646c;
+      border-bottom: 1px solid #646464;
+      color: #64646c;
     }
   }
 }

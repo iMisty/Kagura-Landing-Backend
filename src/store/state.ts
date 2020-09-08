@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-09-03 11:38:28
+ * @LastEditTime: 2020-09-08 16:48:04
  * @LastEditors: Please set LastEditors
  * @Description: Vuex State部分
  * @FilePath: /Single-Search/src/store/state.ts
@@ -15,10 +15,10 @@ const state = {
   // 用户相关
   // TODO: api.xxx.com/settings/user
   user: {
-    // 用户ID
-    id: 1,
-    // 用户组
-    status: 'admin',
+    // // 用户ID
+    // id: 1,
+    // // 用户组
+    // status: 'admin',
     // 用户昵称
     name: 'Miya',
     // 用户性别

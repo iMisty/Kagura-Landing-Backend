@@ -1,11 +1,13 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:17:38
- * @LastEditTime: 2020-09-04 01:27:53
- * @LastEditors: Miya
+ * @LastEditTime: 2020-09-08 18:19:10
+ * @LastEditors: Please set LastEditors
  * @Description: Vuex 内的 Mutations
  * @FilePath: /Single-Search/src/store/mutations.ts
  */
+
+import UserAdmin from '@/layout/admin/user';
 
 const mutations = {
   /*
@@ -56,6 +58,13 @@ const mutations = {
    */
   set_token(state: any, token: string) {
     state.token = token;
+  },
+  /*
+   *  改变 state 里的 user
+   *  该变量用于用户数据
+   */
+  set_user(state: any, data: object) {
+    state.user = data;
   }
 };
 
