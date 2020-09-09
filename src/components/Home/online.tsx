@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-08-26 01:06:24
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-03 11:12:28
+ * @LastEditTime: 2020-09-09 18:01:21
  * @Description: 用户在线状态模块
  * @FilePath: /Single-Search/src/components/Home/setting/online.tsx
  */
@@ -65,7 +65,7 @@ export default class UserSetting extends Vue {
             <avatar image={this.image} sex={this.sex}></avatar>
           ) : (
               <section class="setting__wrap--avatar--custom">
-                <i style="width: 80px;height: 80px;background-color: #444;border-radius: 64%;"></i>
+                <avatar image={this.image}></avatar>
               </section>
             )}
         </article>
