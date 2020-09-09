@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-08 18:38:07
+ * @LastEditTime: 2020-09-09 17:11:17
  * @Description: file content
  * @FilePath: /Single-Search/src/components/Admin/user.tsx
  */
@@ -67,7 +67,7 @@ export default class UserAdmin extends Vue {
               </section>
             </section>
             <input
-              type="text"
+              type="url"
               name="avatar"
               value={this.userData.avatar}
               onBlur={() => (this.userData.avatar = this.userData.avatar)}
@@ -90,7 +90,7 @@ export default class UserAdmin extends Vue {
               </section>
             </section>
             <input
-              type="url"
+              type="text"
               name="setting"
               value={this.userData.name}
               v-model={this.userData.name}
@@ -176,10 +176,10 @@ export default class UserAdmin extends Vue {
                   class="admin__user--setting--checkpoint--switch"
                   type="checkbox"
                   name="style"
-                  value={this.userData.default_search}
-                  v-model={this.userData.default_search}
+                  value={this.userData.dark_style}
+                  v-model={this.userData.dark_style}
                 />
-                {this.userData.default_search ? (
+                {this.userData.dark_style ? (
                   <p>暗色模式</p>
                 ) : (
                   <p>亮色模式</p>
@@ -190,7 +190,7 @@ export default class UserAdmin extends Vue {
           <div class="admin__user--submit">
             <Button onHandleClick={() => this.handleSave()}>保存</Button>
             {/* TODO: 优化样式 */}
-            {this.statusSuccess ? <p>1</p> : <p>2</p>}
+            {this.statusSuccess ? <p>保存成功</p> : <p></p>}
           </div>
         </div>
       </section>
