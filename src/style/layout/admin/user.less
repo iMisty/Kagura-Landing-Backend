@@ -58,6 +58,19 @@
         outline: none;
       }
     }
+
+    // 选项框
+    &--checkpoint {
+      &--item {
+        .layout-flex(flex, row);
+        p {
+          margin: 0 0.25rem;
+        }
+      }
+      input&--switch {
+        width: auto;
+      }
+    }
   }
 
   // 头像部分
@@ -65,5 +78,10 @@
     &--image {
       max-width: 10rem;
     }
+  }
+
+  // 提交按钮
+  &--submit {
+    .layout-flex(flex, row, flex-start, center);
   }
 }
