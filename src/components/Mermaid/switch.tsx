@@ -1,11 +1,11 @@
 /*
  * @Author: Miya
  * @Date: 2020-09-10 15:36:56
- * @LastEditTime: 2020-09-10 17:37:30
+ * @LastEditTime: 2020-09-10 18:19:13
  * @LastEditors: Miya
  * @Description: Switch component in Mermaid UI
  * @FilePath: \Single-Search\src\components\Mermaid\switch.tsx
- * @Version: 1.0
+ * @Version: 0.1
  */
 
 import { Component, Vue, Emit, Prop } from 'vue-property-decorator';
