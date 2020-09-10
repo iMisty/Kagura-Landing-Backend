@@ -106,12 +106,18 @@
         border-radius: 64%;
         transition: all 0.4s cubic-bezier(0.68, -0.56, 0.24, 1.56);
       }
+      // Active Status
       &.switch-active {
         border: 1px solid #595bb3;
         &::after {
           transform: translate(1rem, -50%);
           background-color: #595bb3;
         }
+      }
+      // Disabled Status
+      //TODO
+      &.switch-disabled{
+        
       }
     }
     // switch text
