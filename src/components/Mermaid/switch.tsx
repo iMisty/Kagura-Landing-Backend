@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-09-10 15:36:56
- * @LastEditTime: 2020-09-10 18:54:14
+ * @LastEditTime: 2020-09-10 22:39:21
  * @LastEditors: Miya
  * @Description: Switch component in Mermaid UI
- * @FilePath: \Single-Search\src\components\Mermaid\switch.tsx
+ * @FilePath: /Single-Search/src/components/Mermaid/switch.tsx
  * @Version: 0.3
  */
 
@@ -29,6 +29,7 @@ export default class MermaidSwitch extends Vue {
   // method => Emit: 点击事件
   @Emit('handleClick')
   private handleClick() {
+    if (this.disabled) return false;
     console.log('switch-click');
   }
 
