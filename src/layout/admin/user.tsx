@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-10 17:46:03
+ * @LastEditTime: 2020-09-10 18:18:56
  * @Description: User page in Admin
  * @FilePath: \Single-Search\src\layout\admin\user.tsx
  */
@@ -34,7 +34,10 @@ export default class UserAdmin extends Vue {
 
   // 获取数据
   private getUserData() {
-    const userData = this.$store.state.user;
+    const getLocalStorage: any = localStorage.getItem('user_info') || null;
+    const data = JSON.parse(getLocalStorage);
+    console.log(data);
+    const userData = data || this.$store.state.user;
     this.userData = userData;
     // 头像设置
     if (!userData.avatar) {
@@ -42,7 +45,7 @@ export default class UserAdmin extends Vue {
     }
   }
 
-  // 修改数据
+  // 修改是否选择暗色模式
   private changeDarkStyle() {
     this.userData.dark_style = !this.userData.dark_style;
     console.log(`是否选择暗色模式：${this.userData.dark_style}`);
@@ -55,7 +58,7 @@ export default class UserAdmin extends Vue {
     this.statusSuccess = true;
 
     // this.$store.dispatch('set_user', this.userData);
-    // localStorage.setItem('user_info', JSON.stringify(this.userData));
+    localStorage.setItem('user_info', JSON.stringify(this.userData));
   }
 
   private mounted() {
