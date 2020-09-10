@@ -17,14 +17,14 @@
     "font-awesome": "^4.7.0",
     "less": "^3.12.2",
     "less-loader": "^6.2.0",
+    "tslib": "^2.0.1",
     "vue": "^2.6.12",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^9.0.0",
     "vue-router": "^3.1.6",
+    "vue-template-compiler": "^2.6.12",
     "vue-tsx-support": "^2.3.3",
-    "vuex": "^3.5.1",
-    "tslib": "^2.0.1",
-    "vue-template-compiler": "^2.6.12"
+    "vuex": "^3.5.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.3.0",
