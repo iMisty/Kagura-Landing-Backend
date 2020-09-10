@@ -40,7 +40,9 @@ export default class FormInput extends Vue {
     return (
       <div>
         <label class="mermaid__input">
-    <p class={`mermaid__input--title ${this.hasValueActive}`}>{this.title}</p>
+          <p class={`mermaid__input--title ${this.hasValueActive}`}>
+            {this.title}
+          </p>
           <input
             class="mermaid__input--input"
             type={this.type}
