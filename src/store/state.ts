@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-09-08 16:48:04
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-09-10 17:30:08
+ * @LastEditors: Miya
  * @Description: Vuex State部分
- * @FilePath: /Single-Search/src/store/state.ts
+ * @FilePath: \Single-Search\src\store\state.ts
  */
 
 const state = {
@@ -28,7 +28,7 @@ const state = {
     // 骚话.jpg
     introduce: 'test text',
     // 适配颜色模式
-    dark_style: true,
+    dark_style: false,
     // 默认搜索引擎
     default_search: 'bing'
   },
@@ -258,8 +258,8 @@ const state = {
         },
         {
           icon: 'undefined',
-          link: 'https://www.youtube.com',
-          text: 'Youtube'
+          link: 'https://cubic-bezier.com/',
+          text: 'Cubic Bezier'
         },
         {
           icon: 'undefined',
