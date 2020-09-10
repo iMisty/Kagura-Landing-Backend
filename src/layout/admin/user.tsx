@@ -1,16 +1,22 @@
 /*
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-09 17:11:17
- * @Description: file content
- * @FilePath: /Single-Search/src/components/Admin/user.tsx
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-10 17:46:03
+ * @Description: User page in Admin
+ * @FilePath: \Single-Search\src\layout\admin\user.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
-// Button Component
-import Button from '@/components/button';
 import User from '@/model/user';
-@Component({})
+// Mermaid UI
+import Button from '@/components/Mermaid/button';
+import Switch from '@/components/Mermaid/switch';
+@Component({
+  components: {
+    'm-button': Button,
+    'm-switch': Switch
+  }
+})
 export default class UserAdmin extends Vue {
   // tips图标
   private tipsicon: object = require('@/assets/tips.svg');
@@ -35,6 +41,13 @@ export default class UserAdmin extends Vue {
       this.userData.avatar = require('@/assets/female.svg');
     }
   }
+
+  // 修改数据
+  private changeDarkStyle() {
+    this.userData.dark_style = !this.userData.dark_style;
+    console.log(`是否选择暗色模式：${this.userData.dark_style}`);
+  }
+
   // 保存修改
   private handleSave() {
     console.log(`新数据：${JSON.stringify(this.userData)}`);
@@ -171,25 +184,15 @@ export default class UserAdmin extends Vue {
             </section>
             <section class="admin__user--setting--checkpoint">
               <section class="admin__user--setting--checkpoint--item">
-                {/* switch组件 */}
-                <input
-                  class="admin__user--setting--checkpoint--switch"
-                  type="checkbox"
-                  name="style"
-                  value={this.userData.dark_style}
-                  v-model={this.userData.dark_style}
-                />
-                {this.userData.dark_style ? (
-                  <p>暗色模式</p>
-                ) : (
-                  <p>亮色模式</p>
-                )}
+                <m-switch
+                  status={this.userData.dark_style}
+                  onHandleClick={() => this.changeDarkStyle()}
+                ></m-switch>
               </section>
             </section>
           </div>
           <div class="admin__user--submit">
-            <Button onHandleClick={() => this.handleSave()}>保存</Button>
-            {/* TODO: 优化样式 */}
+            <m-button onHandleClick={() => this.handleSave()}>保存</m-button>
             {this.statusSuccess ? <p>保存成功</p> : <p></p>}
           </div>
         </div>
