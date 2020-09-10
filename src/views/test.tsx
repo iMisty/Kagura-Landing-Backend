@@ -1,27 +1,34 @@
 import { Component, Vue } from 'vue-property-decorator';
-import input from '@/components/input.tsx';
-import { getExtraData } from '@/utils/getSearchExtraData';
+import Switch from '@/components/Mermaid/switch';
+import '@/style/mermaid.less';
 @Component({
   components: {
-    'm-input': input
+    'm-switch': Switch
   }
 })
 export default class Test extends Vue {
-  private aa: string = '';
-  private submit: object = {};
-  private datas: any = '';
-  private async submits() {
-    const a = await getExtraData('baidu', this.aa);
-    console.log(a);
-    this.submit = a;
+  private status: boolean = false;
+
+  private click() {
+    this.status = !this.status;
   }
+
+  get switchActive() {
+    if (!this.status) {
+      return '';
+    }
+    if (this.status) {
+      return 'switch-active';
+    }
+  }
+
   private render() {
     return (
       <div style="width: 100vw;height: 100vh;display: flex;justify-content: center;align-items: center;">
-        <input type="text" v-model={this.aa} />
-        <p>{this.aa}</p>
-        <button onClick={() => this.submits()}>Submit</button>
-        <p>{this.submit}</p>
+        <m-switch
+          status={this.status}
+          onHandleClick={() => this.click()}
+        ></m-switch>
       </div>
     );
   }
