@@ -1,16 +1,16 @@
 /*
  * @Author: Miya
  * @Date: 2020-08-23 21:38:13
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-27 12:01:13
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-10 17:42:43
  * @Description: 首页右侧边栏用于显示用户离线时
- * @FilePath: /Single-Search/src/components/Home/setting/offline.vue
+ * @FilePath: \Single-Search\src\components\Home\offline.tsx
 */
 import { Component, Vue } from 'vue-property-decorator';
-import mermaidButton from '@/components/button.tsx';
+import Button from '@/components/Mermaid/button';
 @Component({
   components: {
-    'm-button': mermaidButton,
+    'm-button': Button,
   },
 })
 export default class Offline extends Vue {
