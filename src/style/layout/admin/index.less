@@ -9,12 +9,17 @@
     top: 4rem;
     left: 0;
     .layout-flex(flex, column, flex-start, center);
+    margin-top: 2rem;
     min-width: 8rem;
     height: calc(100% - 4rem);
+    .router-link-exact-active {
+      background-color: #fff;
+      border-radius: 1rem 0 0 1rem;
+    }
 
     // 图标
     .icon {
-      .layout-flex(flex, row, flex-start, center, nowrap);
+      .layout-flex(flex, row, center, center, nowrap);
       width: 100%;
       padding: 1rem;
       cursor: default;
