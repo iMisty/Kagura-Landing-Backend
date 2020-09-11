@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-10 18:41:48
+ * @LastEditTime: 2020-09-11 18:16:32
  * @Description: User page in Admin
  * @FilePath: \Single-Search\src\layout\admin\user.tsx
  */
@@ -55,7 +55,6 @@ export default class UserAdmin extends Vue {
   private handleSave() {
     console.log(`新数据：${JSON.stringify(this.userData)}`);
     this.statusSuccess = true;
-    
     this.$store.commit('set_user', this.userData);
     // this.$store.dispatch('set_user', this.userData);
     localStorage.setItem('user_info', JSON.stringify(this.userData));
@@ -189,14 +188,14 @@ export default class UserAdmin extends Vue {
               <section class="admin__user--setting--checkpoint--item">
                 <m-switch
                   status={this.userData.dark_style}
-                  disabled="true"
-                  onHandleClick={() => this.changeDarkStyle()}
+                  disabled="false"
+                  onClickevent={() => this.changeDarkStyle()}
                 ></m-switch>
               </section>
             </section>
           </div>
           <div class="admin__user--submit">
-            <m-button onHandleClick={() => this.handleSave()}>保存</m-button>
+            <m-button onClickevent={() => this.handleSave()}>保存</m-button>
             {this.statusSuccess ? <p>保存成功</p> : <p></p>}
           </div>
         </div>

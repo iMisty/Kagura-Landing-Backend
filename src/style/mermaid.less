@@ -1,6 +1,17 @@
 @import './global/var.less';
 @import './Mermaid/var.less';
 .mermaid {
+  // mask
+  &__mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 32;
+  }
+
   // sidecard
   &__side-card {
     margin: 2rem;
@@ -84,9 +95,12 @@
 
   // switch
   &__switch {
-    .layout-flex(flex, row, flex-start, center, nowrap);
-    // switch icon
     &--wrap {
+      .layout-flex(flex, row, flex-start, center, nowrap);
+    }
+
+    // switch icon
+    &--icon {
       position: relative;
       width: 2.5rem;
       height: 1.5rem;
@@ -114,15 +128,18 @@
           background-color: #595bb3;
         }
       }
-      // Disabled Status
-      &.switch-disabled {
-      }
     }
+
     // switch text
     &--text {
       margin-left: 1rem;
       .checkpoint;
       cursor: default;
+    }
+    
+    // Disabled Status
+    &.switch-disabled {
+      position: relative;
     }
   }
 }

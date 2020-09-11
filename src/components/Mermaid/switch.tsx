@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-09-10 15:36:56
- * @LastEditTime: 2020-09-10 22:39:21
+ * @LastEditTime: 2020-09-11 18:12:06
  * @LastEditors: Miya
  * @Description: Switch component in Mermaid UI
- * @FilePath: /Single-Search/src/components/Mermaid/switch.tsx
+ * @FilePath: \Single-Search\src\components\Mermaid\switch.tsx
  * @Version: 0.3
  */
 
@@ -18,7 +18,7 @@ export default class MermaidSwitch extends Vue {
   private status!: boolean;
 
   // Prop: switch text
-  // Prop: 选项标题
+  // Prop: 选项文字
   @Prop()
   private text!: string;
 
@@ -27,9 +27,8 @@ export default class MermaidSwitch extends Vue {
 
   // method => Emit: Click
   // method => Emit: 点击事件
-  @Emit('handleClick')
+  @Emit('clickevent')
   private handleClick() {
-    if (this.disabled) return false;
     console.log('switch-click');
   }
 
@@ -47,13 +46,12 @@ export default class MermaidSwitch extends Vue {
 
   private render() {
     return (
-      // TODO: 在disabled为true时禁止点击修改
-      <section
-        class={`mermaid__switch ${this.getDisabledStatus}`}
-        onClick={this.handleClick}
-      >
-        <div class={`mermaid__switch--wrap ${this.getSwitchActive}`}></div>
-        <div class="mermaid__switch--text">{this.text}</div>
+      <section class={`mermaid__switch ${this.getDisabledStatus}`}>
+        {this.disabled ? <div class="mermaid__mask"></div> : ''}
+        <section class="mermaid__switch--wrap" onClick={this.handleClick}>
+          <div class={`mermaid__switch--icon ${this.getSwitchActive}`}></div>
+          <div class="mermaid__switch--text">{this.text}</div>
+        </section>
       </section>
     );
   }

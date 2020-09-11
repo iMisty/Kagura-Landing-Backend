@@ -1,34 +1,47 @@
 import { Component, Vue } from 'vue-property-decorator';
-import Switch from '@/components/Mermaid/switch';
+import InputInputing from '@/components/Admin/input-inputing';
 import '@/style/mermaid.less';
 @Component({
   components: {
-    'm-switch': Switch
+    'input-inputing': InputInputing
   }
 })
 export default class Test extends Vue {
-  private status: boolean = false;
+  private value: string = '111111';
 
-  private click() {
-    this.status = !this.status;
+  private a() {
+    console.log('click');
+    this.value = 'click';
   }
 
-  get switchActive() {
-    if (!this.status) {
-      return '';
-    }
-    if (this.status) {
-      return 'switch-active';
-    }
+  private b() {
+    console.log('focus');
+    this.value = 'focus';
+  }
+
+  private c() {
+    console.log('change');
+    this.value = 'change';
+  }
+
+  private d() {
+    console.log('blur');
+    this.value = 'blur';
   }
 
   private render() {
     return (
       <div style="width: 100vw;height: 100vh;display: flex;justify-content: center;align-items: center;">
-        <m-switch
-          status={this.status}
-          onHandleClick={() => this.click()}
-        ></m-switch>
+        <input-inputing
+          type="text"
+          name="setting"
+          title="1111"
+          value={this.value}
+          onClickevent={() => this.a()}
+          onFocusevent={() => this.b()}
+          onChangeevent={() => this.c()}
+          onBlurevent={() => this.d()}
+        ></input-inputing>
       </div>
     );
   }
