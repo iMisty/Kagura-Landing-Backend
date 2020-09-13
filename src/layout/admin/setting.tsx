@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-08-05 22:53:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-11 12:26:10
+ * @LastEditTime: 2020-09-13 23:19:44
  * @Description: Setting Page In Admin
- * @FilePath: \Single-Search\src\layout\admin\setting.tsx
+ * @FilePath: /Single-Search/src/layout/admin/setting.tsx
  */
 
 import { Component, Vue } from 'vue-property-decorator';
@@ -28,8 +28,20 @@ interface Setting {
   }
 })
 export default class SettingsAdmin extends Vue {
+  // tips图标
+  private tipsicon: object = require('@/assets/tips.svg');
   // 设置数据
-  private settingData!: Setting;
+  private settingData: Setting = {
+    background: '',
+    search_logo: '',
+    blur_style: false,
+    hitokoto: false,
+    copyright: {
+      author: '',
+      website: ''
+    },
+    start_date: ''
+  };
 
   // 获取数据
   private getSettingData() {
@@ -52,14 +64,99 @@ export default class SettingsAdmin extends Vue {
     return (
       <div class="content">
         <div class="admin__settings">
-          <input-checkbox title="测试标题1"></input-checkbox>
-          <input-checkbox title="测试标题1"></input-checkbox>
-          <input-checkbox title="测试标题1"></input-checkbox>
-          <input-checkbox title="测试标题1"></input-checkbox>
-          <input-checkbox title="测试标题1"></input-checkbox>
-          <input-checkbox title="测试标题1"></input-checkbox>
-          <input-checkbox title="测试标题1"></input-checkbox>
-          <input-checkbox title="测试标题1"></input-checkbox>
+          {/* 首页背景图片 */}
+          <div class="admin__user--setting">
+            <section class="admin__user--setting--title">
+              <h5>背景图片</h5>
+              <section class="admin__user--setting--tips">
+                <img
+                  class="admin__user--setting--tips--image"
+                  src={this.tipsicon}
+                />
+                <div class="admin__user--setting--tips--text">依然没什么用</div>
+              </section>
+            </section>
+            <input
+              type="text"
+              name="setting"
+              value={this.settingData.background}
+              v-model={this.settingData.background}
+            />
+          </div>
+          {/* 首页 logo */}
+          <div class="admin__user--setting">
+            <section class="admin__user--setting--title">
+              <h5>搜索处logo</h5>
+              <section class="admin__user--setting--tips">
+                <img
+                  class="admin__user--setting--tips--image"
+                  src={this.tipsicon}
+                />
+                <div class="admin__user--setting--tips--text">依然没什么用</div>
+              </section>
+            </section>
+            <input
+              type="text"
+              name="setting"
+              value={this.settingData.search_logo}
+              v-model={this.settingData.search_logo}
+            />
+          </div>
+          <input-checkbox
+            title="毛玻璃效果"
+            tiptext={true}
+            status={this.settingData.blur_style}
+            disabled={true}
+          ></input-checkbox>
+          <input-checkbox
+            title="一言"
+            tiptext={false}
+            status={this.settingData.hitokoto}
+          ></input-checkbox>
+          {/* 版权信息 */}
+          <div class="admin__user--setting">
+            <section class="admin__user--setting--title">
+              <h5>作者信息</h5>
+              <section class="admin__user--setting--tips">
+                <img
+                  class="admin__user--setting--tips--image"
+                  src={this.tipsicon}
+                />
+                <div class="admin__user--setting--tips--text">依然没什么用</div>
+              </section>
+            </section>
+            <input
+              type="text"
+              name="setting"
+              value={this.settingData.copyright.author}
+              v-model={this.settingData.copyright.author}
+            />
+            <input
+              type="text"
+              name="setting"
+              value={this.settingData.copyright.website}
+              v-model={this.settingData.copyright.website}
+            />
+          </div>
+          {/* 网站开始时间 */}
+          <div class="admin__user--setting">
+            <section class="admin__user--setting--title">
+              <h5>开始时间</h5>
+              <section class="admin__user--setting--tips">
+                <img
+                  class="admin__user--setting--tips--image"
+                  src={this.tipsicon}
+                />
+                <div class="admin__user--setting--tips--text">依然没什么用</div>
+              </section>
+            </section>
+            <input
+              type="text"
+              name="setting"
+              value={this.settingData.start_date}
+              v-model={this.settingData.start_date}
+            />
+          </div>
         </div>
       </div>
     );
