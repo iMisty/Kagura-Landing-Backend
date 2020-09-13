@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-11 18:16:32
+ * @LastEditTime: 2020-09-13 22:43:40
  * @Description: User page in Admin
- * @FilePath: \Single-Search\src\layout\admin\user.tsx
+ * @FilePath: /Single-Search/src/layout/admin/user.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
 import User from '@/model/user';
@@ -78,7 +78,7 @@ export default class UserAdmin extends Vue {
                   class="admin__user--setting--tips--image"
                   src={this.tipsicon}
                 />
-                <div class="admin__user--setting--tips--text">Test Text</div>
+                <div class="admin__user--setting--tips--text">一个头像</div>
               </section>
             </section>
             <input
@@ -101,7 +101,7 @@ export default class UserAdmin extends Vue {
                   class="admin__user--setting--tips--image"
                   src={this.tipsicon}
                 />
-                <div class="admin__user--setting--tips--text">Test Text</div>
+                <div class="admin__user--setting--tips--text">其实目前暂时没用</div>
               </section>
             </section>
             <input
@@ -120,7 +120,7 @@ export default class UserAdmin extends Vue {
                   class="admin__user--setting--tips--image"
                   src={this.tipsicon}
                 />
-                <div class="admin__user--setting--tips--text">Test Text</div>
+                <div class="admin__user--setting--tips--text">目前还是没用</div>
               </section>
             </section>
             <select
@@ -141,7 +141,7 @@ export default class UserAdmin extends Vue {
                   class="admin__user--setting--tips--image"
                   src={this.tipsicon}
                 />
-                <div class="admin__user--setting--tips--text">Test Text</div>
+                <div class="admin__user--setting--tips--text">依然没什么用</div>
               </section>
             </section>
             <input
@@ -160,7 +160,7 @@ export default class UserAdmin extends Vue {
                   class="admin__user--setting--tips--image"
                   src={this.tipsicon}
                 />
-                <div class="admin__user--setting--tips--text">Test Text</div>
+                <div class="admin__user--setting--tips--text">选择默认引擎</div>
               </section>
             </section>
             <select
@@ -181,7 +181,7 @@ export default class UserAdmin extends Vue {
                   class="admin__user--setting--tips--image"
                   src={this.tipsicon}
                 />
-                <div class="admin__user--setting--tips--text">Test Text</div>
+                <div class="admin__user--setting--tips--text">暗色模式尚未完成所以这个没法选择</div>
               </section>
             </section>
             <section class="admin__user--setting--checkpoint">
