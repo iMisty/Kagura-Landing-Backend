@@ -15,15 +15,16 @@
 @import '../../admin/linksum.less';
 
 .fade-enter-active{
-  transition: all .4s ;
+  transition: opacity .4s ;
 }
 .fade-leave-active {
-  transition: all .4s;
+  transition: opacity .4s;
 }
 .fade-enter, .fade-leave-to {
   position: absolute;
   top: 4rem;
   left: 3rem;
+  width: calc(100vw - 3rem);
   z-index: 4;
   opacity: 0;
 }
