@@ -32,9 +32,7 @@ export default class CheckoutInput extends Vue {
 
   // 点击事件
   @Emit('clickevent')
-  private clickEvent() {
-    console.log('clicked');
-  }
+  private clickEvent() {}
 
   private render() {
     return (
@@ -60,7 +58,7 @@ export default class CheckoutInput extends Vue {
             <m-switch
               status={this.status}
               disabled={this.disabled}
-              onHandleclick={() => this.clickEvent()}
+              onClickevent={() => this.clickEvent()}
             ></m-switch>
           </section>
         </section>
