@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-09-03 17:08:06
- * @LastEditTime: 2020-09-11 18:29:54
+ * @LastEditTime: 2020-09-14 12:30:47
  * @LastEditors: Miya
  * @Description: Button component in Mermaid UI
  * @FilePath: \Single-Search\src\components\Mermaid\button.tsx
@@ -23,9 +23,7 @@ export default class MermaidButton extends Vue {
   // Click Event
   // 点击事件
   @Emit('clickevent')
-  public handleClick() {
-    console.log('click button');
-  }
+  public handleClick(event) {}
 
   private render() {
     return (
