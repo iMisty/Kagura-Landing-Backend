@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-13 22:43:40
+ * @LastEditTime: 2020-09-14 16:47:36
  * @Description: User page in Admin
- * @FilePath: /Single-Search/src/layout/admin/user.tsx
+ * @FilePath: \Single-Search\src\layout\admin\user.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
 import User from '@/model/user';
@@ -53,11 +53,12 @@ export default class UserAdmin extends Vue {
 
   // 保存修改
   private handleSave() {
-    console.log(`新数据：${JSON.stringify(this.userData)}`);
+    const data = this.userData;
+    console.log(`新数据：${JSON.stringify(data)}`);
     this.statusSuccess = true;
-    this.$store.commit('set_user', this.userData);
+    this.$store.commit('set_user', data);
     // this.$store.dispatch('set_user', this.userData);
-    localStorage.setItem('user_info', JSON.stringify(this.userData));
+    localStorage.setItem('user_info', JSON.stringify(data));
   }
 
   private mounted() {
@@ -101,7 +102,9 @@ export default class UserAdmin extends Vue {
                   class="admin__user--setting--tips--image"
                   src={this.tipsicon}
                 />
-                <div class="admin__user--setting--tips--text">其实目前暂时没用</div>
+                <div class="admin__user--setting--tips--text">
+                  其实目前暂时没用
+                </div>
               </section>
             </section>
             <input
@@ -181,7 +184,9 @@ export default class UserAdmin extends Vue {
                   class="admin__user--setting--tips--image"
                   src={this.tipsicon}
                 />
-                <div class="admin__user--setting--tips--text">暗色模式尚未完成所以这个没法选择</div>
+                <div class="admin__user--setting--tips--text">
+                  暗色模式尚未完成所以这个没法选择
+                </div>
               </section>
             </section>
             <section class="admin__user--setting--checkpoint">
@@ -194,7 +199,7 @@ export default class UserAdmin extends Vue {
               </section>
             </section>
           </div>
-          <div class="admin__user--submit">
+          <div class="admin__submit">
             <m-button onClickevent={() => this.handleSave()}>保存</m-button>
             {this.statusSuccess ? <p>保存成功</p> : <p></p>}
           </div>
