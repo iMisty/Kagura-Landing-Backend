@@ -2,14 +2,15 @@
  * @Author: Miya
  * @Date: 2020-08-05 22:53:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-13 23:19:44
+ * @LastEditTime: 2020-09-14 17:15:29
  * @Description: Setting Page In Admin
- * @FilePath: /Single-Search/src/layout/admin/setting.tsx
+ * @FilePath: \Single-Search\src\layout\admin\setting.tsx
  */
 
 import { Component, Vue } from 'vue-property-decorator';
 // checkbox
 import checkbox from '@/components/Admin/input-checkbox';
+import Button from '@/components/Mermaid/button';
 
 interface Setting {
   background: string;
@@ -24,7 +25,8 @@ interface Setting {
 }
 @Component({
   components: {
-    'input-checkbox': checkbox
+    'input-checkbox': checkbox,
+    'm-button': Button
   }
 })
 export default class SettingsAdmin extends Vue {
@@ -43,9 +45,12 @@ export default class SettingsAdmin extends Vue {
     start_date: ''
   };
 
+  // 保存状态
+  private statusSuccess: boolean = false;
+
   // 获取数据
   private getSettingData() {
-    const getDataInLocalStorage = localStorage.getItem('setting_data');
+    const getDataInLocalStorage = localStorage.getItem('user_setting');
     if (getDataInLocalStorage === null) {
       const getDataInVuex = this.$store.state.settings.home;
       this.settingData = getDataInVuex;
@@ -54,6 +59,28 @@ export default class SettingsAdmin extends Vue {
     }
     this.settingData = JSON.parse(getDataInLocalStorage);
     console.log(`获取设置数据： ${JSON.stringify(this.settingData)}`);
+  }
+
+  // 修改毛玻璃支持
+  private setBlurBackgroundStatus() {
+    this.settingData.blur_style = !this.settingData.blur_style;
+  }
+
+  // 修改一言
+  private setHitokotoStatus() {
+    this.settingData.hitokoto = !this.settingData.hitokoto;
+  }
+
+  // 修改数据并保存
+  private handleSave() {
+    const data = this.settingData;
+    console.log(`新数据： ${JSON.stringify(this.settingData)}`);
+    this.$store.commit('set_setting', data);
+    localStorage.setItem('user_setting', JSON.stringify(data));
+    this.statusSuccess = true;
+    setTimeout(() => {
+      this.statusSuccess = false;
+    }, 3000);
   }
 
   private mounted() {
@@ -82,6 +109,9 @@ export default class SettingsAdmin extends Vue {
               value={this.settingData.background}
               v-model={this.settingData.background}
             />
+            <div class="admin__preview">
+              <img src={this.settingData.background} alt=""/>
+            </div>
           </div>
           {/* 首页 logo */}
           <div class="admin__user--setting">
@@ -106,12 +136,13 @@ export default class SettingsAdmin extends Vue {
             title="毛玻璃效果"
             tiptext={true}
             status={this.settingData.blur_style}
-            disabled={true}
+            onClickevent={() => this.setBlurBackgroundStatus()}
           ></input-checkbox>
           <input-checkbox
             title="一言"
             tiptext={false}
             status={this.settingData.hitokoto}
+            onClickevent={() => this.setHitokotoStatus()}
           ></input-checkbox>
           {/* 版权信息 */}
           <div class="admin__user--setting">
@@ -156,6 +187,10 @@ export default class SettingsAdmin extends Vue {
               value={this.settingData.start_date}
               v-model={this.settingData.start_date}
             />
+          </div>
+          <div class="admin__submit">
+            <m-button onClickevent={() => this.handleSave()}>保存</m-button>
+            {this.statusSuccess ? <p>保存成功</p> : <p></p>}
           </div>
         </div>
       </div>
