@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-03 12:04:12
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-14 16:14:54
  */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -20,8 +20,6 @@ import { getExtraData } from '@/utils/getSearchExtraData';
   }
 })
 export default class Search extends Vue {
-  // Logo
-  private logoImgSrc: object = require('@/assets/logo.svg');
   // 放大镜图标
   private magnifier: object = require('@/assets/magnifier.svg');
   // 控制搜索框样式
@@ -163,7 +161,7 @@ export default class Search extends Vue {
       <div class="search--bar">
         {/* 搜索引擎logo部分 */}
         <div class="search--bar-logo">
-          <img src={this.logoImgSrc} alt="Logo" />
+          <img src={this.$store.state.settings.home.search_logo} alt="Logo" />
         </div>
         {/* 搜索引擎内容部分 */}
         <div class={`search--bar-wrap ${this.inputing}`}>

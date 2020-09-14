@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-09-10 17:30:08
+ * @LastEditTime: 2020-09-14 16:45:33
  * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: \Single-Search\src\store\state.ts
@@ -39,7 +39,7 @@ const state = {
       // 背景图片
       background: 'https://i.loli.net/2020/06/13/Tsa8uqY2gbjRndw.jpg',
       // TODO: 首页搜索栏图片
-      search_logo: '',
+      search_logo: require('@/assets/logo.svg'),
       // 是否开启毛玻璃效果
       blur_style: true,
       // 是否开启一言
@@ -317,7 +317,7 @@ const state = {
     // 控制设置边栏开关
     is_setting: false,
     // 当前选中的搜索引擎
-    search_engine: '',
+    search_engine: ''
     // // 当前输入的关键词
     // search_text: '',
     // // 搜索引擎联想数据
