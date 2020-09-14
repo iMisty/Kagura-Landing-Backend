@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-03 17:55:41
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-14 12:39:49
  */
 import { Component, Vue } from 'vue-property-decorator';
 import adminTop from '@/layout/admin/top';
@@ -68,9 +68,9 @@ export default class Admin extends Vue {
 
         {/* Wrap start */}
         <section class="admin__wrap">
-            <transition name="fade">
+            {/* <transition name="fade"> */}
               <router-view></router-view>
-            </transition>
+            {/* </transition> */}
         </section>
         {/* Wrap end*/}
       </div>
