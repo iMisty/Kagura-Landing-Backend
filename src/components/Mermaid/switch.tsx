@@ -28,9 +28,7 @@ export default class MermaidSwitch extends Vue {
   // method => Emit: Click
   // method => Emit: 点击事件
   @Emit('clickevent')
-  private handleClick() {
-    console.log('switch-click');
-  }
+  private handleClick() {}
 
   // computed: Computed status with active class
   // computed: 根据status值计算active状态
