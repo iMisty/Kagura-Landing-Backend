@@ -1,50 +1,75 @@
-.admin-link {
-  display       : grid;
-  padding-bottom: 4rem;
+.admin__link {
+  width: 100%;
+  height: calc(100vh - 4rem);
+  overflow-y: auto;
 
-  &-types {
-    display         : flex;
-    flex-direction  : column;
-    margin          : 0 2rem 1rem 2rem;
-    padding         : 1rem 2rem;
-    background-color: #fff;
+  &--list {
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 51rem;
+  }
 
-    &-title {
-      font-size: 1.4rem;
-      padding  : 1rem 0;
+  // 表格布局
+  &--table {
+    position: relative;
+    margin: 2rem 0;
+    padding-bottom: 3rem;
+    width: 100%;
+
+    input {
+      width: 100%;
+      line-height: 1.6;
+      color: #525f7f;
+    }
+
+    // 标题
+    &--title {
+      padding: 0.5rem;
+      color: #32325d;
+      font-size: 1rem;
+    }
+
+    // 内容区
+    &--wrap {
+      &:nth-child(even) {
+        background-color: #f4f5f7;
+      }
+    }
+
+    // 图标设置
+    &--icon {
+      padding: 0.5rem;
+      width: 16%;
+    }
+
+    // 链接设置
+    &--link {
+      padding: 0.5rem;
+      width: 48%;
+    }
+
+    // 链接文字设置
+    &--text {
+      padding: 0.5rem;
+      width: 28%;
+    }
+
+    // 设置按钮
+    &--setting {
+      padding: 0.5rem;
+      .layout-flex(flex, row, space-around, center, nowrap);
+      &-button {
+        width: 1.5rem;
+      }
     }
   }
 
-  &-addnew {
-    display         : flex;
-    justify-content : center;
-    align-items     : center;
-    justify-self    : center;
-    width           : 8rem;
-    height          : 8rem;
-    font-size       : 4rem;
-    font-weight     : 900;
-    color           : #fff;
-    background-color: #eaeaea;
-    border-radius   : 64%;
-  }
-
-  &-item {
-    margin : .5rem 0;
-    padding: .5rem;
-
-    &-title {
-      padding: .5rem 1rem;
-    }
-
-    &-wrap {
-      padding  : .5rem;
-      font-size: 1.2rem;
-    }
-
-    &-name {
-      margin-right: .5rem;
-      max-width   : 8rem;
-    }
+  // 主控制按钮组
+  &--options {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    .layout-flex(flex, row, flex-start, center, nowrap);
   }
 }
