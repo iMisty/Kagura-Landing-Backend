@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-09-14 16:45:33
+ * @LastEditTime: 2020-09-15 16:35:08
  * @LastEditors: Miya
  * @Description: Vuex State部分
  * @FilePath: \Single-Search\src\store\state.ts
@@ -101,7 +101,7 @@ const state = {
         },
         {
           icon: 'acfun',
-          link: 'https://www.acfun.com',
+          link: 'https://www.acfun.cn',
           text: 'ACFun'
         },
         {
@@ -117,22 +117,22 @@ const state = {
       titleIconColor: '#29f',
       items: [
         {
-          icon: '',
+          icon: 'undefined',
           link: 'https://www.youtube.com',
           text: 'Youtube'
         },
         {
-          icon: '',
+          icon: 'undefined',
           link: 'https://www.bilibili.com',
           text: 'Bilibili'
         },
         {
-          icon: '',
+          icon: 'undefined',
           link: 'https://www.acfun.com',
           text: 'ACFun'
         },
         {
-          icon: '',
+          icon: 'undefined',
           link: 'https://www.youku.com',
           text: 'Youku'
         }
