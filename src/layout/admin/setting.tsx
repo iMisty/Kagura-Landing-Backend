@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-08-05 22:53:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-14 17:15:29
+ * @LastEditTime: 2020-09-16 00:31:57
  * @Description: Setting Page In Admin
- * @FilePath: \Single-Search\src\layout\admin\setting.tsx
+ * @FilePath: /Single-Search/src/layout/admin/setting.tsx
  */
 
 import { Component, Vue } from 'vue-property-decorator';
@@ -50,7 +50,7 @@ export default class SettingsAdmin extends Vue {
 
   // 获取数据
   private getSettingData() {
-    const getDataInLocalStorage = localStorage.getItem('user_setting');
+    const getDataInLocalStorage = localStorage.getItem('s_user_setting');
     if (getDataInLocalStorage === null) {
       const getDataInVuex = this.$store.state.settings.home;
       this.settingData = getDataInVuex;
@@ -76,7 +76,7 @@ export default class SettingsAdmin extends Vue {
     const data = this.settingData;
     console.log(`新数据： ${JSON.stringify(this.settingData)}`);
     this.$store.commit('set_setting', data);
-    localStorage.setItem('user_setting', JSON.stringify(data));
+    localStorage.setItem('s_user_setting', JSON.stringify(data));
     this.statusSuccess = true;
     setTimeout(() => {
       this.statusSuccess = false;

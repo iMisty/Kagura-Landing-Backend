@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-14 16:47:36
+ * @LastEditTime: 2020-09-16 00:32:10
  * @Description: User page in Admin
- * @FilePath: \Single-Search\src\layout\admin\user.tsx
+ * @FilePath: /Single-Search/src/layout/admin/user.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
 import User from '@/model/user';
@@ -34,7 +34,7 @@ export default class UserAdmin extends Vue {
 
   // 获取数据
   private getUserData() {
-    const getLocalStorage: any = localStorage.getItem('user_info') || null;
+    const getLocalStorage: any = localStorage.getItem('s_user_info') || null;
     const data = JSON.parse(getLocalStorage);
     console.log(data);
     const userData = data || this.$store.state.user;
@@ -58,7 +58,7 @@ export default class UserAdmin extends Vue {
     this.statusSuccess = true;
     this.$store.commit('set_user', data);
     // this.$store.dispatch('set_user', this.userData);
-    localStorage.setItem('user_info', JSON.stringify(data));
+    localStorage.setItem('s_user_info', JSON.stringify(data));
   }
 
   private mounted() {

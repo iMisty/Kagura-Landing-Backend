@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-07-24 17:48:54
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-09 04:08:17
+ * @LastEditTime: 2020-09-16 00:33:04
  * @Description: 登录页面
  * @FilePath: /Single-Search/src/views/Login.tsx
  */
@@ -38,7 +38,7 @@ export default class Login extends Vue {
     // TODO: 上线时需要调整为正式环境与后台交互
     // 临时数据
     const data = this.loginData;
-    const loginStatus = localStorage.getItem('token');
+    const loginStatus = localStorage.getItem('s_token');
 
     // 账号密码不正确
     if (data.username !== 'admin' && data.password !== '123456') {
@@ -57,7 +57,7 @@ export default class Login extends Vue {
     }
 
     // 账号密码正确时，写入localStorage与Vuex
-    localStorage.setItem('token', 'test-token');
+    localStorage.setItem('s_token', 'test-token');
     this.$store.commit('set_token', loginStatus);
     this.$router.push({ path: '/admin' });
     console.log(`token: ${this.$store.state.token}`);

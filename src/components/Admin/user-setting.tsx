@@ -2,8 +2,8 @@
  * @Author: Miya
  * @Version: 1.0
  * @Date: 2020-09-04 01:22:10
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-04 16:05:59
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-16 00:29:37
  * @Description: 用户选项模块选择器
  * @FilePath: /Single-Search/src/components/Admin/user-setting.tsx
  */
@@ -23,7 +23,7 @@ export default class AdminUserSetting extends Vue {
       this.$router.replace({ path: this.router });
       return true;
     } else {
-      localStorage.removeItem('token');
+      localStorage.removeItem('s_token');
       this.$store.commit('set_token', null);
       this.$router.push({ path: '/' });
       return true;

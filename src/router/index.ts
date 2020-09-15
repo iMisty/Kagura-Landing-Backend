@@ -1,8 +1,8 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-27 14:28:24
- * @LastEditTime: 2020-09-04 11:54:46
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-09-16 00:32:48
+ * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: /Single-Search/src/router/index.ts
  */
@@ -71,7 +71,7 @@ router.beforeEach((to, from, next) => {
   if (to.path !== '/admin') {
     next();
   } else {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('s_token');
     // const token =
     //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLC.caAFsUUgzA0bPJtKfkH-4Hk';
     if (token) {
