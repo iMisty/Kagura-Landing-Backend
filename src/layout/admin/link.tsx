@@ -24,7 +24,8 @@ export default class AdminLink extends Vue {
    * @return {type}
    */
   private getLinkData() {
-    const data = localStorage.getItem('s_user_link') || this.$store.state.link;
+    const dataInLocalSrorage: string | null = localStorage.getItem('s_user_link');
+    const data = dataInLocalSrorage || this.$store.state.link;
     console.log(data);
     this.linkData = data;
   }
