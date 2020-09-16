@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-08-26 01:06:24
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-16 16:07:40
+ * @LastEditTime: 2020-09-16 16:21:54
  * @Description: 用户在线状态模块
  * @FilePath: \Single-Search\src\components\Home\online.tsx
  */
@@ -17,7 +17,6 @@ import mButton from '@/components/Mermaid/button.tsx';
   }
 })
 export default class UserSetting extends Vue {
-  
   // 用户名
   @Prop()
   private name!: string;

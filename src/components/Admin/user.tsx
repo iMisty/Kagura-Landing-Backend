@@ -27,7 +27,7 @@ export default class AdminUser extends Vue {
    * @param {boolean} status
    * @return {boolean}
    */
-  private handleSettingMenuStatus(status) {
+  private handleSettingMenuStatus(status: boolean) {
     this.isSettingMenuActive = status;
     return true;
   }
@@ -43,7 +43,7 @@ export default class AdminUser extends Vue {
         </section>
         {this.isSettingMenuActive ? (
           <section class="admin__top--user--menu">
-            {this.settingMenu.map(item => {
+            {this.settingMenu.map((item: any) => {
               return (
                 <user-setting
                   title={item.title}
