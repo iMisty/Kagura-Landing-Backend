@@ -2,9 +2,9 @@
 
 ## 目前进度
 
-前端: 95%
+前端: 85%
 
-后台系统: 65%
+后台系统: 85%
 
 后端: 50%
 
@@ -14,13 +14,13 @@
 
 ## 状况
 
-前端主要功能已实现,尚缺: 导航栏内容需要完成
+前端主要功能已实现
 
 数据目前分为两个版本：
 
 - 可直接部署使用单页版本，数据存储使用localStorage
 
-- 直接部署在服务器版本，数据存储使用MongoDB
+- ~~直接部署在服务器版本，数据存储使用MongoDB~~ （未完成）
 
 ## 如何部署
 
@@ -28,13 +28,13 @@
 
 若想修改导航内容等:
 
-- git clone 本项目到本地
+- 直接下载位于 `release` 内的localStorage版安装包
 
-- npm install 安装依赖
+- 复制到服务器或虚拟空间或本地目录
 
-- npm run build 即可打包为静态页面
+- 输入 `http://yoursite/login` 或点击右上角个人信息图标登录至后台（默认账户与密码已给出）
 
-- 导航部分目前由 Vuex 管理,位于 src 目录下的 `store/state.ts` 内
+- 修改位于 `link` 选项卡下的链接，目前图标采用 `iconfont` 内图标
 
 ## 项目组成
 
@@ -44,15 +44,31 @@
 
 - components: 存放各种组件
 
+  - 根目录下： 共用组件
+
+  - 首页用组件： Home
+
+  - 后台用组件： Admin
+
+  - Mermaid UI组件： Mermaid
+
 - icons: (即将废弃)存放 iconfont 的 js 图标文件
 
 - layout: 存放页面模组框架文件
+
+  - 首页展示： home
+
+  - 后台展示： admin
+
+  - 登录页： login
 
 - model: 存放 typescript 类型模型
 
 - router: 存放路由配置
 
-- store: 存放 vuex 配置
+- store: 存放 vuex 配置及初始数据
+
+- style: 存放 less 文件 （待优化）
 
 - util: 存放各种业务逻辑配置
 
@@ -60,7 +76,7 @@
 
 ## 使用框架及库
 
-基础框架: Vue 全家桶 with TypeScript
+基础框架: Vue2.6 with TypeScript
 
 CSS 格式化: Less
 
@@ -70,7 +86,7 @@ CSS 格式化: Less
 
 后端框架: Koa
 
-数据库: MongoDB
+数据库: localStorage / MongoDB
 
 ## ~~功能~~ TODOs
 

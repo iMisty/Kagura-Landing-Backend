@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-08-23 21:38:13
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-10 17:42:43
+ * @LastEditTime: 2020-09-16 15:07:06
  * @Description: 首页右侧边栏用于显示用户离线时
  * @FilePath: \Single-Search\src\components\Home\offline.tsx
 */
@@ -32,11 +32,8 @@ export default class Offline extends Vue {
           </section>
         </article>
         <article class="setting__logoff--setting">
-          <m-button className="setting__logoff--setting--button" onhandleClick={this.handleLogin}>
+          <m-button class="setting__logoff--setting--button" onClickevent={this.handleLogin}>
             <p>Login</p>
-          </m-button>
-          <m-button className="setting__logoff--setting--button" onhandleClick={this.handleNoEvent}>
-            <p>Registry</p>
           </m-button>
         </article>
       </div>

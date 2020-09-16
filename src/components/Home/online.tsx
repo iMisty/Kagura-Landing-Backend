@@ -2,23 +2,37 @@
  * @Author: Miya
  * @Version: 1.0
  * @Date: 2020-08-26 01:06:24
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-09 18:01:21
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-16 16:07:40
  * @Description: 用户在线状态模块
- * @FilePath: /Single-Search/src/components/Home/setting/online.tsx
+ * @FilePath: \Single-Search\src\components\Home\online.tsx
  */
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import avatar from '@/components/avatar.tsx';
+import mButton from '@/components/Mermaid/button.tsx';
 @Component({
   components: {
-    avatar
+    avatar,
+    'm-button': mButton
   }
 })
 export default class UserSetting extends Vue {
-  @Prop() private name!: string;
-  @Prop() private avatar!: string;
-  @Prop() private sex!: string;
-  @Prop() private introduce!: string;
+  
+  // 用户名
+  @Prop()
+  private name!: string;
+
+  // 头像
+  @Prop()
+  private avatar!: string;
+
+  // 性别 => 影响默认头像
+  @Prop()
+  private sex!: string;
+
+  // 骚话
+  @Prop()
+  private introduce!: string;
 
   // 缺省头像图片
   private male: object = require('@/assets/male.svg');
@@ -64,21 +78,30 @@ export default class UserSetting extends Vue {
           {this.avatar === '' ? (
             <avatar image={this.image} sex={this.sex}></avatar>
           ) : (
-              <section class="setting__wrap--avatar--custom">
-                <avatar image={this.image}></avatar>
-              </section>
-            )}
+            <section class="setting__wrap--avatar--custom">
+              <avatar image={this.image}></avatar>
+            </section>
+          )}
         </article>
         <article class="setting__wrap--information">
           <h3 class="setting__wrap--information--title">{this.name}</h3>
           <p class="setting__wrap--information--text">{this.introduce}</p>
           <section class="setting__wrap--buttons">
-            <button class="setting__wrap--information--button" onClick={this.goAdmin}>Admin</button>
-            <button class="setting__wrap--information--button" onClick={this.logout}>Logout</button>
+            <m-button
+              class="setting__wrap--information--button"
+              onClickevent={this.goAdmin}
+            >
+              Admin
+            </m-button>
+            <m-button
+              class="setting__wrap--information--button"
+              onClickevent={this.logout}
+            >
+              Logout
+            </m-button>
           </section>
         </article>
       </section>
     );
   }
 }
-
