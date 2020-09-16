@@ -1,11 +1,11 @@
 /*
  * @Author: Miya
  * @Date: 2020-09-16 16:44:44
- * @LastEditTime: 2020-09-16 16:46:52
+ * @LastEditTime: 2020-09-16 18:05:20
  * @LastEditors: Miya
  * @Description: 用户设置模型
  * @FilePath: \Single-Search\src\model\setting.ts
- * @Version: 
+ * @Version: 1.0
  */
 export default interface UserSetting {
   // 背景图片
