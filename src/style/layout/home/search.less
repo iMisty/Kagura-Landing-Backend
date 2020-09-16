@@ -19,7 +19,7 @@
       position           : relative;
       padding            : .5rem;
       width              : 64vw;
-      border-radius      : @border-radius;
+      border-radius      : @border-radius / 4;
       transition-duration: @transition-duration;
 
       &.inputing {
@@ -41,7 +41,7 @@
       }
 
       .choose-engine {
-        .blur-bg-dark();
+        .blur-bg-light();
         display      : none;
         position     : absolute;
         top          : 108%;
@@ -49,7 +49,7 @@
         transform    : translateX(-50%);
         padding      : .5rem;
         z-index      : 16;
-        border-radius: @border-radius;
+        border-radius: @border-radius / 4;
 
         &::after {
           content         : '';
@@ -71,7 +71,7 @@
           padding            : .5rem;
           font-size          : 1.5em;
           color              : #fff;
-          border-radius      : @border-radius / 2;
+          border-radius      : @border-radius / 4;
           transition-duration: @transition-duration / 2;
 
           &:hover {

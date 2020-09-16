@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-16 00:32:10
+ * @LastEditTime: 2020-09-16 16:52:39
  * @Description: User page in Admin
- * @FilePath: /Single-Search/src/layout/admin/user.tsx
+ * @FilePath: \Single-Search\src\layout\admin\user.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
 import User from '@/model/user';
@@ -169,6 +169,7 @@ export default class UserAdmin extends Vue {
             <select
               class="admin__user--setting--select"
               value={this.userData.default_search}
+              v-model={this.userData.default_search}
             >
               <option value="google">谷歌</option>
               <option value="bing">必应</option>

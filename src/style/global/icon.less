@@ -1,21 +1,21 @@
 .index-icon {
-  position           : relative;
-  width              : 1.6rem;
-  height             : 2rem;
-  overflow           : hidden;
-  transition-duration: .2s;
+  position: relative;
+  width: 1.6rem;
+  height: 2rem;
+  overflow: hidden;
+  transition-duration: 0.4s;
 
   .line {
-    position           : absolute;
-    left               : 0;
-    width              : 1.6rem;
-    height             : 1px;
-    background-color   : #cacaca;
-    transition-duration: .2s;
+    position: absolute;
+    left: 0;
+    width: 1.6rem;
+    height: 1px;
+    background-color: #cacaca;
+    transition-duration: 0.4s;
   }
 
   .top {
-    top      : .5rem;
+    top: 0.5rem;
     transform: translateX(50%);
   }
 
@@ -24,13 +24,11 @@
   }
 
   .bottom {
-    bottom   : .5rem;
+    bottom: 0.5rem;
     transform: translateX(-50%);
-
   }
 
   &:hover {
-
     .top,
     .bottom {
       transform: translateX(0);
@@ -43,8 +41,8 @@
     }
 
     .top {
-      width    : 1.6rem;
-      top      : 0.9rem;
+      width: 1.6rem;
+      top: 0.9rem;
       transform: rotate(45deg);
     }
 
@@ -53,8 +51,8 @@
     }
 
     .bottom {
-      bottom   : 1rem;
-      width    : 1.6rem;
+      bottom: 1rem;
+      width: 1.6rem;
       transform: rotate(-45deg);
     }
   }

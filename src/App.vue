@@ -4,12 +4,12 @@
  * @Author: Miya
  * @Date: 2020-05-25 22:54:11
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-01 22:21:28
+ * @LastEditTime: 2020-09-16 17:29:30
 -->
 <template>
   <div id="App">
     <router-view></router-view>
-    <!-- <Background :isInputing="bgStatus"></Background> -->
+    <Background></Background>
   </div>
 </template>
 
@@ -25,16 +25,5 @@ import Background from '@/layout/home/background.tsx';
     Background
   }
 })
-export default class App extends Vue {
-  private bgStatus: boolean = false;
-
-  get backgroundStatus() {
-    return this.$store.state.status.is_inputing;
-  }
-
-  @Watch('backgroundStatus')
-  private getBackgroundStatus(stat: boolean) {
-    this.bgStatus = stat;
-  }
-}
+export default class App extends Vue {}
 </script>

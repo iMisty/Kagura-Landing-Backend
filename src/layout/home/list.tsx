@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-03 12:04:25
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-16 17:17:34
  */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon.tsx';
@@ -43,7 +43,6 @@ export default class HomeList extends Vue {
           return (
             <list-item
               icon={item.icon}
-              color="#fff"
               title={item.name}
               link={item.items}
             ></list-item>

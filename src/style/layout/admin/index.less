@@ -1,13 +1,14 @@
 .admin {
+  display: grid;
+  grid-template-columns: 4rem auto;
+  grid-template-rows: 4rem auto;
+  background: #f3f4f5;
   &__index {
     margin: 0 auto;
     width: 100%;
   }
   // 左边栏
   &__left {
-    position: fixed;
-    top: 4rem;
-    left: 0;
     .layout-flex(flex, column, flex-start, center);
     margin-top: 2rem;
     min-width: 8rem;
@@ -35,11 +36,9 @@
 
   // 内容栏
   &__wrap {
-    position: fixed;
     display: grid;
     grid-template-columns: 1fr auto;
     justify-items: center;
-    margin: 4rem 0 0 8rem;
     width: calc(100vw - 8rem);
     min-height: calc(100vh - 4rem);
     background-color: #fff;

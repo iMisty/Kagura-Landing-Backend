@@ -3,8 +3,8 @@
  * @Version: 1.0
  * @Author: Miya
  * @Date: 2020-05-27 01:24:20
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-09-03 11:41:34
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-16 17:38:13
 -->
 <template>
   <div class="home">
@@ -56,7 +56,11 @@
     <!-- RightBar end -->
 
     <!-- Float & Extra start -->
-    <section class="home__mask" :class="{ 'mask-active': isMask }" @click="setStatus(false)"></section>
+    <section
+      class="home__mask"
+      :class="{ 'mask-active': isMask }"
+      @click="setStatus(false)"
+    ></section>
     <!-- Float & Extra end -->
   </div>
 </template>
@@ -74,6 +78,9 @@ import List from '@/layout/home/list.tsx';
 import Search from '@/layout/home/search.tsx';
 // 计算搜索结果web工具函数
 import { GET } from '@/utils/ajax';
+// 模型
+import User from '@/model/user.ts';
+import UserSetting from '@/model/setting.ts';
 
 @Component({
   // 组件注册
@@ -83,8 +90,8 @@ import { GET } from '@/utils/ajax';
     List,
     Search,
     Hitokoto: () => import('@/layout/home/hitokoto.tsx'),
-    Copyright: () => import('@/layout/home/copyright.tsx'),
-  },
+    Copyright: () => import('@/layout/home/copyright.tsx')
+  }
 })
 export default class Home extends Vue {
   // data
@@ -97,16 +104,60 @@ export default class Home extends Vue {
   private isMask: boolean = false;
   // 一言
   private hitorikoto: string | undefined = '加载中...';
+  // 用户数据
+  private userData: User = {
+    name: '',
+    sex: '',
+    avatar: '',
+    introduce: '',
+    dark_style: false,
+    default_search: ''
+  };
+  // 设置数据
+  private userSetting: UserSetting = {
+    background: '',
+    search_logo: '',
+    blur_style: true,
+    hitokoto: false,
+    copyright: {
+      author: '',
+      website: ''
+    },
+    start_date: ''
+  };
 
   // methods
+  /**
+   * @description: 获取用户数据
+   * @param {type}
+   * @return {type}
+   */
+  private getUserData() {
+    // user data
+    const dataInLocalStorage: string | null = localStorage.getItem(
+      's_user_info'
+    );
+    const dataInVuex: object = this.$store.state.user;
+
+    //user setting
+    const settingInLocalStorage: string | null = localStorage.getItem(
+      's_user_setting'
+    );
+    const settingInVuex: object = this.$store.state.settings.home;
+
+    // @ts-ignore
+    this.userData = JSON.parse(dataInLocalStorage) || dataInVuex;
+    // @ts-ignore
+    this.userSetting = JSON.parse(settingInLocalStorage) || settingInVuex;
+  }
+
   /**
    * @description: 一言加载
    * @param {type}
    * @return: boolean
-   * @author: Miya
    */
   private async getHitokoto() {
-    const status = this.$store.state.settings.home.hitokoto;
+    const status = this.userSetting.hitokoto;
     console.log(`是否显示一言:${status}`);
     if (status === false) {
       this.hitorikoto = undefined;
@@ -124,7 +175,7 @@ export default class Home extends Vue {
    * @author: Miya
    */
   private getDefaultSearchEngine() {
-    const eng = this.$store.state.user.default_search;
+    const eng = this.userData.default_search;
     this.$store.commit('set_search_engine', eng);
   }
 
@@ -174,8 +225,7 @@ export default class Home extends Vue {
 
   // mounted
   private mounted() {
-    // // 重置状态
-    // this.setStatus(false);
+    this.getUserData();
     // 默认搜索引擎与链接同步
     this.getDefaultSearchEngine();
     // 获取一言
@@ -183,4 +233,3 @@ export default class Home extends Vue {
   }
 }
 </script>
-

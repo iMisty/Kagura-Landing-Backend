@@ -14,6 +14,7 @@ export default class ListItem extends Vue {
   @Prop() private title!: string;
   // 链接信息
   @Prop() private link!: any[];
+
   private render() {
     return (
       <div class="list__item">
@@ -30,7 +31,7 @@ export default class ListItem extends Vue {
           {this.link.map((item, index) => {
             return (
               <li class="item" data-index={index}>
-                <a href={item.link}>
+                <a href={item.link} target="_blank">
                   <svgicon
                     class="svg-link-icon"
                     svgClass="icon"
