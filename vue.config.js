@@ -1,14 +1,14 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-18 18:17:09
- * @LastEditTime: 2020-08-07 18:42:37
+ * @LastEditTime: 2020-09-16 12:10:13
  * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: \Single-Search\vue.config.js
  */
 module.exports = {
   // 打包输出目录
-  publicPath: '/',
+  publicPath: './',
   // 构建输出目录
   outputDir: 'dist',
   // 静态资源目录
@@ -17,7 +17,7 @@ module.exports = {
   // 查阅： https://cli.vuejs.org/zh/guide/css.html#%E5%BC%95%E7%94%A8%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90
   css: {
     // 提取至单独的CSS文件
-    extract: false
+    extract: true
   },
   configureWebpack: {
     resolve: {
@@ -25,7 +25,7 @@ module.exports = {
       //   // 别名
       //   vue$: "vue/dist/vue.esm.js",
       // }
-      extensions: ['.js', '.vue', '.json', '.ts', '.tsx']
+      extensions: ['.js', '.vue', '.json', '.ts', '.tsx'],
     }
   },
   // 代理服务器配置
