@@ -13,27 +13,29 @@ interface Link {
   }
 })
 export default class AdminLink extends Vue {
-  private ringIcon: object = require('@/assets/ring.svg');
   private deleteIcon: object = require('@/assets/delete.svg');
 
   private linkData: Link[] = [];
 
   /**
    * @description: 获取数据（初始数据取自Vuex，后续数据取自localStorage）
-   * @param {type}
-   * @return {type}
+   * @param {object}
+   * @return {boolean}
    */
   private getLinkData() {
-    const dataInLocalSrorage: string | null = localStorage.getItem('s_user_link');
+    const dataInLocalSrorage: string | null = localStorage.getItem(
+      's_user_link'
+    );
     const data = dataInLocalSrorage || this.$store.state.link;
     console.log(data);
     this.linkData = data;
+    return true;
   }
 
   /**
    * @description: 新建一组新链接
-   * @param {type} e
-   * @return {type}
+   * @param {object} e
+   * @return {boolean}
    */
   private createNewItem(e: {
     target: { parentElement: { getAttribute: (arg0: string) => any } };
@@ -45,15 +47,17 @@ export default class AdminLink extends Vue {
       text: ''
     });
     console.log(this.linkData[index].items);
+    return true;
   }
 
   /**
    * @description: 保存数据
-   * @param {type} params
-   * @return {type}
+   * @param
+   * @return {boolean}
    */
   private handleSave() {
     localStorage.setItem('s_user_link', JSON.stringify(this.linkData));
+    return true;
   }
 
   /**
@@ -90,13 +94,15 @@ export default class AdminLink extends Vue {
     return (
       <div class="admin__link">
         {this.linkData.length === 0 ? (
-          <section class="admin__link--list">
-            <div class="mermaid__alerts">
-              <img src={this.ringIcon} />
-              <p>暂时还没有导航链接,不点一下按钮增加一个?</p>
+          <section class="admin__link--list nodata">
+            <div class="admin__link--nodata">
+              <img src={require('@/assets/target_monochromatic.svg')}></img>
+              <p class="admin__link--nodata--text">
+                当前没有导航链接，不点下按钮添加一个？
+              </p>
             </div>
-            <div class="admin__link--options">
-              <m-button>增加新分类</m-button>
+            <div class="admin__link--options no-data">
+              <m-button type="regular">增加新分类</m-button>
             </div>
           </section>
         ) : (
@@ -174,8 +180,11 @@ export default class AdminLink extends Vue {
                     <m-button onClickevent={this.createNewItem}>
                       增加项
                     </m-button>
-                    <m-button>保存项</m-button>
-                    <m-button onClickevent={this.handleDeleteAssort}>
+                    <m-button onClickevent={this.handleSave}>保存项</m-button>
+                    <m-button
+                      color="danger"
+                      onClickevent={this.handleDeleteAssort}
+                    >
                       删除整项
                     </m-button>
                   </th>
@@ -184,6 +193,9 @@ export default class AdminLink extends Vue {
             })}
           </section>
         )}
+        <div class="admin__link--options on-footer">
+          <m-button type="regular">增加新分类</m-button>
+        </div>
       </div>
     );
   }
