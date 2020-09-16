@@ -1,11 +1,11 @@
 /*
  * @Author: Miya
  * @Date: 2020-09-03 17:08:06
- * @LastEditTime: 2020-09-16 11:24:20
+ * @LastEditTime: 2020-09-16 16:19:41
  * @LastEditors: Miya
  * @Description: Button component in Mermaid UI
  * @FilePath: \Single-Search\src\components\Mermaid\button.tsx
- * @Version: 0.2
+ * @Version: 0.3
  */
 import { Component, Vue, Prop, Emit } from 'vue-property-decorator';
 
@@ -28,17 +28,29 @@ enum Color {
   secondary = 'secondary'
 }
 
+// 规定按钮格式
+enum Style {
+  round = 'round',
+  outline = 'outline',
+  link = 'link'
+}
+
 @Component({})
 export default class MermaidButton extends Vue {
   // Button Width
   // 按钮大小
   @Prop({ default: 'regular' })
-  private type?: Button;
+  private size?: Button;
 
   // Button Color
   // 按钮颜色
   @Prop({ default: 'primary' })
   private color?: Color;
+
+  // Button Type
+  // 按钮样式
+  @Prop({ default: 'round' })
+  private type?: Style;
 
   // Click Event
   // 点击事件
@@ -48,7 +60,7 @@ export default class MermaidButton extends Vue {
   private render() {
     return (
       <button
-        class={`mermaid__btn mermaid__btn--${this.type} mermaid__btn--${this.color}`}
+        class={`mermaid__btn btn-${this.size} btn-${this.type}-${this.color}`}
         onClick={this.handleClick}
       >
         {this.$slots.default}

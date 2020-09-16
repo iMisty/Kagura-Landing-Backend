@@ -1,11 +1,11 @@
 <!--
  * @Author: Miya
  * @Date: 2020-09-11 15:42:18
- * @LastEditTime: 2020-09-11 18:26:23
+ * @LastEditTime: 2020-09-16 16:18:42
  * @LastEditors: Miya
  * @Description: Mermaid UI 临时文档
  * @FilePath: \Single-Search\src\Mermaid.md
- * @Version: 0.1
+ * @Version: 0.2
 -->
 
 ## button
@@ -13,8 +13,9 @@
 |    参数    |         说明         | 是否必须 | 数据类型 |                                数据可选                                 | 默认值  |
 | :--------: | :------------------: | :------: | :------: | :---------------------------------------------------------------------: | :-----: |
 |    slot    | 在插槽中插入任意内容 |          |   any    |                                                                         |
-| className  |       额外类名       |          |  string  |                                                                         |   ''    |
+|    size    |       按钮大小       |          |  string  |                   small<br>regular<br>large<br>block                    | regular |
 |   color    |       按钮颜色       |          |  string  | primary<br>info<br>success<br>danger<br>warning<br>default<br>secondary | primary |
+|    type    |       按钮样式       |          |  string  |                        round<br>outline<br>link                         |  round  |
 |    ---     |         ---          |   ---    |   ---    |                                   ---                                   |   ---   |
 | clickevent |     触发点击事件     |          | function |
 

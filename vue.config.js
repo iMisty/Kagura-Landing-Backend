@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-18 18:17:09
- * @LastEditTime: 2020-09-16 12:10:13
+ * @LastEditTime: 2020-09-16 15:07:20
  * @LastEditors: Miya
  * @Description: In User Settings Edit
  * @FilePath: \Single-Search\vue.config.js
@@ -17,7 +17,7 @@ module.exports = {
   // 查阅： https://cli.vuejs.org/zh/guide/css.html#%E5%BC%95%E7%94%A8%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90
   css: {
     // 提取至单独的CSS文件
-    extract: true
+    extract: false
   },
   configureWebpack: {
     resolve: {
