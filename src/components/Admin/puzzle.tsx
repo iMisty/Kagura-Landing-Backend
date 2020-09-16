@@ -2,24 +2,25 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component({})
 export default class Puzzle extends Vue {
   // @Props: title => 标题
-  @Prop({ default: 'Test Puzzle', type: String }) public title:
-    | string
-    | undefined;
+  @Prop({ default: 'Test Puzzle' })
+  public title?: string;
+
   // @Props: text => 内容
-  @Prop({
-    default: 'This is a test text.',
-    type: String
-  })
-  public text: string | undefined;
+  @Prop({ default: 'This is a test text.' })
+  public text?: string;
+
   // 组件占用的空间
-  @Prop({ default: 2 }) private row: number | undefined;
-  @Prop({ default: 2 }) private column: number | undefined;
+  @Prop({ default: 2 })
+  private row?: number;
+
+  @Prop({ default: 2 })
+  private column?: number;
 
   // computed
-  get rowClass(): string {
+  private get rowClass(): string {
     return `row-${this.row}`;
   }
-  get columnClass(): string {
+  private get columnClass(): string {
     return `column-${this.column}`;
   }
   private render() {

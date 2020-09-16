@@ -1,20 +1,29 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-26 16:04:26
- * @LastEditTime: 2020-08-30 23:53:35
+ * @LastEditTime: 2020-09-16 23:51:30
  * @LastEditors: Miya
  * @Description: 版权信息
  * @FilePath: /Single-Search/src/layout/home/copyright.tsx
  */
 
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component({})
 export default class Copyright extends Vue {
   // Data
-  private startdate: number = 2005;
   private year: number = 2019;
-  private author: string = 'Miya';
-  private website: string = 'https://github.com/imisty';
+
+  // 开始时间
+  @Prop({ default: '2005' })
+  private startdate?: string;
+
+  // 作者
+  @Prop({ default: 'Miya' })
+  private author?: string;
+
+  // 网站
+  @Prop({ default: 'https://github.com/imisty' })
+  private website?: string;
 
   /**
    * @description: 获取时间
@@ -28,30 +37,22 @@ export default class Copyright extends Vue {
     this.year = years;
   }
 
-  /**
-   * @description: 获取版权信息
-   * @param {type}
-   * @return: void
-   * @author: Miya
-   */
-  private getAuthor(): void {
-    const { copyright, start_date } = this.$store.state.settings.home;
-    const year = start_date.slice(0, 4);
-    this.author = copyright.author;
-    this.website = copyright.website;
-    this.startdate = year;
-  }
-
   // Mounted
   private mounted() {
     this.getYear();
-    this.getAuthor();
   }
+
+  private get startDateYear() {
+    const year = this.startdate || '2005-05-04';
+    const temp = year.slice(0, 4);
+    return temp;
+  }
+
   private render() {
     return (
       <div class="copyright">
         <p class="copyright-text">
-          © <span>{this.startdate}</span>-<span>{this.year}</span> by{' '}
+          © <span>{this.startDateYear}</span>-<span>{this.year}</span> by{' '}
           <a href={this.website}>{this.author}</a> . All rights reserved.
         </p>
       </div>

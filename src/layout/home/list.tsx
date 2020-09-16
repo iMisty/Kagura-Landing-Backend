@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-16 17:17:34
+ * @LastEditTime: 2020-09-16 23:56:04
  */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon.tsx';
@@ -18,7 +18,7 @@ import '@/icons/svg/index';
   }
 })
 export default class HomeList extends Vue {
-  // 链接数据 => Vuex 调用
+  // 链接数据 => localStorage 调用
   // TODO: 使用 MongoDB 存储
   private listData: string[] = [];
 
@@ -29,8 +29,10 @@ export default class HomeList extends Vue {
    * @author: Miya
    */
   private getListData(): void {
-    const data = this.$store.state.link;
-    this.listData = data;
+    const data: string | null = localStorage.getItem('s_user_link');
+    if (data !== null) {
+      this.listData = JSON.parse(data);
+    }
   }
 
   private mounted() {

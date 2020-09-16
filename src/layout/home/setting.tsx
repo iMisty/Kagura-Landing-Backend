@@ -14,8 +14,7 @@ import User from '@/model/user';
 })
 export default class HomeSetting extends Vue {
   // data
-  // TODO: 将集成至Vuex中
-  // TODO: 从LocalStorage读取
+  //从LocalStorage读取
   private setting: User = {
     name: '',
     sex: '',
@@ -92,13 +91,13 @@ export default class HomeSetting extends Vue {
             ></online>
           </m-card>
         ) : (
-            <m-card className="home__setting--user-offline">
-              <offline
-                onIsActive={this.isLoginStatus}
-                onLogin={this.handleLogin}
-              ></offline>
-            </m-card>
-          )}
+          <m-card className="home__setting--user-offline">
+            <offline
+              onIsActive={this.isLoginStatus}
+              onLogin={this.handleLogin}
+            ></offline>
+          </m-card>
+        )}
       </div>
     );
   }

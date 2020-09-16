@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-08-05 22:53:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-16 00:31:57
+ * @LastEditTime: 2020-09-16 23:32:02
  * @Description: Setting Page In Admin
  * @FilePath: /Single-Search/src/layout/admin/setting.tsx
  */
@@ -110,7 +110,7 @@ export default class SettingsAdmin extends Vue {
               v-model={this.settingData.background}
             />
             <div class="admin__preview">
-              <img src={this.settingData.background} alt=""/>
+              <img src={this.settingData.background} alt="" />
             </div>
           </div>
           {/* 首页 logo */}

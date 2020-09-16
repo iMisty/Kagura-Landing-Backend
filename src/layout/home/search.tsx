@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-14 16:14:54
+ * @LastEditTime: 2020-09-17 00:15:02
  */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -43,13 +43,9 @@ export default class Search extends Vue {
    * @param {type}
    * @return: void
    */
-  private handleSearchMenu(): void {
+  private handleSearchMenu(status: boolean): void {
     this.$emit('handleSearchMenu');
-    this.searchMenu = true;
-  }
-  private closeSearchMenu(): void {
-    this.$emit('closeSearchMenu');
-    this.searchMenu = false;
+    this.searchMenu = status;
   }
 
   /**
@@ -107,7 +103,7 @@ export default class Search extends Vue {
    * @return: boolean
    * @author: Miya
    */
-  private submitSearchText(e) {
+  private submitSearchText(e: { keyCode: number }) {
     if (e.keyCode === 13) {
       this.$emit('submit', this.choose, this.searchText, this.extraParam);
       return true;
@@ -167,8 +163,8 @@ export default class Search extends Vue {
         <div class={`search--bar-wrap ${this.inputing}`}>
           <section
             class="search--bar-choose"
-            onMouseover={this.handleSearchMenu}
-            onMouseout={this.closeSearchMenu}
+            onMouseover={() => this.handleSearchMenu(true)}
+            onMouseout={() => this.handleSearchMenu(false)}
           >
             <div class="search--bar-choose-engine" data-choose={this.choose}>
               <img
@@ -177,14 +173,16 @@ export default class Search extends Vue {
               />
             </div>
             <ul class={`choose-engine ${this.searchMenuActive}`}>
-              {this.searchChoose.map((item, index) => {
-                return (
-                  <engine
-                    icon={item.icon}
-                    onChoose={() => this.handleChooseSearch(index)}
-                  ></engine>
-                );
-              })}
+              {this.searchChoose.map(
+                (item: { icon: string }, index: number) => {
+                  return (
+                    <engine
+                      icon={item.icon}
+                      onChoose={() => this.handleChooseSearch(index)}
+                    ></engine>
+                  );
+                }
+              )}
             </ul>
           </section>
           <section class="search--bar-input">

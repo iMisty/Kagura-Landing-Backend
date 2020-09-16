@@ -4,20 +4,23 @@
  * @Autor: Miya
  * @Date: 2020-06-11 23:32:14
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-01 23:24:02
-*/
-import { Component, Prop, Vue } from 'vue-property-decorator';
+ * @LastEditTime: 2020-09-17 00:41:34
+ */
+import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
 @Component({
   // 组件注册
   components: {
-    svgicon,
+    svgicon
   }
 })
 export default class SearchEngine extends Vue {
   // props
-  @Prop() private icon: any;
-  @Prop() private value: any;
+  @Prop()
+  private icon?: object | string;
+
+  @Prop()
+  private value?: string;
 
   /**
    * @name: handleChooseSearchEngine
@@ -25,9 +28,9 @@ export default class SearchEngine extends Vue {
    * @param {type}
    * @return: void
    */
-  private handleChooseEngine(): void {
-    this.$emit('choose');
-  }
+  @Emit('choose')
+  private handleChooseEngine(): void {}
+
   private render() {
     return (
       <li class="choose-engine-wrap" onClick={this.handleChooseEngine}>
@@ -37,8 +40,8 @@ export default class SearchEngine extends Vue {
           iconClass={this.iconValue}
           iconName={this.iconValue}
         ></svgicon> */}
-        <img src={this.icon}/>
-        {/* <p class="choose-engine-wrap-text">{this.value}</p> */}
+        <img src={this.icon} />
+        <p class="choose-engine-wrap-text">{this.value}</p>
       </li>
     );
   }

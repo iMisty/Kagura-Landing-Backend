@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-16 18:05:45
+ * @LastEditTime: 2020-09-16 23:47:04
 -->
 <template>
   <div class="home">
@@ -27,7 +27,6 @@
 
     <!-- Medium start -->
     <section class="home__medium">
-      <!-- TODO: 鼠标移动到此处时会连续触发openSearchMenu事件 -->
       <Search :searchMenu="searchMenu"></Search>
       <Hitokoto :hito="hitorikoto" v-show="hitorikoto"></Hitokoto>
     </section>
@@ -35,7 +34,11 @@
 
     <!-- Bottom start -->
     <section class="home__bottom">
-      <Copyright></Copyright>
+      <Copyright
+        :author="userSetting.copyright.author"
+        :website="userSetting.copyright.website"
+        :startdate="userSetting.start_date"
+      ></Copyright>
     </section>
     <!-- Bottom end -->
 
@@ -106,24 +109,24 @@ export default class Home extends Vue {
   private hitorikoto: string | undefined = '加载中...';
   // 用户数据
   private userData: User = {
-    name: '',
-    sex: '',
+    name: 'Miya',
+    sex: 'female',
     avatar: '',
-    introduce: '',
+    introduce: '只是一个默认用户',
     dark_style: false,
-    default_search: ''
+    default_search: 'bing'
   };
   // 设置数据
   private userSetting: UserSetting = {
-    background: '',
-    search_logo: '',
+    background: 'https://i.loli.net/2020/06/13/Tsa8uqY2gbjRndw.jpg',
+    search_logo: require('@/assets/logo.svg'),
     blur_style: true,
     hitokoto: false,
     copyright: {
-      author: '',
-      website: ''
+      author: 'Miya',
+      website: 'https://github.com/imisty'
     },
-    start_date: ''
+    start_date: '2005-05-04'
   };
 
   // methods
@@ -134,21 +137,18 @@ export default class Home extends Vue {
    */
   private getUserData() {
     // user data
-    const dataInLocalStorage: string | null = localStorage.getItem(
-      's_user_info'
-    );
-    const dataInVuex: object = this.$store.state.user;
-
+    const user: string | null = localStorage.getItem('s_user_info');
     // user setting
-    const settingInLocalStorage: string | null = localStorage.getItem(
-      's_user_setting'
-    );
-    const settingInVuex: object = this.$store.state.settings.home;
+    const setting: string | null = localStorage.getItem('s_user_setting');
 
-    // @ts-ignore
-    this.userData = JSON.parse(dataInLocalStorage) || dataInVuex;
-    // @ts-ignore
-    this.userSetting = JSON.parse(settingInLocalStorage) || settingInVuex;
+    if (user !== null) {
+      // @ts-ignore
+      this.userData = JSON.parse(user);
+    }
+    if (setting !== null) {
+      // @ts-ignore
+      this.userSetting = JSON.parse(setting);
+    }
   }
 
   /**

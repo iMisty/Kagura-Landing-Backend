@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:49:17
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-06 20:33:16
+ * @LastEditTime: 2020-09-17 00:24:47
  * @Description: 后台管理首页
  * @FilePath: /Single-Search/src/layout/admin/index.tsx
  */
@@ -39,15 +39,17 @@ export default class IndexAdmin extends Vue {
     color: 'green'
   };
 
-  // 获取当前Vuex中的链接存放数目
+  // 获取当前localStorage中的链接存放数目
   private getLinkSum() {
     // 获取数据
-    const data = this.$store.state.link;
-    // 分类总数
-    this.linkSortSum.sum = data.length;
-    // 链接总数
-    for (const key of data) {
-      this.linkSum.sum += key.items.length;
+    const data = localStorage.getItem('s_user_link');
+    if (data !== null) {
+      // 分类总数
+      this.linkSortSum.sum = JSON.parse(data).length;
+      // 链接总数
+      for (const key of JSON.parse(data)) {
+        this.linkSum.sum += key.items.length;
+      }
     }
     return true;
   }
@@ -80,18 +82,6 @@ export default class IndexAdmin extends Vue {
           <puzzle row="1" column="1" title={null}>
             <link-sum></link-sum>
           </puzzle>
-          <puzzle row="1" column="1"></puzzle>
-          <puzzle row="1" column="1"></puzzle>
-          <puzzle row="1" column="1"></puzzle>
-          <puzzle row="1" column="1"></puzzle>
-          <puzzle row="1" column="1"></puzzle>
-          <puzzle row="1" column="1"></puzzle>
-          <puzzle row="1" column="1"></puzzle>
-          <puzzle row="1" column="1"></puzzle>
-          <puzzle></puzzle>
-          <puzzle></puzzle>
-          <puzzle></puzzle>
-          <puzzle></puzzle>
         </section>
       </div>
     );

@@ -27,8 +27,8 @@ export default class AdminUser extends Vue {
    * @param {boolean} status
    * @return {boolean}
    */
-  private handleSettingMenuStatus(status: boolean) {
-    this.isSettingMenuActive = status;
+  private handleSettingMenuStatus() {
+    this.isSettingMenuActive = !this.isSettingMenuActive;
     return true;
   }
   private render() {
@@ -36,8 +36,7 @@ export default class AdminUser extends Vue {
       <div class="admin__top--user">
         <section
           class="admin__top--user--avatar"
-          onMouseover={() => this.handleSettingMenuStatus(true)}
-          onMouseleave={() => this.handleSettingMenuStatus(false)}
+          onClick={this.handleSettingMenuStatus}
         >
           <img src={this.avatar}></img>
         </section>

@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-16 16:52:39
+ * @LastEditTime: 2020-09-17 00:34:49
  * @Description: User page in Admin
- * @FilePath: \Single-Search\src\layout\admin\user.tsx
+ * @FilePath: /Single-Search/src/layout/admin/user.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
 import User from '@/model/user';
@@ -24,23 +24,22 @@ export default class UserAdmin extends Vue {
   private statusSuccess: boolean = false;
   // 原始数据
   private userData: User = {
-    name: '',
-    sex: '',
+    name: 'Miya',
+    sex: 'Female',
     avatar: '',
-    introduce: '',
+    introduce: '一个测试用账号',
     dark_style: false,
-    default_search: ''
+    default_search: 'bing'
   };
 
   // 获取数据
   private getUserData() {
-    const getLocalStorage: any = localStorage.getItem('s_user_info') || null;
-    const data = JSON.parse(getLocalStorage);
-    console.log(data);
-    const userData = data || this.$store.state.user;
-    this.userData = userData;
-    // 头像设置
-    if (!userData.avatar) {
+    const getData = localStorage.getItem('s_user_info');
+    if (getData !== null) {
+      this.userData = JSON.parse(getData);
+      // 头像设置
+    }
+    if (!this.userData.avatar) {
       this.userData.avatar = require('@/assets/female.svg');
     }
   }
@@ -56,8 +55,6 @@ export default class UserAdmin extends Vue {
     const data = this.userData;
     console.log(`新数据：${JSON.stringify(data)}`);
     this.statusSuccess = true;
-    this.$store.commit('set_user', data);
-    // this.$store.dispatch('set_user', this.userData);
     localStorage.setItem('s_user_info', JSON.stringify(data));
   }
 

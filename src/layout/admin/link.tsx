@@ -18,17 +18,15 @@ export default class AdminLink extends Vue {
   private linkData: Link[] = [];
 
   /**
-   * @description: 获取数据（初始数据取自Vuex，后续数据取自localStorage）
+   * @description: 获取数据,取自localStorage
    * @param {object}
-   * @return {boolean}
+   * @return
    */
   private getLinkData() {
-    const dataInLocalSrorage: string | null = localStorage.getItem(
-      's_user_link'
-    );
-    const data = dataInLocalSrorage || this.$store.state.link;
-    console.log(data);
-    this.linkData = data;
+    const data: string | null = localStorage.getItem('s_user_link');
+    if (data !== null) {
+      this.linkData = JSON.parse(data);
+    }
     return true;
   }
 
