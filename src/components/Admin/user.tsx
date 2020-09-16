@@ -24,22 +24,26 @@ export default class AdminUser extends Vue {
 
   /**
    * @description: 控制用户菜单是否开启
-   * @param {type}
-   * @return {type} boolean
+   * @param {boolean} status
+   * @return {boolean}
    */
-  private handleSettingMenuStatus() {
-    this.isSettingMenuActive = !this.isSettingMenuActive;
+  private handleSettingMenuStatus(status) {
+    this.isSettingMenuActive = status;
     return true;
   }
   private render() {
     return (
       <div class="admin__top--user">
-        <section class="admin__top--user--avatar" onClick={this.handleSettingMenuStatus}>
+        <section
+          class="admin__top--user--avatar"
+          onMouseover={() => this.handleSettingMenuStatus(true)}
+          onMouseleave={() => this.handleSettingMenuStatus(false)}
+        >
           <img src={this.avatar}></img>
         </section>
         {this.isSettingMenuActive ? (
           <section class="admin__top--user--menu">
-            {this.settingMenu.map((item) => {
+            {this.settingMenu.map(item => {
               return (
                 <user-setting
                   title={item.title}
