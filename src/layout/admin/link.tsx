@@ -14,6 +14,7 @@ interface Link {
 })
 export default class AdminLink extends Vue {
   private deleteIcon: object = require('@/assets/delete.svg');
+  private questionIcon: object = require('@/assets/tips.svg');
 
   private linkData: Link[] = [];
 
@@ -46,6 +47,28 @@ export default class AdminLink extends Vue {
     });
     console.log(this.linkData[index].items);
     return true;
+  }
+
+  /**
+   * @description: 新建一个新分组
+   * @param {type}
+   * @return {type}
+   */
+
+  private createNewAssort() {
+    const newData = {
+      name: '',
+      titleIconColor: '',
+      icon: '',
+      items: [
+        {
+          icon: '',
+          link: '',
+          text: ''
+        }
+      ]
+    };
+    this.linkData.push(newData);
   }
 
   /**
@@ -99,9 +122,6 @@ export default class AdminLink extends Vue {
                 当前没有导航链接，不点下按钮添加一个？
               </p>
             </div>
-            <div class="admin__link--options no-data">
-              <m-button type="regular">增加新分类</m-button>
-            </div>
           </section>
         ) : (
           <section class="admin__link--list">
@@ -112,21 +132,24 @@ export default class AdminLink extends Vue {
                     <th class="admin__link--table--title">图标class</th>
                     <th class="admin__link--table--title">标题</th>
                     <th class="admin__link--table--title">标题颜色</th>
-                    <th class="admin__link--table--setting">操作</th>
+                    <th class="admin__link--table--setting">疑问</th>
                   </tr>
                   <tr class="admin__link--table--wrap">
                     <td class="admin__link--table--icon">
-                      <input value={item.icon} />
+                      <input value={item.icon} placeholder="分类标题图标" />
                     </td>
                     <td class="admin__link--table--link">
-                      <input value={item.name} />
+                      <input value={item.name} placeholder="分类标题" />
                     </td>
                     <td class="admin__link--table--text">
-                      <input value={item.titleIconColor} />
+                      <input
+                        value={item.titleIconColor}
+                        placeholder="分类标题文字颜色"
+                      />
                     </td>
                     <td class="admin__link--table--setting">
                       <div class="admin__link--table--setting-button">
-                        <img src={this.deleteIcon} alt="" />
+                        <img src={this.questionIcon} alt="" />
                       </div>
                     </td>
                   </tr>
@@ -149,13 +172,22 @@ export default class AdminLink extends Vue {
                           data-index={childIndex}
                         >
                           <td class="admin__link--table--icon">
-                            <input value={childItem.icon} />
+                            <input
+                              value={childItem.icon}
+                              placeholder="链接图标"
+                            />
                           </td>
                           <td class="admin__link--table--link">
-                            <input value={childItem.link} />
+                            <input
+                              value={childItem.link}
+                              placeholder="链接地址"
+                            />
                           </td>
                           <td class="admin__link--table--text">
-                            <input value={childItem.text} />
+                            <input
+                              value={childItem.text}
+                              placeholder="链接显示文字"
+                            />
                           </td>
                           <td class="admin__link--table--setting">
                             <div
@@ -192,7 +224,14 @@ export default class AdminLink extends Vue {
           </section>
         )}
         <div class="admin__link--options on-footer">
-          <m-button type="regular">增加新分类</m-button>
+          <m-button
+            type="round"
+            color="primary"
+            size="regular"
+            onClickevent={() => this.createNewAssort()}
+          >
+            增加新分类
+          </m-button>
         </div>
       </div>
     );
