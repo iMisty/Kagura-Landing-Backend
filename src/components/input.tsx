@@ -1,3 +1,12 @@
+/*
+ * @Author: Miya
+ * @Date: 2020-09-03 17:08:06
+ * @LastEditTime: 2020-09-17 11:39:01
+ * @LastEditors: Miya
+ * @Description: 输入框组件
+ * @FilePath: \Single-Search\src\components\input.tsx
+ * @Version: 0.1
+ */
 import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component({})
 export default class FormInput extends Vue {

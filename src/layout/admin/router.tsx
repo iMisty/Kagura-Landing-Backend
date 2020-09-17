@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-08-06 00:20:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-17 00:35:02
+ * @LastEditTime: 2020-09-17 11:19:09
  * @Description: 路由跳转
- * @FilePath: /Single-Search/src/layout/admin/router.tsx
+ * @FilePath: \Single-Search\src\layout\admin\router.tsx
  */
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -32,7 +32,7 @@ export default class RouterAdmin extends Vue {
           iconClass={this.title}
           iconName={this.title}
         ></svgicon>
-        <p class="admin-left-router-text">{ this.name }</p>
+        <p class="admin__left-router-text">{ this.name }</p>
       </router-link>
     );
   }

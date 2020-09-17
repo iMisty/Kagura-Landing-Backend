@@ -1,15 +1,21 @@
 @media screen and (max-width: 1200px) {
+  // 左部分
+  // 限制4rem
   .admin__left {
     min-width: 4rem;
-    .icon{
+    // 图标居中
+    .icon {
       justify-content: center;
     }
+    // 不显示文字
+    &-router-text {
+      display: none;
+    }
   }
-  .admin-left-router-text {
-    display: none;
-  }
+  // 主体部分
   .admin__wrap {
     width: calc(100vw - 4rem);
+    // 首页模块占满屏幕
     &--puzzle {
       justify-content: stretch;
     }

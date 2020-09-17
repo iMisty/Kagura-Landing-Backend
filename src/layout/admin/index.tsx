@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:49:17
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-17 00:24:47
+ * @LastEditTime: 2020-09-17 11:15:13
  * @Description: 后台管理首页
- * @FilePath: /Single-Search/src/layout/admin/index.tsx
+ * @FilePath: \Single-Search\src\layout\admin\index.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
 // 卡片式框架组件
@@ -78,9 +78,6 @@ export default class IndexAdmin extends Vue {
           </puzzle>
           <puzzle row="1" column="1">
             <link-sum result={this.SearchSum}></link-sum>
-          </puzzle>
-          <puzzle row="1" column="1" title={null}>
-            <link-sum></link-sum>
           </puzzle>
         </section>
       </div>

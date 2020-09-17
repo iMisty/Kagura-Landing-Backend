@@ -14,7 +14,7 @@ import User from '@/model/user';
 })
 export default class HomeSetting extends Vue {
   // data
-  //从LocalStorage读取
+  // 从LocalStorage读取
   private setting: User = {
     name: '',
     sex: '',
