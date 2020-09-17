@@ -10,21 +10,46 @@ import LoginInterface from '@/model/login';
 export default class LoginForm extends Vue {
   // 用户输入数据
   private loginData: LoginInterface = {
-    username: 'admin',
-    password: '123456'
+    username: '',
+    password: ''
   };
+
+  // 错误信息
+  private errMsg: string = '';
 
   // 提交登录状态
   private setLoginStatus() {
-    // TODO: 上线时需要调整为正式环境与后台交互
-    // 临时数据
-    const data = this.loginData;
+    this.errMsg = '';
+    const getUserLoginData = localStorage.getItem('s_user_password');
+    console.log(`是否已自定义账号密码：${getUserLoginData}`);
+    const value = this.loginData;
+
+    // 已设置新账号密码
+    if (getUserLoginData !== null) {
+      const data = JSON.parse(getUserLoginData);
+      // 账号密码不正确
+      if (
+        value.username !== data.username &&
+        value.password !== data.password
+      ) {
+        this.errMsg = '账号密码错误';
+        return false;
+      }
+      // 账号密码正确时，写入localStorage与Vuex
+      localStorage.setItem('s_token', 'test-token');
+      const loginStatus = localStorage.getItem('s_token');
+      this.$store.commit('set_token', loginStatus);
+      this.$router.push({ path: '/admin' });
+      console.log(`token: ${this.$store.state.token}`);
+      return true;
+    }
+
     const loginStatus = localStorage.getItem('s_token');
 
     // 账号密码不正确
-    if (data.username !== 'admin' && data.password !== '123456') {
+    if (value.username !== 'admin' && value.password !== '123456') {
       console.log('账号密码不正确');
-      // this.buttonText = 'Login inconnect';
+      this.errMsg = '账号密码不正确';
       return false;
     }
 
@@ -73,6 +98,11 @@ export default class LoginForm extends Vue {
         </section>
         <section class="login__form--button">
           <m-button onClickevent={this.setLoginStatus}>登录</m-button>
+          {this.errMsg ? (
+            <p>{this.errMsg}</p>
+          ) : (
+            <p style="visibility: hidden;">这里没错误信息，别看了</p>
+          )}
         </section>
       </div>
     );
