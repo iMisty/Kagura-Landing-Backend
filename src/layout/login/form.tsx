@@ -37,8 +37,8 @@ export default class LoginForm extends Vue {
       }
       // 账号密码正确时，写入localStorage与Vuex
       localStorage.setItem('s_token', 'test-token');
-      const loginStatus = localStorage.getItem('s_token');
-      this.$store.commit('set_token', loginStatus);
+      const getLoginStatus = localStorage.getItem('s_token');
+      this.$store.commit('set_token', getLoginStatus);
       this.$router.push({ path: '/admin' });
       console.log(`token: ${this.$store.state.token}`);
       return true;
