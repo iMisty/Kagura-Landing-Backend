@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-06-21 11:14:32
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-16 17:15:13
+ * @LastEditTime: 2020-09-17 10:41:50
  * @Description: 首页-设置栏
  * @FilePath: \Single-Search\src\style\layout\home\setting.less
  */
@@ -13,7 +13,7 @@
     height             : 100%;
     z-index            : 12;
     overflow-y         : auto;
-    transition-duration: @transition-duration;
+    transition-duration: @transition-duration / 2;
   }
 }
 
@@ -90,11 +90,11 @@
     padding            : 1rem;
     color              : @pri-text;
     cursor             : pointer;
-    transition-duration: 0.4s;
+    transition-duration: @transition-duration / 2;
 
     &:hover {
       background-color   : @hover;
-      transition-duration: 0.4s;
+      transition-duration: @transition-duration / 2;
     }
 
     &-text {

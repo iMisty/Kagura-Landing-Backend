@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 18:18:46
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-16 17:23:31
+ * @LastEditTime: 2020-09-17 10:45:02
  */
 // 白天模式文字颜色
 @pri-text: rgba(0, 0, 0, 0.87);
@@ -28,14 +28,6 @@
   background-color: @color;
   backdrop-filter: blur(@blur);
 }
-// // 防止在 VirtualBox 下虚拟机出现毛玻璃效果宕机配置
-// .blur-bg-light(@color: #dfe2e2) {
-//   background-color: @color;
-// }
-
-// .blur-bg-dark(@color: rgba(0, 0, 0, .72)) {
-//   background-color: @color;
-// }
 
 // 毛玻璃背景组件背景色
 @blur-component-color: rgba(255, 255, 255, 0.28);
@@ -43,13 +35,12 @@
 // 主体色
 @pri-color: rgba(0, 98, 183, 1);
 
-// @card-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 @card-shadow: 0 4px 32px rgba(50, 50, 93, 0.1);
 @box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2),
   0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
 
 // 圆角
-@border-radius: 1rem;
+@border-radius: .25rem;
 // 动画时长
 @transition-duration: 0.4s;
 
@@ -60,28 +51,6 @@
   flex-wrap: @allowwrap;
   justify-content: @horizon;
   align-items: @vertial;
-}
-
-// 链接菜单启动
-.link-active {
-  transform: translateX(0%);
-  transition-timing-function: ease-in;
-  transition-duration: 0.4s;
-}
-
-// 设置菜单启动
-.setting-active {
-  transform: translateX(0%);
-  transition-timing-function: ease-in;
-  transition-duration: 0.4s;
-}
-
-// 蒙版启动
-.mask-active {
-  z-index: 4;
-  opacity: 0.38;
-  transition-timing-function: ease-in;
-  transition-duration: 0.4s;
 }
 
 /*********************************************
