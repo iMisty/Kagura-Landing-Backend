@@ -46,6 +46,7 @@ export default class AdminLink extends Vue {
       text: ''
     });
     console.log(this.linkData[index].items);
+    this.handleSave();
     return true;
   }
 
@@ -69,6 +70,7 @@ export default class AdminLink extends Vue {
       ]
     };
     this.linkData.push(newData);
+    this.handleSave();
   }
 
   /**
@@ -92,6 +94,7 @@ export default class AdminLink extends Vue {
     const ids = e.target.getAttribute('data-id');
     const index = e.target.getAttribute('data-index');
     this.linkData[ids].items.splice(index, 1);
+    this.handleSave();
     console.log(`对应数据：${JSON.stringify(this.linkData[ids].items[index])}`);
   }
 
@@ -105,6 +108,7 @@ export default class AdminLink extends Vue {
   }) {
     const index = e.target.parentElement.dataset.index;
     this.linkData.splice(index, 1);
+    this.handleSave();
   }
 
   private mounted() {
@@ -136,14 +140,23 @@ export default class AdminLink extends Vue {
                   </tr>
                   <tr class="admin__link--table--wrap">
                     <td class="admin__link--table--icon">
-                      <input value={item.icon} placeholder="分类标题图标" />
+                      <input
+                        value={item.icon}
+                        v-model={item.icon}
+                        placeholder="分类标题图标"
+                      />
                     </td>
                     <td class="admin__link--table--link">
-                      <input value={item.name} placeholder="分类标题" />
+                      <input
+                        value={item.name}
+                        v-model={item.name}
+                        placeholder="分类标题"
+                      />
                     </td>
                     <td class="admin__link--table--text">
                       <input
                         value={item.titleIconColor}
+                        v-model={item.titleIconColor}
                         placeholder="分类标题文字颜色"
                       />
                     </td>
@@ -174,18 +187,21 @@ export default class AdminLink extends Vue {
                           <td class="admin__link--table--icon">
                             <input
                               value={childItem.icon}
+                              v-model={childItem.icon}
                               placeholder="链接图标"
                             />
                           </td>
                           <td class="admin__link--table--link">
                             <input
                               value={childItem.link}
+                              v-model={childItem.link}
                               placeholder="链接地址"
                             />
                           </td>
                           <td class="admin__link--table--text">
                             <input
                               value={childItem.text}
+                              v-model={childItem.text}
                               placeholder="链接显示文字"
                             />
                           </td>
@@ -210,7 +226,6 @@ export default class AdminLink extends Vue {
                     <m-button onClickevent={this.createNewItem}>
                       增加项
                     </m-button>
-                    <m-button onClickevent={this.handleSave}>保存项</m-button>
                     <m-button
                       color="danger"
                       onClickevent={this.handleDeleteAssort}
