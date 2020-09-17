@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-06-24 21:38:13
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-16 23:36:32
+ * @LastEditTime: 2020-09-17 23:45:14
  * @Description: 背景图片设置
  * @FilePath: /Single-Search/src/layout/home/background.tsx
  */
@@ -12,8 +12,9 @@ import '../../style/layout/home/background.less';
 
 @Component({})
 export default class Background extends Vue {
-  private imageURL: string =
-    'https://i.loli.net/2020/06/13/Tsa8uqY2gbjRndw.jpg';
+  private imageURL: string = '';
+
+  // https://i.loli.net/2020/06/13/Tsa8uqY2gbjRndw.jpg
 
   private style: object = {
     backgroundImage: `url(${this.imageURL})`

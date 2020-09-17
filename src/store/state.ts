@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:20:47
- * @LastEditTime: 2020-09-15 16:35:08
+ * @LastEditTime: 2020-09-17 23:44:14
  * @LastEditors: Miya
  * @Description: Vuex State部分
- * @FilePath: \Single-Search\src\store\state.ts
+ * @FilePath: /Single-Search/src/store/state.ts
  */
 
 const state = {
@@ -37,7 +37,7 @@ const state = {
     // TODO: api.xxx.com/settings/home
     home: {
       // 背景图片
-      background: 'https://i.loli.net/2020/06/13/Tsa8uqY2gbjRndw.jpg',
+      // background: 'https://i.loli.net/2020/06/13/Tsa8uqY2gbjRndw.jpg',
       // TODO: 首页搜索栏图片
       search_logo: require('@/assets/logo.svg'),
       // 是否开启毛玻璃效果
