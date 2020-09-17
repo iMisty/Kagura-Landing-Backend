@@ -1,116 +1,46 @@
 @import '../global/var.less';
+
+@text-color: #8898aa;
+
 .login {
-  display              : flex;
-  flex-direction       : row;
-  justify-content      : flex-end;
-  width                : 100vw;
-  min-height           : 100vh;
+  .layout-flex(flex, row, center, center);
+  width: 100vw;
+  min-height: 100vh;
 
-  &-form {
-    padding         : 2rem;
-    width           : 40%;
-    height          : 100vh;
-    background-color: rgba(255, 255, 255, .72);
+  &__form {
+    padding: 3rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0.5rem);
+    border-radius: @border-radius;
 
-    // 顶部 logo
-    &-logo {
-      width           : 16rem;
-      height          : 4rem;
-      // TODO: REMOVE
-      display         : flex;
-      justify-content : center;
-      align-items     : center;
-      font-size       : 2rem;
-      color           : #888;
-      background-color: aliceblue;
-    }
-
-    // 介绍文字
-    &-header {
-      margin    : 2rem 0;
-      word-break: break-all;
-
-      &-title {
-        margin     : .5rem 0;
-        line-height: 2rem;
-      }
-
-      &-text {
-        color: #888;
-      }
+    // 标题
+    &--title {
+      color: @text-color;
     }
 
     // 表单填写
-    &-input {
-      display           : grid;
+    &--input {
+      display: grid;
       grid-template-rows: 1fr 1fr;
-      grid-gap          : 1px;
-      width             : 100%;
-      background-color  : #ddd;
-      border            : 1px solid #ddd;
+      grid-gap: 1rem;
+      padding: 2rem 0;
+      width: 100%;
+      color: @text-color;
 
-      &-item {
-        padding         : 1rem 1rem 1rem 1.5rem;
-        background-color: #fff;
-
-        p {
-          padding-bottom: 1rem;
-        }
+      &--item {
+        padding: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 1px 3px rgba(50, 50, 93, 0.15),
+          0 1px 0 rgba(0, 0, 0, 0.02);
+        border-radius: @border-radius;
+        backdrop-filter: blur(0.5rem);
       }
 
-      &-inputarea {
-        width      : 100%;
-        font-size  : 1.2rem;
-        font-weight: 600;
-        color      : @pri-color;
+      &-username,
+      &-password {
+        color: #32325d;
       }
     }
-
-    // 选项
-    &-options {
-      display        : flex;
-      flex-direction : row;
-      justify-content: space-between;
-      align-items    : center;
-      padding        : 1rem 0;
-      color          : #888;
-    }
-
-    // 按钮组
-    &-button {
-      display        : flex;
-      flex-direction : row;
-      justify-content: space-around;
-      margin         : 1rem 0;
-    }
   }
-}
-
-
-// 独立 class
-// 记住密码选项
-.remember {
-  display       : flex;
-  flex-direction: row;
-  align-items   : center;
-
-  &-checkbox {
-    margin-right: .5rem;
-  }
-}
-
-// 按钮组公用
-.login-button {
-  padding      : 1rem 3rem;
-  border-radius: .25rem;
-}
-
-.submit {
-  color           : #fff;
-  background-color: @pri-color;
-}
-
-.extra {
-  color : @pri-color;
-  border: 1px solid @pri-color;
 }
