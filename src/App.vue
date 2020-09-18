@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-25 22:54:11
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-19 02:48:15
+ * @LastEditTime: 2020-09-19 04:54:39
 -->
 <template>
   <div id="App">
@@ -17,6 +17,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { LINK_ICON } from './config/external.config';
+import install from '@/utils/install';
 import Background from '@/layout/background.tsx';
 import external from '@/components/external';
 
@@ -31,7 +32,7 @@ export default class App extends Vue {
   private iconsrc = LINK_ICON;
 
   private created() {
-    console.log('a');
+    install();
   }
 }
 </script>
