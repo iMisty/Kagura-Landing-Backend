@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-18 11:27:19
+ * @LastEditTime: 2020-09-19 03:51:55
 -->
 <template>
   <div class="home">
@@ -70,7 +70,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import '@/style/home/style.less';
+import '@/style/home.less';
 // 链接图标
 import Icon from '@/components/icon.tsx';
 // 设置边栏

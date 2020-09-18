@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-25 22:54:11
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-18 18:23:18
+ * @LastEditTime: 2020-09-19 02:48:15
 -->
 <template>
   <div id="App">
@@ -16,22 +16,21 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Home from '@/views/Home.vue';
-import Background from '@/layout/home/background.tsx';
+import { LINK_ICON } from './config/external.config';
+import Background from '@/layout/background.tsx';
 import external from '@/components/external';
 
 @Component({
   // 组件注册
   components: {
-    Home,
     Background,
     external
   }
 })
 export default class App extends Vue {
-  private iconsrc = '//at.alicdn.com/t/font_1874703_f3w9wcyv815.js';
+  private iconsrc = LINK_ICON;
 
-  private created(){
+  private created() {
     console.log('a');
   }
 }

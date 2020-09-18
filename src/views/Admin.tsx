@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-18 17:07:03
+ * @LastEditTime: 2020-09-19 03:46:57
  */
 import { Component, Vue } from 'vue-property-decorator';
 import { router } from '@/config/router.config';
@@ -17,7 +17,7 @@ import Router from '@/layout/admin/router';
 import external from '@/components/external';
 // 后台路由模型
 import Routes from '@/model/routes';
-import '@/style/layout/admin/style.less';
+import '@/style/admin.less';
 
 @Component({
   // 组件注册

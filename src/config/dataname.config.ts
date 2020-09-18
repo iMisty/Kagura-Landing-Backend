@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-09-18 17:57:53
- * @LastEditTime: 2020-09-18 18:02:25
+ * @LastEditTime: 2020-09-19 02:17:43
  * @LastEditors: Miya
  * @Description: 保存存储在localStorage上的数据名
- * @FilePath: \Single-Search\src\config\dataname.config.ts
+ * @FilePath: /Single-Search/src/config/dataname.config.ts
  * @Version: 1.0
  */
 

@@ -4,13 +4,12 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:59:19
  * @LastEditors: Miya
- * @LastEditTime: 2020-08-30 23:53:25
+ * @LastEditTime: 2020-09-19 02:17:04
  */
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import { store } from './store';
-// import 'vue-tsx-support/enable-check';
 import '@/style/mermaid.less';
 import '@/style/global/style.less';
 
