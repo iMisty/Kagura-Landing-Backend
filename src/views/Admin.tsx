@@ -4,10 +4,11 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-19 03:46:57
+ * @LastEditTime: 2020-09-19 04:12:41
  */
 import { Component, Vue } from 'vue-property-decorator';
 import { router } from '@/config/router.config';
+import { ADMIN_ICON } from '@/config/external.config';
 import adminTop from '@/layout/admin/top';
 // 导入SVG相关
 import svgicon from '@/components/svgicon';
@@ -34,7 +35,7 @@ export default class Admin extends Vue {
   private render() {
     return (
       <div class="admin">
-        <external href="//at.alicdn.com/t/font_1736333_4000hqnp66d.css"></external>
+        <external href={ADMIN_ICON}></external>
         {/* TopBar start */}
         <admin-top></admin-top>
         {/* TopBar end */}
