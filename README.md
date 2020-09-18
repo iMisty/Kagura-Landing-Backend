@@ -52,8 +52,6 @@
 
   - Mermaid UI组件： Mermaid
 
-- icons: (即将废弃)存放 iconfont 的 js 图标文件
-
 - layout: 存放页面模组框架文件
 
   - 首页展示： home

@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-14 12:39:49
+ * @LastEditTime: 2020-09-18 15:31:15
  */
 import { Component, Vue } from 'vue-property-decorator';
 import adminTop from '@/layout/admin/top';
@@ -12,42 +12,35 @@ import adminTop from '@/layout/admin/top';
 import svgicon from '@/components/svgicon';
 // 路由相关
 import Router from '@/layout/admin/router';
+// 外部CSS
+import external from '@/components/external';
 // 后台路由模型
 import Routes from '@/model/routes';
 import '@/style/layout/admin/style.less';
-import '@/icons/svg/admin';
 
 @Component({
   // 组件注册
   components: {
     'admin-top': adminTop,
     svgicon,
-    'router': Router
+    external,
+    'admin-router': Router
   }
 })
 export default class Admin extends Vue {
   // 临时变量
   private logo: any = require('@/assets/logo.png');
   private router: Routes[] = [
-    { path: '/admin', title: 'shouye', name: 'HOME' },
+    { path: '/admin', title: 'home', name: 'HOME' },
     { path: '/admin/user', title: 'gaojiban', name: 'USER' },
-    { path: '/admin/link', title: 'piliangxiugai', name: 'LINK' },
-    { path: '/admin/setting', title: 'bianji', name: 'SETTING' }
+    { path: '/admin/link', title: 'edit', name: 'LINK' },
+    { path: '/admin/setting', title: 'setting', name: 'SETTING' }
   ];
-
-  /**
-   * @description: 返回首页
-   * @param {type}
-   * @return {type} boolean
-   */
-  private backToIndex() {
-    this.$router.push({ path: '/' });
-    return true;
-  }
 
   private render() {
     return (
       <div class="admin">
+        <external href="//at.alicdn.com/t/font_1736333_4000hqnp66d.css"></external>
         {/* TopBar start */}
         <admin-top logo={this.logo}></admin-top>
         {/* TopBar end */}
@@ -56,11 +49,11 @@ export default class Admin extends Vue {
         <section class="admin__left">
           {this.router.map((item: Routes) => {
             return (
-              <router
+              <admin-router
                 path={item.path}
                 title={item.title}
                 name={item.name}
-              ></router>
+              ></admin-router>
             );
           })}
         </section>
@@ -68,9 +61,9 @@ export default class Admin extends Vue {
 
         {/* Wrap start */}
         <section class="admin__wrap">
-            {/* <transition name="fade"> */}
-              <router-view></router-view>
-            {/* </transition> */}
+          {/* <transition name="fade"> */}
+          <router-view></router-view>
+          {/* </transition> */}
         </section>
         {/* Wrap end*/}
       </div>

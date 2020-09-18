@@ -4,12 +4,11 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-16 23:56:04
+ * @LastEditTime: 2020-09-18 15:25:26
  */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon.tsx';
 import listitem from '@/components/Home/listitem.tsx';
-import '@/icons/svg/index';
 
 @Component({
   components: {

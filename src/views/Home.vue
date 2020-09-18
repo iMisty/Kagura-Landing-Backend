@@ -4,14 +4,14 @@
  * @Author: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-16 23:47:04
+ * @LastEditTime: 2020-09-18 11:27:19
 -->
 <template>
   <div class="home">
     <!-- Top start -->
     <section class="home__top">
       <Icon class="list--button" @handleClick="setSettingStatus(true)">
-        <img src="@/icons/svg/avatar.svg" alt />
+        <img src="@/assets/user.svg" alt />
       </Icon>
       <Icon
         class="list--button"
