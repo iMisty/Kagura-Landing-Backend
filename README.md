@@ -52,6 +52,8 @@
 
   - Mermaid UI组件： Mermaid
 
+- config: 存放配置文件
+
 - layout: 存放页面模组框架文件
 
   - 首页展示： home

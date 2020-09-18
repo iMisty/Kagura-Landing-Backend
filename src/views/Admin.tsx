@@ -4,9 +4,10 @@
  * @Autor: Miya
  * @Date: 2020-06-02 00:04:25
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-18 15:31:15
+ * @LastEditTime: 2020-09-18 17:07:03
  */
 import { Component, Vue } from 'vue-property-decorator';
+import { router } from '@/config/router.config';
 import adminTop from '@/layout/admin/top';
 // 导入SVG相关
 import svgicon from '@/components/svgicon';
@@ -28,21 +29,14 @@ import '@/style/layout/admin/style.less';
   }
 })
 export default class Admin extends Vue {
-  // 临时变量
-  private logo: any = require('@/assets/logo.png');
-  private router: Routes[] = [
-    { path: '/admin', title: 'home', name: 'HOME' },
-    { path: '/admin/user', title: 'gaojiban', name: 'USER' },
-    { path: '/admin/link', title: 'edit', name: 'LINK' },
-    { path: '/admin/setting', title: 'setting', name: 'SETTING' }
-  ];
+  private router: Routes[] = router;
 
   private render() {
     return (
       <div class="admin">
         <external href="//at.alicdn.com/t/font_1736333_4000hqnp66d.css"></external>
         {/* TopBar start */}
-        <admin-top logo={this.logo}></admin-top>
+        <admin-top></admin-top>
         {/* TopBar end */}
 
         {/* LeftBar start */}

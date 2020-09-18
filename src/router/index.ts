@@ -1,16 +1,16 @@
 /*
  * @Author: Miya
  * @Date: 2020-05-27 14:28:24
- * @LastEditTime: 2020-09-16 00:32:48
+ * @LastEditTime: 2020-09-18 17:43:21
  * @LastEditors: Miya
  * @Description: In User Settings Edit
- * @FilePath: /Single-Search/src/router/index.ts
+ * @FilePath: \Single-Search\src\router\index.ts
  */
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '@/views/Home.vue';
 import Admin from '@/views/Admin.tsx';
-import Login from '@/views/Login.tsx';
+// import Login from '@/views/Login.tsx';
 
 import AdminIndex from '@/layout/admin';
 import AdminUser from '@/layout/admin/user';
@@ -52,7 +52,7 @@ const routes: RouteConfig[] = [
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: () => import('@/views/Login')
   },
   {
     path: '/test',
