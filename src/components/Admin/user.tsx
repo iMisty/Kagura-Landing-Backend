@@ -13,9 +13,7 @@ export default class AdminUser extends Vue {
 
   // 移动菜单
   private settingMenu: SettingMenu[] = [
-    // { title: '个人设置', path: '/admin/user' },
-    // { title: '系统设置', path: '/setting' },
-    // { title: '去往首页', path: '/' },
+    { title: '去往首页', path: '/' },
     { title: '退出登录', path: '/', event: 'logout' }
   ];
 
