@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-25 22:54:11
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-18 15:23:08
+ * @LastEditTime: 2020-09-18 18:23:18
 -->
 <template>
   <div id="App">
@@ -30,5 +30,9 @@ import external from '@/components/external';
 })
 export default class App extends Vue {
   private iconsrc = '//at.alicdn.com/t/font_1874703_f3w9wcyv815.js';
+
+  private created(){
+    console.log('a');
+  }
 }
 </script>

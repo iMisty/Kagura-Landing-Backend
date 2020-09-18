@@ -26,7 +26,6 @@ export default class Puzzle extends Vue {
   private render() {
     return (
       <section class={`puzzle-wrap ${this.rowClass} ${this.columnClass}`}>
-        {/* 还有这种操作?????? */}
         {this.$slots.default ? (
           this.$slots.default
         ) : (

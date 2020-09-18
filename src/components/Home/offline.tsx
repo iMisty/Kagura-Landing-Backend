@@ -2,7 +2,7 @@
  * @Author: Miya
  * @Date: 2020-08-23 21:38:13
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-16 15:07:06
+ * @LastEditTime: 2020-09-18 18:33:31
  * @Description: 首页右侧边栏用于显示用户离线时
  * @FilePath: \Single-Search\src\components\Home\offline.tsx
 */
@@ -19,10 +19,7 @@ export default class Offline extends Vue {
   private handleLogin(): void {
     this.$router.push({ path: 'login' });
   }
-  // 点击弹一个敬请期待
-  private handleNoEvent(): void {
-    console.log('No');
-  }
+
   private render() {
     return (
       <div class="setting__wrap setting__logoff">

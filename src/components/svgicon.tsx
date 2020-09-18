@@ -1,17 +1,17 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-08 17:42:30
- * @LastEditTime: 2020-08-28 11:18:38
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-09-18 18:32:54
+ * @LastEditors: Miya
  * @Description: SVG 图标支持
- * @FilePath: /Single-Search/src/components/svgicon.tsx
+ * @FilePath: \Single-Search\src\components\svgicon.tsx
  */
 import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component({})
 export default class Svgicon extends Vue {
   // Props
-  @Prop({ required: true }) public iconClass: string | undefined;
-  @Prop() public className: string | undefined;
+  @Prop({ required: true }) public iconClass?: string;
+  @Prop() public className?: string;
 
   // Computed
 
