@@ -4,7 +4,7 @@
  * @Autor: Miya
  * @Date: 2020-06-08 00:41:53
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-18 18:32:28
+ * @LastEditTime: 2020-09-19 03:11:03
  */
 import { Component, Emit, Vue } from 'vue-property-decorator';
 @Component({})
@@ -15,7 +15,7 @@ export default class Icon extends Vue {
 
   private render() {
     return (
-      <div class={`index-icon`} onClick={this.handleClick}>
+      <div class={`home__icon`} onClick={this.handleClick}>
         {this.$slots.default}
       </div>
     );
