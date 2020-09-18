@@ -144,6 +144,7 @@ export default class AdminLink extends Vue {
                         value={item.icon}
                         v-model={item.icon}
                         placeholder="分类标题图标"
+                        onBlur={() => this.handleSave()}
                       />
                     </td>
                     <td class="admin__link--table--link">
@@ -151,6 +152,7 @@ export default class AdminLink extends Vue {
                         value={item.name}
                         v-model={item.name}
                         placeholder="分类标题"
+                        onBlur={() => this.handleSave()}
                       />
                     </td>
                     <td class="admin__link--table--text">
@@ -158,6 +160,7 @@ export default class AdminLink extends Vue {
                         value={item.titleIconColor}
                         v-model={item.titleIconColor}
                         placeholder="分类标题文字颜色"
+                        onBlur={() => this.handleSave()}
                       />
                     </td>
                     <td class="admin__link--table--setting">
@@ -189,6 +192,7 @@ export default class AdminLink extends Vue {
                               value={childItem.icon}
                               v-model={childItem.icon}
                               placeholder="链接图标"
+                              onBlur={() => this.handleSave()}
                             />
                           </td>
                           <td class="admin__link--table--link">
@@ -196,6 +200,7 @@ export default class AdminLink extends Vue {
                               value={childItem.link}
                               v-model={childItem.link}
                               placeholder="链接地址"
+                              onBlur={() => this.handleSave()}
                             />
                           </td>
                           <td class="admin__link--table--text">
@@ -203,6 +208,7 @@ export default class AdminLink extends Vue {
                               value={childItem.text}
                               v-model={childItem.text}
                               placeholder="链接显示文字"
+                              onBlur={() => this.handleSave()}
                             />
                           </td>
                           <td class="admin__link--table--setting">

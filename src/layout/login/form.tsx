@@ -70,6 +70,14 @@ export default class LoginForm extends Vue {
     return true;
   }
 
+  private loginSuccessed(path) {
+    localStorage.setItem('s_token', 'test-token');
+    const getLoginStatus = localStorage.getItem('s_token');
+    this.$store.commit('set_token', getLoginStatus);
+    this.$router.push({ path });
+    console.log(`token: ${this.$store.state.token}`);
+  }
+
   private render() {
     return (
       <div class="login__form">
