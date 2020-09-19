@@ -2,22 +2,23 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-17 00:34:49
+ * @LastEditTime: 2020-09-20 01:37:51
  * @Description: User page in Admin
- * @FilePath: /Single-Search/src/layout/admin/user.tsx
+ * @FilePath: /Single-Search/src/layout/admin/setting-user.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
 import User from '@/model/user';
 // Mermaid UI
 import Button from '@/components/Mermaid/button';
 import Switch from '@/components/Mermaid/switch';
+import { USER_DATA } from '@/config/dataname.config';
 @Component({
   components: {
     'm-button': Button,
     'm-switch': Switch
   }
 })
-export default class UserAdmin extends Vue {
+export default class SettingUser extends Vue {
   // tips图标
   private tipsicon: object = require('@/assets/tips.svg');
   // 保存成功
@@ -34,11 +35,11 @@ export default class UserAdmin extends Vue {
 
   // 获取数据
   private getUserData() {
-    const getData = localStorage.getItem('s_user_info');
+    const getData = localStorage.getItem(USER_DATA);
     if (getData !== null) {
       this.userData = JSON.parse(getData);
-      // 头像设置
     }
+    // 头像设置
     if (!this.userData.avatar) {
       this.userData.avatar = require('@/assets/female.svg');
     }
@@ -55,7 +56,7 @@ export default class UserAdmin extends Vue {
     const data = this.userData;
     console.log(`新数据：${JSON.stringify(data)}`);
     this.statusSuccess = true;
-    localStorage.setItem('s_user_info', JSON.stringify(data));
+    localStorage.setItem(USER_DATA, JSON.stringify(data));
   }
 
   private mounted() {

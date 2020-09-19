@@ -4,6 +4,7 @@ import sidecard from '@/components/sidecard.tsx';
 import online from '@/components/Home/online';
 import offline from '@/components/Home/offline';
 import User from '@/model/user';
+import { TOKEN_DATA } from '@/config/dataname.config';
 
 @Component({
   components: {
@@ -33,7 +34,7 @@ export default class HomeSetting extends Vue {
    * @return void
    */
   private getUserInfo() {
-    const token = localStorage.getItem('s_token') || this.$store.state.token;
+    const token = localStorage.getItem(TOKEN_DATA) || this.$store.state.token;
     const info = this.$store.state.user;
     if (!token) {
       return false;
@@ -59,7 +60,7 @@ export default class HomeSetting extends Vue {
    * @return {type} boolean
    */
   private handleLogout() {
-    const token = localStorage.getItem('s_token');
+    const token = localStorage.getItem(TOKEN_DATA);
     const vuextoken = this.$store.state.token;
     // 非正常状态
     if (!token && !vuextoken) {
@@ -67,7 +68,7 @@ export default class HomeSetting extends Vue {
       return false;
     }
     // 清除token
-    localStorage.removeItem('s_token');
+    localStorage.removeItem(TOKEN_DATA);
     this.$store.commit('set_token', null);
     this.isLogin = false;
     return true;

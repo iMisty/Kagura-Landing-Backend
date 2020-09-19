@@ -1,11 +1,12 @@
+import { TOKEN_DATA } from '@/config/dataname.config';
 /*
  * @Author: Miya
  * @Version: 1.0
  * @Date: 2020-09-04 01:22:10
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-18 17:11:22
+ * @LastEditTime: 2020-09-19 17:42:36
  * @Description: 用户选项模块选择器
- * @FilePath: \Single-Search\src\components\Admin\user-setting.tsx
+ * @FilePath: /Single-Search/src/components/Admin/user-setting.tsx
  */
 import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component({})
@@ -29,7 +30,7 @@ export default class AdminUserSetting extends Vue {
       this.$router.push({ path: '/' });
       return true;
     } else {
-      localStorage.removeItem('s_token');
+      localStorage.removeItem(TOKEN_DATA);
       this.$store.commit('set_token', null);
       this.$router.push({ path: '/' });
       return true;

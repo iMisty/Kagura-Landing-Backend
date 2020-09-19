@@ -1,6 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import mButton from '@/components/Mermaid/button';
 import LoginInterface from '@/model/login';
+import { ACCOUNT_DATA, TOKEN_DATA } from '@/config/dataname.config';
 
 @Component({
   components: {
@@ -20,7 +21,7 @@ export default class LoginForm extends Vue {
   // 提交登录状态
   private setLoginStatus() {
     this.errMsg = '';
-    const getUserLoginData = localStorage.getItem('s_user_password');
+    const getUserLoginData = localStorage.getItem(ACCOUNT_DATA);
     console.log(`是否已自定义账号密码：${getUserLoginData}`);
     const value = this.loginData;
 
@@ -36,15 +37,15 @@ export default class LoginForm extends Vue {
         return false;
       }
       // 账号密码正确时，写入localStorage与Vuex
-      localStorage.setItem('s_token', 'test-token');
-      const getLoginStatus = localStorage.getItem('s_token');
+      localStorage.setItem(TOKEN_DATA, 'test-token');
+      const getLoginStatus = localStorage.getItem(TOKEN_DATA);
       this.$store.commit('set_token', getLoginStatus);
       this.$router.push({ path: '/admin' });
       console.log(`token: ${this.$store.state.token}`);
       return true;
     }
 
-    const loginStatus = localStorage.getItem('s_token');
+    const loginStatus = localStorage.getItem(TOKEN_DATA);
 
     // 账号密码不正确
     if (value.username !== 'admin' && value.password !== '123456') {
@@ -63,7 +64,7 @@ export default class LoginForm extends Vue {
     }
 
     // 账号密码正确时，写入localStorage与Vuex
-    localStorage.setItem('s_token', 'test-token');
+    localStorage.setItem(TOKEN_DATA, 'test-token');
     this.$store.commit('set_token', loginStatus);
     this.$router.push({ path: '/admin' });
     console.log(`token: ${this.$store.state.token}`);
@@ -71,8 +72,8 @@ export default class LoginForm extends Vue {
   }
 
   private loginSuccessed(path) {
-    localStorage.setItem('s_token', 'test-token');
-    const getLoginStatus = localStorage.getItem('s_token');
+    localStorage.setItem(TOKEN_DATA, 'test-token');
+    const getLoginStatus = localStorage.getItem(TOKEN_DATA);
     this.$store.commit('set_token', getLoginStatus);
     this.$router.push({ path });
     console.log(`token: ${this.$store.state.token}`);

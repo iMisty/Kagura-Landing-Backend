@@ -371,12 +371,28 @@
       border: 1px solid #ddd;
       border-radius: 0.25rem;
     }
+
+    // 选项卡标题
+    &--title {
+      .layout-flex(flex, row, center, center, nowrap);
+      padding: 1rem 0;
+      &--text {
+        position: relative;
+        .layout-flex(flex, row, flex-start, center, nowrap);
+        margin: 0 0.5rem;
+        line-height: 1;
+        cursor: default;
+        &.router-link-active{
+          color: #595bb3;
+        }
+      }
+    }
   }
 }
 
 .content {
   width: 60vw;
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 7rem);
   overflow-y: auto;
 }
 
