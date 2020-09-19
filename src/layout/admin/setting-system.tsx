@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-09-20 00:31:34
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-20 05:40:06
+ * @LastEditTime: 2020-09-20 06:49:56
  * @Description: 设置页面系统设置部分
  * @FilePath: /Single-Search/src/layout/admin/setting-system.tsx
  */
@@ -81,7 +81,7 @@ export default class SettingsAdmin extends Vue {
   private mounted() {
     this.getSettingData();
   }
-  
+
   private render() {
     return (
       <div class="content">
