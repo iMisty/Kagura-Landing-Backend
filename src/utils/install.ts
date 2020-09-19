@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-09-19 04:13:49
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-19 04:52:50
+ * @LastEditTime: 2020-09-19 16:28:21
  * @Description: 首次进入加载数据
  * @FilePath: /Single-Search/src/utils/install.ts
  */
@@ -18,7 +18,7 @@ import { loginData } from '@/config/login.config';
 import { setting } from '@/config/setting.config';
 import { userInfo } from '@/config/user.config';
 
-export default function install() {
+export const install = () => {
   const user = localStorage.getItem(USER_DATA);
   // 若 localStorage 中包含用户信息则判定为已开启过页面
   if (user !== null) {
@@ -41,4 +41,4 @@ export default function install() {
   localStorage.setItem(SETTING_DATA, settingData);
 
   return true;
-}
+};

@@ -1,12 +1,12 @@
 /*
  * @Author: Miya
  * @Date: 2020-08-17 00:31:28
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-18 16:17:03
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-19 16:29:06
  * @Description: 节流方法
- * @FilePath: /Single-Search/src/services/debounce.ts
+ * @FilePath: /Single-Search/src/utils/debounce.ts
  */
-const debounce = (fn: string, delay: number) => {
+export const debounce = (fn: string, delay: number) => {
   // 设定时间
   const delaytime: number = delay || 200;
   // 定时器
@@ -25,5 +25,3 @@ const debounce = (fn: string, delay: number) => {
     }, delay);
   };
 };
-
-export default debounce;
