@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-19 16:51:57
+ * @LastEditTime: 2020-09-20 06:24:07
  */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -13,6 +13,7 @@ import associate from '@/components/Home/associate';
 import { getEngineValue } from '@/utils/getEngineValue.ts';
 import { getExtraData } from '@/utils/getSearchExtraData';
 import { searchData } from '@/config/search.config';
+import { USER_DATA } from '@/config/dataname.config';
 @Component({
   components: {
     engine,
@@ -78,9 +79,12 @@ export default class Search extends Vue {
    * @return: void
    */
   private getDefaultSearchEngines() {
-    const defaultSearch = this.$store.state.user.default_search;
-    console.log(`默认搜索引擎：${defaultSearch}`);
-    this.choose = defaultSearch;
+    const defaultSearch = localStorage.getItem(USER_DATA);
+    if (defaultSearch !== null) {
+      const search = JSON.parse(defaultSearch).default_search;
+      console.log(`默认搜索引擎：${defaultSearch}`);
+      this.choose = search;
+    }
   }
 
   /**
