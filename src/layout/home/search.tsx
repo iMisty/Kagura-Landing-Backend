@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-20 06:24:07
+ * @LastEditTime: 2020-09-20 06:57:38
  */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -82,7 +82,7 @@ export default class Search extends Vue {
     const defaultSearch = localStorage.getItem(USER_DATA);
     if (defaultSearch !== null) {
       const search = JSON.parse(defaultSearch).default_search;
-      console.log(`默认搜索引擎：${defaultSearch}`);
+      console.log(`默认搜索引擎：${search}`);
       this.choose = search;
     }
   }
@@ -162,7 +162,7 @@ export default class Search extends Vue {
       <div class="search--bar">
         {/* 搜索引擎logo部分 */}
         <div class="search--bar-logo">
-          <img src={this.$store.state.settings.home.search_logo} alt="Logo" />
+          <img src={require('@/assets/logo.svg')} alt="Logo" />
         </div>
         {/* 搜索引擎内容部分 */}
         <div class={`search--bar-wrap ${this.inputing}`}>

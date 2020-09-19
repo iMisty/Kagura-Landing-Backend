@@ -4,7 +4,7 @@ import sidecard from '@/components/sidecard.tsx';
 import online from '@/components/Home/online';
 import offline from '@/components/Home/offline';
 import User from '@/model/user';
-import { TOKEN_DATA } from '@/config/dataname.config';
+import { TOKEN_DATA, USER_DATA } from '@/config/dataname.config';
 
 @Component({
   components: {
@@ -35,12 +35,15 @@ export default class HomeSetting extends Vue {
    */
   private getUserInfo() {
     const token = localStorage.getItem(TOKEN_DATA) || this.$store.state.token;
-    const info = this.$store.state.user;
+    const userdata = localStorage.getItem(USER_DATA);
     if (!token) {
       return false;
     }
     this.isLogin = true;
-    this.setting = info;
+    if (userdata !== null) {
+      const info = JSON.parse(userdata);
+      this.setting = info;
+    }
     return true;
   }
 

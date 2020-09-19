@@ -1,13 +1,11 @@
 /*
  * @Author: Miya
  * @Date: 2020-06-06 12:17:38
- * @LastEditTime: 2020-09-16 17:33:09
+ * @LastEditTime: 2020-09-20 06:50:34
  * @LastEditors: Miya
  * @Description: Vuex 内的 Mutations
- * @FilePath: \Single-Search\src\store\mutations.ts
+ * @FilePath: /Single-Search/src/store/mutations.ts
  */
-
-import UserAdmin from '@/layout/admin/user';
 
 const mutations = {
   /*
@@ -45,13 +43,6 @@ const mutations = {
   set_search_engine(state: any, data: string) {
     state.status.search_engine = data;
   },
-  // /*
-  //  *  改变 status 中的 styleMode
-  //  *  该变量用于确认是否启用夜间模式
-  //  */
-  // STYLEMODE(state: any, style: string) {
-  //   state.status.styleMode = style;
-  // },
   /*
    *  改变 state 里的 token
    *  该变量用于登录与退出
