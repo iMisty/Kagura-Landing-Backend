@@ -2,8 +2,8 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:38:12
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-20 01:37:51
- * @Description: User page in Admin
+ * @LastEditTime: 2020-09-20 05:40:16
+ * @Description: 设置页面用户设置部分
  * @FilePath: /Single-Search/src/layout/admin/setting-user.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';

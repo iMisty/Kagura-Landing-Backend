@@ -1,3 +1,12 @@
+/*
+ * @Author: Miya
+ * @Version: 1.0
+ * @Date: 2020-09-20 00:31:34
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-20 05:40:06
+ * @Description: 设置页面系统设置部分
+ * @FilePath: /Single-Search/src/layout/admin/setting-system.tsx
+ */
 import { Component, Vue } from 'vue-property-decorator';
 // checkbox
 import checkbox from '@/components/Admin/input-checkbox';

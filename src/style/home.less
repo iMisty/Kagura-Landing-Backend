@@ -79,7 +79,7 @@
 
   // 中间区域
   &__medium {
-    .layout-flex(flex, column, flex-start, center);
+    .layout-flex(flex, column, space-around, center);
     padding-bottom: 12vh;
     // 搜索栏
     .search--bar {
@@ -217,7 +217,7 @@
 
     // 搜索引擎联想
     .associate {
-      .blur-bg-light();
+      .blur-bg-light(rgba(255, 255, 255, 0.54));
       position: absolute;
       top: 0;
       left: 0;
@@ -252,6 +252,11 @@
           background-color: @blur-component-color;
         }
       }
+    }
+
+    // 一言
+    .hitokoto {
+      color: @pri-text-dark;
     }
   }
 
@@ -531,11 +536,6 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-
-    // 一言
-    .hitokoto {
-      color: @pri-text-dark;
-    }
 
     // 版权信息
     .copyright {

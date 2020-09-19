@@ -1,3 +1,12 @@
+/*
+ * @Author: Miya
+ * @Version: 1.0
+ * @Date: 2020-09-20 00:31:22
+ * @LastEditors: Miya
+ * @LastEditTime: 2020-09-20 05:39:46
+ * @Description: 设置页面用户账号密码部分
+ * @FilePath: /Single-Search/src/layout/admin/setting-account.tsx
+ */
 import { Component, Vue } from 'vue-property-decorator';
 import { ACCOUNT_DATA } from '@/config/dataname.config';
 import Button from '@/components/Mermaid/button';
