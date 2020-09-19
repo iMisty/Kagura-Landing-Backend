@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-25 22:54:11
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-19 04:54:39
+ * @LastEditTime: 2020-09-20 05:43:38
 -->
 <template>
   <div id="App">
@@ -17,7 +17,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { LINK_ICON } from './config/external.config';
-import install from '@/utils/install';
+import { install } from '@/utils/install';
 import Background from '@/layout/background.tsx';
 import external from '@/components/external';
 
