@@ -1,4 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
+import { LINK_DATA } from '@/config/dataname.config';
+import LinkEmpty from '@/components/Admin/link-empty';
 import mButton from '@/components/Mermaid/button';
 
 interface Link {
@@ -9,7 +11,8 @@ interface Link {
 }
 @Component({
   components: {
-    'm-button': mButton
+    'm-button': mButton,
+    'link-empty': LinkEmpty
   }
 })
 export default class AdminLink extends Vue {
@@ -24,7 +27,7 @@ export default class AdminLink extends Vue {
    * @return
    */
   private getLinkData() {
-    const data: string | null = localStorage.getItem('s_user_link');
+    const data: string | null = localStorage.getItem(LINK_DATA);
     if (data !== null) {
       this.linkData = JSON.parse(data);
     }
@@ -79,7 +82,7 @@ export default class AdminLink extends Vue {
    * @return {boolean}
    */
   private handleSave() {
-    localStorage.setItem('s_user_link', JSON.stringify(this.linkData));
+    localStorage.setItem(LINK_DATA, JSON.stringify(this.linkData));
     return true;
   }
 
@@ -119,14 +122,7 @@ export default class AdminLink extends Vue {
     return (
       <div class="admin__link">
         {this.linkData.length === 0 ? (
-          <section class="admin__link--list nodata">
-            <div class="admin__link--nodata">
-              <img src={require('@/assets/target_monochromatic.svg')}></img>
-              <p class="admin__link--nodata--text">
-                当前没有导航链接，不点下按钮添加一个？
-              </p>
-            </div>
-          </section>
+          <link-empty></link-empty>
         ) : (
           <section class="admin__link--list">
             {this.linkData.map((item: any, index: number) => {

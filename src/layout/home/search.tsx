@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-17 00:15:02
+ * @LastEditTime: 2020-09-19 16:51:57
  */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -12,6 +12,7 @@ import engine from '@/components/Home/engine';
 import associate from '@/components/Home/associate';
 import { getEngineValue } from '@/utils/getEngineValue.ts';
 import { getExtraData } from '@/utils/getSearchExtraData';
+import { searchData } from '@/config/search.config';
 @Component({
   components: {
     engine,
@@ -66,7 +67,7 @@ export default class Search extends Vue {
    * @return: void
    */
   private getSearchEngines(): void {
-    const data = this.$store.state.searchList;
+    const data = searchData;
     this.searchChoose = data;
   }
 
@@ -132,13 +133,13 @@ export default class Search extends Vue {
   }
 
   // 计算在输入内容时显示的class
-  get inputing() {
+  private get inputing() {
     if (this.isInputing) {
       return `inputing`;
     }
     return null;
   }
-  get searchMenuActive() {
+  private get searchMenuActive() {
     if (this.searchMenu) {
       return `active`;
     }
@@ -146,7 +147,7 @@ export default class Search extends Vue {
   }
 
   // 临时设置： 计算图片
-  get getChooseImg() {
+  private get getChooseImg() {
     const temp: any = this.choose;
     const temparray = ['google', 'bing', 'baidu'];
     return temparray.indexOf(temp);

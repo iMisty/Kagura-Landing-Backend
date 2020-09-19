@@ -2,9 +2,9 @@
  * @Author: Miya
  * @Date: 2020-07-23 15:49:17
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-17 11:15:13
+ * @LastEditTime: 2020-09-19 16:36:48
  * @Description: 后台管理首页
- * @FilePath: \Single-Search\src\layout\admin\index.tsx
+ * @FilePath: /Single-Search/src/layout/admin/index.tsx
  */
 import { Component, Vue } from 'vue-property-decorator';
 // 卡片式框架组件
@@ -12,7 +12,6 @@ import puzzle from '@/components/Admin/puzzle.tsx';
 // 计数器组件
 import linksum from '@/components/Admin/linksum.tsx';
 import Sum from '@/model/sum';
-import '@/style/layout/admin/style.less';
 @Component({
   components: {
     puzzle,

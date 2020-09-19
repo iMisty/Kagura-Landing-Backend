@@ -4,11 +4,12 @@
  * @Autor: Miya
  * @Date: 2020-05-27 01:24:20
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-18 15:25:26
+ * @LastEditTime: 2020-09-19 16:46:54
  */
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon.tsx';
 import listitem from '@/components/Home/listitem.tsx';
+import { LINK_DATA } from '@/config/dataname.config';
 
 @Component({
   components: {
@@ -28,7 +29,7 @@ export default class HomeList extends Vue {
    * @author: Miya
    */
   private getListData(): void {
-    const data: string | null = localStorage.getItem('s_user_link');
+    const data: string | null = localStorage.getItem(LINK_DATA);
     if (data !== null) {
       this.listData = JSON.parse(data);
     }
