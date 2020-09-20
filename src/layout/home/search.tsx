@@ -4,7 +4,7 @@
  * @Author: Miya
  * @Date: 2020-05-26 21:41:27
  * @LastEditors: Miya
- * @LastEditTime: 2020-09-20 06:57:38
+ * @LastEditTime: 2020-09-20 08:31:14
  */
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import svgicon from '@/components/svgicon';
@@ -14,6 +14,7 @@ import { getEngineValue } from '@/utils/getEngineValue.ts';
 import { getExtraData } from '@/utils/getSearchExtraData';
 import { searchData } from '@/config/search.config';
 import { USER_DATA } from '@/config/dataname.config';
+import { submitSearch } from '@/utils/submitSearch';
 @Component({
   components: {
     engine,
@@ -109,8 +110,13 @@ export default class Search extends Vue {
    * @author: Miya
    */
   private submitSearchText(e: { keyCode: number }) {
+    const choose = this.choose;
+    const text = this.searchText;
     if (e.keyCode === 13) {
-      this.$emit('submit', this.choose, this.searchText, this.extraParam);
+      console.log(choose);
+      console.log(text);
+      window.open(submitSearch(choose!, text));
+      // this.$emit('submit', this.choose, this.searchText, this.extraParam);
       return true;
     }
     return false;
@@ -198,7 +204,7 @@ export default class Search extends Vue {
               onClick={() => this.setInputStatus(true)}
               onBlur={() => this.setInputStatus(false)}
               onKeydown={(e: any) => this.submitSearchText(e)}
-              onInput={this.getExtraValue}
+              // onInput={this.getExtraValue}
             />
           </section>
           {this.extraDatas[0] !== '' ? (
