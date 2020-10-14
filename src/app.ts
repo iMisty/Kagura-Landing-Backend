@@ -3,31 +3,42 @@
  * @Version: 1.0
  * @Date: 2020-10-15 01:43:35
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-15 01:46:21
+ * @LastEditTime: 2020-10-15 02:14:49
  * @Description: main
  * @FilePath: /Kagura-Landing-Backend/src/app.ts
  */
 const Koa = require('koa');
-const Router = require('koa-router');
+
+// require
 const BodyParser = require('koa-bodyparser');
+const Mongoose = require('mongoose');
+const dbConfig = require('./config/db');
 
+import router from './router/index';
+
+// interface
+import { Log } from './interface/Log';
+
+// constructor
 const app = new Koa();
-const router = new Router();
 
-app.use(router.routes());
-
-router.get('/', async (ctx: any) => {
-  return (ctx.body = 'Hello TypeScript');
-});
+// use
+app.use(BodyParser());
+app.use(router());
 
 app.listen(24540);
 
-app.use(async (ctx: { method: any; url: any }, next: () => any) => {
+app.use(async (ctx: Log, next: () => any) => {
   const start: any = new Date();
   await next();
   const fin: any = new Date();
   const ms: number = fin - start;
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
+});
+
+Mongoose.connect(dbConfig.blog, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 console.log('server running on port 24540');
