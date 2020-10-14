@@ -1,0 +1,36 @@
+{
+  "name": "kagura-landing-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "scripts": {
+    "watch": "tsc --watch",
+    "start": "nodemon ./src/app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iMisty/Kagura-Landing-Backend.git"
+  },
+  "author": "Miya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iMisty/Kagura-Landing-Backend/issues"
+  },
+  "homepage": "https://github.com/iMisty/Kagura-Landing-Backend#readme",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-combine-routers": "^4.0.2",
+    "koa-router": "^9.4.0",
+    "mongoose": "^5.10.9",
+    "nodemon": "^2.0.5",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.5",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-router": "^7.4.1",
+    "@types/mongoose": "^5.7.36"
+  }
+}
