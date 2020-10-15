@@ -7,17 +7,17 @@
  * @Description: main
  * @FilePath: /Kagura-Landing-Backend/src/app.ts
  */
-const Koa = require('koa');
+const Koa = require("koa");
 
 // require
-const BodyParser = require('koa-bodyparser');
-const Mongoose = require('mongoose');
-const dbConfig = require('./config/db');
+const BodyParser = require("koa-bodyparser");
+const Mongoose = require("mongoose");
+const dbConfig = require("./config/db");
 
-import router from './router/index';
+import router from "./router/index";
 
 // interface
-import { Log } from './interface/Log';
+import { Log } from "./interface/Log";
 
 // constructor
 const app = new Koa();
@@ -41,4 +41,4 @@ Mongoose.connect(dbConfig.blog, {
   useUnifiedTopology: true,
 });
 
-console.log('server running on port 24540');
+console.log("server running on port 24540");
