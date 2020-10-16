@@ -1,0 +1,26 @@
+### RestAPI Test
+
+GET http://localhost:24540/test
+
+name=lari
+
+### test.ts => 新建人物
+
+POST http://localhost:24540/test
+Content-Type: application/x-www-form-urlencoded
+
+name=lari2&age=112
+
+### test.ts => 删除人物
+
+DELETE http://localhost:24540/test
+Content-Type: application/x-www-form-urlencoded
+
+name=lari2&age=112
+
+### test.ts => 修改人物
+
+PUT http://localhost:24540/test
+Content-Type: application/x-www-form-urlencoded
+
+name=lari&age=231
