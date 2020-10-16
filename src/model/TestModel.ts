@@ -1,16 +1,17 @@
 /*
  * @Author: Miya
  * @Date: 2020-10-15 10:27:51
- * @LastEditTime: 2020-10-15 18:36:30
+ * @LastEditTime: 2020-10-16 16:08:24
  * @LastEditors: Miya
- * @Description: 
+ * @Description:
  * @FilePath: \Kagura-Landing-Backend\src\model\TestModel.ts
- * @Version: 
+ * @Version:
  */
-import mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import * as Mongoose from 'mongoose';
 
-const TestModel = new Schema({
+const TestSchema = new Mongoose.Schema({
   name: String,
-  age: Number
-})
+  age: Number,
+});
+
+module.exports = Mongoose.model('Test', TestSchema);
