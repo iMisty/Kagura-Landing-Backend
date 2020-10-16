@@ -5,10 +5,10 @@ import { Response } from '../interface/Response';
 /*
  * @Author: Miya
  * @Date: 2020-10-16 15:34:00
- * @LastEditTime: 2020-10-16 18:16:52
+ * @LastEditTime: 2020-10-17 01:42:28
  * @LastEditors: Miya
  * @Description: Model
- * @FilePath: \Kagura-Landing-Backend\src\controller\TestController.ts
+ * @FilePath: /Kagura-Landing-Backend/src/controller/TestController.ts
  * @Version: 1.0
  */
 const TestModel = require('../model/TestModel');
@@ -110,7 +110,7 @@ class Test {
     const params = {
       name: ctx.request.body.name,
     };
-    const result = await TestModel.find();
+    const result = await TestModel.findOne();
 
     try {
       return (ctx.body = {
