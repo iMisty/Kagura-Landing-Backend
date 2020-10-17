@@ -1,34 +1,8 @@
-### RestAPI Test
-
-GET http://localhost:24540/test
-
-
-### test.ts => 新建人物
-
-POST http://localhost:24540/test
-Content-Type: application/x-www-form-urlencoded
-
-name=lari&age=11
-
-### test.ts => 删除人物
-
-DELETE http://localhost:24540/test
-Content-Type: application/x-www-form-urlencoded
-
-name=lari2&age=112
-
-### test.ts => 修改人物
-
-PUT http://localhost:24540/test
-Content-Type: application/x-www-form-urlencoded
-
-name=lari&age=231
-
 ### 新建一篇文章
-POST http://localhost:24540/blog/add
+POST http://localhost:24540/blog
 Content-Type: application/x-www-form-urlencoded
 
-id=3&avatar=&tag=&title=test1&text=faoifjfdlfdfjaldhfuakfheufheuiofhkajhfksdfhakfhadkfhndkfhasdf
+id=4&avatar=&tag=1&tag=2&title=test1&text=faoifjfdlfdfjaldhfuakfheufheuiofhkajhfksdfhakfhadkfhndkfhasdf
 
 ### 根据 ID 查找文章
 GET http://localhost:24540/blog/search
@@ -38,12 +12,23 @@ id=1
 
 ### 修改文章内容
 PUT http://localhost:24540/blog
-Content-Type: application/json
+Content-Type: application/x-www-form-urlencoded
 
-{
-  "id": "1",
-  "tag": ["1","2"],
-  "avatar": "",
-  "title": "test1",
-  "text": "11111"
-}
+id=4&tag=1&avatar=&title=test3&text=11
+
+### 删除一篇文章
+GET http://localhost:24540/blog
+Content-Type: application/x-www-form-urlencoded
+
+id=5f89e68f6a73732732f8cbd6
+
+
+### 查找所有文章
+GET http://localhost:24540/blog
+Content-Type: application/x-www-form-urlencoded
+
+### 查找固定条数文章
+GET http://localhost:24540/blog
+Content-Type: application/x-www-form-urlencoded
+
+limit=4
