@@ -23,4 +23,4 @@ const WorkModel = new Mongoose.Schema({
   status: Number,
 });
 
-module.exports = Mongoose.model('WorkModel', WorkModel);
+module.exports = Mongoose.model('Work', WorkModel);

@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-10-17 01:49:58
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-18 05:12:23
+ * @LastEditTime: 2020-10-18 18:45:57
  * @Description: 博客文章模型
  * @FilePath: /Kagura-Landing-Backend/src/model/BlogModel.ts
  */
@@ -19,4 +19,4 @@ const BlogModel = new Mongoose.Schema({
   content: String,
 });
 
-module.exports = Mongoose.model('BlogModel', BlogModel);
+module.exports = Mongoose.model('Blog', BlogModel);

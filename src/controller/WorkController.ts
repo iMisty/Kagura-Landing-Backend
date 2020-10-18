@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-10-18 04:51:32
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-18 16:27:14
+ * @LastEditTime: 2020-10-18 18:46:16
  * @Description: 项目模块接口
  * @FilePath: /Kagura-Landing-Backend/src/controller/WorkController.ts
  */
@@ -47,22 +47,6 @@ class Work {
     } catch (err) {
       return (ctx.body = {
         code: 1,
-        msg: err,
-      });
-    }
-  }
-
-  // 删除项目
-  public static async deleteWork(ctx: any) {
-    const result = await WorkModel.deleteOne({ id: ctx.request.body.id });
-    try {
-      return (ctx.body = {
-        code: 1,
-        msg: result,
-      });
-    } catch (err) {
-      return (ctx.body = {
-        code: 0,
         msg: err,
       });
     }
@@ -120,6 +104,22 @@ class Work {
         },
       }
     );
+    try {
+      return (ctx.body = {
+        code: 1,
+        msg: result,
+      });
+    } catch (err) {
+      return (ctx.body = {
+        code: 0,
+        msg: err,
+      });
+    }
+  }
+
+  // 删除项目
+  public static async deleteWork(ctx: any) {
+    const result = await WorkModel.deleteOne({ id: ctx.request.body.id });
     try {
       return (ctx.body = {
         code: 1,
