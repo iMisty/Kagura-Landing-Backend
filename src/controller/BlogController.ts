@@ -3,11 +3,11 @@
  * @Version: 1.0
  * @Date: 2020-10-17 01:54:08
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-18 04:55:42
+ * @LastEditTime: 2020-10-18 15:28:34
  * @Description: Blog Controller
  * @FilePath: /Kagura-Landing-Backend/src/controller/BlogController.ts
  */
-const blogdata = require('../model/BlogModel');
+const BlogModel = require('../model/BlogModel');
 import { BlogInterface } from '../interface/Blog';
 class Blog {
   // 增加一篇文章
@@ -24,10 +24,10 @@ class Blog {
       tag: ctx.request.body.tag,
       title: ctx.request.body.title,
       intro: ctx.request.body.intro,
-      text: ctx.request.body.text,
+      content: ctx.request.body.content,
     };
 
-    const model = new blogdata(param);
+    const model = new BlogModel(param);
 
     try {
       await model.save();
@@ -47,7 +47,7 @@ class Blog {
     request: { body: { id: number } };
     body: { code: number; msg: object };
   }) {
-    const result = await blogdata.find({ id: ctx.request.body.id });
+    const result = await BlogModel.find({ id: ctx.request.body.id });
     try {
       return (ctx.body = {
         code: 1,
@@ -64,7 +64,7 @@ class Blog {
   // 查找全部或指定条数文章
   public static async getArticle(ctx: any) {
     const limit = Number(ctx.request.body.limit);
-    const result = await blogdata.find({}).limit(limit).sort({ time: -1 });
+    const result = await BlogModel.find({}).limit(limit).sort({ time: -1 });
 
     try {
       return (ctx.body = {
@@ -81,7 +81,7 @@ class Blog {
 
   // 修改文章内容
   public static async updateArticle(ctx: any) {
-    const result = await blogdata.update(
+    const result = await BlogModel.update(
       { id: ctx.request.body.id },
       {
         $set: {
@@ -89,7 +89,7 @@ class Blog {
           tag: ctx.request.body.tag,
           title: ctx.request.body.title,
           intro: ctx.request.body.intro,
-          text: ctx.request.body.text,
+          content: ctx.request.body.content,
         },
       }
     );
@@ -110,10 +110,18 @@ class Blog {
   // 删除一篇文章
   public static async deleteArticle(ctx: any) {
     // @ts-ignore
-    const result = await blogdata.findOne({ _id: ctx.request.body.id });
-    return (ctx.body = {
-      result,
-    });
+    const result = await BlogModel.deleteOne({ id: ctx.request.body.id });
+    try {
+      return (ctx.body = {
+        code: 1,
+        msg: result,
+      });
+    } catch (err) {
+      return (ctx.body = {
+        code: 0,
+        msg: err,
+      });
+    }
   }
 }
 

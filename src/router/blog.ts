@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-10-17 02:08:59
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-18 04:04:02
+ * @LastEditTime: 2020-10-18 15:26:41
  * @Description: Blog Router
  * @FilePath: /Kagura-Landing-Backend/src/router/blog.ts
  */
@@ -25,6 +25,6 @@ router.get('/search', Blog.getArticleByID);
 router.put('/', Blog.updateArticle);
 
 // 删除一篇文章
-router.get('/', Blog.deleteArticle);
+router.delete('/', Blog.deleteArticle);
 
 export default router;
