@@ -17,10 +17,10 @@ Content-Type: application/x-www-form-urlencoded
 id=4&tag=1&avatar=&title=test3&text=11
 
 ### 删除一篇文章
-GET http://localhost:24540/blog
+DELETE http://localhost:24540/blog
 Content-Type: application/x-www-form-urlencoded
 
-id=5f89e68f6a73732732f8cbd6
+id=2
 
 
 ### 查找所有文章
@@ -32,3 +32,28 @@ GET http://localhost:24540/blog
 Content-Type: application/x-www-form-urlencoded
 
 limit=4
+
+#################################
+
+### 新建一个项目
+
+POST http://localhost:24540/work
+Content-Type: application/x-www-form-urlencoded
+
+id=4&avatar=&title=test1&tag=1&tag=2&content=yhsiuhfiaufhisduafhaidsfhuiadsfhidsa&preview=github&source=github&lastupdate=153334444333&version=1.0&status=1
+
+### 查找所有项目
+GET http://localhost:24540/work
+Content-Type: application/x-www-form-urlencoded
+
+### 查找指定条数项目
+GET http://localhost:24540/work
+Content-Type: application/x-www-form-urlencoded
+
+limit=2
+
+### 修改项目内容
+PUT http://localhost:24540/work
+Content-Type: application/x-www-form-urlencoded
+
+id=4&avatar=&title=test4&tag=4&content=1&status=1
