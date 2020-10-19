@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-10-15 02:04:46
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-18 06:06:05
+ * @LastEditTime: 2020-10-19 16:42:02
  * @Description: router
- * @FilePath: /Kagura-Landing-Backend/src/router/index.ts
+ * @FilePath: \Kagura-Landing-Backend\src\router\index.ts
  */
 import * as Router from 'koa-router';
 import * as CombineRouters from 'koa-combine-routers';
@@ -13,6 +13,7 @@ import * as CombineRouters from 'koa-combine-routers';
 import TestRouter from './test';
 import BlogRouter from './blog';
 import WorkRouter from './work';
+import UserRouter from './user';
 import { SingleText } from '../interface/SingleText';
 
 const router = new Router();
@@ -21,6 +22,12 @@ const index = router.get('/', async (ctx: SingleText) => {
   ctx.body = 'Hello TypeScript';
 });
 
-const routers = CombineRouters(index, TestRouter, BlogRouter, WorkRouter);
+const routers = CombineRouters(
+  index,
+  TestRouter,
+  BlogRouter,
+  WorkRouter,
+  UserRouter
+);
 
 export default routers;

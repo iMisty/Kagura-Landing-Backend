@@ -57,3 +57,20 @@ PUT http://localhost:24540/work
 Content-Type: application/x-www-form-urlencoded
 
 id=4&avatar=&title=test4&tag=4&content=1&status=1
+
+
+### 新建关于页内容
+POST http://localhost:24540/user/about
+Content-Type: application/x-www-form-urlencoded
+
+background=11&concept=1111111&image=11111&title=33333&content=281479
+
+### 获取关于页内容
+GET http://localhost:24540/user/about
+Content-Type: application/x-www-form-urlencoded
+
+### 修改关于页内容
+PUT http://localhost:24540/user/about
+Content-Type: application/x-www-form-urlencoded
+
+id=5f8d56e71d8f9f1004b76cf2&background=111111&concept=21111111&image=2211111&title=233333&content=281479
