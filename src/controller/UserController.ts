@@ -3,11 +3,10 @@
  * @Version: 1.0
  * @Date: 2020-10-18 16:53:30
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-19 18:31:34
+ * @LastEditTime: 2020-10-20 00:39:56
  * @Description: 用户信息接口
- * @FilePath: \Kagura-Landing-Backend\src\controller\UserController.ts
+ * @FilePath: /Kagura-Landing-Backend/src/controller/UserController.ts
  */
-import { SUCCESSED_MESSAGE } from '../config/code';
 const UserModel = require('../model/UserModel');
 const ContentModel = require('../model/ContactModel');
 
@@ -82,7 +81,7 @@ class User {
     }
     try {
       return (ctx.body = {
-        SUCCESSED_MESSAGE,
+        code: 1,
         result,
       });
     } catch (err) {
@@ -141,7 +140,7 @@ class User {
 
   // 新建团队信息
   public static async addNewTeamContact(ctx: any) {
-    const search = ContentModel.find();
+    const search = await ContentModel.find();
     if (search.length > 5) {
       return (ctx.body = {
         code: 11601,
@@ -157,9 +156,78 @@ class User {
     try {
       await result.save();
       return (ctx.body = {
-        SUCCESSED_MESSAGE,
+        code: 1,
+        msg: 'successed',
+      });
+    } catch (err) {
+      return (ctx.body = {
+        code: 0,
+        msg: err,
+      });
+    }
+  }
+
+  // 查阅所有团队信息
+  public static async getTeamContact(ctx: any) {
+    const result = await ContentModel.find();
+    try {
+      if (result.length === 0) {
+        return (ctx.body = {
+          code: 11599,
+          msg: 'no content',
+        });
+      }
+      return (ctx.body = {
+        code: 1,
+        msg: result,
       });
     } catch (err) {}
+  }
+
+  // 修改对应团队信息
+  public static async updateTeamContact(ctx: any) {
+    const result = await ContentModel.updateOne(
+      { _id: ctx.request.body.id },
+      {
+        $set: {
+          icon: ctx.request.body.icon,
+          title: ctx.request.body.title,
+          content: ctx.request.body.content,
+        },
+      }
+    );
+
+    try {
+      return (ctx.body = {
+        code: 1,
+        message: 'successed',
+        result,
+      });
+    } catch (err) {
+      return (ctx.body = {
+        code: 0,
+        message: err,
+      });
+    }
+  }
+
+  // 删除团队信息
+  public static async deleteTeamContact(ctx: any) {
+    const result = await ContentModel.deleteOne({
+      _id: ctx.request.body.id,
+    });
+    try {
+      return (ctx.body = {
+        code: 1,
+        msg: 'successed',
+        result,
+      });
+    } catch (err) {
+      return (ctx.body = {
+        code: 0,
+        msg: err,
+      });
+    }
   }
 }
 

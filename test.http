@@ -74,3 +74,28 @@ PUT http://localhost:24540/user/about
 Content-Type: application/x-www-form-urlencoded
 
 id=5f8d56e71d8f9f1004b76cf2&background=111111&concept=21111111&image=2211111&title=233333&content=281479
+
+### 新建团队人员
+
+POST http://localhost:24540/user/team
+Content-Type: application/x-www-form-urlencoded
+
+icon=123&title=234&content=345
+
+### 查阅团队人员
+
+GET http://localhost:24540/user/team
+Content-Type: application/x-www-form-urlencoded
+
+### 修改团队人员
+
+PUT http://localhost:24540/user/team
+Content-Type: application/x-www-form-urlencoded
+
+id=5f8dc045176d4b0c0cdf679f&icon=1235&title=2394&content=3456
+
+### 删除团队人员
+DELETE http://localhost:24540/user/team
+Content-Type: application/x-www-form-urlencoded
+
+id=5f8dc045176d4b0c0cdf679f
