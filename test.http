@@ -66,7 +66,7 @@ Content-Type: application/x-www-form-urlencoded
 background=11&concept=1111111&image=11111&title=33333&content=281479
 
 ### 获取关于页内容
-GET http://localhost:24540/user/about
+GET http://localhost:24540/info/about
 Content-Type: application/x-www-form-urlencoded
 
 ### 修改关于页内容
@@ -84,7 +84,7 @@ icon=123&title=234&content=345
 
 ### 查阅团队人员
 
-GET http://localhost:24540/user/team
+GET http://localhost:24540/info/team
 Content-Type: application/x-www-form-urlencoded
 
 ### 修改团队人员
@@ -105,12 +105,18 @@ id=5f8dc045176d4b0c0cdf679f
 
 POST http://localhost:24540/user/footer
 Content-Type: application/x-www-form-urlencoded
+Authorization: Bearar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDMyMTQxODEsImV4cCI6MTYwMzMwMDU4MX0.eLs2cZyPQZGmskSxoHyF7cNrcFKeiV2z7lcPQVP6Keo
 
-img=1111&pri=123&sec=234&copyrightyear=2019&author=miya&website=393290
+img=1111
+&pri=123
+&sec=234
+&copyrightyear=2019
+&author=miya
+&website=393290
 
 ### 获取页脚信息
 
-GET http://localhost:24540/user/footer
+GET http://localhost:24540/info/footer
 Content-Type: application/x-www-form-urlencoded
 
 ### 新建页脚联系方式

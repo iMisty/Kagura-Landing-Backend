@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-10-20 16:53:12
- * @LastEditTime: 2020-10-20 17:56:14
+ * @LastEditTime: 2020-10-21 00:46:04
  * @LastEditors: Miya
  * @Description: 不经过jwt验证部分
- * @FilePath: \Kagura-Landing-Backend\src\router\info.ts
+ * @FilePath: /Kagura-Landing-Backend/src/router/info.ts
  * @Version: 1.0
  */
 const router = require('koa-router')();

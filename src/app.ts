@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-10-15 01:43:35
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-20 17:04:08
+ * @LastEditTime: 2020-10-21 01:17:11
  * @Description: main
- * @FilePath: \Kagura-Landing-Backend\src\app.ts
+ * @FilePath: /Kagura-Landing-Backend/src/app.ts
  */
 const Koa = require('koa');
 
@@ -31,7 +31,7 @@ app.use(BodyParser());
 // 验证
 app.use(
   jwt({ secret: SECRET }).unless({
-    path: ['/login', /^\/info/],
+    path: ['/login', '/registry', /^\/info/],
   })
 );
 
@@ -47,22 +47,6 @@ app.use(async (ctx: Log, next: () => any) => {
   const ms: number = fin - start;
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
-
-const USER = {
-  username: '123',
-  password: '123',
-};
-
-// const token = jsonwebtoken.sign(
-//   {
-//     name: USER.username,
-//     password: USER.password,
-//   },
-//   SECRET,
-//   { expiresIn: '36000h' }
-// );
-
-// console.log(`token: ${token}`);
 
 app.use(
   async (
@@ -83,36 +67,6 @@ app.use(
     });
   }
 );
-
-
-
-app.use(async (ctx: any) => {
-  if (ctx.path === '/login' && ctx.method === 'POST') {
-    // 登录
-    // 判断用户名密码是否匹配
-    const checkUser =
-      ctx.request.body.username === USER.username &&
-      ctx.request.body.password === USER.password;
-    if (checkUser) {
-      ctx.body = {
-        code: 200,
-        msg: '登录成功',
-        token: jsonwebtoken.sign(
-          { name: USER.username }, // 加密userToken
-          SECRET,
-          { expiresIn: '24h' }
-        ),
-      };
-    } else {
-      // 登录失败, 用户名密码不正确
-      ctx.body = {
-        code: 400,
-        msg: '用户名密码不匹配',
-      };
-    }
-  }
-});
-
 
 Mongoose.connect(dbConfig.blog, {
   useNewUrlParser: true,

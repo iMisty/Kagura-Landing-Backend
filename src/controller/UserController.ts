@@ -3,12 +3,16 @@
  * @Version: 1.0
  * @Date: 2020-10-18 16:53:30
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-20 11:24:48
+ * @LastEditTime: 2020-10-21 01:18:50
  * @Description: 用户信息接口
- * @FilePath: \Kagura-Landing-Backend\src\controller\UserController.ts
+ * @FilePath: /Kagura-Landing-Backend/src/controller/UserController.ts
  */
+import * as md5 from 'md5';
+const jsonwebtoken = require('jsonwebtoken');
 const UserModel = require('../model/UserModel');
 const ContentModel = require('../model/ContactModel');
+const AdminModel = require('../model/AdminModel');
+const SECRET = 'kagura';
 
 class User {
   /**
@@ -20,13 +24,82 @@ class User {
    */
 
   // 创建管理员
-  public static async addNewAdmin(ctx: any) {}
+  public static async addNewAdmin(ctx: any) {
+    const search = await AdminModel.find();
+    if (search.length >= 1) {
+      return (ctx.body = {
+        code: 11599,
+        msg: 'Max Content',
+      });
+    }
+    const result = new AdminModel({
+      username: ctx.request.body.username,
+      password: md5(ctx.request.body.password),
+    });
 
-  // 修改管理员密码
-  public static async updateAdmin(ctx: any) {}
+    try {
+      await result.save();
+      return (ctx.body = {
+        code: 1,
+        msg: 'successed',
+      });
+    } catch (err) {
+      return ctx.throw(400, {
+        code: 11400,
+        msg: err,
+      });
+    }
+  }
+
+  // 修改管理员账号密码
+  public static async updateAdmin(ctx: any) {
+    const result = await AdminModel.updateOne(
+      { _id: ctx.request.body.id },
+      {
+        $set: {
+          username: ctx.request.body.username,
+          password: md5(ctx.request.body.password),
+        },
+      }
+    );
+
+    try {
+      return (ctx.body = {
+        code: 1,
+        msg: 'successed',
+        result
+      });
+    } catch (err) {
+      return ctx.throw(400, { code: 400, msg: err });
+    }
+  }
 
   // 验证登录
-  public static async validateAdmin(ctx: any) {}
+  public static async validateAdmin(ctx: any) {
+    const getAdminData = await AdminModel.find();
+    // 登录
+    // 判断用户名密码是否匹配
+    const checkUser =
+      ctx.request.body.username === getAdminData[0].username &&
+      md5(ctx.request.body.password) === getAdminData[0].password;
+    if (checkUser) {
+      ctx.body = {
+        code: 1,
+        msg: '登录成功',
+        token: jsonwebtoken.sign(
+          { name: getAdminData.username }, // 加密userToken
+          SECRET,
+          { expiresIn: '24h' }
+        ),
+      };
+    } else {
+      // 登录失败, 用户名密码不正确
+      ctx.body = {
+        code: 400,
+        msg: '用户名密码不匹配',
+      };
+    }
+  }
 
   /**
    *
