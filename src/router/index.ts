@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-10-15 02:04:46
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-19 16:42:02
+ * @LastEditTime: 2020-10-20 17:00:17
  * @Description: router
  * @FilePath: \Kagura-Landing-Backend\src\router\index.ts
  */
@@ -14,6 +14,7 @@ import TestRouter from './test';
 import BlogRouter from './blog';
 import WorkRouter from './work';
 import UserRouter from './user';
+import InfoRouter from './info';
 import { SingleText } from '../interface/SingleText';
 
 const router = new Router();
@@ -27,7 +28,8 @@ const routers = CombineRouters(
   TestRouter,
   BlogRouter,
   WorkRouter,
-  UserRouter
+  UserRouter,
+  InfoRouter
 );
 
 export default routers;

@@ -5,10 +5,10 @@ Content-Type: application/x-www-form-urlencoded
 id=4&avatar=&tag=1&tag=2&title=test1&text=faoifjfdlfdfjaldhfuakfheufheuiofhkajhfksdfhakfhadkfhndkfhasdf
 
 ### 根据 ID 查找文章
-GET http://localhost:24540/blog/search
+GET http://localhost:24540/info/blog/id
 Content-Type: application/x-www-form-urlencoded
 
-id=1
+id=43
 
 ### 修改文章内容
 PUT http://localhost:24540/blog
@@ -24,7 +24,7 @@ id=2
 
 
 ### 查找所有文章
-GET http://localhost:24540/blog
+GET http://localhost:24540/info/blog
 Content-Type: application/x-www-form-urlencoded
 
 ### 查找固定条数文章
@@ -95,7 +95,27 @@ Content-Type: application/x-www-form-urlencoded
 id=5f8dc045176d4b0c0cdf679f&icon=1235&title=2394&content=3456
 
 ### 删除团队人员
+
 DELETE http://localhost:24540/user/team
 Content-Type: application/x-www-form-urlencoded
 
 id=5f8dc045176d4b0c0cdf679f
+
+### 新建页脚信息
+
+POST http://localhost:24540/user/footer
+Content-Type: application/x-www-form-urlencoded
+
+img=1111&pri=123&sec=234&copyrightyear=2019&author=miya&website=393290
+
+### 获取页脚信息
+
+GET http://localhost:24540/user/footer
+Content-Type: application/x-www-form-urlencoded
+
+### 新建页脚联系方式
+
+POST http://localhost:24540/user/footer/contact
+Content-Type: application/x-www-form-urlencoded
+
+id=5f8e617bda7c8122eceb04f9&name=1&icon=2&link=3

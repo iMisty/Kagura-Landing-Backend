@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-10-18 04:51:32
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-18 18:46:16
+ * @LastEditTime: 2020-10-20 11:20:35
  * @Description: 项目模块接口
- * @FilePath: /Kagura-Landing-Backend/src/controller/WorkController.ts
+ * @FilePath: \Kagura-Landing-Backend\src\controller\WorkController.ts
  */
 const WorkModel = require('../model/WorkModel');
 
@@ -46,7 +46,7 @@ class Work {
       });
     } catch (err) {
       return (ctx.body = {
-        code: 1,
+        code: 0,
         msg: err,
       });
     }

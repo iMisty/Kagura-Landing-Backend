@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-10-18 16:53:30
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-20 00:39:56
+ * @LastEditTime: 2020-10-20 11:24:48
  * @Description: 用户信息接口
- * @FilePath: /Kagura-Landing-Backend/src/controller/UserController.ts
+ * @FilePath: \Kagura-Landing-Backend\src\controller\UserController.ts
  */
 const UserModel = require('../model/UserModel');
 const ContentModel = require('../model/ContactModel');
@@ -41,7 +41,7 @@ class User {
     const search = await UserModel.find();
     if (search.length !== 0) {
       return (ctx.body = {
-        code: 0,
+        code: 16002,
         msg: 'had content',
       });
     }
@@ -75,7 +75,7 @@ class User {
     const result = await UserModel.find();
     if (result.length === 0) {
       return (ctx.body = {
-        code: 0,
+        code: 11599,
         msg: 'no content',
       });
     }
@@ -181,7 +181,12 @@ class User {
         code: 1,
         msg: result,
       });
-    } catch (err) {}
+    } catch (err) {
+      return (ctx.body = {
+        code: 0,
+        msg: err,
+      });
+    }
   }
 
   // 修改对应团队信息
