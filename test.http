@@ -123,5 +123,26 @@ Content-Type: application/x-www-form-urlencoded
 
 POST http://localhost:24540/user/footer/contact
 Content-Type: application/x-www-form-urlencoded
+Authorization: Bearar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDMyMTQxODEsImV4cCI6MTYwMzMwMDU4MX0.eLs2cZyPQZGmskSxoHyF7cNrcFKeiV2z7lcPQVP6Keo
+
 
 id=5f8e617bda7c8122eceb04f9&name=1&icon=2&link=3
+
+### 修改页脚联系方式
+PUT http://localhost:24540/user/footer/contact
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDMyMTQxODEsImV4cCI6MTYwMzMwMDU4MX0.eLs2cZyPQZGmskSxoHyF7cNrcFKeiV2z7lcPQVP6Keo
+
+### 新建管理员账户
+POST http://localhost:24540/registry
+Content-Type: application/x-www-form-urlencoded
+
+username=admin
+&password=123456
+
+### 登录
+POST http://localhost:24540/login
+Content-Type: application/x-www-form-urlencoded
+
+username=admin
+&password=123456

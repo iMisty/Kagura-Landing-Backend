@@ -3,18 +3,18 @@
  * @Version: 1.0
  * @Date: 2020-10-15 01:43:35
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-21 01:17:11
+ * @LastEditTime: 2020-10-21 16:57:05
  * @Description: main
- * @FilePath: /Kagura-Landing-Backend/src/app.ts
+ * @FilePath: \Kagura-Landing-Backend\src\app.ts
  */
 const Koa = require('koa');
 
 // require
+const cors = require('koa2-cors');
 const BodyParser = require('koa-bodyparser');
 const Mongoose = require('mongoose');
 const dbConfig = require('./config/db');
 const jwt = require('koa-jwt');
-const jsonwebtoken = require('jsonwebtoken');
 
 import router from './router/index';
 
@@ -27,6 +27,7 @@ const SECRET = 'kagura';
 
 // use
 app.use(BodyParser());
+app.use(cors());
 
 // 验证
 app.use(
@@ -37,7 +38,7 @@ app.use(
 
 // 路由
 app.use(router());
-app.listen(24540);
+app.listen(12345);
 
 // 打印日志
 app.use(async (ctx: Log, next: () => any) => {

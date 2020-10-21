@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-10-20 10:12:19
- * @LastEditTime: 2020-10-20 18:11:31
+ * @LastEditTime: 2020-10-21 15:59:50
  * @LastEditors: Miya
  * @Description: 页脚控制
  * @FilePath: \Kagura-Landing-Backend\src\controller\FooterController.ts
@@ -100,6 +100,7 @@ class Footer {
       return (ctx.body = {
         code: 1,
         msg: 'successed',
+        result,
       });
     } catch (err) {
       return (ctx.body = {
@@ -149,19 +150,24 @@ class Footer {
     body: FooterBody;
     throw: (arg0: number, arg1: { code: number; msg: FooterBody }) => Object;
   }) {
-    // const result = await FooterModel.updateOne(
-    //   { _id: ctx.request.body.id },
-    //   {
-    //     $set: {
-    //       contact: [{
-    //         name: ctx.request.body.name,
-    //         icon: ctx.request.body.icon,
-    //         href: ctx.request.body.link,
-    //       }],
-    //     },
-    //   }
-    // );
-    const result = await FooterModel.find();
+    const oldList = await FooterModel.find();
+    const array = oldList[0].contact;
+    const newList = (array[ctx.request.body.len] = {
+      _id: ctx.request.body.id,
+      name: ctx.request.body.name,
+      icon: ctx.request.body.icon,
+      href: ctx.request.body.link,
+    });
+
+    const result = await FooterModel.updateOne(
+      { _id: ctx.request.body.id },
+      {
+        $set: {
+          contact: newList,
+        },
+      }
+    );
+
     try {
       return (ctx.body = {
         code: 1,
@@ -173,6 +179,39 @@ class Footer {
         code: 11400,
         msg: err,
       });
+    }
+  }
+
+  // 删除联系方式
+  public static async deleteFooterContact(ctx: {
+    request: { body: FooterContact };
+    body: FooterBody;
+    throw: (arg0: number, arg1: { code: number; msg: FooterBody }) => Object;
+  }) {
+    const oldList = await FooterModel.find();
+    let temp = oldList[0].contact.splice(ctx.request.body.len, 1);
+    if (temp.length === 1) {
+      temp = [];
+    }
+    const result = await FooterModel.updateOne(
+      { _id: ctx.request.body.id },
+      {
+        $set: {
+          contact: temp,
+        },
+      }
+    );
+
+    try {
+      return (ctx.body = {
+        code: 1,
+        msg: 'successed',
+        // @ts-ignore
+        temp,
+        result,
+      });
+    } catch (err) {
+      return ctx.throw(400, { code: 11400, msg: err });
     }
   }
 }

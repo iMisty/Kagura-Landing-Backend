@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-10-19 16:37:43
- * @LastEditTime: 2020-10-21 01:15:47
+ * @LastEditTime: 2020-10-21 15:51:21
  * @LastEditors: Miya
  * @Description: 用户信息接口
- * @FilePath: /Kagura-Landing-Backend/src/router/user.ts
+ * @FilePath: \Kagura-Landing-Backend\src\router\user.ts
  * @Version: 1.0
  */
 const router = require('koa-router')();
@@ -39,5 +39,8 @@ router.post('/footer/contact', Footer.addNewFooterContact);
 
 // 修改页脚信息
 router.put('/footer/contact', Footer.updateFooterContact);
+
+// 删除页脚信息
+router.delete('/footer/contact', Footer.deleteFooterContact);
 
 export default router;

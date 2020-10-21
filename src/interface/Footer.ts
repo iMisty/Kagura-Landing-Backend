@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-10-20 12:10:08
- * @LastEditTime: 2020-10-20 15:17:14
+ * @LastEditTime: 2020-10-21 12:36:37
  * @LastEditors: Miya
  * @Description: 页脚模型
  * @FilePath: \Kagura-Landing-Backend\src\interface\Footer.ts
@@ -24,6 +24,13 @@ export interface FooterRequest {
 }
 
 export interface FooterContact {
+  len: number | string;
+  img?: string;
+  pri?: string;
+  sec?: string;
+  copyrightyear?: number;
+  author?: string;
+  website?: string;
   id: string;
   name: string;
   icon: string;

@@ -5,7 +5,8 @@
   "main": "app.ts",
   "scripts": {
     "watch": "tsc --watch",
-    "start": "nodemon ./src/app.ts"
+    "start": "nodemon ./src/app.ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "koa-combine-routers": "^4.0.2",
     "koa-jwt": "^4.0.0",
     "koa-router": "^9.4.0",
+    "koa2-cors": "^2.0.6",
     "md5": "^2.3.0",
     "mongoose": "^5.10.9",
     "nodemon": "^2.0.5",
