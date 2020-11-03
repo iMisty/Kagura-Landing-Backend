@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-10-17 01:54:08
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-18 15:28:34
+ * @LastEditTime: 2020-11-03 16:21:20
  * @Description: Blog Controller
- * @FilePath: /Kagura-Landing-Backend/src/controller/BlogController.ts
+ * @FilePath: \LandingPagec:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\BlogController.ts
  */
 const BlogModel = require('../model/BlogModel');
 import { BlogInterface } from '../interface/Blog';
@@ -20,7 +20,7 @@ class Blog {
     const param = {
       id: ctx.request.body.id,
       avatar: ctx.request.body.avatar,
-      time: new Date().getTime(),
+      time: new Date().toLocaleString(),
       tag: ctx.request.body.tag,
       title: ctx.request.body.title,
       intro: ctx.request.body.intro,
@@ -47,7 +47,7 @@ class Blog {
     request: { body: { id: number } };
     body: { code: number; msg: object };
   }) {
-    const result = await BlogModel.find({ id: ctx.request.body.id });
+    const result = await BlogModel.find({ _id: ctx.request.body.id });
     try {
       return (ctx.body = {
         code: 1,
