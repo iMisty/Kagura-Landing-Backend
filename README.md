@@ -2,8 +2,6 @@
 
 本项目为[Kagura-Landing](https://github.com/iMisty/Kagura-LandingPage)配套后端系统，基于 Koa2
 
-~~待优化系列~~
-
 ### 配置环境
 
 - NodeJS: 需要在服务器中安装 NodeJS 环境并配置 TypeScript 项目部署确认.若服务器为虚拟主机或无法配置 TypeScript 可使用以下方法
@@ -29,7 +27,7 @@
 
 ### 项目目录说明
 
-采用 MVC 的方式进行部署
+采用 MVC 的方式进行部署 ~~哪有V~~
 
 - config: 配置 mongodb
 
