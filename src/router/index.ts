@@ -3,14 +3,13 @@
  * @Version: 1.0
  * @Date: 2020-10-15 02:04:46
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-21 00:48:48
+ * @LastEditTime: 2020-11-04 11:51:41
  * @Description: router
- * @FilePath: /Kagura-Landing-Backend/src/router/index.ts
+ * @FilePath: \LandingPagec:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\router\index.ts
  */
 import * as Router from 'koa-router';
 import * as CombineRouters from 'koa-combine-routers';
 
-import TestRouter from './test';
 import BlogRouter from './blog';
 import WorkRouter from './work';
 import UserRouter from './user';
@@ -31,7 +30,6 @@ const routers = CombineRouters(
   index,
   a,
   login,
-  TestRouter,
   BlogRouter,
   WorkRouter,
   UserRouter,
