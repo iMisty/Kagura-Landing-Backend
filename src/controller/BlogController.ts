@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-10-17 01:54:08
  * @LastEditors: Miya
- * @LastEditTime: 2020-11-03 16:21:20
+ * @LastEditTime: 2020-11-04 10:44:51
  * @Description: Blog Controller
  * @FilePath: \LandingPagec:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\BlogController.ts
  */
@@ -62,7 +62,10 @@ class Blog {
   }
 
   // 查找全部或指定条数文章
-  public static async getArticle(ctx: any) {
+  public static async getArticle(ctx: {
+    request: { body: { limit: number } };
+    body: { code: number; msg: string[] };
+  }) {
     const limit = Number(ctx.request.body.limit);
     const result = await BlogModel.find({}).limit(limit).sort({ time: -1 });
 
@@ -80,9 +83,21 @@ class Blog {
   }
 
   // 修改文章内容
-  public static async updateArticle(ctx: any) {
+  public static async updateArticle(ctx: {
+    request: {
+      body: {
+        id: string;
+        avatar: string;
+        tag: string[];
+        title: string;
+        intro: string;
+        content: string;
+      };
+    };
+    body: { code: number; msg: string[] };
+  }) {
     const result = await BlogModel.update(
-      { id: ctx.request.body.id },
+      { _id: ctx.request.body.id },
       {
         $set: {
           avatar: ctx.request.body.avatar,
@@ -108,9 +123,12 @@ class Blog {
   }
 
   // 删除一篇文章
-  public static async deleteArticle(ctx: any) {
+  public static async deleteArticle(ctx: {
+    request: { body: { id: string } };
+    body: { code: number; msg: any };
+  }) {
     // @ts-ignore
-    const result = await BlogModel.deleteOne({ id: ctx.request.body.id });
+    const result = await BlogModel.deleteOne({ _id: ctx.request.body.id });
     try {
       return (ctx.body = {
         code: 1,

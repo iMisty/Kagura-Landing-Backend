@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-10-18 04:51:32
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-20 11:20:35
+ * @LastEditTime: 2020-11-04 11:31:13
  * @Description: 项目模块接口
- * @FilePath: \Kagura-Landing-Backend\src\controller\WorkController.ts
+ * @FilePath: \LandingPagec:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\WorkController.ts
  */
 const WorkModel = require('../model/WorkModel');
 
@@ -24,7 +24,24 @@ const WorkModel = require('../model/WorkModel');
  */
 class Work {
   // 新建一个项目
-  public static async addNewWork(ctx: any) {
+  public static async addNewWork(ctx: {
+    request: {
+      body: {
+        id: number;
+        avatar: string;
+        title: string;
+        tag: string[];
+        intro: string;
+        content: string;
+        preview: string;
+        source: string;
+        lastupdate: string;
+        version: string;
+        status: string;
+      };
+    };
+    body: { code: number; msg: string };
+  }) {
     const result = new WorkModel({
       id: ctx.request.body.id,
       avatar: ctx.request.body.avatar,
@@ -53,7 +70,10 @@ class Work {
   }
 
   // 查找所有项目或指定条数项目
-  public static async getWork(ctx: any) {
+  public static async getWork(ctx: {
+    request: { body: { limit: number } };
+    body: { code: number; msg: string[] | string };
+  }) {
     const limit = Number(ctx.request.body.limit);
     const result = await WorkModel.find().limit(limit).sort({ _id: -1 });
     try {
@@ -70,8 +90,11 @@ class Work {
   }
 
   // 根据ID查找项目
-  public static async getWorkByID(ctx: any) {
-    const result = await WorkModel.find({ id: ctx.request.body.id });
+  public static async getWorkByID(ctx: {
+    request: { body: { id: string } };
+    body: { code: number; msg: string | string[] };
+  }) {
+    const result = await WorkModel.find({ _id: ctx.request.body.id });
     try {
       return (ctx.body = {
         code: 1,
@@ -86,9 +109,26 @@ class Work {
   }
 
   // 修改项目内容
-  public static async updateWork(ctx: any) {
+  public static async updateWork(ctx: {
+    request: {
+      body: {
+        id: string;
+        avatar: string;
+        title: string;
+        tag: string[];
+        intro: string;
+        content: string;
+        preview: string;
+        source: string;
+        lastupdate: string;
+        version: string;
+        status: string;
+      };
+    };
+    body: { code: number; msg: string | string[] };
+  }) {
     const result = await WorkModel.updateOne(
-      { id: ctx.request.body.id },
+      { _id: ctx.request.body.id },
       {
         $set: {
           avatar: ctx.request.body.avatar,
@@ -118,8 +158,11 @@ class Work {
   }
 
   // 删除项目
-  public static async deleteWork(ctx: any) {
-    const result = await WorkModel.deleteOne({ id: ctx.request.body.id });
+  public static async deleteWork(ctx: {
+    request: { body: { id: string } };
+    body: { code: number; msg: string | string[] };
+  }) {
+    const result = await WorkModel.deleteOne({ _id: ctx.request.body.id });
     try {
       return (ctx.body = {
         code: 1,

@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-10-18 16:53:30
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-21 01:18:50
+ * @LastEditTime: 2020-11-04 11:15:01
  * @Description: 用户信息接口
- * @FilePath: /Kagura-Landing-Backend/src/controller/UserController.ts
+ * @FilePath: \LandingPagec:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\UserController.ts
  */
 import * as md5 from 'md5';
 const jsonwebtoken = require('jsonwebtoken');
@@ -24,7 +24,11 @@ class User {
    */
 
   // 创建管理员
-  public static async addNewAdmin(ctx: any) {
+  public static async addNewAdmin(ctx: {
+    body: { code: number; msg: string };
+    request: { body: { username: any; password: string | Buffer | number[] } };
+    throw: (arg0: number, arg1: { code: number; msg: string }) => any;
+  }) {
     const search = await AdminModel.find();
     if (search.length >= 1) {
       return (ctx.body = {
@@ -52,7 +56,17 @@ class User {
   }
 
   // 修改管理员账号密码
-  public static async updateAdmin(ctx: any) {
+  public static async updateAdmin(ctx: {
+    request: {
+      body: {
+        id: string;
+        username: string;
+        password: string | Buffer | number[];
+      };
+    };
+    body: { code: number; msg: string; result: string };
+    throw: (arg0: number, arg1: { code: number; msg: string }) => any;
+  }) {
     const result = await AdminModel.updateOne(
       { _id: ctx.request.body.id },
       {
@@ -67,7 +81,7 @@ class User {
       return (ctx.body = {
         code: 1,
         msg: 'successed',
-        result
+        result,
       });
     } catch (err) {
       return ctx.throw(400, { code: 400, msg: err });
@@ -75,7 +89,12 @@ class User {
   }
 
   // 验证登录
-  public static async validateAdmin(ctx: any) {
+  public static async validateAdmin(ctx: {
+    request: {
+      body: { username: string; password: string | Buffer | number[] };
+    };
+    body: { code: number; msg: string; token?: string };
+  }) {
     const getAdminData = await AdminModel.find();
     // 登录
     // 判断用户名密码是否匹配
@@ -110,7 +129,18 @@ class User {
    */
 
   // 新建页面介绍文字
-  public static async addNewAboutIntro(ctx: any) {
+  public static async addNewAboutIntro(ctx: {
+    body: { code: number; msg: string };
+    request: {
+      body: {
+        background: string;
+        image: string;
+        title: string;
+        content: string;
+        concept: string;
+      };
+    };
+  }) {
     const search = await UserModel.find();
     if (search.length !== 0) {
       return (ctx.body = {
@@ -144,7 +174,9 @@ class User {
   }
 
   // 获取页面介绍文字
-  public static async getAboutIntro(ctx: any) {
+  public static async getAboutIntro(ctx: {
+    body: { code: number; msg?: string; result?: string };
+  }) {
     const result = await UserModel.find();
     if (result.length === 0) {
       return (ctx.body = {
@@ -166,7 +198,19 @@ class User {
   }
 
   // 修改页面介绍文字
-  public static async updateAboutIntro(ctx: any) {
+  public static async updateAboutIntro(ctx: {
+    body: { code: number; msg: string };
+    request: {
+      body: {
+        id: string;
+        background: string;
+        image: string;
+        title: string;
+        content: string;
+        concept: string;
+      };
+    };
+  }) {
     const search = await UserModel.find();
     if (search.length === 0) {
       return (ctx.body = {
@@ -212,7 +256,10 @@ class User {
    */
 
   // 新建团队信息
-  public static async addNewTeamContact(ctx: any) {
+  public static async addNewTeamContact(ctx: {
+    body: { code: number; msg: string };
+    request: { body: { icon: string; title: string; content: string } };
+  }) {
     const search = await ContentModel.find();
     if (search.length > 5) {
       return (ctx.body = {
@@ -241,7 +288,9 @@ class User {
   }
 
   // 查阅所有团队信息
-  public static async getTeamContact(ctx: any) {
+  public static async getTeamContact(ctx: {
+    body: { code: number; msg: string | string[] };
+  }) {
     const result = await ContentModel.find();
     try {
       if (result.length === 0) {
@@ -263,7 +312,12 @@ class User {
   }
 
   // 修改对应团队信息
-  public static async updateTeamContact(ctx: any) {
+  public static async updateTeamContact(ctx: {
+    request: {
+      body: { id: string; icon: string; title: string; content: string };
+    };
+    body: { code: number; message: string; result?: string };
+  }) {
     const result = await ContentModel.updateOne(
       { _id: ctx.request.body.id },
       {
@@ -290,7 +344,10 @@ class User {
   }
 
   // 删除团队信息
-  public static async deleteTeamContact(ctx: any) {
+  public static async deleteTeamContact(ctx: {
+    request: { body: { id: string } };
+    body: { code: number; msg: string; result?: string };
+  }) {
     const result = await ContentModel.deleteOne({
       _id: ctx.request.body.id,
     });

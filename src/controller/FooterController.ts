@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-10-20 10:12:19
- * @LastEditTime: 2020-10-21 15:59:50
+ * @LastEditTime: 2020-11-04 11:07:01
  * @LastEditors: Miya
  * @Description: 页脚控制
- * @FilePath: \Kagura-Landing-Backend\src\controller\FooterController.ts
+ * @FilePath: \LandingPagec:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\FooterController.ts
  * @Version: 1.0
  */
 import { FooterBody, FooterContact, FooterRequest } from '../interface/Footer';
@@ -79,7 +79,7 @@ class Footer {
 
   // 修改信息
   public static async updateFooterContent(ctx: {
-    request: { body: { id: any; img: any; pri: any; sec: any } };
+    request: { body: { id: string; img: string; pri: string; sec: string } };
     body: FooterBody;
   }) {
     const result = await FooterModel.updateOne(
