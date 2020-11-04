@@ -41,8 +41,6 @@ TODO: 监听 mongodb 状态
 
   - Footer: 页脚模块
 
-  - Test: 测试用 // 待移除
-
   - User: 用户管理
 
   - Work: 项目作品
@@ -59,8 +57,6 @@ TODO: 监听 mongodb 状态
 
   - Footer: 页脚
 
-  - Test: 测试 // 待移除
-
   - User: 用户个性化定制
 
   - Work: 项目作品
@@ -71,9 +67,7 @@ TODO: 监听 mongodb 状态
 
   - index: 接口聚合
 
-  - info: 信息展示(GET,除该文件外其余接口均需Bearar Token)
-
-  - test: 测试数据 // 待移除
+  - info: 信息展示(POST,除该文件外其余接口均需Bearar Token)
 
   - user: 用户信息
 
