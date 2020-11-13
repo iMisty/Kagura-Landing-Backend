@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-10-18 16:53:30
  * @LastEditors: Miya
- * @LastEditTime: 2020-11-04 11:15:01
+ * @LastEditTime: 2020-11-13 16:53:59
  * @Description: 用户信息接口
- * @FilePath: \LandingPagec:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\UserController.ts
+ * @FilePath: \Kagura-Landing-Backend\src\controller\UserController.ts
  */
 import * as md5 from 'md5';
 const jsonwebtoken = require('jsonwebtoken');
@@ -118,6 +118,31 @@ class User {
         msg: '用户名密码不匹配',
       };
     }
+  }
+
+  // 验证token
+  public static async validateToken(ctx: any) {
+    const token = ctx.request.body.token;
+    if(!token){
+      return ctx.body = {
+        code: 401,
+        msg: 'Offline'
+      }
+    }
+
+    const validate = jsonwebtoken.verify(token, SECRET, (err: string) => {
+      if (err) {
+        return (ctx.body = {
+          code: 403,
+          msg: err,
+        });
+      }
+      return (ctx.body = {
+        code: 200,
+        msg: 'ok',
+      });
+    });
+    return validate;
   }
 
   /**

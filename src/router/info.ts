@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-10-20 16:53:12
- * @LastEditTime: 2020-11-03 15:55:34
+ * @LastEditTime: 2020-11-13 15:26:18
  * @LastEditors: Miya
  * @Description: 不经过jwt验证部分
- * @FilePath: \LandingPagec:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\router\info.ts
+ * @FilePath: \Kagura-Landing-Backend\src\router\info.ts
  * @Version: 1.0
  */
 const router = require('koa-router')();
@@ -35,5 +35,8 @@ router.post('/team', User.getTeamContact);
 
 // 获取页脚信息
 router.post('/footer', Footer.getFooterContent);
+
+// 验证token
+router.post('/admin', User.validateToken);
 
 export default router;
