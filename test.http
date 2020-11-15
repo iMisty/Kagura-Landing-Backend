@@ -152,4 +152,4 @@ username=admin
 POST http://localhost:12345/info/admin
 Content-Type: application/x-www-form-urlencoded
 
-token=e2
+token=
