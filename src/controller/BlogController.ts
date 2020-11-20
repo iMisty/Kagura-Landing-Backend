@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-10-17 01:54:08
  * @LastEditors: Miya
- * @LastEditTime: 2020-11-04 10:44:51
+ * @LastEditTime: 2020-11-20 18:05:23
  * @Description: Blog Controller
- * @FilePath: \LandingPagec:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\BlogController.ts
+ * @FilePath: \Single-Search-APIc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\BlogController.ts
  */
 const BlogModel = require('../model/BlogModel');
 import { BlogInterface } from '../interface/Blog';
@@ -63,10 +63,10 @@ class Blog {
 
   // 查找全部或指定条数文章
   public static async getArticle(ctx: {
-    request: { body: { limit: number } };
-    body: { code: number; msg: string[] };
+    query: { limit: string };
+    body: { code: number; msg: string };
   }) {
-    const limit = Number(ctx.request.body.limit);
+    const limit = Number(ctx.query.limit);
     const result = await BlogModel.find({}).limit(limit).sort({ time: -1 });
 
     try {
