@@ -71,10 +71,10 @@ class Work {
 
   // 查找所有项目或指定条数项目
   public static async getWork(ctx: {
-    request: { body: { limit: number } };
-    body: { code: number; msg: string[] | string };
+    query: { limit: string };
+    body: { code: number; msg: string };
   }) {
-    const limit = Number(ctx.request.body.limit);
+    const limit = Number(ctx.query.limit);
     const result = await WorkModel.find().limit(limit).sort({ _id: -1 });
     try {
       return (ctx.body = {
@@ -91,10 +91,10 @@ class Work {
 
   // 根据ID查找项目
   public static async getWorkByID(ctx: {
-    request: { body: { id: string } };
-    body: { code: number; msg: string | string[] };
+    query: { id: string };
+    body: { code: number; msg: string[] };
   }) {
-    const result = await WorkModel.find({ _id: ctx.request.body.id });
+    const result = await WorkModel.find({ _id: ctx.query.id });
     try {
       return (ctx.body = {
         code: 1,
