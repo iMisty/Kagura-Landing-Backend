@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-10-15 01:43:35
  * @LastEditors: Miya
- * @LastEditTime: 2020-10-21 16:57:05
+ * @LastEditTime: 2020-11-23 10:24:22
  * @Description: main
- * @FilePath: \Kagura-Landing-Backend\src\app.ts
+ * @FilePath: \Single-Search-APIc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\app.ts
  */
 const Koa = require('koa');
 
@@ -74,4 +74,4 @@ Mongoose.connect(dbConfig.blog, {
   useUnifiedTopology: true,
 });
 
-console.log('server running on port 24540');
+console.log('server running on port 12345');
