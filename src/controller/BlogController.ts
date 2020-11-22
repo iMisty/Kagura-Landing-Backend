@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-10-17 01:54:08
  * @LastEditors: Miya
- * @LastEditTime: 2020-11-20 18:05:23
+ * @LastEditTime: 2020-11-23 11:21:48
  * @Description: Blog Controller
  * @FilePath: \Single-Search-APIc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\BlogController.ts
  */
@@ -44,10 +44,10 @@ class Blog {
   }
   // 查找指定 ID 文章
   public static async getArticleByID(ctx: {
-    request: { body: { id: number } };
-    body: { code: number; msg: object };
+    query: { id: string };
+    body: { code: number; msg: string };
   }) {
-    const result = await BlogModel.find({ _id: ctx.request.body.id });
+    const result = await BlogModel.find({ _id: ctx.query.id });
     try {
       return (ctx.body = {
         code: 1,
@@ -61,13 +61,21 @@ class Blog {
     }
   }
 
-  // 查找全部或指定条数文章
+  // 查找全部或指定文章
   public static async getArticle(ctx: {
-    query: { limit: string };
+    query: { limit: string; id: string };
     body: { code: number; msg: string };
   }) {
     const limit = Number(ctx.query.limit);
-    const result = await BlogModel.find({}).limit(limit).sort({ time: -1 });
+    const id = ctx.query.id;
+    let result;
+    if (!id) {
+      result = await BlogModel.find().limit(limit).sort({ time: -1 });
+    } else {
+      result = await BlogModel.find({ _id: ctx.query.id })
+        .limit(limit)
+        .sort({ time: -1 });
+    }
 
     try {
       return (ctx.body = {
