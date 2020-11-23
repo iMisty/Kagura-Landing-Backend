@@ -1,7 +1,7 @@
 /*
  * @Author: Miya
  * @Date: 2020-10-20 16:53:12
- * @LastEditTime: 2020-11-19 17:51:25
+ * @LastEditTime: 2020-11-23 11:28:28
  * @LastEditors: Miya
  * @Description: 不经过jwt验证部分
  * @FilePath: \Single-Search-APIc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\router\info.ts
@@ -16,16 +16,11 @@ const Footer = require('../controller/FooterController');
 router.prefix('/info');
 
 // 获取文章列表
+// @param 
 router.get('/blog', Blog.getArticle);
-
-// 根据ID获取单篇文章
-router.get('/blog/id', Blog.getArticleByID);
 
 // 查找项目
 router.get('/work', Work.getWork);
-
-// 根据ID查找项目
-router.get('/work/id', Work.getWorkByID);
 
 // 获取关于页介绍
 router.get('/about', User.getAboutIntro);
