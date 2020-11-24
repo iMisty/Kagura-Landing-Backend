@@ -3,7 +3,7 @@
  * @Version: 1.0
  * @Date: 2020-10-18 16:53:30
  * @LastEditors: Miya
- * @LastEditTime: 2020-11-23 10:24:11
+ * @LastEditTime: 2020-11-24 18:11:55
  * @Description: 用户信息接口
  * @FilePath: \Single-Search-APIc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\UserController.ts
  */
@@ -102,7 +102,7 @@ class User {
       ctx.request.body.username === getAdminData[0].username &&
       md5(ctx.request.body.password) === getAdminData[0].password;
     if (checkUser) {
-      ctx.body = {
+      return ctx.body = {
         code: 1,
         msg: '登录成功',
         token: jsonwebtoken.sign(
@@ -113,7 +113,7 @@ class User {
       };
     } else {
       // 登录失败, 用户名密码不正确
-      ctx.body = {
+      return ctx.body = {
         code: 400,
         msg: '用户名密码不匹配',
       };
@@ -122,7 +122,7 @@ class User {
 
   // 验证token
   public static async validateToken(ctx: any) {
-    const token = ctx.request.body.token;
+    const token = `Bearer ${ctx.request.body.token}`;
     if (!token) {
       return (ctx.body = {
         code: 401,
