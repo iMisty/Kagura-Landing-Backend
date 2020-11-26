@@ -3,7 +3,7 @@
  * @Version: 1.01
  * @Date: 2020-10-18 16:53:30
  * @LastEditors: Miya
- * @LastEditTime: 2020-11-25 15:02:36
+ * @LastEditTime: 2020-11-27 16:48:45
  * @Description: 用户信息接口
  * @FilePath: \Single-Search-APIc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\UserController.ts
  */
@@ -126,8 +126,7 @@ class User {
     console.log(token);
     const validate = jsonwebtoken.verify(
       token,
-      // SECRET,
-      'kagura',
+      SECRET,
       (err: string) => {
         // console.log(validate)
         if (err) {
