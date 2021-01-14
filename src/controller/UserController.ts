@@ -3,7 +3,7 @@
  * @Version: 1.01
  * @Date: 2020-10-18 16:53:30
  * @LastEditors: Miya
- * @LastEditTime: 2020-11-30 10:37:26
+ * @LastEditTime: 2021-01-14 10:23:11
  * @Description: 用户信息接口
  * @FilePath: \Single-Search-APIc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\UserController.ts
  */
@@ -49,7 +49,7 @@ class User {
       });
     } catch (err) {
       return ctx.throw(400, {
-        code: 11400,
+        code: 400,
         msg: err,
       });
     }
@@ -169,7 +169,7 @@ class User {
     const search = await UserModel.find();
     if (search.length !== 0) {
       return (ctx.body = {
-        code: 16002,
+        code: 406,
         msg: 'had content',
       });
     }
@@ -205,7 +205,7 @@ class User {
     const result = await UserModel.find();
     if (result.length === 0) {
       return (ctx.body = {
-        code: 11599,
+        code: 599,
         msg: 'no content',
       });
     }
@@ -239,7 +239,7 @@ class User {
     const search = await UserModel.find();
     if (search.length === 0) {
       return (ctx.body = {
-        code: 11599,
+        code: 599,
         msg: 'no content',
       });
     }
@@ -288,7 +288,7 @@ class User {
     const search = await ContentModel.find();
     if (search.length > 5) {
       return (ctx.body = {
-        code: 11601,
+        code: 601,
         msg: 'max length',
       });
     }
@@ -320,7 +320,7 @@ class User {
     try {
       if (result.length === 0) {
         return (ctx.body = {
-          code: 11599,
+          code: 599,
           msg: 'no content',
         });
       }

@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-10-20 10:12:19
- * @LastEditTime: 2020-11-04 11:07:01
+ * @LastEditTime: 2021-01-14 10:09:53
  * @LastEditors: Miya
  * @Description: 页脚控制
- * @FilePath: \LandingPagec:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\FooterController.ts
+ * @FilePath: \Single-Search-APIc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\FooterController.ts
  * @Version: 1.0
  */
 import { FooterBody, FooterContact, FooterRequest } from '../interface/Footer';
@@ -176,7 +176,7 @@ class Footer {
       });
     } catch (err) {
       return ctx.throw(400, {
-        code: 11400,
+        code: 400,
         msg: err,
       });
     }
@@ -211,7 +211,7 @@ class Footer {
         result,
       });
     } catch (err) {
-      return ctx.throw(400, { code: 11400, msg: err });
+      return ctx.throw(400, { code: 400, msg: err });
     }
   }
 }
