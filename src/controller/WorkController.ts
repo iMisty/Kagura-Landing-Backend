@@ -3,9 +3,9 @@
  * @Version: 1.0
  * @Date: 2020-10-18 04:51:32
  * @LastEditors: Miya
- * @LastEditTime: 2021-01-14 10:24:59
+ * @LastEditTime: 2021-03-12 15:02:04
  * @Description: 项目模块接口
- * @FilePath: \Single-Search-APIc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\WorkController.ts
+ * @FilePath: \maid-chanc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\controller\WorkController.ts
  */
 const WorkModel = require('../model/WorkModel');
 
@@ -38,6 +38,10 @@ class Work {
         lastupdate: string;
         version: string;
         status: string;
+        trash: {
+          img: string[];
+          content: string;
+        };
       };
     };
     body: { code: number; msg: string };
@@ -54,6 +58,7 @@ class Work {
       lastupdate: ctx.request.body.lastupdate,
       version: ctx.request.body.version,
       status: ctx.request.body.status,
+      trash: ctx.request.body.trash,
     });
     try {
       await result.save();
@@ -129,6 +134,10 @@ class Work {
         lastupdate: string;
         version: string;
         status: string;
+        trash: {
+          img: string[],
+          content: string
+        }
       };
     };
     body: { code: number; msg: string | string[] };
@@ -147,6 +156,10 @@ class Work {
           lastupdate: ctx.request.body.lastupdate,
           version: ctx.request.body.version,
           status: ctx.request.body.status,
+          trash: {
+            img: ctx.request.body.trash.img,
+            content: ctx.request.body.trash.content
+          }
         },
       }
     );

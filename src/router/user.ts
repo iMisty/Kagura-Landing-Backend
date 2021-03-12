@@ -1,10 +1,10 @@
 /*
  * @Author: Miya
  * @Date: 2020-10-19 16:37:43
- * @LastEditTime: 2020-11-24 11:56:12
+ * @LastEditTime: 2021-03-12 16:38:02
  * @LastEditors: Miya
  * @Description: 用户信息接口
- * @FilePath: \Single-Search-APIc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\router\user.ts
+ * @FilePath: \maid-chanc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\router\user.ts
  * @Version: 1.0
  */
 const router = require('koa-router')();
@@ -12,12 +12,6 @@ const User = require('../controller/UserController');
 const Footer = require('../controller/FooterController');
 
 router.prefix('/user');
-
-// 验证token
-router.post('/status', User.validateToken);
-
-// 修改管理员账号密码
-router.put('/', User.updateAdmin);
 
 // 新建关于页介绍
 router.post('/about', User.addNewAboutIntro);

@@ -1,22 +1,23 @@
 /*
  * @Author: Miya
  * @Date: 2020-10-20 16:53:12
- * @LastEditTime: 2020-11-23 11:28:28
+ * @LastEditTime: 2021-03-12 16:44:38
  * @LastEditors: Miya
  * @Description: 不经过jwt验证部分
- * @FilePath: \Single-Search-APIc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\router\info.ts
+ * @FilePath: \maid-chanc:\Users\Platinum Prism\Documents\GitHub\Kagura-Landing-Backend\src\router\info.ts
  * @Version: 1.0
  */
 const router = require('koa-router')();
 const Blog = require('../controller/BlogController');
 const Work = require('../controller/WorkController');
 const User = require('../controller/UserController');
+const Admin = require('../controller/AdminController');
 const Footer = require('../controller/FooterController');
 
 router.prefix('/info');
 
 // 获取文章列表
-// @param 
+// @param
 router.get('/blog', Blog.getArticle);
 
 // 查找项目
@@ -32,6 +33,6 @@ router.get('/team', User.getTeamContact);
 router.get('/footer', Footer.getFooterContent);
 
 // 验证token
-router.get('/admin', User.validateToken);
+router.get('/admin', Admin.validateToken);
 
 export default router;
